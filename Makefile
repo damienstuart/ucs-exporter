@@ -14,7 +14,7 @@ LDFLAGS  := -s -w \
 	-X github.com/prometheus/common/version.BuildUser=$(USER) \
 	-X github.com/prometheus/common/version.BuildDate=$(shell date -u +%Y%m%d-%H:%M:%S)
 
-.PHONY: all build test vet fmt golden docs docker run-fake clean
+.PHONY: all build test vet fmt golden docs dashboard docker run-fake clean
 
 all: vet test build
 
@@ -38,6 +38,10 @@ golden:
 # Regenerate the metrics reference.
 docs:
 	go run ./cmd/ucs-exporter modules --markdown > docs/metrics.md
+
+# Regenerate the Grafana dashboard; edit grafana/generate.py, not the JSON.
+dashboard:
+	python3 grafana/generate.py > grafana/dashboard.json
 
 docker:
 	docker build --build-arg VERSION=$(VERSION) --build-arg REVISION=$(REVISION) -t $(IMAGE):$(VERSION) .

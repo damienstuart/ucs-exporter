@@ -1,7 +1,7 @@
 {
   "title": "Cisco UCS",
-  "uid": "ucs-exporter",
-  "description": "Cisco UCS Manager domains monitored by ucs-exporter.",
+  "uid": "warbjdq9hbjeun",
+  "description": "A Cisco UCS Manager domain monitored by ucs-exporter.",
   "tags": [
     "cisco",
     "ucs",
@@ -11,7 +11,7 @@
   "graphTooltip": 1,
   "refresh": "1m",
   "time": {
-    "from": "now-6h",
+    "from": "now-1h",
     "to": "now"
   },
   "timezone": "",
@@ -33,8 +33,8 @@
     },
     {
       "type": "stat",
-      "title": "Domains up",
-      "description": "0 if any selected domain's latest poll failed.",
+      "title": "Domain up",
+      "description": "0 if the latest poll of the domain failed.",
       "id": 2,
       "datasource": {
         "type": "prometheus",
@@ -52,7 +52,7 @@
             "type": "prometheus",
             "uid": "${datasource}"
           },
-          "expr": "min(ucs_up{domain=~\"$domain\"})",
+          "expr": "ucs_up{domain=\"$domain\"}",
           "refId": "A",
           "legendFormat": "__auto"
         }
@@ -127,7 +127,7 @@
             "type": "prometheus",
             "uid": "${datasource}"
           },
-          "expr": "sum(ucs_faults{domain=~\"$domain\",severity=\"critical\"}) or vector(0)",
+          "expr": "sum(ucs_faults{domain=\"$domain\",severity=\"critical\"}) or vector(0)",
           "refId": "A",
           "legendFormat": "__auto"
         }
@@ -188,7 +188,7 @@
             "type": "prometheus",
             "uid": "${datasource}"
           },
-          "expr": "sum(ucs_faults{domain=~\"$domain\",severity=\"major\"}) or vector(0)",
+          "expr": "sum(ucs_faults{domain=\"$domain\",severity=\"major\"}) or vector(0)",
           "refId": "A",
           "legendFormat": "__auto"
         }
@@ -249,7 +249,7 @@
             "type": "prometheus",
             "uid": "${datasource}"
           },
-          "expr": "count(ucs_server_ok{domain=~\"$domain\"} == 0) or vector(0)",
+          "expr": "count(ucs_server_ok{domain=\"$domain\"} == 0) or vector(0)",
           "refId": "A",
           "legendFormat": "__auto"
         }
@@ -310,7 +310,7 @@
             "type": "prometheus",
             "uid": "${datasource}"
           },
-          "expr": "count(ucs_vif_up{domain=~\"$domain\"} == 0) or vector(0)",
+          "expr": "count(ucs_vif_up{domain=\"$domain\"} == 0) or vector(0)",
           "refId": "A",
           "legendFormat": "__auto"
         }
@@ -371,7 +371,7 @@
             "type": "prometheus",
             "uid": "${datasource}"
           },
-          "expr": "count(ucs_fi_port_up{domain=~\"$domain\",role=\"network\"} == 0) or vector(0)",
+          "expr": "count(ucs_fi_port_up{domain=\"$domain\",role=\"network\"} == 0) or vector(0)",
           "refId": "A",
           "legendFormat": "__auto"
         }
@@ -432,7 +432,7 @@
             "type": "prometheus",
             "uid": "${datasource}"
           },
-          "expr": "count(ucs_fi_fc_port_oper_state{domain=~\"$domain\",state!~\"up|link-up|sfp-not-present\"}) or vector(0)",
+          "expr": "count(ucs_fi_fc_port_oper_state{domain=\"$domain\",state!~\"up|link-up|sfp-not-present\"}) or vector(0)",
           "refId": "A",
           "legendFormat": "__auto"
         }
@@ -493,7 +493,7 @@
             "type": "prometheus",
             "uid": "${datasource}"
           },
-          "expr": "min(ucs_fi_mgmt_ha_ready{domain=~\"$domain\"})",
+          "expr": "min(ucs_fi_mgmt_ha_ready{domain=\"$domain\"})",
           "refId": "A",
           "legendFormat": "__auto"
         }
@@ -549,7 +549,7 @@
     },
     {
       "type": "table",
-      "title": "Domains",
+      "title": "Domain",
       "description": "",
       "id": 10,
       "datasource": {
@@ -557,7 +557,7 @@
         "uid": "${datasource}"
       },
       "gridPos": {
-        "h": 6,
+        "h": 5,
         "w": 12,
         "x": 0,
         "y": 5
@@ -568,7 +568,7 @@
             "type": "prometheus",
             "uid": "${datasource}"
           },
-          "expr": "ucs_domain_info{domain=~\"$domain\"}",
+          "expr": "ucs_domain_info{domain=\"$domain\"}",
           "refId": "A",
           "legendFormat": "__auto",
           "format": "table",
@@ -578,19 +578,18 @@
       ],
       "transformations": [
         {
-          "id": "merge",
-          "options": {}
-        },
-        {
           "id": "organize",
           "options": {
             "excludeByName": {
               "Time": true,
-              "Value": true,
               "__name__": true,
               "job": true,
-              "instance": true
-            }
+              "instance": true,
+              "domain": true,
+              "Value": true
+            },
+            "renameByName": {},
+            "indexByName": {}
           }
         }
       ],
@@ -613,7 +612,7 @@
         "uid": "${datasource}"
       },
       "gridPos": {
-        "h": 6,
+        "h": 5,
         "w": 12,
         "x": 12,
         "y": 5
@@ -624,7 +623,7 @@
             "type": "prometheus",
             "uid": "${datasource}"
           },
-          "expr": "ucs_fi_mgmt_leadership_state{domain=~\"$domain\"}",
+          "expr": "ucs_fi_mgmt_leadership_state{domain=\"$domain\"}",
           "refId": "A",
           "legendFormat": "__auto",
           "format": "table",
@@ -634,19 +633,18 @@
       ],
       "transformations": [
         {
-          "id": "merge",
-          "options": {}
-        },
-        {
           "id": "organize",
           "options": {
             "excludeByName": {
               "Time": true,
-              "Value": true,
               "__name__": true,
               "job": true,
-              "instance": true
-            }
+              "instance": true,
+              "domain": true,
+              "Value": true
+            },
+            "renameByName": {},
+            "indexByName": {}
           }
         }
       ],
@@ -662,3431 +660,3214 @@
     {
       "type": "row",
       "title": "Faults",
-      "collapsed": false,
+      "collapsed": true,
       "id": 12,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 10
+      },
+      "panels": [
+        {
+          "type": "timeseries",
+          "title": "Active faults by severity",
+          "description": "",
+          "id": 13,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 11
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "sum by (severity) (ucs_faults{domain=\"$domain\",severity=~\"critical|major|minor|warning\"})",
+              "refId": "A",
+              "legendFormat": "{{severity}}"
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {
+              "unit": "short",
+              "custom": {
+                "lineWidth": 1,
+                "fillOpacity": 10,
+                "showPoints": "never",
+                "stacking": {
+                  "mode": "normal"
+                }
+              }
+            },
+            "overrides": []
+          },
+          "options": {
+            "legend": {
+              "displayMode": "table",
+              "placement": "right",
+              "showLegend": true,
+              "calcs": [
+                "lastNotNull",
+                "max"
+              ]
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "desc"
+            }
+          }
+        },
+        {
+          "type": "table",
+          "title": "Active faults by type",
+          "description": "",
+          "id": 14,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 11
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "sum by (severity, type) (ucs_faults{domain=\"$domain\"}) > 0",
+              "refId": "A",
+              "legendFormat": "__auto",
+              "format": "table",
+              "instant": true,
+              "range": false
+            }
+          ],
+          "transformations": [
+            {
+              "id": "organize",
+              "options": {
+                "excludeByName": {
+                  "Time": true,
+                  "__name__": true,
+                  "job": true,
+                  "instance": true,
+                  "domain": true
+                },
+                "renameByName": {
+                  "Value": "Faults"
+                },
+                "indexByName": {}
+              }
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {},
+            "overrides": []
+          },
+          "options": {
+            "showHeader": true,
+            "cellHeight": "sm"
+          }
+        }
+      ]
+    },
+    {
+      "type": "row",
+      "title": "Capacity",
+      "collapsed": true,
+      "id": 15,
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
         "y": 11
       },
-      "panels": []
-    },
-    {
-      "type": "timeseries",
-      "title": "Active faults by severity",
-      "description": "",
-      "id": 13,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 0,
-        "y": 12
-      },
-      "targets": [
+      "panels": [
         {
+          "type": "stat",
+          "title": "Servers",
+          "description": "",
+          "id": 16,
           "datasource": {
             "type": "prometheus",
             "uid": "${datasource}"
           },
-          "expr": "sum by (domain, severity) (ucs_faults{domain=~\"$domain\",severity=~\"critical|major|minor|warning\"})",
-          "refId": "A",
-          "legendFormat": "{{domain}} {{severity}}"
-        }
-      ],
-      "fieldConfig": {
-        "defaults": {
-          "unit": "short",
-          "custom": {
-            "lineWidth": 1,
-            "fillOpacity": 10,
-            "showPoints": "never",
-            "stacking": {
-              "mode": "normal"
+          "gridPos": {
+            "h": 4,
+            "w": 4,
+            "x": 0,
+            "y": 12
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "count(ucs_server_info{domain=\"$domain\"})",
+              "refId": "A",
+              "legendFormat": "__auto"
             }
-          }
-        },
-        "overrides": []
-      },
-      "options": {
-        "legend": {
-          "displayMode": "table",
-          "placement": "right",
-          "showLegend": true,
-          "calcs": [
-            "lastNotNull",
-            "max"
-          ]
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "desc"
-        }
-      }
-    },
-    {
-      "type": "table",
-      "title": "Active faults by type",
-      "description": "",
-      "id": 14,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 12,
-        "y": 12
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
+          ],
+          "fieldConfig": {
+            "defaults": {
+              "unit": "short",
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "blue",
+                    "value": null
+                  }
+                ]
+              }
+            },
+            "overrides": []
           },
-          "expr": "sum by (domain, severity, type) (ucs_faults{domain=~\"$domain\"}) > 0",
-          "refId": "A",
-          "legendFormat": "__auto",
-          "format": "table",
-          "instant": true,
-          "range": false
-        }
-      ],
-      "transformations": [
-        {
-          "id": "merge",
-          "options": {}
-        },
-        {
-          "id": "organize",
           "options": {
-            "excludeByName": {
-              "Time": true,
-              "Value": true,
-              "__name__": true,
-              "job": true,
-              "instance": true
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "colorMode": "background",
+            "graphMode": "none",
+            "textMode": "auto",
+            "justifyMode": "auto",
+            "orientation": "auto"
+          }
+        },
+        {
+          "type": "stat",
+          "title": "CPU cores",
+          "description": "",
+          "id": 17,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 4,
+            "x": 4,
+            "y": 12
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "sum(ucs_server_cpu_cores{domain=\"$domain\"})",
+              "refId": "A",
+              "legendFormat": "__auto"
             }
+          ],
+          "fieldConfig": {
+            "defaults": {
+              "unit": "short",
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "blue",
+                    "value": null
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "colorMode": "background",
+            "graphMode": "none",
+            "textMode": "auto",
+            "justifyMode": "auto",
+            "orientation": "auto"
+          }
+        },
+        {
+          "type": "stat",
+          "title": "Memory",
+          "description": "",
+          "id": 18,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 4,
+            "x": 8,
+            "y": 12
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "sum(ucs_server_memory_bytes{domain=\"$domain\"})",
+              "refId": "A",
+              "legendFormat": "__auto"
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {
+              "unit": "bytes",
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "blue",
+                    "value": null
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "colorMode": "background",
+            "graphMode": "none",
+            "textMode": "auto",
+            "justifyMode": "auto",
+            "orientation": "auto"
+          }
+        },
+        {
+          "type": "stat",
+          "title": "Blade slots used",
+          "description": "",
+          "id": 19,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 4,
+            "x": 12,
+            "y": 12
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "sum(ucs_chassis_blade_slots{domain=\"$domain\",presence=\"equipped\"}) / sum(ucs_chassis_blade_slots{domain=\"$domain\"})",
+              "refId": "A",
+              "legendFormat": "__auto"
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {
+              "unit": "percentunit",
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 0.95
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "colorMode": "background",
+            "graphMode": "none",
+            "textMode": "auto",
+            "justifyMode": "auto",
+            "orientation": "auto"
+          }
+        },
+        {
+          "type": "stat",
+          "title": "Service profiles associated",
+          "description": "",
+          "id": 20,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 4,
+            "x": 16,
+            "y": 12
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "count(ucs_service_profile_assoc_state{domain=\"$domain\",state=\"associated\"}) or vector(0)",
+              "refId": "A",
+              "legendFormat": "__auto"
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {
+              "unit": "short",
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "blue",
+                    "value": null
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "colorMode": "background",
+            "graphMode": "none",
+            "textMode": "auto",
+            "justifyMode": "auto",
+            "orientation": "auto"
+          }
+        },
+        {
+          "type": "stat",
+          "title": "Service profiles not associated",
+          "description": "",
+          "id": 21,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 4,
+            "x": 20,
+            "y": 12
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "count(ucs_service_profile_assoc_state{domain=\"$domain\",state!=\"associated\"}) or vector(0)",
+              "refId": "A",
+              "legendFormat": "__auto"
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {
+              "unit": "short",
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "blue",
+                    "value": null
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "colorMode": "background",
+            "graphMode": "none",
+            "textMode": "auto",
+            "justifyMode": "auto",
+            "orientation": "auto"
+          }
+        },
+        {
+          "type": "table",
+          "title": "Servers",
+          "description": "",
+          "id": 22,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 24,
+            "x": 0,
+            "y": 16
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "ucs_server_info{domain=\"$domain\",server=~\"$server\"} * on (domain, server) group_left (org, service_profile) (ucs_server_service_profile_info{domain=\"$domain\"} or on (domain, server) label_replace(ucs_server_info{domain=\"$domain\"} * 0 + 1, \"service_profile\", \"(none)\", \"\", \"\"))",
+              "refId": "A",
+              "legendFormat": "__auto",
+              "format": "table",
+              "instant": true,
+              "range": false
+            }
+          ],
+          "transformations": [
+            {
+              "id": "organize",
+              "options": {
+                "excludeByName": {
+                  "Time": true,
+                  "__name__": true,
+                  "job": true,
+                  "instance": true,
+                  "domain": true,
+                  "Value": true
+                },
+                "renameByName": {},
+                "indexByName": {
+                  "server": 0,
+                  "service_profile": 1,
+                  "org": 2,
+                  "type": 3,
+                  "model": 4,
+                  "serial": 5,
+                  "vendor": 6
+                }
+              }
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {},
+            "overrides": []
+          },
+          "options": {
+            "showHeader": true,
+            "cellHeight": "sm"
           }
         }
-      ],
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
-      "options": {
-        "showHeader": true,
-        "cellHeight": "sm"
-      }
+      ]
     },
     {
       "type": "row",
-      "title": "Capacity",
-      "collapsed": false,
-      "id": 15,
+      "title": "Hardware health",
+      "collapsed": true,
+      "id": 23,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 12
+      },
+      "panels": [
+        {
+          "type": "table",
+          "title": "Components not operable",
+          "description": "Every component whose operability is not 'operable': servers, CPUs, DIMMs, disks, adapters, chassis, IOMs, FEXes, FIs, PSUs, fans and fan modules.",
+          "id": 24,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 24,
+            "x": 0,
+            "y": 13
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "label_replace({__name__=~\"ucs_.+_operability_state\",domain=\"$domain\",state!=\"operable\"}, \"component\", \"$1\", \"__name__\", \"ucs_(.+)_operability_state\")",
+              "refId": "A",
+              "legendFormat": "__auto",
+              "format": "table",
+              "instant": true,
+              "range": false
+            }
+          ],
+          "transformations": [
+            {
+              "id": "organize",
+              "options": {
+                "excludeByName": {
+                  "Time": true,
+                  "__name__": true,
+                  "job": true,
+                  "instance": true,
+                  "domain": true,
+                  "Value": true
+                },
+                "renameByName": {},
+                "indexByName": {
+                  "component": 0,
+                  "state": 1
+                }
+              }
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {},
+            "overrides": []
+          },
+          "options": {
+            "showHeader": true,
+            "cellHeight": "sm"
+          }
+        },
+        {
+          "type": "timeseries",
+          "title": "CPU temperature (max per server)",
+          "description": "",
+          "id": 25,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 8,
+            "x": 0,
+            "y": 21
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "max by (server) (ucs_server_cpu_temperature_celsius{domain=\"$domain\",server=~\"$server\"})",
+              "refId": "A",
+              "legendFormat": "{{server}}"
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {
+              "unit": "celsius",
+              "custom": {
+                "lineWidth": 1,
+                "fillOpacity": 10,
+                "showPoints": "never",
+                "stacking": {
+                  "mode": "none"
+                }
+              }
+            },
+            "overrides": []
+          },
+          "options": {
+            "legend": {
+              "displayMode": "table",
+              "placement": "right",
+              "showLegend": true,
+              "calcs": [
+                "lastNotNull",
+                "max"
+              ]
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "desc"
+            }
+          }
+        },
+        {
+          "type": "timeseries",
+          "title": "DIMM temperature (max per server)",
+          "description": "",
+          "id": 26,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 8,
+            "x": 8,
+            "y": 21
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "max by (server) (ucs_server_dimm_temperature_celsius{domain=\"$domain\",server=~\"$server\"})",
+              "refId": "A",
+              "legendFormat": "{{server}}"
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {
+              "unit": "celsius",
+              "custom": {
+                "lineWidth": 1,
+                "fillOpacity": 10,
+                "showPoints": "never",
+                "stacking": {
+                  "mode": "none"
+                }
+              }
+            },
+            "overrides": []
+          },
+          "options": {
+            "legend": {
+              "displayMode": "table",
+              "placement": "right",
+              "showLegend": true,
+              "calcs": [
+                "lastNotNull",
+                "max"
+              ]
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "desc"
+            }
+          }
+        },
+        {
+          "type": "timeseries",
+          "title": "IOM temperatures",
+          "description": "",
+          "id": 27,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 8,
+            "x": 16,
+            "y": 21
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "ucs_iom_temperature_celsius{domain=\"$domain\",chassis=~\"$chassis\"}",
+              "refId": "A",
+              "legendFormat": "chassis {{chassis}} IOM {{iom}} {{sensor}}"
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {
+              "unit": "celsius",
+              "custom": {
+                "lineWidth": 1,
+                "fillOpacity": 10,
+                "showPoints": "never",
+                "stacking": {
+                  "mode": "none"
+                }
+              }
+            },
+            "overrides": []
+          },
+          "options": {
+            "legend": {
+              "displayMode": "table",
+              "placement": "right",
+              "showLegend": true,
+              "calcs": [
+                "lastNotNull",
+                "max"
+              ]
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "desc"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "row",
+      "title": "Power",
+      "collapsed": true,
+      "id": 28,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 13
+      },
+      "panels": [
+        {
+          "type": "timeseries",
+          "title": "Chassis input power",
+          "description": "",
+          "id": 29,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 8,
+            "x": 0,
+            "y": 14
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "ucs_chassis_input_power_watts{domain=\"$domain\",chassis=~\"$chassis\"}",
+              "refId": "A",
+              "legendFormat": "chassis {{chassis}}"
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {
+              "unit": "watt",
+              "custom": {
+                "lineWidth": 1,
+                "fillOpacity": 10,
+                "showPoints": "never",
+                "stacking": {
+                  "mode": "none"
+                }
+              }
+            },
+            "overrides": []
+          },
+          "options": {
+            "legend": {
+              "displayMode": "table",
+              "placement": "right",
+              "showLegend": true,
+              "calcs": [
+                "lastNotNull",
+                "max"
+              ]
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "desc"
+            }
+          }
+        },
+        {
+          "type": "timeseries",
+          "title": "Top 10 servers by power",
+          "description": "",
+          "id": 30,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 8,
+            "x": 8,
+            "y": 14
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "topk(10, ucs_server_power_watts{domain=\"$domain\",server=~\"$server\"})",
+              "refId": "A",
+              "legendFormat": "{{server}}"
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {
+              "unit": "watt",
+              "custom": {
+                "lineWidth": 1,
+                "fillOpacity": 10,
+                "showPoints": "never",
+                "stacking": {
+                  "mode": "none"
+                }
+              }
+            },
+            "overrides": []
+          },
+          "options": {
+            "legend": {
+              "displayMode": "table",
+              "placement": "right",
+              "showLegend": true,
+              "calcs": [
+                "lastNotNull",
+                "max"
+              ]
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "desc"
+            }
+          }
+        },
+        {
+          "type": "table",
+          "title": "Power supplies not OK",
+          "description": "",
+          "id": 31,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 8,
+            "x": 16,
+            "y": 14
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "label_replace({__name__=~\"ucs_.+_psu_ok\",domain=\"$domain\"} == 0, \"component\", \"$1\", \"__name__\", \"ucs_(.+)_ok\")",
+              "refId": "A",
+              "legendFormat": "__auto",
+              "format": "table",
+              "instant": true,
+              "range": false
+            }
+          ],
+          "transformations": [
+            {
+              "id": "organize",
+              "options": {
+                "excludeByName": {
+                  "Time": true,
+                  "__name__": true,
+                  "job": true,
+                  "instance": true,
+                  "domain": true,
+                  "Value": true
+                },
+                "renameByName": {},
+                "indexByName": {
+                  "component": 0,
+                  "state": 1
+                }
+              }
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {},
+            "overrides": []
+          },
+          "options": {
+            "showHeader": true,
+            "cellHeight": "sm"
+          }
+        }
+      ]
+    },
+    {
+      "type": "row",
+      "title": "Fabric interconnects",
+      "collapsed": true,
+      "id": 32,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 14
+      },
+      "panels": [
+        {
+          "type": "timeseries",
+          "title": "CPU load",
+          "description": "",
+          "id": 33,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 8,
+            "x": 0,
+            "y": 15
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "ucs_fi_load{domain=\"$domain\"}",
+              "refId": "A",
+              "legendFormat": "{{fabric}}"
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {
+              "unit": "short",
+              "custom": {
+                "lineWidth": 1,
+                "fillOpacity": 10,
+                "showPoints": "never",
+                "stacking": {
+                  "mode": "none"
+                }
+              }
+            },
+            "overrides": []
+          },
+          "options": {
+            "legend": {
+              "displayMode": "table",
+              "placement": "right",
+              "showLegend": true,
+              "calcs": [
+                "lastNotNull",
+                "max"
+              ]
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "desc"
+            }
+          }
+        },
+        {
+          "type": "timeseries",
+          "title": "Memory available",
+          "description": "",
+          "id": 34,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 8,
+            "x": 8,
+            "y": 15
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "ucs_fi_memory_available_bytes{domain=\"$domain\"}",
+              "refId": "A",
+              "legendFormat": "{{fabric}}"
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {
+              "unit": "bytes",
+              "custom": {
+                "lineWidth": 1,
+                "fillOpacity": 10,
+                "showPoints": "never",
+                "stacking": {
+                  "mode": "none"
+                }
+              }
+            },
+            "overrides": []
+          },
+          "options": {
+            "legend": {
+              "displayMode": "table",
+              "placement": "right",
+              "showLegend": true,
+              "calcs": [
+                "lastNotNull",
+                "max"
+              ]
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "desc"
+            }
+          }
+        },
+        {
+          "type": "timeseries",
+          "title": "Kernel memory used",
+          "description": "",
+          "id": 35,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 8,
+            "x": 16,
+            "y": 15
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "1 - ucs_fi_kernel_memory_free_bytes{domain=\"$domain\"} / ucs_fi_kernel_memory_total_bytes{domain=\"$domain\"}",
+              "refId": "A",
+              "legendFormat": "{{fabric}}"
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {
+              "unit": "percentunit",
+              "custom": {
+                "lineWidth": 1,
+                "fillOpacity": 10,
+                "showPoints": "never",
+                "stacking": {
+                  "mode": "none"
+                }
+              }
+            },
+            "overrides": []
+          },
+          "options": {
+            "legend": {
+              "displayMode": "table",
+              "placement": "right",
+              "showLegend": true,
+              "calcs": [
+                "lastNotNull",
+                "max"
+              ]
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "desc"
+            }
+          }
+        },
+        {
+          "type": "timeseries",
+          "title": "Temperatures",
+          "description": "",
+          "id": 36,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 8,
+            "x": 0,
+            "y": 23
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "ucs_fi_temperature_celsius{domain=\"$domain\"}",
+              "refId": "A",
+              "legendFormat": "{{fabric}} {{sensor}}"
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {
+              "unit": "celsius",
+              "custom": {
+                "lineWidth": 1,
+                "fillOpacity": 10,
+                "showPoints": "never",
+                "stacking": {
+                  "mode": "none"
+                }
+              }
+            },
+            "overrides": []
+          },
+          "options": {
+            "legend": {
+              "displayMode": "table",
+              "placement": "right",
+              "showLegend": true,
+              "calcs": [
+                "lastNotNull",
+                "max"
+              ]
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "desc"
+            }
+          }
+        },
+        {
+          "type": "timeseries",
+          "title": "Fan speed",
+          "description": "",
+          "id": 37,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 8,
+            "x": 8,
+            "y": 23
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "ucs_fi_fan_speed_rpm{domain=\"$domain\"}",
+              "refId": "A",
+              "legendFormat": "{{fabric}} fan {{fan}}"
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {
+              "unit": "rotrpm",
+              "custom": {
+                "lineWidth": 1,
+                "fillOpacity": 10,
+                "showPoints": "never",
+                "stacking": {
+                  "mode": "none"
+                }
+              }
+            },
+            "overrides": []
+          },
+          "options": {
+            "legend": {
+              "displayMode": "table",
+              "placement": "right",
+              "showLegend": true,
+              "calcs": [
+                "lastNotNull",
+                "max"
+              ]
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "desc"
+            }
+          }
+        },
+        {
+          "type": "bargauge",
+          "title": "VLAN port usage",
+          "description": "VLAN port instances in use as a fraction of the platform limit.",
+          "id": 38,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 8,
+            "x": 16,
+            "y": 23
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "ucs_fi_vlan_ports{domain=\"$domain\"} / ucs_fi_vlan_ports_limit{domain=\"$domain\"}",
+              "refId": "A",
+              "legendFormat": "{{fabric}}"
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {
+              "unit": "percentunit",
+              "min": 0,
+              "max": 1,
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "orange",
+                    "value": 0.7
+                  },
+                  {
+                    "color": "red",
+                    "value": 0.9
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "options": {
+            "displayMode": "gradient",
+            "orientation": "horizontal",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "row",
+      "title": "LAN uplinks",
+      "collapsed": true,
+      "id": 39,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 15
+      },
+      "panels": [
+        {
+          "type": "timeseries",
+          "title": "Uplink port channel traffic",
+          "description": "",
+          "id": 40,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 16
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "8 * rate(ucs_fi_port_channel_receive_bytes_total{domain=\"$domain\"}[$__rate_interval])",
+              "refId": "A",
+              "legendFormat": "{{fabric}} Po{{port_channel}} rx"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "8 * rate(ucs_fi_port_channel_transmit_bytes_total{domain=\"$domain\"}[$__rate_interval])",
+              "refId": "B",
+              "legendFormat": "{{fabric}} Po{{port_channel}} tx"
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {
+              "unit": "bps",
+              "custom": {
+                "lineWidth": 1,
+                "fillOpacity": 10,
+                "showPoints": "never",
+                "stacking": {
+                  "mode": "none"
+                }
+              }
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byRegexp",
+                  "options": ".*(tx|transmit).*"
+                },
+                "properties": [
+                  {
+                    "id": "custom.transform",
+                    "value": "negative-Y"
+                  }
+                ]
+              }
+            ]
+          },
+          "options": {
+            "legend": {
+              "displayMode": "table",
+              "placement": "right",
+              "showLegend": true,
+              "calcs": [
+                "lastNotNull",
+                "max"
+              ]
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "desc"
+            }
+          }
+        },
+        {
+          "type": "timeseries",
+          "title": "Uplink port traffic",
+          "description": "",
+          "id": 41,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 16
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "8 * rate(ucs_fi_port_receive_bytes_total{domain=\"$domain\",role=\"network\"}[$__rate_interval])",
+              "refId": "A",
+              "legendFormat": "{{fabric}} {{port}} rx"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "8 * rate(ucs_fi_port_transmit_bytes_total{domain=\"$domain\",role=\"network\"}[$__rate_interval])",
+              "refId": "B",
+              "legendFormat": "{{fabric}} {{port}} tx"
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {
+              "unit": "bps",
+              "custom": {
+                "lineWidth": 1,
+                "fillOpacity": 10,
+                "showPoints": "never",
+                "stacking": {
+                  "mode": "none"
+                }
+              }
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byRegexp",
+                  "options": ".*(tx|transmit).*"
+                },
+                "properties": [
+                  {
+                    "id": "custom.transform",
+                    "value": "negative-Y"
+                  }
+                ]
+              }
+            ]
+          },
+          "options": {
+            "legend": {
+              "displayMode": "table",
+              "placement": "right",
+              "showLegend": true,
+              "calcs": [
+                "lastNotNull",
+                "max"
+              ]
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "desc"
+            }
+          }
+        },
+        {
+          "type": "timeseries",
+          "title": "FI port errors",
+          "description": "",
+          "id": 42,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 24
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "sum by (fabric, port, role) (rate(ucs_fi_port_fcs_errors_total{domain=\"$domain\"}[$__rate_interval]) + rate(ucs_fi_port_receive_errors_total{domain=\"$domain\"}[$__rate_interval]) + rate(ucs_fi_port_transmit_errors_total{domain=\"$domain\"}[$__rate_interval]) + rate(ucs_fi_port_align_errors_total{domain=\"$domain\"}[$__rate_interval])) > 0",
+              "refId": "A",
+              "legendFormat": "{{fabric}} {{port}} ({{role}})"
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {
+              "unit": "pps",
+              "custom": {
+                "lineWidth": 1,
+                "fillOpacity": 10,
+                "showPoints": "never",
+                "stacking": {
+                  "mode": "none"
+                }
+              }
+            },
+            "overrides": []
+          },
+          "options": {
+            "legend": {
+              "displayMode": "table",
+              "placement": "right",
+              "showLegend": true,
+              "calcs": [
+                "lastNotNull",
+                "max"
+              ]
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "desc"
+            }
+          }
+        },
+        {
+          "type": "timeseries",
+          "title": "FI port discards and pause frames",
+          "description": "",
+          "id": 43,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 24
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "rate(ucs_fi_port_transmit_discards_total{domain=\"$domain\"}[$__rate_interval]) > 0",
+              "refId": "A",
+              "legendFormat": "{{fabric}} {{port}} tx discards"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "rate(ucs_fi_port_receive_pause_frames_total{domain=\"$domain\"}[$__rate_interval]) > 0",
+              "refId": "B",
+              "legendFormat": "{{fabric}} {{port}} rx pause"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "rate(ucs_fi_port_transmit_pause_frames_total{domain=\"$domain\"}[$__rate_interval]) > 0",
+              "refId": "C",
+              "legendFormat": "{{fabric}} {{port}} tx pause"
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {
+              "unit": "pps",
+              "custom": {
+                "lineWidth": 1,
+                "fillOpacity": 10,
+                "showPoints": "never",
+                "stacking": {
+                  "mode": "none"
+                }
+              }
+            },
+            "overrides": []
+          },
+          "options": {
+            "legend": {
+              "displayMode": "table",
+              "placement": "right",
+              "showLegend": true,
+              "calcs": [
+                "lastNotNull",
+                "max"
+              ]
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "desc"
+            }
+          }
+        },
+        {
+          "type": "table",
+          "title": "Uplinks and port channels down",
+          "description": "",
+          "id": 44,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 24,
+            "x": 0,
+            "y": 32
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "label_replace(ucs_fi_port_oper_state{domain=\"$domain\",role=\"network\",state!~\"up|link-up\"} or ucs_fi_port_channel_oper_state{domain=\"$domain\",state!~\"up|link-up\"} or ucs_fi_port_channel_member_state{domain=\"$domain\",state!=\"up\"}, \"component\", \"$1\", \"__name__\", \"ucs_fi_(.+)_state\")",
+              "refId": "A",
+              "legendFormat": "__auto",
+              "format": "table",
+              "instant": true,
+              "range": false
+            }
+          ],
+          "transformations": [
+            {
+              "id": "organize",
+              "options": {
+                "excludeByName": {
+                  "Time": true,
+                  "__name__": true,
+                  "job": true,
+                  "instance": true,
+                  "domain": true,
+                  "Value": true
+                },
+                "renameByName": {},
+                "indexByName": {
+                  "component": 0,
+                  "state": 1
+                }
+              }
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {},
+            "overrides": []
+          },
+          "options": {
+            "showHeader": true,
+            "cellHeight": "sm"
+          }
+        }
+      ]
+    },
+    {
+      "type": "row",
+      "title": "SAN / Fibre Channel",
+      "collapsed": true,
+      "id": 45,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 16
+      },
+      "panels": [
+        {
+          "type": "timeseries",
+          "title": "FC port traffic",
+          "description": "",
+          "id": 46,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 17
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "8 * rate(ucs_fi_fc_port_receive_bytes_total{domain=\"$domain\"}[$__rate_interval])",
+              "refId": "A",
+              "legendFormat": "{{fabric}} fc{{port}} rx"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "8 * rate(ucs_fi_fc_port_transmit_bytes_total{domain=\"$domain\"}[$__rate_interval])",
+              "refId": "B",
+              "legendFormat": "{{fabric}} fc{{port}} tx"
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {
+              "unit": "bps",
+              "custom": {
+                "lineWidth": 1,
+                "fillOpacity": 10,
+                "showPoints": "never",
+                "stacking": {
+                  "mode": "none"
+                }
+              }
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byRegexp",
+                  "options": ".*(tx|transmit).*"
+                },
+                "properties": [
+                  {
+                    "id": "custom.transform",
+                    "value": "negative-Y"
+                  }
+                ]
+              }
+            ]
+          },
+          "options": {
+            "legend": {
+              "displayMode": "table",
+              "placement": "right",
+              "showLegend": true,
+              "calcs": [
+                "lastNotNull",
+                "max"
+              ]
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "desc"
+            }
+          }
+        },
+        {
+          "type": "timeseries",
+          "title": "FC CRC errors (per hour)",
+          "description": "",
+          "id": 47,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 17
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "increase(ucs_fi_fc_port_crc_errors_total{domain=\"$domain\"}[1h]) > 0",
+              "refId": "A",
+              "legendFormat": "{{fabric}} fc{{port}}"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "increase(ucs_fi_fc_port_channel_crc_errors_total{domain=\"$domain\"}[1h]) > 0",
+              "refId": "B",
+              "legendFormat": "{{fabric}} san-po{{port_channel}}"
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {
+              "unit": "short",
+              "custom": {
+                "lineWidth": 1,
+                "fillOpacity": 10,
+                "showPoints": "never",
+                "stacking": {
+                  "mode": "none"
+                }
+              }
+            },
+            "overrides": []
+          },
+          "options": {
+            "legend": {
+              "displayMode": "table",
+              "placement": "right",
+              "showLegend": true,
+              "calcs": [
+                "lastNotNull",
+                "max"
+              ]
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "desc"
+            }
+          }
+        },
+        {
+          "type": "timeseries",
+          "title": "FC link failures, signal and sync losses (per hour)",
+          "description": "",
+          "id": 48,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 25
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "increase(ucs_fi_fc_port_link_failures_total{domain=\"$domain\"}[1h]) > 0",
+              "refId": "A",
+              "legendFormat": "{{fabric}} fc{{port}} link failures"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "increase(ucs_fi_fc_port_signal_losses_total{domain=\"$domain\"}[1h]) > 0",
+              "refId": "B",
+              "legendFormat": "{{fabric}} fc{{port}} signal losses"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "increase(ucs_fi_fc_port_sync_losses_total{domain=\"$domain\"}[1h]) > 0",
+              "refId": "C",
+              "legendFormat": "{{fabric}} fc{{port}} sync losses"
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {
+              "unit": "short",
+              "custom": {
+                "lineWidth": 1,
+                "fillOpacity": 10,
+                "showPoints": "never",
+                "stacking": {
+                  "mode": "none"
+                }
+              }
+            },
+            "overrides": []
+          },
+          "options": {
+            "legend": {
+              "displayMode": "table",
+              "placement": "right",
+              "showLegend": true,
+              "calcs": [
+                "lastNotNull",
+                "max"
+              ]
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "desc"
+            }
+          }
+        },
+        {
+          "type": "timeseries",
+          "title": "vHBA errors (adapter side, per hour)",
+          "description": "Only some adapters report these; see the README.",
+          "id": 49,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 25
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "increase(ucs_vhba_crc_errors_total{domain=\"$domain\",service_profile=~\"$service_profile\"}[1h]) > 0",
+              "refId": "A",
+              "legendFormat": "{{service_profile}} {{vhba}} CRC"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "increase(ucs_vhba_link_failures_total{domain=\"$domain\",service_profile=~\"$service_profile\"}[1h]) > 0",
+              "refId": "B",
+              "legendFormat": "{{service_profile}} {{vhba}} link failures"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "increase(ucs_vhba_sync_losses_total{domain=\"$domain\",service_profile=~\"$service_profile\"}[1h]) > 0",
+              "refId": "C",
+              "legendFormat": "{{service_profile}} {{vhba}} sync losses"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "increase(ucs_vhba_port_receive_bad_frames_total{domain=\"$domain\",service_profile=~\"$service_profile\"}[1h]) > 0",
+              "refId": "D",
+              "legendFormat": "{{service_profile}} {{vhba}} bad frames"
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {
+              "unit": "short",
+              "custom": {
+                "lineWidth": 1,
+                "fillOpacity": 10,
+                "showPoints": "never",
+                "stacking": {
+                  "mode": "none"
+                }
+              }
+            },
+            "overrides": []
+          },
+          "options": {
+            "legend": {
+              "displayMode": "table",
+              "placement": "right",
+              "showLegend": true,
+              "calcs": [
+                "lastNotNull",
+                "max"
+              ]
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "desc"
+            }
+          }
+        },
+        {
+          "type": "table",
+          "title": "FC ports, SAN port channels and FCoE uplinks not up",
+          "description": "",
+          "id": 50,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 24,
+            "x": 0,
+            "y": 33
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "label_replace(ucs_fi_fc_port_oper_state{domain=\"$domain\",state!~\"up|link-up|sfp-not-present\"} or ucs_fi_fc_port_channel_oper_state{domain=\"$domain\",state!~\"up|link-up\"} or ucs_fi_fc_port_channel_member_state{domain=\"$domain\",state!=\"up\"} or ucs_fi_fcoe_uplink_oper_state{domain=\"$domain\",state!=\"up\"}, \"component\", \"$1\", \"__name__\", \"ucs_fi_(.+)_state\")",
+              "refId": "A",
+              "legendFormat": "__auto",
+              "format": "table",
+              "instant": true,
+              "range": false
+            }
+          ],
+          "transformations": [
+            {
+              "id": "organize",
+              "options": {
+                "excludeByName": {
+                  "Time": true,
+                  "__name__": true,
+                  "job": true,
+                  "instance": true,
+                  "domain": true,
+                  "Value": true
+                },
+                "renameByName": {},
+                "indexByName": {
+                  "component": 0,
+                  "state": 1
+                }
+              }
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {},
+            "overrides": []
+          },
+          "options": {
+            "showHeader": true,
+            "cellHeight": "sm"
+          }
+        }
+      ]
+    },
+    {
+      "type": "row",
+      "title": "Service profiles, vNICs and virtual circuits",
+      "collapsed": true,
+      "id": 51,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 17
+      },
+      "panels": [
+        {
+          "type": "table",
+          "title": "Service profiles not OK",
+          "description": "",
+          "id": 52,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 18
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "ucs_service_profile_oper_state{domain=\"$domain\",service_profile=~\"$service_profile\",state!~\"ok|unassociated\"}",
+              "refId": "A",
+              "legendFormat": "__auto",
+              "format": "table",
+              "instant": true,
+              "range": false
+            }
+          ],
+          "transformations": [
+            {
+              "id": "organize",
+              "options": {
+                "excludeByName": {
+                  "Time": true,
+                  "__name__": true,
+                  "job": true,
+                  "instance": true,
+                  "domain": true,
+                  "Value": true
+                },
+                "renameByName": {},
+                "indexByName": {}
+              }
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {},
+            "overrides": []
+          },
+          "options": {
+            "showHeader": true,
+            "cellHeight": "sm"
+          }
+        },
+        {
+          "type": "table",
+          "title": "Virtual circuits down",
+          "description": "VIFs (one per vNIC/vHBA per fabric) whose operational state is not active.",
+          "id": 53,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 18
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "ucs_vif_oper_state{domain=\"$domain\",service_profile=~\"$service_profile\",state!=\"active\"}",
+              "refId": "A",
+              "legendFormat": "__auto",
+              "format": "table",
+              "instant": true,
+              "range": false
+            }
+          ],
+          "transformations": [
+            {
+              "id": "organize",
+              "options": {
+                "excludeByName": {
+                  "Time": true,
+                  "__name__": true,
+                  "job": true,
+                  "instance": true,
+                  "domain": true,
+                  "Value": true
+                },
+                "renameByName": {},
+                "indexByName": {
+                  "service_profile": 0,
+                  "vnic": 1,
+                  "fabric": 2,
+                  "state": 3,
+                  "server": 4,
+                  "vif": 5,
+                  "transport": 6
+                }
+              }
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {},
+            "overrides": []
+          },
+          "options": {
+            "showHeader": true,
+            "cellHeight": "sm"
+          }
+        },
+        {
+          "type": "timeseries",
+          "title": "vNIC traffic",
+          "description": "",
+          "id": 54,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 26
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "8 * sum by (service_profile, vnic) (rate(ucs_vnic_receive_bytes_total{domain=\"$domain\",service_profile=~\"$service_profile\"}[$__rate_interval]))",
+              "refId": "A",
+              "legendFormat": "{{service_profile}} {{vnic}} rx"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "8 * sum by (service_profile, vnic) (rate(ucs_vnic_transmit_bytes_total{domain=\"$domain\",service_profile=~\"$service_profile\"}[$__rate_interval]))",
+              "refId": "B",
+              "legendFormat": "{{service_profile}} {{vnic}} tx"
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {
+              "unit": "bps",
+              "custom": {
+                "lineWidth": 1,
+                "fillOpacity": 10,
+                "showPoints": "never",
+                "stacking": {
+                  "mode": "none"
+                }
+              }
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byRegexp",
+                  "options": ".*(tx|transmit).*"
+                },
+                "properties": [
+                  {
+                    "id": "custom.transform",
+                    "value": "negative-Y"
+                  }
+                ]
+              }
+            ]
+          },
+          "options": {
+            "legend": {
+              "displayMode": "table",
+              "placement": "right",
+              "showLegend": true,
+              "calcs": [
+                "lastNotNull",
+                "max"
+              ]
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "desc"
+            }
+          }
+        },
+        {
+          "type": "timeseries",
+          "title": "vHBA traffic",
+          "description": "",
+          "id": 55,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 26
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "8 * sum by (service_profile, vhba) (rate(ucs_vhba_receive_bytes_total{domain=\"$domain\",service_profile=~\"$service_profile\"}[$__rate_interval]))",
+              "refId": "A",
+              "legendFormat": "{{service_profile}} {{vhba}} rx"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "8 * sum by (service_profile, vhba) (rate(ucs_vhba_transmit_bytes_total{domain=\"$domain\",service_profile=~\"$service_profile\"}[$__rate_interval]))",
+              "refId": "B",
+              "legendFormat": "{{service_profile}} {{vhba}} tx"
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {
+              "unit": "bps",
+              "custom": {
+                "lineWidth": 1,
+                "fillOpacity": 10,
+                "showPoints": "never",
+                "stacking": {
+                  "mode": "none"
+                }
+              }
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byRegexp",
+                  "options": ".*(tx|transmit).*"
+                },
+                "properties": [
+                  {
+                    "id": "custom.transform",
+                    "value": "negative-Y"
+                  }
+                ]
+              }
+            ]
+          },
+          "options": {
+            "legend": {
+              "displayMode": "table",
+              "placement": "right",
+              "showLegend": true,
+              "calcs": [
+                "lastNotNull",
+                "max"
+              ]
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "desc"
+            }
+          }
+        },
+        {
+          "type": "timeseries",
+          "title": "vNIC drops and errors",
+          "description": "",
+          "id": 56,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 34
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "sum by (service_profile, vnic) (rate(ucs_vnic_receive_dropped_total{domain=\"$domain\",service_profile=~\"$service_profile\"}[$__rate_interval]) + rate(ucs_vnic_transmit_dropped_total{domain=\"$domain\",service_profile=~\"$service_profile\"}[$__rate_interval])) > 0",
+              "refId": "A",
+              "legendFormat": "{{service_profile}} {{vnic}} drops"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "sum by (service_profile, vnic) (rate(ucs_vnic_receive_errors_total{domain=\"$domain\",service_profile=~\"$service_profile\"}[$__rate_interval]) + rate(ucs_vnic_transmit_errors_total{domain=\"$domain\",service_profile=~\"$service_profile\"}[$__rate_interval])) > 0",
+              "refId": "B",
+              "legendFormat": "{{service_profile}} {{vnic}} errors"
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {
+              "unit": "pps",
+              "custom": {
+                "lineWidth": 1,
+                "fillOpacity": 10,
+                "showPoints": "never",
+                "stacking": {
+                  "mode": "none"
+                }
+              }
+            },
+            "overrides": []
+          },
+          "options": {
+            "legend": {
+              "displayMode": "table",
+              "placement": "right",
+              "showLegend": true,
+              "calcs": [
+                "lastNotNull",
+                "max"
+              ]
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "desc"
+            }
+          }
+        },
+        {
+          "type": "table",
+          "title": "Virtual circuit pinning",
+          "description": "The FI uplink port or port channel each virtual circuit is pinned to.",
+          "id": 57,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 34
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "ucs_vif_pinned_port_info{domain=\"$domain\",service_profile=~\"$service_profile\"} or ucs_vif_pinned_port_channel_info{domain=\"$domain\",service_profile=~\"$service_profile\"}",
+              "refId": "A",
+              "legendFormat": "__auto",
+              "format": "table",
+              "instant": true,
+              "range": false
+            }
+          ],
+          "transformations": [
+            {
+              "id": "organize",
+              "options": {
+                "excludeByName": {
+                  "Time": true,
+                  "__name__": true,
+                  "job": true,
+                  "instance": true,
+                  "domain": true,
+                  "Value": true
+                },
+                "renameByName": {},
+                "indexByName": {
+                  "service_profile": 0,
+                  "vnic": 1,
+                  "fabric": 2,
+                  "port": 3,
+                  "port_channel": 4,
+                  "server": 5,
+                  "vif": 6,
+                  "transport": 7
+                }
+              }
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {},
+            "overrides": []
+          },
+          "options": {
+            "showHeader": true,
+            "cellHeight": "sm"
+          }
+        },
+        {
+          "type": "table",
+          "title": "vNICs",
+          "description": "",
+          "id": 58,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 42
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "ucs_vnic_info{domain=\"$domain\",service_profile=~\"$service_profile\"}",
+              "refId": "A",
+              "legendFormat": "__auto",
+              "format": "table",
+              "instant": true,
+              "range": false
+            }
+          ],
+          "transformations": [
+            {
+              "id": "organize",
+              "options": {
+                "excludeByName": {
+                  "Time": true,
+                  "__name__": true,
+                  "job": true,
+                  "instance": true,
+                  "domain": true,
+                  "Value": true
+                },
+                "renameByName": {},
+                "indexByName": {
+                  "service_profile": 0,
+                  "vnic": 1,
+                  "admin_fabric": 2,
+                  "mac": 3
+                }
+              }
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {},
+            "overrides": []
+          },
+          "options": {
+            "showHeader": true,
+            "cellHeight": "sm"
+          }
+        },
+        {
+          "type": "table",
+          "title": "vHBAs",
+          "description": "",
+          "id": 59,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 42
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "ucs_vhba_info{domain=\"$domain\",service_profile=~\"$service_profile\"}",
+              "refId": "A",
+              "legendFormat": "__auto",
+              "format": "table",
+              "instant": true,
+              "range": false
+            }
+          ],
+          "transformations": [
+            {
+              "id": "organize",
+              "options": {
+                "excludeByName": {
+                  "Time": true,
+                  "__name__": true,
+                  "job": true,
+                  "instance": true,
+                  "domain": true,
+                  "Value": true
+                },
+                "renameByName": {},
+                "indexByName": {
+                  "service_profile": 0,
+                  "vhba": 1,
+                  "admin_fabric": 2,
+                  "wwpn": 3,
+                  "wwnn": 4,
+                  "vsan": 5
+                }
+              }
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {},
+            "overrides": []
+          },
+          "options": {
+            "showHeader": true,
+            "cellHeight": "sm"
+          }
+        }
+      ]
+    },
+    {
+      "type": "row",
+      "title": "Chassis backplane",
+      "collapsed": true,
+      "id": 60,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 18
+      },
+      "panels": [
+        {
+          "type": "stat",
+          "title": "IOM active fabric ports (min)",
+          "description": "",
+          "id": 61,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 4,
+            "x": 0,
+            "y": 19
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "min(ucs_iom_active_fabric_ports{domain=\"$domain\",chassis=~\"$chassis\"})",
+              "refId": "A",
+              "legendFormat": "__auto"
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {
+              "unit": "short",
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "blue",
+                    "value": null
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "colorMode": "background",
+            "graphMode": "none",
+            "textMode": "auto",
+            "justifyMode": "auto",
+            "orientation": "auto"
+          }
+        },
+        {
+          "type": "table",
+          "title": "IOM host ports down (with connected adapter)",
+          "description": "",
+          "id": 62,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 10,
+            "x": 4,
+            "y": 19
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "(ucs_iom_host_port_up{domain=\"$domain\",chassis=~\"$chassis\"} == 0) * on (domain, chassis, iom, port) group_left (server, adaptor, interface) ucs_iom_host_port_peer_info{domain=\"$domain\"}",
+              "refId": "A",
+              "legendFormat": "__auto",
+              "format": "table",
+              "instant": true,
+              "range": false
+            }
+          ],
+          "transformations": [
+            {
+              "id": "organize",
+              "options": {
+                "excludeByName": {
+                  "Time": true,
+                  "__name__": true,
+                  "job": true,
+                  "instance": true,
+                  "domain": true,
+                  "Value": true
+                },
+                "renameByName": {},
+                "indexByName": {}
+              }
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {},
+            "overrides": []
+          },
+          "options": {
+            "showHeader": true,
+            "cellHeight": "sm"
+          }
+        },
+        {
+          "type": "timeseries",
+          "title": "IOM fabric port CRC errors (per hour)",
+          "description": "",
+          "id": 63,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 10,
+            "x": 14,
+            "y": 19
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "increase(ucs_iom_fabric_port_crc_errors_total{domain=\"$domain\",chassis=~\"$chassis\"}[1h])",
+              "refId": "A",
+              "legendFormat": "chassis {{chassis}} IOM {{iom}} port {{port}}"
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {
+              "unit": "short",
+              "custom": {
+                "lineWidth": 1,
+                "fillOpacity": 10,
+                "showPoints": "never",
+                "stacking": {
+                  "mode": "none"
+                }
+              }
+            },
+            "overrides": []
+          },
+          "options": {
+            "legend": {
+              "displayMode": "table",
+              "placement": "right",
+              "showLegend": true,
+              "calcs": [
+                "lastNotNull",
+                "max"
+              ]
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "desc"
+            }
+          }
+        },
+        {
+          "type": "table",
+          "title": "IOM to FI links",
+          "description": "",
+          "id": 64,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
+          "gridPos": {
+            "h": 6,
+            "w": 24,
+            "x": 0,
+            "y": 27
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "ucs_iom_fabric_port_peer_info{domain=\"$domain\",chassis=~\"$chassis\"}",
+              "refId": "A",
+              "legendFormat": "__auto",
+              "format": "table",
+              "instant": true,
+              "range": false
+            }
+          ],
+          "transformations": [
+            {
+              "id": "organize",
+              "options": {
+                "excludeByName": {
+                  "Time": true,
+                  "__name__": true,
+                  "job": true,
+                  "instance": true,
+                  "domain": true,
+                  "Value": true
+                },
+                "renameByName": {},
+                "indexByName": {}
+              }
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {},
+            "overrides": []
+          },
+          "options": {
+            "showHeader": true,
+            "cellHeight": "sm"
+          }
+        }
+      ]
+    },
+    {
+      "type": "row",
+      "title": "Memory errors",
+      "collapsed": true,
+      "id": 65,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 19
+      },
+      "panels": [
+        {
+          "type": "timeseries",
+          "title": "Correctable ECC errors (top 10 DIMMs, per hour)",
+          "description": "",
+          "id": 66,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 20
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "topk(10, increase(ucs_server_dimm_ecc_singlebit_errors_total{domain=\"$domain\",server=~\"$server\"}[1h]) > 0)",
+              "refId": "A",
+              "legendFormat": "{{server}} DIMM {{memory_array}}/{{dimm}}"
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {
+              "unit": "short",
+              "custom": {
+                "lineWidth": 1,
+                "fillOpacity": 10,
+                "showPoints": "never",
+                "stacking": {
+                  "mode": "none"
+                }
+              }
+            },
+            "overrides": []
+          },
+          "options": {
+            "legend": {
+              "displayMode": "table",
+              "placement": "right",
+              "showLegend": true,
+              "calcs": [
+                "lastNotNull",
+                "max"
+              ]
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "desc"
+            }
+          }
+        },
+        {
+          "type": "table",
+          "title": "DIMMs with uncorrectable errors",
+          "description": "",
+          "id": 67,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 20
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "(ucs_server_dimm_ecc_multibit_errors_total{domain=\"$domain\"} > 0) * on (domain, server, memory_array, dimm) group_left (location) ucs_server_dimm_info{domain=\"$domain\"}",
+              "refId": "A",
+              "legendFormat": "__auto",
+              "format": "table",
+              "instant": true,
+              "range": false
+            }
+          ],
+          "transformations": [
+            {
+              "id": "organize",
+              "options": {
+                "excludeByName": {
+                  "Time": true,
+                  "__name__": true,
+                  "job": true,
+                  "instance": true,
+                  "domain": true
+                },
+                "renameByName": {
+                  "Value": "Errors"
+                },
+                "indexByName": {}
+              }
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {},
+            "overrides": []
+          },
+          "options": {
+            "showHeader": true,
+            "cellHeight": "sm"
+          }
+        }
+      ]
+    },
+    {
+      "type": "row",
+      "title": "Firmware",
+      "collapsed": true,
+      "id": 68,
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
         "y": 20
       },
-      "panels": []
-    },
-    {
-      "type": "stat",
-      "title": "Servers",
-      "description": "",
-      "id": 16,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
-      "gridPos": {
-        "h": 4,
-        "w": 4,
-        "x": 0,
-        "y": 21
-      },
-      "targets": [
+      "panels": [
         {
+          "type": "table",
+          "title": "Running firmware",
+          "description": "",
+          "id": 69,
           "datasource": {
             "type": "prometheus",
             "uid": "${datasource}"
           },
-          "expr": "count(ucs_server_info{domain=~\"$domain\"})",
-          "refId": "A",
-          "legendFormat": "__auto"
-        }
-      ],
-      "fieldConfig": {
-        "defaults": {
-          "unit": "short",
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
+          "gridPos": {
+            "h": 10,
+            "w": 24,
+            "x": 0,
+            "y": 21
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
               },
-              {
-                "color": "red",
-                "value": 1000000000000.0
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "options": {
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
+              "expr": "ucs_firmware_running_info{domain=\"$domain\"}",
+              "refId": "A",
+              "legendFormat": "__auto",
+              "format": "table",
+              "instant": true,
+              "range": false
+            }
           ],
-          "fields": "",
-          "values": false
-        },
-        "colorMode": "background",
-        "graphMode": "none",
-        "textMode": "auto",
-        "justifyMode": "auto",
-        "orientation": "auto"
-      }
-    },
-    {
-      "type": "stat",
-      "title": "CPU cores",
-      "description": "",
-      "id": 17,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
-      "gridPos": {
-        "h": 4,
-        "w": 4,
-        "x": 4,
-        "y": 21
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "sum(ucs_server_cpu_cores{domain=~\"$domain\"})",
-          "refId": "A",
-          "legendFormat": "__auto"
-        }
-      ],
-      "fieldConfig": {
-        "defaults": {
-          "unit": "short",
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 1000000000000.0
+          "transformations": [
+            {
+              "id": "organize",
+              "options": {
+                "excludeByName": {
+                  "Time": true,
+                  "__name__": true,
+                  "job": true,
+                  "instance": true,
+                  "domain": true,
+                  "Value": true
+                },
+                "renameByName": {},
+                "indexByName": {}
               }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "options": {
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
+            }
           ],
-          "fields": "",
-          "values": false
-        },
-        "colorMode": "background",
-        "graphMode": "none",
-        "textMode": "auto",
-        "justifyMode": "auto",
-        "orientation": "auto"
-      }
-    },
-    {
-      "type": "stat",
-      "title": "Memory",
-      "description": "",
-      "id": 18,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
-      "gridPos": {
-        "h": 4,
-        "w": 4,
-        "x": 8,
-        "y": 21
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
+          "fieldConfig": {
+            "defaults": {},
+            "overrides": []
           },
-          "expr": "sum(ucs_server_memory_bytes{domain=~\"$domain\"})",
-          "refId": "A",
-          "legendFormat": "__auto"
-        }
-      ],
-      "fieldConfig": {
-        "defaults": {
-          "unit": "bytes",
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 1e+30
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "options": {
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "colorMode": "background",
-        "graphMode": "none",
-        "textMode": "auto",
-        "justifyMode": "auto",
-        "orientation": "auto"
-      }
-    },
-    {
-      "type": "stat",
-      "title": "Blade slots used",
-      "description": "",
-      "id": 19,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
-      "gridPos": {
-        "h": 4,
-        "w": 4,
-        "x": 12,
-        "y": 21
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "sum(ucs_chassis_blade_slots{domain=~\"$domain\",presence=\"equipped\"}) / sum(ucs_chassis_blade_slots{domain=~\"$domain\"})",
-          "refId": "A",
-          "legendFormat": "__auto"
-        }
-      ],
-      "fieldConfig": {
-        "defaults": {
-          "unit": "percentunit",
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 0.95
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "options": {
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "colorMode": "background",
-        "graphMode": "none",
-        "textMode": "auto",
-        "justifyMode": "auto",
-        "orientation": "auto"
-      }
-    },
-    {
-      "type": "stat",
-      "title": "Service profiles associated",
-      "description": "",
-      "id": 20,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
-      "gridPos": {
-        "h": 4,
-        "w": 4,
-        "x": 16,
-        "y": 21
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "count(ucs_service_profile_assoc_state{domain=~\"$domain\",state=\"associated\"}) or vector(0)",
-          "refId": "A",
-          "legendFormat": "__auto"
-        }
-      ],
-      "fieldConfig": {
-        "defaults": {
-          "unit": "short",
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 1000000000000.0
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "options": {
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "colorMode": "background",
-        "graphMode": "none",
-        "textMode": "auto",
-        "justifyMode": "auto",
-        "orientation": "auto"
-      }
-    },
-    {
-      "type": "stat",
-      "title": "Service profiles not associated",
-      "description": "",
-      "id": 21,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
-      "gridPos": {
-        "h": 4,
-        "w": 4,
-        "x": 20,
-        "y": 21
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "count(ucs_service_profile_assoc_state{domain=~\"$domain\",state!=\"associated\"}) or vector(0)",
-          "refId": "A",
-          "legendFormat": "__auto"
-        }
-      ],
-      "fieldConfig": {
-        "defaults": {
-          "unit": "short",
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 1000000000000.0
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "options": {
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "colorMode": "background",
-        "graphMode": "none",
-        "textMode": "auto",
-        "justifyMode": "auto",
-        "orientation": "auto"
-      }
-    },
-    {
-      "type": "table",
-      "title": "Servers",
-      "description": "",
-      "id": 22,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 24,
-        "x": 0,
-        "y": 25
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "ucs_server_info{domain=~\"$domain\",server=~\"$server\"}",
-          "refId": "A",
-          "legendFormat": "__auto",
-          "format": "table",
-          "instant": true,
-          "range": false
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "ucs_server_service_profile_info{domain=~\"$domain\",server=~\"$server\"}",
-          "refId": "B",
-          "legendFormat": "__auto",
-          "format": "table",
-          "instant": true,
-          "range": false
-        }
-      ],
-      "transformations": [
-        {
-          "id": "merge",
-          "options": {}
-        },
-        {
-          "id": "organize",
           "options": {
-            "excludeByName": {
-              "Time": true,
-              "Value": true,
-              "__name__": true,
-              "job": true,
-              "instance": true
-            }
+            "showHeader": true,
+            "cellHeight": "sm"
           }
         }
-      ],
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
-      "options": {
-        "showHeader": true,
-        "cellHeight": "sm"
-      }
-    },
-    {
-      "type": "row",
-      "title": "Hardware health",
-      "collapsed": false,
-      "id": 23,
-      "gridPos": {
-        "h": 1,
-        "w": 24,
-        "x": 0,
-        "y": 33
-      },
-      "panels": []
-    },
-    {
-      "type": "table",
-      "title": "Components not operable",
-      "description": "Every component whose operability is not 'operable'.",
-      "id": 24,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 24,
-        "x": 0,
-        "y": 34
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "ucs_server_operability_state{domain=~\"$domain\",state!=\"operable\"}",
-          "refId": "A",
-          "legendFormat": "__auto",
-          "format": "table",
-          "instant": true,
-          "range": false
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "ucs_chassis_operability_state{domain=~\"$domain\",state!=\"operable\"}",
-          "refId": "B",
-          "legendFormat": "__auto",
-          "format": "table",
-          "instant": true,
-          "range": false
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "ucs_iom_operability_state{domain=~\"$domain\",state!=\"operable\"}",
-          "refId": "C",
-          "legendFormat": "__auto",
-          "format": "table",
-          "instant": true,
-          "range": false
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "ucs_fi_operability_state{domain=~\"$domain\",state!=\"operable\"}",
-          "refId": "D",
-          "legendFormat": "__auto",
-          "format": "table",
-          "instant": true,
-          "range": false
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "ucs_chassis_psu_operability_state{domain=~\"$domain\",state!=\"operable\"}",
-          "refId": "E",
-          "legendFormat": "__auto",
-          "format": "table",
-          "instant": true,
-          "range": false
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "ucs_fi_psu_operability_state{domain=~\"$domain\",state!=\"operable\"}",
-          "refId": "F",
-          "legendFormat": "__auto",
-          "format": "table",
-          "instant": true,
-          "range": false
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "ucs_chassis_fan_operability_state{domain=~\"$domain\",state!=\"operable\"}",
-          "refId": "G",
-          "legendFormat": "__auto",
-          "format": "table",
-          "instant": true,
-          "range": false
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "ucs_fi_fan_operability_state{domain=~\"$domain\",state!=\"operable\"}",
-          "refId": "H",
-          "legendFormat": "__auto",
-          "format": "table",
-          "instant": true,
-          "range": false
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "ucs_server_dimm_operability_state{domain=~\"$domain\",state!=\"operable\"}",
-          "refId": "I",
-          "legendFormat": "__auto",
-          "format": "table",
-          "instant": true,
-          "range": false
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "ucs_server_disk_operability_state{domain=~\"$domain\",state!=\"operable\"}",
-          "refId": "J",
-          "legendFormat": "__auto",
-          "format": "table",
-          "instant": true,
-          "range": false
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "ucs_adaptor_operability_state{domain=~\"$domain\",state!=\"operable\"}",
-          "refId": "K",
-          "legendFormat": "__auto",
-          "format": "table",
-          "instant": true,
-          "range": false
-        }
-      ],
-      "transformations": [
-        {
-          "id": "merge",
-          "options": {}
-        },
-        {
-          "id": "organize",
-          "options": {
-            "excludeByName": {
-              "Time": true,
-              "Value": true,
-              "__name__": true,
-              "job": true,
-              "instance": true
-            }
-          }
-        }
-      ],
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
-      "options": {
-        "showHeader": true,
-        "cellHeight": "sm"
-      }
-    },
-    {
-      "type": "timeseries",
-      "title": "CPU temperature (max per server)",
-      "description": "",
-      "id": 25,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 8,
-        "x": 0,
-        "y": 42
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "max by (domain, server) (ucs_server_cpu_temperature_celsius{domain=~\"$domain\",server=~\"$server\"})",
-          "refId": "A",
-          "legendFormat": "{{server}}"
-        }
-      ],
-      "fieldConfig": {
-        "defaults": {
-          "unit": "celsius",
-          "custom": {
-            "lineWidth": 1,
-            "fillOpacity": 10,
-            "showPoints": "never",
-            "stacking": {
-              "mode": "none"
-            }
-          }
-        },
-        "overrides": []
-      },
-      "options": {
-        "legend": {
-          "displayMode": "table",
-          "placement": "right",
-          "showLegend": true,
-          "calcs": [
-            "lastNotNull",
-            "max"
-          ]
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "desc"
-        }
-      }
-    },
-    {
-      "type": "timeseries",
-      "title": "DIMM temperature (max per server)",
-      "description": "",
-      "id": 26,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 8,
-        "x": 8,
-        "y": 42
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "max by (domain, server) (ucs_server_dimm_temperature_celsius{domain=~\"$domain\",server=~\"$server\"})",
-          "refId": "A",
-          "legendFormat": "{{server}}"
-        }
-      ],
-      "fieldConfig": {
-        "defaults": {
-          "unit": "celsius",
-          "custom": {
-            "lineWidth": 1,
-            "fillOpacity": 10,
-            "showPoints": "never",
-            "stacking": {
-              "mode": "none"
-            }
-          }
-        },
-        "overrides": []
-      },
-      "options": {
-        "legend": {
-          "displayMode": "table",
-          "placement": "right",
-          "showLegend": true,
-          "calcs": [
-            "lastNotNull",
-            "max"
-          ]
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "desc"
-        }
-      }
-    },
-    {
-      "type": "timeseries",
-      "title": "IOM temperatures",
-      "description": "",
-      "id": 27,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 8,
-        "x": 16,
-        "y": 42
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "ucs_iom_temperature_celsius{domain=~\"$domain\",chassis=~\"$chassis\"}",
-          "refId": "A",
-          "legendFormat": "chassis {{chassis}} IOM {{iom}} {{sensor}}"
-        }
-      ],
-      "fieldConfig": {
-        "defaults": {
-          "unit": "celsius",
-          "custom": {
-            "lineWidth": 1,
-            "fillOpacity": 10,
-            "showPoints": "never",
-            "stacking": {
-              "mode": "none"
-            }
-          }
-        },
-        "overrides": []
-      },
-      "options": {
-        "legend": {
-          "displayMode": "table",
-          "placement": "right",
-          "showLegend": true,
-          "calcs": [
-            "lastNotNull",
-            "max"
-          ]
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "desc"
-        }
-      }
-    },
-    {
-      "type": "row",
-      "title": "Power",
-      "collapsed": false,
-      "id": 28,
-      "gridPos": {
-        "h": 1,
-        "w": 24,
-        "x": 0,
-        "y": 50
-      },
-      "panels": []
-    },
-    {
-      "type": "timeseries",
-      "title": "Chassis input power",
-      "description": "",
-      "id": 29,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 8,
-        "x": 0,
-        "y": 51
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "ucs_chassis_input_power_watts{domain=~\"$domain\",chassis=~\"$chassis\"}",
-          "refId": "A",
-          "legendFormat": "chassis {{chassis}}"
-        }
-      ],
-      "fieldConfig": {
-        "defaults": {
-          "unit": "watt",
-          "custom": {
-            "lineWidth": 1,
-            "fillOpacity": 10,
-            "showPoints": "never",
-            "stacking": {
-              "mode": "none"
-            }
-          }
-        },
-        "overrides": []
-      },
-      "options": {
-        "legend": {
-          "displayMode": "table",
-          "placement": "right",
-          "showLegend": true,
-          "calcs": [
-            "lastNotNull",
-            "max"
-          ]
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "desc"
-        }
-      }
-    },
-    {
-      "type": "timeseries",
-      "title": "Top 10 servers by power",
-      "description": "",
-      "id": 30,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 8,
-        "x": 8,
-        "y": 51
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "topk(10, ucs_server_power_watts{domain=~\"$domain\",server=~\"$server\"})",
-          "refId": "A",
-          "legendFormat": "{{server}}"
-        }
-      ],
-      "fieldConfig": {
-        "defaults": {
-          "unit": "watt",
-          "custom": {
-            "lineWidth": 1,
-            "fillOpacity": 10,
-            "showPoints": "never",
-            "stacking": {
-              "mode": "none"
-            }
-          }
-        },
-        "overrides": []
-      },
-      "options": {
-        "legend": {
-          "displayMode": "table",
-          "placement": "right",
-          "showLegend": true,
-          "calcs": [
-            "lastNotNull",
-            "max"
-          ]
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "desc"
-        }
-      }
-    },
-    {
-      "type": "table",
-      "title": "Power supplies not OK",
-      "description": "",
-      "id": 31,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 8,
-        "x": 16,
-        "y": 51
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "ucs_chassis_psu_ok{domain=~\"$domain\"} == 0",
-          "refId": "A",
-          "legendFormat": "__auto",
-          "format": "table",
-          "instant": true,
-          "range": false
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "ucs_server_psu_ok{domain=~\"$domain\"} == 0",
-          "refId": "B",
-          "legendFormat": "__auto",
-          "format": "table",
-          "instant": true,
-          "range": false
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "ucs_fi_psu_ok{domain=~\"$domain\"} == 0",
-          "refId": "C",
-          "legendFormat": "__auto",
-          "format": "table",
-          "instant": true,
-          "range": false
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "ucs_fex_psu_ok{domain=~\"$domain\"} == 0",
-          "refId": "D",
-          "legendFormat": "__auto",
-          "format": "table",
-          "instant": true,
-          "range": false
-        }
-      ],
-      "transformations": [
-        {
-          "id": "merge",
-          "options": {}
-        },
-        {
-          "id": "organize",
-          "options": {
-            "excludeByName": {
-              "Time": true,
-              "Value": true,
-              "__name__": true,
-              "job": true,
-              "instance": true
-            }
-          }
-        }
-      ],
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
-      "options": {
-        "showHeader": true,
-        "cellHeight": "sm"
-      }
-    },
-    {
-      "type": "row",
-      "title": "Fabric interconnects",
-      "collapsed": false,
-      "id": 32,
-      "gridPos": {
-        "h": 1,
-        "w": 24,
-        "x": 0,
-        "y": 59
-      },
-      "panels": []
-    },
-    {
-      "type": "timeseries",
-      "title": "CPU load",
-      "description": "",
-      "id": 33,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 8,
-        "x": 0,
-        "y": 60
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "ucs_fi_load{domain=~\"$domain\"}",
-          "refId": "A",
-          "legendFormat": "{{domain}} {{fabric}}"
-        }
-      ],
-      "fieldConfig": {
-        "defaults": {
-          "unit": "short",
-          "custom": {
-            "lineWidth": 1,
-            "fillOpacity": 10,
-            "showPoints": "never",
-            "stacking": {
-              "mode": "none"
-            }
-          }
-        },
-        "overrides": []
-      },
-      "options": {
-        "legend": {
-          "displayMode": "table",
-          "placement": "right",
-          "showLegend": true,
-          "calcs": [
-            "lastNotNull",
-            "max"
-          ]
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "desc"
-        }
-      }
-    },
-    {
-      "type": "timeseries",
-      "title": "Memory available",
-      "description": "",
-      "id": 34,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 8,
-        "x": 8,
-        "y": 60
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "ucs_fi_memory_available_bytes{domain=~\"$domain\"}",
-          "refId": "A",
-          "legendFormat": "{{domain}} {{fabric}}"
-        }
-      ],
-      "fieldConfig": {
-        "defaults": {
-          "unit": "bytes",
-          "custom": {
-            "lineWidth": 1,
-            "fillOpacity": 10,
-            "showPoints": "never",
-            "stacking": {
-              "mode": "none"
-            }
-          }
-        },
-        "overrides": []
-      },
-      "options": {
-        "legend": {
-          "displayMode": "table",
-          "placement": "right",
-          "showLegend": true,
-          "calcs": [
-            "lastNotNull",
-            "max"
-          ]
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "desc"
-        }
-      }
-    },
-    {
-      "type": "timeseries",
-      "title": "Kernel memory used",
-      "description": "",
-      "id": 35,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 8,
-        "x": 16,
-        "y": 60
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "1 - ucs_fi_kernel_memory_free_bytes{domain=~\"$domain\"} / ucs_fi_kernel_memory_total_bytes{domain=~\"$domain\"}",
-          "refId": "A",
-          "legendFormat": "{{domain}} {{fabric}}"
-        }
-      ],
-      "fieldConfig": {
-        "defaults": {
-          "unit": "percentunit",
-          "custom": {
-            "lineWidth": 1,
-            "fillOpacity": 10,
-            "showPoints": "never",
-            "stacking": {
-              "mode": "none"
-            }
-          }
-        },
-        "overrides": []
-      },
-      "options": {
-        "legend": {
-          "displayMode": "table",
-          "placement": "right",
-          "showLegend": true,
-          "calcs": [
-            "lastNotNull",
-            "max"
-          ]
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "desc"
-        }
-      }
-    },
-    {
-      "type": "timeseries",
-      "title": "Temperatures",
-      "description": "",
-      "id": 36,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 8,
-        "x": 0,
-        "y": 68
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "ucs_fi_temperature_celsius{domain=~\"$domain\"}",
-          "refId": "A",
-          "legendFormat": "{{fabric}} {{sensor}}"
-        }
-      ],
-      "fieldConfig": {
-        "defaults": {
-          "unit": "celsius",
-          "custom": {
-            "lineWidth": 1,
-            "fillOpacity": 10,
-            "showPoints": "never",
-            "stacking": {
-              "mode": "none"
-            }
-          }
-        },
-        "overrides": []
-      },
-      "options": {
-        "legend": {
-          "displayMode": "table",
-          "placement": "right",
-          "showLegend": true,
-          "calcs": [
-            "lastNotNull",
-            "max"
-          ]
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "desc"
-        }
-      }
-    },
-    {
-      "type": "timeseries",
-      "title": "Fan speed",
-      "description": "",
-      "id": 37,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 8,
-        "x": 8,
-        "y": 68
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "ucs_fi_fan_speed_rpm{domain=~\"$domain\"}",
-          "refId": "A",
-          "legendFormat": "{{fabric}} fan {{fan}}"
-        }
-      ],
-      "fieldConfig": {
-        "defaults": {
-          "unit": "rotrpm",
-          "custom": {
-            "lineWidth": 1,
-            "fillOpacity": 10,
-            "showPoints": "never",
-            "stacking": {
-              "mode": "none"
-            }
-          }
-        },
-        "overrides": []
-      },
-      "options": {
-        "legend": {
-          "displayMode": "table",
-          "placement": "right",
-          "showLegend": true,
-          "calcs": [
-            "lastNotNull",
-            "max"
-          ]
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "desc"
-        }
-      }
-    },
-    {
-      "type": "bargauge",
-      "title": "VLAN port usage",
-      "description": "VLAN port instances in use as a fraction of the platform limit.",
-      "id": 38,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 8,
-        "x": 16,
-        "y": 68
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "ucs_fi_vlan_ports{domain=~\"$domain\"} / ucs_fi_vlan_ports_limit{domain=~\"$domain\"}",
-          "refId": "A",
-          "legendFormat": "{{domain}} {{fabric}}"
-        }
-      ],
-      "fieldConfig": {
-        "defaults": {
-          "unit": "percentunit",
-          "min": 0,
-          "max": 1,
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "orange",
-                "value": 0.7
-              },
-              {
-                "color": "red",
-                "value": 0.9
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "options": {
-        "displayMode": "gradient",
-        "orientation": "horizontal",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        }
-      }
-    },
-    {
-      "type": "row",
-      "title": "LAN uplinks",
-      "collapsed": false,
-      "id": 39,
-      "gridPos": {
-        "h": 1,
-        "w": 24,
-        "x": 0,
-        "y": 76
-      },
-      "panels": []
-    },
-    {
-      "type": "timeseries",
-      "title": "Uplink port channel traffic",
-      "description": "",
-      "id": 40,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 0,
-        "y": 77
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "8 * rate(ucs_fi_port_channel_receive_bytes_total{domain=~\"$domain\"}[$__rate_interval])",
-          "refId": "A",
-          "legendFormat": "{{fabric}} Po{{port_channel}} rx"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "8 * rate(ucs_fi_port_channel_transmit_bytes_total{domain=~\"$domain\"}[$__rate_interval])",
-          "refId": "B",
-          "legendFormat": "{{fabric}} Po{{port_channel}} tx"
-        }
-      ],
-      "fieldConfig": {
-        "defaults": {
-          "unit": "bps",
-          "custom": {
-            "lineWidth": 1,
-            "fillOpacity": 10,
-            "showPoints": "never",
-            "stacking": {
-              "mode": "none"
-            }
-          }
-        },
-        "overrides": [
-          {
-            "matcher": {
-              "id": "byRegexp",
-              "options": ".*(tx|transmit).*"
-            },
-            "properties": [
-              {
-                "id": "custom.transform",
-                "value": "negative-Y"
-              }
-            ]
-          }
-        ]
-      },
-      "options": {
-        "legend": {
-          "displayMode": "table",
-          "placement": "right",
-          "showLegend": true,
-          "calcs": [
-            "lastNotNull",
-            "max"
-          ]
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "desc"
-        }
-      }
-    },
-    {
-      "type": "timeseries",
-      "title": "Uplink port traffic",
-      "description": "",
-      "id": 41,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 12,
-        "y": 77
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "8 * rate(ucs_fi_port_receive_bytes_total{domain=~\"$domain\",role=\"network\"}[$__rate_interval])",
-          "refId": "A",
-          "legendFormat": "{{fabric}} {{port}} rx"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "8 * rate(ucs_fi_port_transmit_bytes_total{domain=~\"$domain\",role=\"network\"}[$__rate_interval])",
-          "refId": "B",
-          "legendFormat": "{{fabric}} {{port}} tx"
-        }
-      ],
-      "fieldConfig": {
-        "defaults": {
-          "unit": "bps",
-          "custom": {
-            "lineWidth": 1,
-            "fillOpacity": 10,
-            "showPoints": "never",
-            "stacking": {
-              "mode": "none"
-            }
-          }
-        },
-        "overrides": [
-          {
-            "matcher": {
-              "id": "byRegexp",
-              "options": ".*(tx|transmit).*"
-            },
-            "properties": [
-              {
-                "id": "custom.transform",
-                "value": "negative-Y"
-              }
-            ]
-          }
-        ]
-      },
-      "options": {
-        "legend": {
-          "displayMode": "table",
-          "placement": "right",
-          "showLegend": true,
-          "calcs": [
-            "lastNotNull",
-            "max"
-          ]
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "desc"
-        }
-      }
-    },
-    {
-      "type": "timeseries",
-      "title": "FI port errors",
-      "description": "",
-      "id": 42,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 0,
-        "y": 85
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "sum by (domain, fabric, port, role) (rate(ucs_fi_port_fcs_errors_total{domain=~\"$domain\"}[$__rate_interval]) + rate(ucs_fi_port_receive_errors_total{domain=~\"$domain\"}[$__rate_interval]) + rate(ucs_fi_port_transmit_errors_total{domain=~\"$domain\"}[$__rate_interval]) + rate(ucs_fi_port_align_errors_total{domain=~\"$domain\"}[$__rate_interval])) > 0",
-          "refId": "A",
-          "legendFormat": "{{fabric}} {{port}} ({{role}})"
-        }
-      ],
-      "fieldConfig": {
-        "defaults": {
-          "unit": "pps",
-          "custom": {
-            "lineWidth": 1,
-            "fillOpacity": 10,
-            "showPoints": "never",
-            "stacking": {
-              "mode": "none"
-            }
-          }
-        },
-        "overrides": []
-      },
-      "options": {
-        "legend": {
-          "displayMode": "table",
-          "placement": "right",
-          "showLegend": true,
-          "calcs": [
-            "lastNotNull",
-            "max"
-          ]
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "desc"
-        }
-      }
-    },
-    {
-      "type": "timeseries",
-      "title": "FI port discards and pause frames",
-      "description": "",
-      "id": 43,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 12,
-        "y": 85
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "rate(ucs_fi_port_transmit_discards_total{domain=~\"$domain\"}[$__rate_interval]) > 0",
-          "refId": "A",
-          "legendFormat": "{{fabric}} {{port}} tx discards"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "rate(ucs_fi_port_receive_pause_frames_total{domain=~\"$domain\"}[$__rate_interval]) > 0",
-          "refId": "B",
-          "legendFormat": "{{fabric}} {{port}} rx pause"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "rate(ucs_fi_port_transmit_pause_frames_total{domain=~\"$domain\"}[$__rate_interval]) > 0",
-          "refId": "C",
-          "legendFormat": "{{fabric}} {{port}} tx pause"
-        }
-      ],
-      "fieldConfig": {
-        "defaults": {
-          "unit": "pps",
-          "custom": {
-            "lineWidth": 1,
-            "fillOpacity": 10,
-            "showPoints": "never",
-            "stacking": {
-              "mode": "none"
-            }
-          }
-        },
-        "overrides": []
-      },
-      "options": {
-        "legend": {
-          "displayMode": "table",
-          "placement": "right",
-          "showLegend": true,
-          "calcs": [
-            "lastNotNull",
-            "max"
-          ]
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "desc"
-        }
-      }
-    },
-    {
-      "type": "table",
-      "title": "Ports and port channel members down",
-      "description": "",
-      "id": 44,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 24,
-        "x": 0,
-        "y": 93
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "ucs_fi_port_oper_state{domain=~\"$domain\",role=\"network\",state!~\"up|link-up\"}",
-          "refId": "A",
-          "legendFormat": "__auto",
-          "format": "table",
-          "instant": true,
-          "range": false
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "ucs_fi_port_channel_member_state{domain=~\"$domain\",state!=\"up\"}",
-          "refId": "B",
-          "legendFormat": "__auto",
-          "format": "table",
-          "instant": true,
-          "range": false
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "ucs_fi_port_channel_oper_state{domain=~\"$domain\",state!~\"up|link-up\"}",
-          "refId": "C",
-          "legendFormat": "__auto",
-          "format": "table",
-          "instant": true,
-          "range": false
-        }
-      ],
-      "transformations": [
-        {
-          "id": "merge",
-          "options": {}
-        },
-        {
-          "id": "organize",
-          "options": {
-            "excludeByName": {
-              "Time": true,
-              "Value": true,
-              "__name__": true,
-              "job": true,
-              "instance": true
-            }
-          }
-        }
-      ],
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
-      "options": {
-        "showHeader": true,
-        "cellHeight": "sm"
-      }
-    },
-    {
-      "type": "row",
-      "title": "SAN / Fibre Channel",
-      "collapsed": false,
-      "id": 45,
-      "gridPos": {
-        "h": 1,
-        "w": 24,
-        "x": 0,
-        "y": 101
-      },
-      "panels": []
-    },
-    {
-      "type": "timeseries",
-      "title": "FC port traffic",
-      "description": "",
-      "id": 46,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 0,
-        "y": 102
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "8 * rate(ucs_fi_fc_port_receive_bytes_total{domain=~\"$domain\"}[$__rate_interval])",
-          "refId": "A",
-          "legendFormat": "{{fabric}} fc{{port}} rx"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "8 * rate(ucs_fi_fc_port_transmit_bytes_total{domain=~\"$domain\"}[$__rate_interval])",
-          "refId": "B",
-          "legendFormat": "{{fabric}} fc{{port}} tx"
-        }
-      ],
-      "fieldConfig": {
-        "defaults": {
-          "unit": "bps",
-          "custom": {
-            "lineWidth": 1,
-            "fillOpacity": 10,
-            "showPoints": "never",
-            "stacking": {
-              "mode": "none"
-            }
-          }
-        },
-        "overrides": [
-          {
-            "matcher": {
-              "id": "byRegexp",
-              "options": ".*(tx|transmit).*"
-            },
-            "properties": [
-              {
-                "id": "custom.transform",
-                "value": "negative-Y"
-              }
-            ]
-          }
-        ]
-      },
-      "options": {
-        "legend": {
-          "displayMode": "table",
-          "placement": "right",
-          "showLegend": true,
-          "calcs": [
-            "lastNotNull",
-            "max"
-          ]
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "desc"
-        }
-      }
-    },
-    {
-      "type": "timeseries",
-      "title": "FC CRC errors (per hour)",
-      "description": "",
-      "id": 47,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 12,
-        "y": 102
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "increase(ucs_fi_fc_port_crc_errors_total{domain=~\"$domain\"}[1h]) > 0",
-          "refId": "A",
-          "legendFormat": "{{fabric}} fc{{port}}"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "increase(ucs_fi_fc_port_channel_crc_errors_total{domain=~\"$domain\"}[1h]) > 0",
-          "refId": "B",
-          "legendFormat": "{{fabric}} san-po{{port_channel}}"
-        }
-      ],
-      "fieldConfig": {
-        "defaults": {
-          "unit": "short",
-          "custom": {
-            "lineWidth": 1,
-            "fillOpacity": 10,
-            "showPoints": "never",
-            "stacking": {
-              "mode": "none"
-            }
-          }
-        },
-        "overrides": []
-      },
-      "options": {
-        "legend": {
-          "displayMode": "table",
-          "placement": "right",
-          "showLegend": true,
-          "calcs": [
-            "lastNotNull",
-            "max"
-          ]
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "desc"
-        }
-      }
-    },
-    {
-      "type": "timeseries",
-      "title": "FC link failures, signal and sync losses (per hour)",
-      "description": "",
-      "id": 48,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 0,
-        "y": 110
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "increase(ucs_fi_fc_port_link_failures_total{domain=~\"$domain\"}[1h]) > 0",
-          "refId": "A",
-          "legendFormat": "{{fabric}} fc{{port}} link failures"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "increase(ucs_fi_fc_port_signal_losses_total{domain=~\"$domain\"}[1h]) > 0",
-          "refId": "B",
-          "legendFormat": "{{fabric}} fc{{port}} signal losses"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "increase(ucs_fi_fc_port_sync_losses_total{domain=~\"$domain\"}[1h]) > 0",
-          "refId": "C",
-          "legendFormat": "{{fabric}} fc{{port}} sync losses"
-        }
-      ],
-      "fieldConfig": {
-        "defaults": {
-          "unit": "short",
-          "custom": {
-            "lineWidth": 1,
-            "fillOpacity": 10,
-            "showPoints": "never",
-            "stacking": {
-              "mode": "none"
-            }
-          }
-        },
-        "overrides": []
-      },
-      "options": {
-        "legend": {
-          "displayMode": "table",
-          "placement": "right",
-          "showLegend": true,
-          "calcs": [
-            "lastNotNull",
-            "max"
-          ]
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "desc"
-        }
-      }
-    },
-    {
-      "type": "timeseries",
-      "title": "vHBA errors (adapter side, per hour)",
-      "description": "",
-      "id": 49,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 12,
-        "y": 110
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "increase(ucs_vhba_crc_errors_total{domain=~\"$domain\",service_profile=~\"$service_profile\"}[1h]) > 0",
-          "refId": "A",
-          "legendFormat": "{{service_profile}} {{vhba}} CRC"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "increase(ucs_vhba_link_failures_total{domain=~\"$domain\",service_profile=~\"$service_profile\"}[1h]) > 0",
-          "refId": "B",
-          "legendFormat": "{{service_profile}} {{vhba}} link failures"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "increase(ucs_vhba_sync_losses_total{domain=~\"$domain\",service_profile=~\"$service_profile\"}[1h]) > 0",
-          "refId": "C",
-          "legendFormat": "{{service_profile}} {{vhba}} sync losses"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "increase(ucs_vhba_port_receive_bad_frames_total{domain=~\"$domain\",service_profile=~\"$service_profile\"}[1h]) > 0",
-          "refId": "D",
-          "legendFormat": "{{service_profile}} {{vhba}} bad frames"
-        }
-      ],
-      "fieldConfig": {
-        "defaults": {
-          "unit": "short",
-          "custom": {
-            "lineWidth": 1,
-            "fillOpacity": 10,
-            "showPoints": "never",
-            "stacking": {
-              "mode": "none"
-            }
-          }
-        },
-        "overrides": []
-      },
-      "options": {
-        "legend": {
-          "displayMode": "table",
-          "placement": "right",
-          "showLegend": true,
-          "calcs": [
-            "lastNotNull",
-            "max"
-          ]
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "desc"
-        }
-      }
-    },
-    {
-      "type": "table",
-      "title": "FC ports, SAN port channels and FCoE uplinks not up",
-      "description": "",
-      "id": 50,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 24,
-        "x": 0,
-        "y": 118
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "ucs_fi_fc_port_oper_state{domain=~\"$domain\",state!~\"up|link-up|sfp-not-present\"}",
-          "refId": "A",
-          "legendFormat": "__auto",
-          "format": "table",
-          "instant": true,
-          "range": false
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "ucs_fi_fc_port_channel_oper_state{domain=~\"$domain\",state!~\"up|link-up\"}",
-          "refId": "B",
-          "legendFormat": "__auto",
-          "format": "table",
-          "instant": true,
-          "range": false
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "ucs_fi_fc_port_channel_member_state{domain=~\"$domain\",state!=\"up\"}",
-          "refId": "C",
-          "legendFormat": "__auto",
-          "format": "table",
-          "instant": true,
-          "range": false
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "ucs_fi_fcoe_uplink_oper_state{domain=~\"$domain\",state!=\"up\"}",
-          "refId": "D",
-          "legendFormat": "__auto",
-          "format": "table",
-          "instant": true,
-          "range": false
-        }
-      ],
-      "transformations": [
-        {
-          "id": "merge",
-          "options": {}
-        },
-        {
-          "id": "organize",
-          "options": {
-            "excludeByName": {
-              "Time": true,
-              "Value": true,
-              "__name__": true,
-              "job": true,
-              "instance": true
-            }
-          }
-        }
-      ],
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
-      "options": {
-        "showHeader": true,
-        "cellHeight": "sm"
-      }
-    },
-    {
-      "type": "row",
-      "title": "Service profiles, vNICs and virtual circuits",
-      "collapsed": false,
-      "id": 51,
-      "gridPos": {
-        "h": 1,
-        "w": 24,
-        "x": 0,
-        "y": 126
-      },
-      "panels": []
-    },
-    {
-      "type": "table",
-      "title": "Service profiles not OK",
-      "description": "",
-      "id": 52,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 0,
-        "y": 127
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "ucs_service_profile_oper_state{domain=~\"$domain\",service_profile=~\"$service_profile\",state!~\"ok|unassociated\"}",
-          "refId": "A",
-          "legendFormat": "__auto",
-          "format": "table",
-          "instant": true,
-          "range": false
-        }
-      ],
-      "transformations": [
-        {
-          "id": "merge",
-          "options": {}
-        },
-        {
-          "id": "organize",
-          "options": {
-            "excludeByName": {
-              "Time": true,
-              "Value": true,
-              "__name__": true,
-              "job": true,
-              "instance": true
-            }
-          }
-        }
-      ],
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
-      "options": {
-        "showHeader": true,
-        "cellHeight": "sm"
-      }
-    },
-    {
-      "type": "table",
-      "title": "Virtual circuits down",
-      "description": "VIFs (one per vNIC/vHBA per fabric) whose operational state is not active.",
-      "id": 53,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 12,
-        "y": 127
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "ucs_vif_oper_state{domain=~\"$domain\",service_profile=~\"$service_profile\",state!=\"active\"}",
-          "refId": "A",
-          "legendFormat": "__auto",
-          "format": "table",
-          "instant": true,
-          "range": false
-        }
-      ],
-      "transformations": [
-        {
-          "id": "merge",
-          "options": {}
-        },
-        {
-          "id": "organize",
-          "options": {
-            "excludeByName": {
-              "Time": true,
-              "Value": true,
-              "__name__": true,
-              "job": true,
-              "instance": true
-            }
-          }
-        }
-      ],
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
-      "options": {
-        "showHeader": true,
-        "cellHeight": "sm"
-      }
-    },
-    {
-      "type": "timeseries",
-      "title": "vNIC traffic",
-      "description": "",
-      "id": 54,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 0,
-        "y": 135
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "8 * sum by (domain, service_profile, vnic) (rate(ucs_vnic_receive_bytes_total{domain=~\"$domain\",service_profile=~\"$service_profile\"}[$__rate_interval]))",
-          "refId": "A",
-          "legendFormat": "{{service_profile}} {{vnic}} rx"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "8 * sum by (domain, service_profile, vnic) (rate(ucs_vnic_transmit_bytes_total{domain=~\"$domain\",service_profile=~\"$service_profile\"}[$__rate_interval]))",
-          "refId": "B",
-          "legendFormat": "{{service_profile}} {{vnic}} tx"
-        }
-      ],
-      "fieldConfig": {
-        "defaults": {
-          "unit": "bps",
-          "custom": {
-            "lineWidth": 1,
-            "fillOpacity": 10,
-            "showPoints": "never",
-            "stacking": {
-              "mode": "none"
-            }
-          }
-        },
-        "overrides": [
-          {
-            "matcher": {
-              "id": "byRegexp",
-              "options": ".*(tx|transmit).*"
-            },
-            "properties": [
-              {
-                "id": "custom.transform",
-                "value": "negative-Y"
-              }
-            ]
-          }
-        ]
-      },
-      "options": {
-        "legend": {
-          "displayMode": "table",
-          "placement": "right",
-          "showLegend": true,
-          "calcs": [
-            "lastNotNull",
-            "max"
-          ]
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "desc"
-        }
-      }
-    },
-    {
-      "type": "timeseries",
-      "title": "vHBA traffic",
-      "description": "",
-      "id": 55,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 12,
-        "y": 135
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "8 * sum by (domain, service_profile, vhba) (rate(ucs_vhba_receive_bytes_total{domain=~\"$domain\",service_profile=~\"$service_profile\"}[$__rate_interval]))",
-          "refId": "A",
-          "legendFormat": "{{service_profile}} {{vhba}} rx"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "8 * sum by (domain, service_profile, vhba) (rate(ucs_vhba_transmit_bytes_total{domain=~\"$domain\",service_profile=~\"$service_profile\"}[$__rate_interval]))",
-          "refId": "B",
-          "legendFormat": "{{service_profile}} {{vhba}} tx"
-        }
-      ],
-      "fieldConfig": {
-        "defaults": {
-          "unit": "bps",
-          "custom": {
-            "lineWidth": 1,
-            "fillOpacity": 10,
-            "showPoints": "never",
-            "stacking": {
-              "mode": "none"
-            }
-          }
-        },
-        "overrides": [
-          {
-            "matcher": {
-              "id": "byRegexp",
-              "options": ".*(tx|transmit).*"
-            },
-            "properties": [
-              {
-                "id": "custom.transform",
-                "value": "negative-Y"
-              }
-            ]
-          }
-        ]
-      },
-      "options": {
-        "legend": {
-          "displayMode": "table",
-          "placement": "right",
-          "showLegend": true,
-          "calcs": [
-            "lastNotNull",
-            "max"
-          ]
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "desc"
-        }
-      }
-    },
-    {
-      "type": "timeseries",
-      "title": "vNIC drops and errors",
-      "description": "",
-      "id": 56,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 0,
-        "y": 143
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "sum by (domain, service_profile, vnic) (rate(ucs_vnic_receive_dropped_total{domain=~\"$domain\",service_profile=~\"$service_profile\"}[$__rate_interval]) + rate(ucs_vnic_transmit_dropped_total{domain=~\"$domain\",service_profile=~\"$service_profile\"}[$__rate_interval])) > 0",
-          "refId": "A",
-          "legendFormat": "{{service_profile}} {{vnic}} drops"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "sum by (domain, service_profile, vnic) (rate(ucs_vnic_receive_errors_total{domain=~\"$domain\",service_profile=~\"$service_profile\"}[$__rate_interval]) + rate(ucs_vnic_transmit_errors_total{domain=~\"$domain\",service_profile=~\"$service_profile\"}[$__rate_interval])) > 0",
-          "refId": "B",
-          "legendFormat": "{{service_profile}} {{vnic}} errors"
-        }
-      ],
-      "fieldConfig": {
-        "defaults": {
-          "unit": "pps",
-          "custom": {
-            "lineWidth": 1,
-            "fillOpacity": 10,
-            "showPoints": "never",
-            "stacking": {
-              "mode": "none"
-            }
-          }
-        },
-        "overrides": []
-      },
-      "options": {
-        "legend": {
-          "displayMode": "table",
-          "placement": "right",
-          "showLegend": true,
-          "calcs": [
-            "lastNotNull",
-            "max"
-          ]
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "desc"
-        }
-      }
-    },
-    {
-      "type": "table",
-      "title": "Virtual circuit pinning",
-      "description": "The FI uplink port or port channel each virtual circuit is pinned to.",
-      "id": 57,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 12,
-        "y": 143
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "ucs_vif_pinned_port_info{domain=~\"$domain\",service_profile=~\"$service_profile\"}",
-          "refId": "A",
-          "legendFormat": "__auto",
-          "format": "table",
-          "instant": true,
-          "range": false
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "ucs_vif_pinned_port_channel_info{domain=~\"$domain\",service_profile=~\"$service_profile\"}",
-          "refId": "B",
-          "legendFormat": "__auto",
-          "format": "table",
-          "instant": true,
-          "range": false
-        }
-      ],
-      "transformations": [
-        {
-          "id": "merge",
-          "options": {}
-        },
-        {
-          "id": "organize",
-          "options": {
-            "excludeByName": {
-              "Time": true,
-              "Value": true,
-              "__name__": true,
-              "job": true,
-              "instance": true
-            }
-          }
-        }
-      ],
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
-      "options": {
-        "showHeader": true,
-        "cellHeight": "sm"
-      }
-    },
-    {
-      "type": "table",
-      "title": "vNICs",
-      "description": "",
-      "id": 58,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 0,
-        "y": 151
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "ucs_vnic_info{domain=~\"$domain\",service_profile=~\"$service_profile\"}",
-          "refId": "A",
-          "legendFormat": "__auto",
-          "format": "table",
-          "instant": true,
-          "range": false
-        }
-      ],
-      "transformations": [
-        {
-          "id": "merge",
-          "options": {}
-        },
-        {
-          "id": "organize",
-          "options": {
-            "excludeByName": {
-              "Time": true,
-              "Value": true,
-              "__name__": true,
-              "job": true,
-              "instance": true
-            }
-          }
-        }
-      ],
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
-      "options": {
-        "showHeader": true,
-        "cellHeight": "sm"
-      }
-    },
-    {
-      "type": "table",
-      "title": "vHBAs",
-      "description": "",
-      "id": 59,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 12,
-        "y": 151
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "ucs_vhba_info{domain=~\"$domain\",service_profile=~\"$service_profile\"}",
-          "refId": "A",
-          "legendFormat": "__auto",
-          "format": "table",
-          "instant": true,
-          "range": false
-        }
-      ],
-      "transformations": [
-        {
-          "id": "merge",
-          "options": {}
-        },
-        {
-          "id": "organize",
-          "options": {
-            "excludeByName": {
-              "Time": true,
-              "Value": true,
-              "__name__": true,
-              "job": true,
-              "instance": true
-            }
-          }
-        }
-      ],
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
-      "options": {
-        "showHeader": true,
-        "cellHeight": "sm"
-      }
-    },
-    {
-      "type": "row",
-      "title": "Chassis backplane",
-      "collapsed": false,
-      "id": 60,
-      "gridPos": {
-        "h": 1,
-        "w": 24,
-        "x": 0,
-        "y": 159
-      },
-      "panels": []
-    },
-    {
-      "type": "stat",
-      "title": "IOM active fabric ports",
-      "description": "",
-      "id": 61,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
-      "gridPos": {
-        "h": 4,
-        "w": 4,
-        "x": 0,
-        "y": 160
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "min(ucs_iom_active_fabric_ports{domain=~\"$domain\",chassis=~\"$chassis\"})",
-          "refId": "A",
-          "legendFormat": "__auto"
-        }
-      ],
-      "fieldConfig": {
-        "defaults": {
-          "unit": "short",
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 1000000000000.0
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "options": {
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "colorMode": "background",
-        "graphMode": "none",
-        "textMode": "auto",
-        "justifyMode": "auto",
-        "orientation": "auto"
-      }
-    },
-    {
-      "type": "table",
-      "title": "IOM host ports down (with connected adapter)",
-      "description": "",
-      "id": 62,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 10,
-        "x": 4,
-        "y": 160
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "(ucs_iom_host_port_up{domain=~\"$domain\",chassis=~\"$chassis\"} == 0) * on (domain, chassis, iom, port) group_left(server, adaptor, interface) ucs_iom_host_port_peer_info",
-          "refId": "A",
-          "legendFormat": "__auto",
-          "format": "table",
-          "instant": true,
-          "range": false
-        }
-      ],
-      "transformations": [
-        {
-          "id": "merge",
-          "options": {}
-        },
-        {
-          "id": "organize",
-          "options": {
-            "excludeByName": {
-              "Time": true,
-              "Value": true,
-              "__name__": true,
-              "job": true,
-              "instance": true
-            }
-          }
-        }
-      ],
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
-      "options": {
-        "showHeader": true,
-        "cellHeight": "sm"
-      }
-    },
-    {
-      "type": "timeseries",
-      "title": "IOM fabric port CRC errors (per hour)",
-      "description": "",
-      "id": 63,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 10,
-        "x": 14,
-        "y": 160
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "increase(ucs_iom_fabric_port_crc_errors_total{domain=~\"$domain\",chassis=~\"$chassis\"}[1h])",
-          "refId": "A",
-          "legendFormat": "chassis {{chassis}} IOM {{iom}} port {{port}}"
-        }
-      ],
-      "fieldConfig": {
-        "defaults": {
-          "unit": "short",
-          "custom": {
-            "lineWidth": 1,
-            "fillOpacity": 10,
-            "showPoints": "never",
-            "stacking": {
-              "mode": "none"
-            }
-          }
-        },
-        "overrides": []
-      },
-      "options": {
-        "legend": {
-          "displayMode": "table",
-          "placement": "right",
-          "showLegend": true,
-          "calcs": [
-            "lastNotNull",
-            "max"
-          ]
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "desc"
-        }
-      }
-    },
-    {
-      "type": "table",
-      "title": "IOM to FI links",
-      "description": "",
-      "id": 64,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
-      "gridPos": {
-        "h": 6,
-        "w": 24,
-        "x": 0,
-        "y": 168
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "ucs_iom_fabric_port_peer_info{domain=~\"$domain\",chassis=~\"$chassis\"}",
-          "refId": "A",
-          "legendFormat": "__auto",
-          "format": "table",
-          "instant": true,
-          "range": false
-        }
-      ],
-      "transformations": [
-        {
-          "id": "merge",
-          "options": {}
-        },
-        {
-          "id": "organize",
-          "options": {
-            "excludeByName": {
-              "Time": true,
-              "Value": true,
-              "__name__": true,
-              "job": true,
-              "instance": true
-            }
-          }
-        }
-      ],
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
-      "options": {
-        "showHeader": true,
-        "cellHeight": "sm"
-      }
-    },
-    {
-      "type": "row",
-      "title": "Memory errors",
-      "collapsed": false,
-      "id": 65,
-      "gridPos": {
-        "h": 1,
-        "w": 24,
-        "x": 0,
-        "y": 174
-      },
-      "panels": []
-    },
-    {
-      "type": "timeseries",
-      "title": "Correctable ECC errors (top 10 DIMMs, per hour)",
-      "description": "",
-      "id": 66,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 0,
-        "y": 175
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "topk(10, increase(ucs_server_dimm_ecc_singlebit_errors_total{domain=~\"$domain\",server=~\"$server\"}[1h]) > 0)",
-          "refId": "A",
-          "legendFormat": "{{server}} DIMM {{memory_array}}/{{dimm}}"
-        }
-      ],
-      "fieldConfig": {
-        "defaults": {
-          "unit": "short",
-          "custom": {
-            "lineWidth": 1,
-            "fillOpacity": 10,
-            "showPoints": "never",
-            "stacking": {
-              "mode": "none"
-            }
-          }
-        },
-        "overrides": []
-      },
-      "options": {
-        "legend": {
-          "displayMode": "table",
-          "placement": "right",
-          "showLegend": true,
-          "calcs": [
-            "lastNotNull",
-            "max"
-          ]
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "desc"
-        }
-      }
-    },
-    {
-      "type": "table",
-      "title": "DIMMs with uncorrectable errors",
-      "description": "",
-      "id": 67,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 12,
-        "y": 175
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "(ucs_server_dimm_ecc_multibit_errors_total{domain=~\"$domain\"} > 0) * on (domain, server, memory_array, dimm) group_left(location) ucs_server_dimm_info",
-          "refId": "A",
-          "legendFormat": "__auto",
-          "format": "table",
-          "instant": true,
-          "range": false
-        }
-      ],
-      "transformations": [
-        {
-          "id": "merge",
-          "options": {}
-        },
-        {
-          "id": "organize",
-          "options": {
-            "excludeByName": {
-              "Time": true,
-              "Value": true,
-              "__name__": true,
-              "job": true,
-              "instance": true
-            }
-          }
-        }
-      ],
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
-      "options": {
-        "showHeader": true,
-        "cellHeight": "sm"
-      }
-    },
-    {
-      "type": "row",
-      "title": "Firmware",
-      "collapsed": false,
-      "id": 68,
-      "gridPos": {
-        "h": 1,
-        "w": 24,
-        "x": 0,
-        "y": 183
-      },
-      "panels": []
-    },
-    {
-      "type": "table",
-      "title": "Running firmware",
-      "description": "",
-      "id": 69,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
-      "gridPos": {
-        "h": 10,
-        "w": 24,
-        "x": 0,
-        "y": 184
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "ucs_firmware_running_info{domain=~\"$domain\"}",
-          "refId": "A",
-          "legendFormat": "__auto",
-          "format": "table",
-          "instant": true,
-          "range": false
-        }
-      ],
-      "transformations": [
-        {
-          "id": "merge",
-          "options": {}
-        },
-        {
-          "id": "organize",
-          "options": {
-            "excludeByName": {
-              "Time": true,
-              "Value": true,
-              "__name__": true,
-              "job": true,
-              "instance": true
-            }
-          }
-        }
-      ],
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
-      "options": {
-        "showHeader": true,
-        "cellHeight": "sm"
-      }
+      ]
     },
     {
       "type": "row",
       "title": "Exporter",
-      "collapsed": false,
+      "collapsed": true,
       "id": 70,
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 194
+        "y": 21
       },
-      "panels": []
-    },
-    {
-      "type": "timeseries",
-      "title": "Poll duration",
-      "description": "",
-      "id": 71,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 8,
-        "x": 0,
-        "y": 195
-      },
-      "targets": [
+      "panels": [
         {
+          "type": "timeseries",
+          "title": "Poll duration",
+          "description": "",
+          "id": 71,
           "datasource": {
             "type": "prometheus",
             "uid": "${datasource}"
           },
-          "expr": "ucs_poll_duration_seconds{domain=~\"$domain\"}",
-          "refId": "A",
-          "legendFormat": "{{domain}}"
-        }
-      ],
-      "fieldConfig": {
-        "defaults": {
-          "unit": "s",
-          "custom": {
-            "lineWidth": 1,
-            "fillOpacity": 10,
-            "showPoints": "never",
-            "stacking": {
-              "mode": "none"
+          "gridPos": {
+            "h": 8,
+            "w": 8,
+            "x": 0,
+            "y": 22
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "ucs_poll_duration_seconds{domain=\"$domain\"}",
+              "refId": "A",
+              "legendFormat": "poll"
             }
-          }
-        },
-        "overrides": []
-      },
-      "options": {
-        "legend": {
-          "displayMode": "table",
-          "placement": "right",
-          "showLegend": true,
-          "calcs": [
-            "lastNotNull",
-            "max"
-          ]
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "desc"
-        }
-      }
-    },
-    {
-      "type": "timeseries",
-      "title": "Data age",
-      "description": "",
-      "id": 72,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 8,
-        "x": 8,
-        "y": 195
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
+          ],
+          "fieldConfig": {
+            "defaults": {
+              "unit": "s",
+              "custom": {
+                "lineWidth": 1,
+                "fillOpacity": 10,
+                "showPoints": "never",
+                "stacking": {
+                  "mode": "none"
+                }
+              }
+            },
+            "overrides": []
           },
-          "expr": "ucs_snapshot_age_seconds{domain=~\"$domain\"}",
-          "refId": "A",
-          "legendFormat": "{{domain}}"
-        }
-      ],
-      "fieldConfig": {
-        "defaults": {
-          "unit": "s",
-          "custom": {
-            "lineWidth": 1,
-            "fillOpacity": 10,
-            "showPoints": "never",
-            "stacking": {
-              "mode": "none"
-            }
-          }
-        },
-        "overrides": []
-      },
-      "options": {
-        "legend": {
-          "displayMode": "table",
-          "placement": "right",
-          "showLegend": true,
-          "calcs": [
-            "lastNotNull",
-            "max"
-          ]
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "desc"
-        }
-      }
-    },
-    {
-      "type": "table",
-      "title": "Failing class queries",
-      "description": "",
-      "id": 73,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${datasource}"
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 8,
-        "x": 16,
-        "y": 195
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${datasource}"
-          },
-          "expr": "ucs_class_query_success{domain=~\"$domain\"} == 0",
-          "refId": "A",
-          "legendFormat": "__auto",
-          "format": "table",
-          "instant": true,
-          "range": false
-        }
-      ],
-      "transformations": [
-        {
-          "id": "merge",
-          "options": {}
-        },
-        {
-          "id": "organize",
           "options": {
-            "excludeByName": {
-              "Time": true,
-              "Value": true,
-              "__name__": true,
-              "job": true,
-              "instance": true
+            "legend": {
+              "displayMode": "table",
+              "placement": "right",
+              "showLegend": true,
+              "calcs": [
+                "lastNotNull",
+                "max"
+              ]
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "desc"
             }
           }
+        },
+        {
+          "type": "timeseries",
+          "title": "Data age",
+          "description": "",
+          "id": 72,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 8,
+            "x": 8,
+            "y": 22
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "ucs_snapshot_age_seconds{domain=\"$domain\"}",
+              "refId": "A",
+              "legendFormat": "age"
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {
+              "unit": "s",
+              "custom": {
+                "lineWidth": 1,
+                "fillOpacity": 10,
+                "showPoints": "never",
+                "stacking": {
+                  "mode": "none"
+                }
+              }
+            },
+            "overrides": []
+          },
+          "options": {
+            "legend": {
+              "displayMode": "table",
+              "placement": "right",
+              "showLegend": true,
+              "calcs": [
+                "lastNotNull",
+                "max"
+              ]
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "desc"
+            }
+          }
+        },
+        {
+          "type": "table",
+          "title": "Failing class queries",
+          "description": "",
+          "id": 73,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 8,
+            "x": 16,
+            "y": 22
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${datasource}"
+              },
+              "expr": "ucs_class_query_success{domain=\"$domain\"} == 0",
+              "refId": "A",
+              "legendFormat": "__auto",
+              "format": "table",
+              "instant": true,
+              "range": false
+            }
+          ],
+          "transformations": [
+            {
+              "id": "organize",
+              "options": {
+                "excludeByName": {
+                  "Time": true,
+                  "__name__": true,
+                  "job": true,
+                  "instance": true,
+                  "domain": true,
+                  "Value": true
+                },
+                "renameByName": {},
+                "indexByName": {}
+              }
+            }
+          ],
+          "fieldConfig": {
+            "defaults": {},
+            "overrides": []
+          },
+          "options": {
+            "showHeader": true,
+            "cellHeight": "sm"
+          }
         }
-      ],
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
-      "options": {
-        "showHeader": true,
-        "cellHeight": "sm"
-      }
+      ]
     }
   ],
   "templating": {
@@ -4114,9 +3895,8 @@
         },
         "definition": "label_values(ucs_up, domain)",
         "refresh": 2,
-        "includeAll": true,
-        "multi": true,
-        "allValue": ".*",
+        "includeAll": false,
+        "multi": false,
         "current": {},
         "sort": 1,
         "hide": 0
@@ -4130,18 +3910,18 @@
           "uid": "${datasource}"
         },
         "query": {
-          "query": "label_values(ucs_chassis_info{domain=~\"$domain\"}, chassis)",
+          "query": "label_values(ucs_chassis_info{domain=\"$domain\"}, chassis)",
           "refId": "PrometheusVariableQueryEditor-VariableQuery",
           "qryType": 1
         },
-        "definition": "label_values(ucs_chassis_info{domain=~\"$domain\"}, chassis)",
+        "definition": "label_values(ucs_chassis_info{domain=\"$domain\"}, chassis)",
         "refresh": 2,
         "includeAll": true,
         "multi": true,
-        "allValue": ".*",
         "current": {},
         "sort": 1,
-        "hide": 0
+        "hide": 0,
+        "allValue": ".*"
       },
       {
         "type": "query",
@@ -4152,18 +3932,18 @@
           "uid": "${datasource}"
         },
         "query": {
-          "query": "label_values(ucs_server_info{domain=~\"$domain\"}, server)",
+          "query": "label_values(ucs_server_info{domain=\"$domain\"}, server)",
           "refId": "PrometheusVariableQueryEditor-VariableQuery",
           "qryType": 1
         },
-        "definition": "label_values(ucs_server_info{domain=~\"$domain\"}, server)",
+        "definition": "label_values(ucs_server_info{domain=\"$domain\"}, server)",
         "refresh": 2,
         "includeAll": true,
         "multi": true,
-        "allValue": ".*",
         "current": {},
         "sort": 1,
-        "hide": 0
+        "hide": 0,
+        "allValue": ".*"
       },
       {
         "type": "query",
@@ -4174,18 +3954,18 @@
           "uid": "${datasource}"
         },
         "query": {
-          "query": "label_values(ucs_service_profile_oper_state{domain=~\"$domain\"}, service_profile)",
+          "query": "label_values(ucs_service_profile_oper_state{domain=\"$domain\"}, service_profile)",
           "refId": "PrometheusVariableQueryEditor-VariableQuery",
           "qryType": 1
         },
-        "definition": "label_values(ucs_service_profile_oper_state{domain=~\"$domain\"}, service_profile)",
+        "definition": "label_values(ucs_service_profile_oper_state{domain=\"$domain\"}, service_profile)",
         "refresh": 2,
         "includeAll": true,
         "multi": true,
-        "allValue": ".*",
         "current": {},
         "sort": 1,
-        "hide": 0
+        "hide": 0,
+        "allValue": ".*"
       }
     ]
   },

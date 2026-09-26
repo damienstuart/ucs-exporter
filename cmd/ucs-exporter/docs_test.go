@@ -85,13 +85,15 @@ func TestDashboardMetrics(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
+	type panel struct {
+		Title   string `json:"title"`
+		Targets []struct {
+			Expr string `json:"expr"`
+		} `json:"targets"`
+		Panels []panel `json:"panels"` // panels of a collapsed row
+	}
 	var dash struct {
-		Panels []struct {
-			Title   string `json:"title"`
-			Targets []struct {
-				Expr string `json:"expr"`
-			} `json:"targets"`
-		} `json:"panels"`
+		Panels     []panel `json:"panels"`
 		Templating struct {
 			List []struct {
 				Definition string `json:"definition"`
@@ -102,18 +104,39 @@ func TestDashboardMetrics(t *testing.T) {
 		t.Fatal(err)
 	}
 	names := regexp.MustCompile(`\bucs_[a-z0-9_]+`)
+	nameRegexps := regexp.MustCompile(`__name__=~"([^"]+)"`)
 	check := func(where, expr string) {
-		for _, n := range names.FindAllString(expr, -1) {
-			if !known[n] {
+		for _, loc := range names.FindAllStringIndex(expr, -1) {
+			// Skip prefixes of regexes, e.g. label_replace's "ucs_fi_(.+)_state".
+			if loc[1] < len(expr) && expr[loc[1]] == '(' {
+				continue
+			}
+			if n := expr[loc[0]:loc[1]]; !known[n] {
 				t.Errorf("%s: unknown metric %s", where, n)
 			}
 		}
-	}
-	for _, p := range dash.Panels {
-		for _, tg := range p.Targets {
-			check("panel "+p.Title, tg.Expr)
+		// A metric-name regex must match at least one metric.
+		for _, m := range nameRegexps.FindAllStringSubmatch(expr, -1) {
+			re := regexp.MustCompile("^(?:" + m[1] + ")$")
+			matched := false
+			for n := range known {
+				matched = matched || re.MatchString(n)
+			}
+			if !matched {
+				t.Errorf("%s: __name__ regex %q matches no metric", where, m[1])
+			}
 		}
 	}
+	var walk func([]panel)
+	walk = func(ps []panel) {
+		for _, p := range ps {
+			for _, tg := range p.Targets {
+				check("panel "+p.Title, tg.Expr)
+			}
+			walk(p.Panels)
+		}
+	}
+	walk(dash.Panels)
 	for _, v := range dash.Templating.List {
 		check("variable", v.Definition)
 	}

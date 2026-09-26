@@ -3,3 +3,4 @@
 /examples/secrets/*
 !/examples/secrets/ucs_password.example
 *.env
+.DS_Store

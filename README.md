@@ -261,7 +261,7 @@ To reduce the count, disable the modules you don't need.
 
 ## Grafana dashboard
 
-Import [`grafana/dashboard.json`](grafana/dashboard.json). It has variables for data source, domain, chassis, server and service profile, and these rows:
+Import [`grafana/dashboard.json`](grafana/dashboard.json). It shows one domain at a time. There are variables for data source, domain, chassis, server and service profile, and it opens on the last hour. Only the Overview row is expanded initially, so opening the dashboard runs about ten queries; the other rows query when you expand them. The rows are:
 
 1. Overview
 2. Faults
@@ -350,6 +350,7 @@ Import [`grafana/dashboard.json`](grafana/dashboard.json). It has variables for 
 make test        # go vet, gofmt check, then go test -race ./...
 make golden      # regenerate testdata/golden after an intended output change, then review the diff
 make docs        # regenerate docs/metrics.md
+make dashboard   # regenerate grafana/dashboard.json from grafana/generate.py
 make run-fake    # serve the synthetic fixtures as a fake UCSM on http://127.0.0.1:8080
 ```
 
