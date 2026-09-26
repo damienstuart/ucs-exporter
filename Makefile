@@ -2,7 +2,8 @@
 #
 # SPDX-License-Identifier: GPL-3.0-only
 
-VERSION  ?= $(shell git describe --tags --always --dirty 2>/dev/null || echo dev)
+# Versions are reported without the tag's "v" prefix, as Prometheus does.
+VERSION  ?= $(shell (git describe --tags --always --dirty 2>/dev/null || echo dev) | sed 's/^v//')
 REVISION ?= $(shell git rev-parse HEAD 2>/dev/null || echo unknown)
 BRANCH   ?= $(shell git rev-parse --abbrev-ref HEAD 2>/dev/null || echo unknown)
 IMAGE    ?= ucs-exporter

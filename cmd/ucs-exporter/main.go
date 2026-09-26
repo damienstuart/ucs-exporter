@@ -13,6 +13,7 @@ import (
 	"fmt"
 	"os"
 	"os/signal"
+	"runtime/debug"
 	"syscall"
 
 	"github.com/alecthomas/kingpin/v2"
@@ -25,6 +26,9 @@ import (
 const defaultListen = ":3001"
 
 func main() {
+	bi, _ := debug.ReadBuildInfo()
+	applyBuildInfo(bi)
+
 	app := kingpin.New("ucs-exporter", "Prometheus exporter for Cisco UCS Manager.").DefaultEnvars()
 	app.Version(version.Print("ucs-exporter"))
 	app.HelpFlag.Short('h')
