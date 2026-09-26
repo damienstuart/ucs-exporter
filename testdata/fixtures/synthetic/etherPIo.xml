@@ -1,0 +1,9 @@
+<configResolveClass cookie="" response="yes" classId="etherPIo">
+<outConfigs>
+<etherPIo dn="sys/switch-A/slot-1/switch-ether/port-1" ifRole="server" mode="fabric" operSpeed="10gbps" operState="up" adminState="enabled" xcvrType="sfp-h10gb-cu3m" portId="1" slotId="1" aggrPortId="0" switchId="A"/>
+<etherPIo dn="sys/switch-A/slot-1/switch-ether/port-17" ifRole="network" mode="trunk" operSpeed="25gbps" operState="up" adminState="enabled" xcvrType="sfp-25g-sr-s" portId="17" slotId="1" aggrPortId="0" switchId="A"/>
+<etherPIo dn="sys/switch-A/slot-1/switch-ether/port-18" ifRole="network" mode="trunk" operSpeed="25gbps" operState="sfp-not-present" adminState="enabled" xcvrType="unknown" portId="18" slotId="1" aggrPortId="0" switchId="A"/>
+<etherPIo dn="sys/switch-A/slot-1/switch-ether/aggr-port-49/port-2" ifRole="network" mode="trunk" operSpeed="10gbps" operState="up" adminState="enabled" xcvrType="qsfp-4sfp10g-cu3m" portId="2" slotId="1" aggrPortId="49" switchId="A"/>
+<etherPIo dn="sys/switch-B/slot-1/switch-ether/port-17" ifRole="network" mode="trunk" operSpeed="25gbps" operState="up" adminState="enabled" xcvrType="sfp-25g-sr-s" portId="17" slotId="1" aggrPortId="0" switchId="B"/>
+</outConfigs>
+</configResolveClass>

@@ -1,0 +1,16 @@
+<configResolveClass cookie="" response="yes" classId="etherTxStats">
+<outConfigs>
+<etherTxStats dn="sys/switch-A/slot-1/switch-ether/port-1/tx-stats" totalBytes="1409800" totalPackets="1012" unicastPackets="982" multicastPackets="20" broadcastPackets="10" jumboPackets="0"/>
+<etherTxStats dn="sys/switch-A/slot-1/switch-ether/port-17/tx-stats" totalBytes="23809800" totalPackets="17012" unicastPackets="16982" multicastPackets="20" broadcastPackets="10" jumboPackets="0"/>
+<etherTxStats dn="sys/switch-A/slot-1/switch-ether/port-18/tx-stats" totalBytes="25209800" totalPackets="18012" unicastPackets="17982" multicastPackets="20" broadcastPackets="10" jumboPackets="0"/>
+<etherTxStats dn="sys/switch-A/slot-1/switch-ether/aggr-port-49/port-2/tx-stats" totalBytes="2809800" totalPackets="2012" unicastPackets="1982" multicastPackets="20" broadcastPackets="10" jumboPackets="0"/>
+<etherTxStats dn="sys/switch-B/slot-1/switch-ether/port-17/tx-stats" totalBytes="23804200" totalPackets="17008" unicastPackets="16978" multicastPackets="20" broadcastPackets="10" jumboPackets="0"/>
+<etherTxStats dn="fabric/lan/A/pc-11/tx-stats" totalBytes="876543210" totalPackets="1134567" unicastPackets="1134000" multicastPackets="500" broadcastPackets="67" jumboPackets="0"/>
+<etherTxStats dn="fabric/lan/B/pc-12/tx-stats" totalBytes="876543210" totalPackets="1134567" unicastPackets="1134000" multicastPackets="500" broadcastPackets="67" jumboPackets="0"/>
+<etherTxStats dn="sys/chassis-1/slot-1/host/port-1/tx-stats" totalBytes="444000" totalPackets="444" unicastPackets="440" multicastPackets="2" broadcastPackets="2" jumboPackets="0"/>
+<etherTxStats dn="sys/chassis-1/slot-1/host/port-2/tx-stats" totalBytes="444000" totalPackets="444" unicastPackets="440" multicastPackets="2" broadcastPackets="2" jumboPackets="0"/>
+<etherTxStats dn="sys/chassis-1/slot-2/host/port-1/tx-stats" totalBytes="444000" totalPackets="444" unicastPackets="440" multicastPackets="2" broadcastPackets="2" jumboPackets="0"/>
+<etherTxStats dn="sys/chassis-1/slot-2/host/port-2/tx-stats" totalBytes="444000" totalPackets="444" unicastPackets="440" multicastPackets="2" broadcastPackets="2" jumboPackets="0"/>
+<etherTxStats dn="sys/fex-101/slot-1/host/port-3/tx-stats" totalBytes="666000" totalPackets="666" unicastPackets="660" multicastPackets="3" broadcastPackets="3" jumboPackets="0"/>
+</outConfigs>
+</configResolveClass>

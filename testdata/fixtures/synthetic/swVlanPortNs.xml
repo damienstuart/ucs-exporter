@@ -1,0 +1,6 @@
+<configResolveClass cookie="" response="yes" classId="swVlanPortNs">
+<outConfigs>
+<swVlanPortNs dn="sys/switch-A/vlan-port-ns" accessVlanPortCount="120" borderVlanPortCount="840" totalVlanPortCount="960" limit="16000" allocStatus="available" switchId="A"/>
+<swVlanPortNs dn="sys/switch-B/vlan-port-ns" accessVlanPortCount="120" borderVlanPortCount="840" totalVlanPortCount="960" limit="16000" allocStatus="available" switchId="B"/>
+</outConfigs>
+</configResolveClass>

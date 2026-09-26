@@ -1,0 +1,8 @@
+<configResolveClass cookie="" response="yes" classId="equipmentFanModule">
+<outConfigs>
+<equipmentFanModule dn="sys/switch-A/fan-module-1-1" operability="operable" presence="equipped" tray="1" id="1"/>
+<equipmentFanModule dn="sys/switch-B/fan-module-1-1" operability="operable" presence="equipped" tray="1" id="1"/>
+<equipmentFanModule dn="sys/chassis-1/fan-module-1-1" operability="operable" presence="equipped"/>
+<equipmentFanModule dn="sys/rack-unit-1/fan-module-1-1" operability="operable" presence="equipped"/>
+</outConfigs>
+</configResolveClass>

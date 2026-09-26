@@ -1,0 +1,5 @@
+<configResolveClass cookie="" response="yes" classId="equipmentFex">
+<outConfigs>
+<equipmentFex dn="sys/fex-101" id="101" model="N2K-C2348UPQ" serial="FOX1111FEX1" switchId="A" operability="operable"/>
+</outConfigs>
+</configResolveClass>

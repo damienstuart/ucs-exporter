@@ -1,0 +1,12 @@
+<configResolveClass cookie="" response="yes" classId="equipmentPsuStats">
+<outConfigs>
+<equipmentPsuStats dn="sys/switch-A/psu-1/stats" inputPower="Not-Applicable" input210v="230" outputPower="210.5" outputCurrent="17.2" output12v="12.1" output3v3="3.3" ambientTemp="28" psuTemp1="not-applicable" psuTemp2="0" PsuI2CErrors="0"/>
+<equipmentPsuStats dn="sys/switch-B/psu-1/stats" inputPower="Not-Applicable" input210v="230" outputPower="210.5" outputCurrent="17.2" output12v="12.1" output3v3="3.3" ambientTemp="28" psuTemp1="not-applicable" psuTemp2="0" PsuI2CErrors="0"/>
+<equipmentPsuStats dn="sys/chassis-1/psu-1/stats" inputPower="620" input210v="229.5" outputPower="566" outputCurrent="46.1" output12v="12.2" output3v3="3.3" ambientTemp="26" psuTemp1="31" psuTemp2="33" PsuI2CErrors="0"/>
+<equipmentPsuStats dn="sys/chassis-1/psu-2/stats" inputPower="620" input210v="229.5" outputPower="566" outputCurrent="46.1" output12v="12.2" output3v3="3.3" ambientTemp="26" psuTemp1="31" psuTemp2="33" PsuI2CErrors="0"/>
+<equipmentPsuStats dn="sys/chassis-1/psu-3/stats" inputPower="620" input210v="229.5" outputPower="566" outputCurrent="46.1" output12v="12.2" output3v3="3.3" ambientTemp="26" psuTemp1="31" psuTemp2="33" PsuI2CErrors="0"/>
+<equipmentPsuStats dn="sys/chassis-1/psu-4/stats" inputPower="0" input210v="229.5" outputPower="566" outputCurrent="46.1" output12v="12.2" output3v3="3.3" ambientTemp="26" psuTemp1="31" psuTemp2="33" PsuI2CErrors="1"/>
+<equipmentPsuStats dn="sys/rack-unit-1/psu-1/stats" inputPower="180" input210v="231" outputPower="165" outputCurrent="13.7" output12v="12.0" output3v3="3.3" ambientTemp="24" psuTemp1="28" psuTemp2="30" PsuI2CErrors="0"/>
+<equipmentPsuStats dn="sys/rack-unit-1/psu-2/stats" inputPower="180" input210v="231" outputPower="165" outputCurrent="13.7" output12v="12.0" output3v3="3.3" ambientTemp="24" psuTemp1="28" psuTemp2="30" PsuI2CErrors="0"/>
+</outConfigs>
+</configResolveClass>

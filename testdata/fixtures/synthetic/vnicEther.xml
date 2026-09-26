@@ -1,0 +1,9 @@
+<configResolveClass cookie="" response="yes" classId="vnicEther">
+<outConfigs>
+<vnicEther dn="org-root/ls-esx01/ether-eth0" addr="00:25:B5:00:00:01" switchId="A" mtu="9000" name="eth0"/>
+<vnicEther dn="org-root/ls-esx01/ether-eth1" addr="00:25:B5:00:00:02" switchId="B" mtu="9000" name="eth1"/>
+<vnicEther dn="org-root/org-finance/ls-db01/ether-eth0" addr="00:25:B5:00:01:01" switchId="A-B" mtu="1500" name="eth0"/>
+<vnicEther dn="org-root/ls-esx-tmpl/ether-eth0" addr="derived" switchId="A" mtu="9000" name="eth0"/>
+<vnicEther dn="org-root/lan-conn-pol-lcp1/ether-eth0" addr="derived" switchId="A" mtu="1500" name="eth0"/>
+</outConfigs>
+</configResolveClass>

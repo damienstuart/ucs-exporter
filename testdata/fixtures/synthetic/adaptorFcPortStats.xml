@@ -1,0 +1,7 @@
+<configResolveClass cookie="" response="yes" classId="adaptorFcPortStats">
+<outConfigs>
+<adaptorFcPortStats dn="sys/chassis-1/blade-1/adaptor-1/host-fc-1/fc-port-stats" rxFrames="5500" txFrames="4400" rxBadFrames="0" txBadFrames="0"/>
+<adaptorFcPortStats dn="sys/chassis-1/blade-1/adaptor-1/host-fc-2/fc-port-stats" rxFrames="11000" txFrames="8800" rxBadFrames="1" txBadFrames="0"/>
+<adaptorFcPortStats dn="sys/rack-unit-1/adaptor-1/host-fc-1/fc-port-stats" rxFrames="5500" txFrames="4400" rxBadFrames="0" txBadFrames="0"/>
+</outConfigs>
+</configResolveClass>

@@ -1,0 +1,7 @@
+<configResolveClass cookie="" response="yes" classId="vnicFc">
+<outConfigs>
+<vnicFc dn="org-root/ls-esx01/fc-fc0" addr="20:00:00:25:B5:0A:00:01" switchId="A" name="fc0"/>
+<vnicFc dn="org-root/ls-esx01/fc-fc1" addr="20:00:00:25:B5:0B:00:01" switchId="B" name="fc1"/>
+<vnicFc dn="org-root/org-finance/ls-db01/fc-fc0" addr="20:00:00:25:B5:0A:01:01" switchId="A" name="fc0"/>
+</outConfigs>
+</configResolveClass>

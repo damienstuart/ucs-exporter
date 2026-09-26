@@ -1,0 +1,5 @@
+<configResolveClass cookie="" response="yes" classId="computeRackUnitMbTempStats">
+<outConfigs>
+<computeRackUnitMbTempStats dn="sys/rack-unit-1/board/temp-stats" ambientTemp="22" frontTemp="23" rearTemp="41" ioh1Temp="47" ioh2Temp="0"/>
+</outConfigs>
+</configResolveClass>

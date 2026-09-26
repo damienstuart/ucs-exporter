@@ -1,0 +1,14 @@
+# HELP ucs_server_input_current_amperes Motherboard input current in amperes (UCSM computeMbPowerStats.inputCurrent).
+# TYPE ucs_server_input_current_amperes gauge
+ucs_server_input_current_amperes{domain="synthetic",server="chassis-1/blade-1"} 25.5
+ucs_server_input_current_amperes{domain="synthetic",server="chassis-1/blade-2"} 0
+ucs_server_input_current_amperes{domain="synthetic",server="rack-unit-1"} 25.5
+# HELP ucs_server_input_voltage_volts Motherboard input voltage in volts (UCSM computeMbPowerStats.inputVoltage).
+# TYPE ucs_server_input_voltage_volts gauge
+ucs_server_input_voltage_volts{domain="synthetic",server="chassis-1/blade-1"} 12.1
+ucs_server_input_voltage_volts{domain="synthetic",server="chassis-1/blade-2"} 12.1
+ucs_server_input_voltage_volts{domain="synthetic",server="rack-unit-1"} 12.1
+# HELP ucs_server_power_watts Power consumed by the server motherboard in watts (UCSM computeMbPowerStats.consumedPower).
+# TYPE ucs_server_power_watts gauge
+ucs_server_power_watts{domain="synthetic",server="chassis-1/blade-1"} 310
+ucs_server_power_watts{domain="synthetic",server="rack-unit-1"} 310

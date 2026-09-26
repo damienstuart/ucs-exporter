@@ -1,0 +1,9 @@
+<configResolveClass cookie="" response="yes" classId="processorEnvStats">
+<outConfigs>
+<processorEnvStats dn="sys/chassis-1/blade-1/board/cpu-1/env-stats" temperature="56" inputCurrent="10"/>
+<processorEnvStats dn="sys/chassis-1/blade-1/board/cpu-2/env-stats" temperature="57" inputCurrent="10"/>
+<processorEnvStats dn="sys/chassis-1/blade-2/board/cpu-1/env-stats" temperature="not-applicable" inputCurrent="10"/>
+<processorEnvStats dn="sys/chassis-1/blade-2/board/cpu-2/env-stats" temperature="not-applicable" inputCurrent="10"/>
+<processorEnvStats dn="sys/rack-unit-1/board/cpu-1/env-stats" temperature="56" inputCurrent="10"/>
+</outConfigs>
+</configResolveClass>

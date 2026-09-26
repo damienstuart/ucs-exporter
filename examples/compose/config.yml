@@ -1,0 +1,15 @@
+# SPDX-FileCopyrightText: 2026 The ucs-exporter authors
+#
+# SPDX-License-Identifier: GPL-3.0-only
+#
+# Minimal configuration used by docker-compose.yaml. See ../config.yml for
+# every option.
+defaults:
+  # username comes from $PROM_UCS_USERNAME
+  password_file: /run/secrets/ucs_password
+  tls:
+    # Mount your UCSM CA certificate and set ca_file, or (less safely)
+    # disable verification for self-signed certificates.
+    insecure_skip_verify: false
+domains:
+  - name: ucs.example.com

@@ -1,0 +1,5 @@
+<configResolveClass cookie="" response="yes" classId="fabricFcoeSanEp">
+<outConfigs>
+<fabricFcoeSanEp dn="fabric/san/B/phys-fcoesanep-slot-1-port-25" operState="up" fcoeState="up" slotId="1" portId="25" switchId="B"/>
+</outConfigs>
+</configResolveClass>

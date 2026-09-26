@@ -1,0 +1,7 @@
+<configResolveClass cookie="" response="yes" classId="computeMbPowerStats">
+<outConfigs>
+<computeMbPowerStats dn="sys/chassis-1/blade-1/board/power-stats" consumedPower="310" inputCurrent="25.5" inputVoltage="12.1" consumedPowerDelta="3"/>
+<computeMbPowerStats dn="sys/chassis-1/blade-2/board/power-stats" consumedPower="not-applicable" inputCurrent="0" inputVoltage="12.1" consumedPowerDelta="3"/>
+<computeMbPowerStats dn="sys/rack-unit-1/board/power-stats" consumedPower="310" inputCurrent="25.5" inputVoltage="12.1" consumedPowerDelta="3"/>
+</outConfigs>
+</configResolveClass>

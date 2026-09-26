@@ -1,0 +1,6 @@
+<configResolveClass cookie="" response="yes" classId="etherFcoeInterfaceStats">
+<outConfigs>
+<etherFcoeInterfaceStats dn="fabric/san/B/phys-fcoesanep-slot-1-port-25/fcoe-interface-stats" bytesRx="4400" bytesTx="3300" packetsRx="44" packetsTx="33" errorsRx="0" errorsTx="0" droppedRx="1" droppedTx="0"/>
+<etherFcoeInterfaceStats dn="fabric/san/B/fcoesanpc-5/fcoe-interface-stats" bytesRx="0" bytesTx="0" packetsRx="0" packetsTx="0" errorsRx="0" errorsTx="0" droppedRx="0" droppedTx="0"/>
+</outConfigs>
+</configResolveClass>

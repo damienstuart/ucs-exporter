@@ -1,0 +1,16 @@
+<configResolveClass cookie="" response="yes" classId="adaptorEthPortErrStats">
+<outConfigs>
+<adaptorEthPortErrStats dn="sys/chassis-1/blade-1/adaptor-1/ext-eth-1/eth-port-err-stats-rx" trafficDirection="rx" badCrcPackets="0" badLengthPackets="0" macDiscardedPackets="0" noBufferDropPackets="0"/>
+<adaptorEthPortErrStats dn="sys/chassis-1/blade-1/adaptor-1/ext-eth-1/eth-port-err-stats-tx" trafficDirection="tx" badCrcPackets="0" badLengthPackets="0" macDiscardedPackets="0" noBufferDropPackets="0"/>
+<adaptorEthPortErrStats dn="sys/chassis-1/blade-1/adaptor-1/ext-eth-2/eth-port-err-stats-rx" trafficDirection="rx" badCrcPackets="1" badLengthPackets="0" macDiscardedPackets="0" noBufferDropPackets="0"/>
+<adaptorEthPortErrStats dn="sys/chassis-1/blade-1/adaptor-1/ext-eth-2/eth-port-err-stats-tx" trafficDirection="tx" badCrcPackets="0" badLengthPackets="0" macDiscardedPackets="0" noBufferDropPackets="0"/>
+<adaptorEthPortErrStats dn="sys/chassis-1/blade-2/adaptor-1/ext-eth-1/eth-port-err-stats-rx" trafficDirection="rx" badCrcPackets="0" badLengthPackets="0" macDiscardedPackets="0" noBufferDropPackets="0"/>
+<adaptorEthPortErrStats dn="sys/chassis-1/blade-2/adaptor-1/ext-eth-1/eth-port-err-stats-tx" trafficDirection="tx" badCrcPackets="0" badLengthPackets="0" macDiscardedPackets="0" noBufferDropPackets="0"/>
+<adaptorEthPortErrStats dn="sys/chassis-1/blade-2/adaptor-1/ext-eth-2/eth-port-err-stats-rx" trafficDirection="rx" badCrcPackets="1" badLengthPackets="0" macDiscardedPackets="0" noBufferDropPackets="0"/>
+<adaptorEthPortErrStats dn="sys/chassis-1/blade-2/adaptor-1/ext-eth-2/eth-port-err-stats-tx" trafficDirection="tx" badCrcPackets="0" badLengthPackets="0" macDiscardedPackets="0" noBufferDropPackets="0"/>
+<adaptorEthPortErrStats dn="sys/rack-unit-1/adaptor-1/ext-eth-1/eth-port-err-stats-rx" trafficDirection="rx" badCrcPackets="0" badLengthPackets="0" macDiscardedPackets="0" noBufferDropPackets="0"/>
+<adaptorEthPortErrStats dn="sys/rack-unit-1/adaptor-1/ext-eth-1/eth-port-err-stats-tx" trafficDirection="tx" badCrcPackets="0" badLengthPackets="0" macDiscardedPackets="0" noBufferDropPackets="0"/>
+<adaptorEthPortErrStats dn="sys/rack-unit-1/adaptor-1/ext-eth-2/eth-port-err-stats-rx" trafficDirection="rx" badCrcPackets="1" badLengthPackets="0" macDiscardedPackets="0" noBufferDropPackets="0"/>
+<adaptorEthPortErrStats dn="sys/rack-unit-1/adaptor-1/ext-eth-2/eth-port-err-stats-tx" trafficDirection="tx" badCrcPackets="0" badLengthPackets="0" macDiscardedPackets="0" noBufferDropPackets="0"/>
+</outConfigs>
+</configResolveClass>

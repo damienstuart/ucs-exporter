@@ -1,0 +1,7 @@
+<configResolveClass cookie="" response="yes" classId="etherNiErrStats">
+<outConfigs>
+<etherNiErrStats dn="sys/chassis-1/slot-1/fabric/port-1/ni-err-stats" crc="0" frameTx="0" inRange="0" tooLong="0" tooShort="0"/>
+<etherNiErrStats dn="sys/chassis-1/slot-2/fabric/port-1/ni-err-stats" crc="2" frameTx="0" inRange="0" tooLong="0" tooShort="0"/>
+<etherNiErrStats dn="sys/fex-101/slot-1/fabric/port-1/ni-err-stats" crc="0" frameTx="0" inRange="0" tooLong="0" tooShort="0"/>
+</outConfigs>
+</configResolveClass>

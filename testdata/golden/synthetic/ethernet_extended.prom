@@ -1,0 +1,573 @@
+# HELP ucs_adaptor_uplink_receive_bad_crc_packets_total Packets with bad CRC (receive) (UCSM adaptorEthPortErrStats.badCrcPackets).
+# TYPE ucs_adaptor_uplink_receive_bad_crc_packets_total counter
+ucs_adaptor_uplink_receive_bad_crc_packets_total{adaptor="1",domain="synthetic",interface="ext-eth-1",server="chassis-1/blade-1"} 0
+ucs_adaptor_uplink_receive_bad_crc_packets_total{adaptor="1",domain="synthetic",interface="ext-eth-1",server="chassis-1/blade-2"} 0
+ucs_adaptor_uplink_receive_bad_crc_packets_total{adaptor="1",domain="synthetic",interface="ext-eth-1",server="rack-unit-1"} 0
+ucs_adaptor_uplink_receive_bad_crc_packets_total{adaptor="1",domain="synthetic",interface="ext-eth-2",server="chassis-1/blade-1"} 1
+ucs_adaptor_uplink_receive_bad_crc_packets_total{adaptor="1",domain="synthetic",interface="ext-eth-2",server="chassis-1/blade-2"} 1
+ucs_adaptor_uplink_receive_bad_crc_packets_total{adaptor="1",domain="synthetic",interface="ext-eth-2",server="rack-unit-1"} 1
+# HELP ucs_adaptor_uplink_receive_bad_length_packets_total Packets with bad length (receive) (UCSM adaptorEthPortErrStats.badLengthPackets).
+# TYPE ucs_adaptor_uplink_receive_bad_length_packets_total counter
+ucs_adaptor_uplink_receive_bad_length_packets_total{adaptor="1",domain="synthetic",interface="ext-eth-1",server="chassis-1/blade-1"} 0
+ucs_adaptor_uplink_receive_bad_length_packets_total{adaptor="1",domain="synthetic",interface="ext-eth-1",server="chassis-1/blade-2"} 0
+ucs_adaptor_uplink_receive_bad_length_packets_total{adaptor="1",domain="synthetic",interface="ext-eth-1",server="rack-unit-1"} 0
+ucs_adaptor_uplink_receive_bad_length_packets_total{adaptor="1",domain="synthetic",interface="ext-eth-2",server="chassis-1/blade-1"} 0
+ucs_adaptor_uplink_receive_bad_length_packets_total{adaptor="1",domain="synthetic",interface="ext-eth-2",server="chassis-1/blade-2"} 0
+ucs_adaptor_uplink_receive_bad_length_packets_total{adaptor="1",domain="synthetic",interface="ext-eth-2",server="rack-unit-1"} 0
+# HELP ucs_adaptor_uplink_receive_mac_discarded_packets_total Packets discarded by the MAC (receive) (UCSM adaptorEthPortErrStats.macDiscardedPackets).
+# TYPE ucs_adaptor_uplink_receive_mac_discarded_packets_total counter
+ucs_adaptor_uplink_receive_mac_discarded_packets_total{adaptor="1",domain="synthetic",interface="ext-eth-1",server="chassis-1/blade-1"} 0
+ucs_adaptor_uplink_receive_mac_discarded_packets_total{adaptor="1",domain="synthetic",interface="ext-eth-1",server="chassis-1/blade-2"} 0
+ucs_adaptor_uplink_receive_mac_discarded_packets_total{adaptor="1",domain="synthetic",interface="ext-eth-1",server="rack-unit-1"} 0
+ucs_adaptor_uplink_receive_mac_discarded_packets_total{adaptor="1",domain="synthetic",interface="ext-eth-2",server="chassis-1/blade-1"} 0
+ucs_adaptor_uplink_receive_mac_discarded_packets_total{adaptor="1",domain="synthetic",interface="ext-eth-2",server="chassis-1/blade-2"} 0
+ucs_adaptor_uplink_receive_mac_discarded_packets_total{adaptor="1",domain="synthetic",interface="ext-eth-2",server="rack-unit-1"} 0
+# HELP ucs_adaptor_uplink_receive_no_buffer_drop_packets_total Packets dropped for lack of buffers (receive) (UCSM adaptorEthPortErrStats.noBufferDropPackets).
+# TYPE ucs_adaptor_uplink_receive_no_buffer_drop_packets_total counter
+ucs_adaptor_uplink_receive_no_buffer_drop_packets_total{adaptor="1",domain="synthetic",interface="ext-eth-1",server="chassis-1/blade-1"} 0
+ucs_adaptor_uplink_receive_no_buffer_drop_packets_total{adaptor="1",domain="synthetic",interface="ext-eth-1",server="chassis-1/blade-2"} 0
+ucs_adaptor_uplink_receive_no_buffer_drop_packets_total{adaptor="1",domain="synthetic",interface="ext-eth-1",server="rack-unit-1"} 0
+ucs_adaptor_uplink_receive_no_buffer_drop_packets_total{adaptor="1",domain="synthetic",interface="ext-eth-2",server="chassis-1/blade-1"} 0
+ucs_adaptor_uplink_receive_no_buffer_drop_packets_total{adaptor="1",domain="synthetic",interface="ext-eth-2",server="chassis-1/blade-2"} 0
+ucs_adaptor_uplink_receive_no_buffer_drop_packets_total{adaptor="1",domain="synthetic",interface="ext-eth-2",server="rack-unit-1"} 0
+# HELP ucs_adaptor_uplink_transmit_bad_crc_packets_total Packets with bad CRC (transmit) (UCSM adaptorEthPortErrStats.badCrcPackets).
+# TYPE ucs_adaptor_uplink_transmit_bad_crc_packets_total counter
+ucs_adaptor_uplink_transmit_bad_crc_packets_total{adaptor="1",domain="synthetic",interface="ext-eth-1",server="chassis-1/blade-1"} 0
+ucs_adaptor_uplink_transmit_bad_crc_packets_total{adaptor="1",domain="synthetic",interface="ext-eth-1",server="chassis-1/blade-2"} 0
+ucs_adaptor_uplink_transmit_bad_crc_packets_total{adaptor="1",domain="synthetic",interface="ext-eth-1",server="rack-unit-1"} 0
+ucs_adaptor_uplink_transmit_bad_crc_packets_total{adaptor="1",domain="synthetic",interface="ext-eth-2",server="chassis-1/blade-1"} 0
+ucs_adaptor_uplink_transmit_bad_crc_packets_total{adaptor="1",domain="synthetic",interface="ext-eth-2",server="chassis-1/blade-2"} 0
+ucs_adaptor_uplink_transmit_bad_crc_packets_total{adaptor="1",domain="synthetic",interface="ext-eth-2",server="rack-unit-1"} 0
+# HELP ucs_adaptor_uplink_transmit_bad_length_packets_total Packets with bad length (transmit) (UCSM adaptorEthPortErrStats.badLengthPackets).
+# TYPE ucs_adaptor_uplink_transmit_bad_length_packets_total counter
+ucs_adaptor_uplink_transmit_bad_length_packets_total{adaptor="1",domain="synthetic",interface="ext-eth-1",server="chassis-1/blade-1"} 0
+ucs_adaptor_uplink_transmit_bad_length_packets_total{adaptor="1",domain="synthetic",interface="ext-eth-1",server="chassis-1/blade-2"} 0
+ucs_adaptor_uplink_transmit_bad_length_packets_total{adaptor="1",domain="synthetic",interface="ext-eth-1",server="rack-unit-1"} 0
+ucs_adaptor_uplink_transmit_bad_length_packets_total{adaptor="1",domain="synthetic",interface="ext-eth-2",server="chassis-1/blade-1"} 0
+ucs_adaptor_uplink_transmit_bad_length_packets_total{adaptor="1",domain="synthetic",interface="ext-eth-2",server="chassis-1/blade-2"} 0
+ucs_adaptor_uplink_transmit_bad_length_packets_total{adaptor="1",domain="synthetic",interface="ext-eth-2",server="rack-unit-1"} 0
+# HELP ucs_adaptor_uplink_transmit_mac_discarded_packets_total Packets discarded by the MAC (transmit) (UCSM adaptorEthPortErrStats.macDiscardedPackets).
+# TYPE ucs_adaptor_uplink_transmit_mac_discarded_packets_total counter
+ucs_adaptor_uplink_transmit_mac_discarded_packets_total{adaptor="1",domain="synthetic",interface="ext-eth-1",server="chassis-1/blade-1"} 0
+ucs_adaptor_uplink_transmit_mac_discarded_packets_total{adaptor="1",domain="synthetic",interface="ext-eth-1",server="chassis-1/blade-2"} 0
+ucs_adaptor_uplink_transmit_mac_discarded_packets_total{adaptor="1",domain="synthetic",interface="ext-eth-1",server="rack-unit-1"} 0
+ucs_adaptor_uplink_transmit_mac_discarded_packets_total{adaptor="1",domain="synthetic",interface="ext-eth-2",server="chassis-1/blade-1"} 0
+ucs_adaptor_uplink_transmit_mac_discarded_packets_total{adaptor="1",domain="synthetic",interface="ext-eth-2",server="chassis-1/blade-2"} 0
+ucs_adaptor_uplink_transmit_mac_discarded_packets_total{adaptor="1",domain="synthetic",interface="ext-eth-2",server="rack-unit-1"} 0
+# HELP ucs_adaptor_uplink_transmit_no_buffer_drop_packets_total Packets dropped for lack of buffers (transmit) (UCSM adaptorEthPortErrStats.noBufferDropPackets).
+# TYPE ucs_adaptor_uplink_transmit_no_buffer_drop_packets_total counter
+ucs_adaptor_uplink_transmit_no_buffer_drop_packets_total{adaptor="1",domain="synthetic",interface="ext-eth-1",server="chassis-1/blade-1"} 0
+ucs_adaptor_uplink_transmit_no_buffer_drop_packets_total{adaptor="1",domain="synthetic",interface="ext-eth-1",server="chassis-1/blade-2"} 0
+ucs_adaptor_uplink_transmit_no_buffer_drop_packets_total{adaptor="1",domain="synthetic",interface="ext-eth-1",server="rack-unit-1"} 0
+ucs_adaptor_uplink_transmit_no_buffer_drop_packets_total{adaptor="1",domain="synthetic",interface="ext-eth-2",server="chassis-1/blade-1"} 0
+ucs_adaptor_uplink_transmit_no_buffer_drop_packets_total{adaptor="1",domain="synthetic",interface="ext-eth-2",server="chassis-1/blade-2"} 0
+ucs_adaptor_uplink_transmit_no_buffer_drop_packets_total{adaptor="1",domain="synthetic",interface="ext-eth-2",server="rack-unit-1"} 0
+# HELP ucs_fex_fabric_port_crc_errors_total Frames received with CRC errors (UCSM etherNiErrStats.crc).
+# TYPE ucs_fex_fabric_port_crc_errors_total counter
+ucs_fex_fabric_port_crc_errors_total{domain="synthetic",fex="101",port="1"} 0
+# HELP ucs_fex_fabric_port_in_range_length_errors_total In-range length errors (UCSM etherNiErrStats.inRange).
+# TYPE ucs_fex_fabric_port_in_range_length_errors_total counter
+ucs_fex_fabric_port_in_range_length_errors_total{domain="synthetic",fex="101",port="1"} 0
+# HELP ucs_fex_fabric_port_oper_state IOM/FEX fabric port operational state (UCSM etherSwitchIntFIo.operState).
+# TYPE ucs_fex_fabric_port_oper_state gauge
+ucs_fex_fabric_port_oper_state{domain="synthetic",fex="101",port="1",state="up"} 1
+# HELP ucs_fex_fabric_port_peer_info Fabric interconnect port connected to an IOM/FEX fabric port (UCSM etherSwitchIntFIo.peerDn).
+# TYPE ucs_fex_fabric_port_peer_info gauge
+ucs_fex_fabric_port_peer_info{domain="synthetic",fex="101",peer_fabric="A",peer_port="1/1",port="1"} 1
+# HELP ucs_fex_fabric_port_receive_too_long_total Frames received that were too long (UCSM etherNiErrStats.tooLong).
+# TYPE ucs_fex_fabric_port_receive_too_long_total counter
+ucs_fex_fabric_port_receive_too_long_total{domain="synthetic",fex="101",port="1"} 0
+# HELP ucs_fex_fabric_port_receive_too_short_total Frames received that were too short (UCSM etherNiErrStats.tooShort).
+# TYPE ucs_fex_fabric_port_receive_too_short_total counter
+ucs_fex_fabric_port_receive_too_short_total{domain="synthetic",fex="101",port="1"} 0
+# HELP ucs_fex_fabric_port_transmit_frame_errors_total Transmit frame errors (UCSM etherNiErrStats.frameTx).
+# TYPE ucs_fex_fabric_port_transmit_frame_errors_total counter
+ucs_fex_fabric_port_transmit_frame_errors_total{domain="synthetic",fex="101",port="1"} 0
+# HELP ucs_fex_fabric_port_up Whether the IOM/FEX fabric port is up (UCSM etherSwitchIntFIo.operState).
+# TYPE ucs_fex_fabric_port_up gauge
+ucs_fex_fabric_port_up{domain="synthetic",fex="101",port="1"} 1
+# HELP ucs_fex_host_port_oper_state IOM/FEX host port operational state (UCSM etherServerIntFIo.operState).
+# TYPE ucs_fex_host_port_oper_state gauge
+ucs_fex_host_port_oper_state{domain="synthetic",fex="101",port="3",state="up"} 1
+# HELP ucs_fex_host_port_peer_info Server adapter port connected to an IOM/FEX host port (UCSM etherServerIntFIo.peerDn).
+# TYPE ucs_fex_host_port_peer_info gauge
+ucs_fex_host_port_peer_info{adaptor="1",domain="synthetic",fex="101",interface="ext-eth-1",port="3",server="rack-unit-1"} 1
+# HELP ucs_fex_host_port_receive_broadcast_packets_total Broadcast packets received (UCSM etherRxStats.broadcastPackets).
+# TYPE ucs_fex_host_port_receive_broadcast_packets_total counter
+ucs_fex_host_port_receive_broadcast_packets_total{domain="synthetic",fex="101",port="3"} 3
+# HELP ucs_fex_host_port_receive_jumbo_packets_total Jumbo packets received (UCSM etherRxStats.jumboPackets).
+# TYPE ucs_fex_host_port_receive_jumbo_packets_total counter
+ucs_fex_host_port_receive_jumbo_packets_total{domain="synthetic",fex="101",port="3"} 0
+# HELP ucs_fex_host_port_receive_multicast_packets_total Multicast packets received (UCSM etherRxStats.multicastPackets).
+# TYPE ucs_fex_host_port_receive_multicast_packets_total counter
+ucs_fex_host_port_receive_multicast_packets_total{domain="synthetic",fex="101",port="3"} 4
+# HELP ucs_fex_host_port_receive_unicast_packets_total Unicast packets received (UCSM etherRxStats.unicastPackets).
+# TYPE ucs_fex_host_port_receive_unicast_packets_total counter
+ucs_fex_host_port_receive_unicast_packets_total{domain="synthetic",fex="101",port="3"} 770
+# HELP ucs_fex_host_port_transmit_broadcast_packets_total Broadcast packets transmitted (UCSM etherTxStats.broadcastPackets).
+# TYPE ucs_fex_host_port_transmit_broadcast_packets_total counter
+ucs_fex_host_port_transmit_broadcast_packets_total{domain="synthetic",fex="101",port="3"} 3
+# HELP ucs_fex_host_port_transmit_jumbo_packets_total Jumbo packets transmitted (UCSM etherTxStats.jumboPackets).
+# TYPE ucs_fex_host_port_transmit_jumbo_packets_total counter
+ucs_fex_host_port_transmit_jumbo_packets_total{domain="synthetic",fex="101",port="3"} 0
+# HELP ucs_fex_host_port_transmit_multicast_packets_total Multicast packets transmitted (UCSM etherTxStats.multicastPackets).
+# TYPE ucs_fex_host_port_transmit_multicast_packets_total counter
+ucs_fex_host_port_transmit_multicast_packets_total{domain="synthetic",fex="101",port="3"} 3
+# HELP ucs_fex_host_port_transmit_unicast_packets_total Unicast packets transmitted (UCSM etherTxStats.unicastPackets).
+# TYPE ucs_fex_host_port_transmit_unicast_packets_total counter
+ucs_fex_host_port_transmit_unicast_packets_total{domain="synthetic",fex="101",port="3"} 660
+# HELP ucs_fex_host_port_up Whether the IOM/FEX host port is up (UCSM etherServerIntFIo.operState).
+# TYPE ucs_fex_host_port_up gauge
+ucs_fex_host_port_up{domain="synthetic",fex="101",port="3"} 1
+# HELP ucs_fi_port_admin_state Fabric interconnect Ethernet port administrative state (UCSM etherPIo.adminState).
+# TYPE ucs_fi_port_admin_state gauge
+ucs_fi_port_admin_state{domain="synthetic",fabric="A",port="1/1",role="server",state="enabled"} 1
+ucs_fi_port_admin_state{domain="synthetic",fabric="A",port="1/17",role="network",state="enabled"} 1
+ucs_fi_port_admin_state{domain="synthetic",fabric="A",port="1/18",role="network",state="enabled"} 1
+ucs_fi_port_admin_state{domain="synthetic",fabric="A",port="1/49/2",role="network",state="enabled"} 1
+ucs_fi_port_admin_state{domain="synthetic",fabric="B",port="1/17",role="network",state="enabled"} 1
+# HELP ucs_fi_port_carrier_sense_errors_total Carrier sense errors (UCSM etherLossStats.carrierSense).
+# TYPE ucs_fi_port_carrier_sense_errors_total counter
+ucs_fi_port_carrier_sense_errors_total{domain="synthetic",fabric="A",port="1/1",role="server"} 0
+ucs_fi_port_carrier_sense_errors_total{domain="synthetic",fabric="A",port="1/17",role="network"} 0
+ucs_fi_port_carrier_sense_errors_total{domain="synthetic",fabric="A",port="1/18",role="network"} 0
+ucs_fi_port_carrier_sense_errors_total{domain="synthetic",fabric="A",port="1/49/2",role="network"} 0
+ucs_fi_port_carrier_sense_errors_total{domain="synthetic",fabric="B",port="1/17",role="network"} 0
+# HELP ucs_fi_port_channel_admin_state LAN port channel administrative state (UCSM fabricEthLanPc.adminState).
+# TYPE ucs_fi_port_channel_admin_state gauge
+ucs_fi_port_channel_admin_state{domain="synthetic",fabric="A",port_channel="11",state="enabled"} 1
+ucs_fi_port_channel_admin_state{domain="synthetic",fabric="B",port_channel="12",state="enabled"} 1
+# HELP ucs_fi_port_channel_carrier_sense_errors_total Carrier sense errors (UCSM etherLossStats.carrierSense).
+# TYPE ucs_fi_port_channel_carrier_sense_errors_total counter
+ucs_fi_port_channel_carrier_sense_errors_total{domain="synthetic",fabric="A",port_channel="11"} 0
+ucs_fi_port_channel_carrier_sense_errors_total{domain="synthetic",fabric="B",port_channel="12"} 0
+# HELP ucs_fi_port_channel_excess_collisions_total Excessive collisions (UCSM etherLossStats.excessCollision).
+# TYPE ucs_fi_port_channel_excess_collisions_total counter
+ucs_fi_port_channel_excess_collisions_total{domain="synthetic",fabric="A",port_channel="11"} 0
+ucs_fi_port_channel_excess_collisions_total{domain="synthetic",fabric="B",port_channel="12"} 0
+# HELP ucs_fi_port_channel_late_collisions_total Late collisions (UCSM etherLossStats.lateCollision).
+# TYPE ucs_fi_port_channel_late_collisions_total counter
+ucs_fi_port_channel_late_collisions_total{domain="synthetic",fabric="A",port_channel="11"} 0
+ucs_fi_port_channel_late_collisions_total{domain="synthetic",fabric="B",port_channel="12"} 0
+# HELP ucs_fi_port_channel_member_state LAN port channel member state (UCSM fabricEthLanPcEp.membership).
+# TYPE ucs_fi_port_channel_member_state gauge
+ucs_fi_port_channel_member_state{domain="synthetic",fabric="A",port="1/17",port_channel="11",state="up"} 1
+ucs_fi_port_channel_member_state{domain="synthetic",fabric="B",port="1/17",port_channel="12",state="up"} 1
+# HELP ucs_fi_port_channel_member_up Whether the LAN port channel member is up (UCSM fabricEthLanPcEp.membership).
+# TYPE ucs_fi_port_channel_member_up gauge
+ucs_fi_port_channel_member_up{domain="synthetic",fabric="A",port="1/17",port_channel="11"} 1
+ucs_fi_port_channel_member_up{domain="synthetic",fabric="B",port="1/17",port_channel="12"} 1
+# HELP ucs_fi_port_channel_multiple_collisions_total Multiple collisions (UCSM etherLossStats.multiCollision).
+# TYPE ucs_fi_port_channel_multiple_collisions_total counter
+ucs_fi_port_channel_multiple_collisions_total{domain="synthetic",fabric="A",port_channel="11"} 0
+ucs_fi_port_channel_multiple_collisions_total{domain="synthetic",fabric="B",port_channel="12"} 0
+# HELP ucs_fi_port_channel_oper_state LAN port channel operational state (UCSM fabricEthLanPc.operState).
+# TYPE ucs_fi_port_channel_oper_state gauge
+ucs_fi_port_channel_oper_state{domain="synthetic",fabric="A",port_channel="11",state="up"} 1
+ucs_fi_port_channel_oper_state{domain="synthetic",fabric="B",port_channel="12",state="up"} 1
+# HELP ucs_fi_port_channel_pause_resets_total Pause resets (UCSM etherPauseStats.resets).
+# TYPE ucs_fi_port_channel_pause_resets_total counter
+ucs_fi_port_channel_pause_resets_total{domain="synthetic",fabric="A",port_channel="11"} 0
+ucs_fi_port_channel_pause_resets_total{domain="synthetic",fabric="B",port_channel="12"} 0
+# HELP ucs_fi_port_channel_receive_broadcast_packets_total Broadcast packets received (UCSM etherRxStats.broadcastPackets).
+# TYPE ucs_fi_port_channel_receive_broadcast_packets_total counter
+ucs_fi_port_channel_receive_broadcast_packets_total{domain="synthetic",fabric="A",port_channel="11"} 67
+ucs_fi_port_channel_receive_broadcast_packets_total{domain="synthetic",fabric="B",port_channel="12"} 67
+# HELP ucs_fi_port_channel_receive_giants_total Oversized (giant) frames received (UCSM etherLossStats.giants).
+# TYPE ucs_fi_port_channel_receive_giants_total counter
+ucs_fi_port_channel_receive_giants_total{domain="synthetic",fabric="A",port_channel="11"} 2
+ucs_fi_port_channel_receive_giants_total{domain="synthetic",fabric="B",port_channel="12"} 2
+# HELP ucs_fi_port_channel_receive_jumbo_packets_total Jumbo packets received (UCSM etherRxStats.jumboPackets).
+# TYPE ucs_fi_port_channel_receive_jumbo_packets_total counter
+ucs_fi_port_channel_receive_jumbo_packets_total{domain="synthetic",fabric="A",port_channel="11"} 0
+ucs_fi_port_channel_receive_jumbo_packets_total{domain="synthetic",fabric="B",port_channel="12"} 0
+# HELP ucs_fi_port_channel_receive_multicast_packets_total Multicast packets received (UCSM etherRxStats.multicastPackets).
+# TYPE ucs_fi_port_channel_receive_multicast_packets_total counter
+ucs_fi_port_channel_receive_multicast_packets_total{domain="synthetic",fabric="A",port_channel="11"} 500
+ucs_fi_port_channel_receive_multicast_packets_total{domain="synthetic",fabric="B",port_channel="12"} 500
+# HELP ucs_fi_port_channel_receive_pause_frames_total Pause frames received (UCSM etherPauseStats.recvPause).
+# TYPE ucs_fi_port_channel_receive_pause_frames_total counter
+ucs_fi_port_channel_receive_pause_frames_total{domain="synthetic",fabric="A",port_channel="11"} 4
+ucs_fi_port_channel_receive_pause_frames_total{domain="synthetic",fabric="B",port_channel="12"} 4
+# HELP ucs_fi_port_channel_receive_unicast_packets_total Unicast packets received (UCSM etherRxStats.unicastPackets).
+# TYPE ucs_fi_port_channel_receive_unicast_packets_total counter
+ucs_fi_port_channel_receive_unicast_packets_total{domain="synthetic",fabric="A",port_channel="11"} 1.234e+06
+ucs_fi_port_channel_receive_unicast_packets_total{domain="synthetic",fabric="B",port_channel="12"} 1.234e+06
+# HELP ucs_fi_port_channel_single_collisions_total Single collisions (UCSM etherLossStats.singleCollision).
+# TYPE ucs_fi_port_channel_single_collisions_total counter
+ucs_fi_port_channel_single_collisions_total{domain="synthetic",fabric="A",port_channel="11"} 0
+ucs_fi_port_channel_single_collisions_total{domain="synthetic",fabric="B",port_channel="12"} 0
+# HELP ucs_fi_port_channel_speed_bytes LAN port channel aggregate bandwidth in bytes per second (UCSM fabricEthLanPc.bandwidth, in Gbps).
+# TYPE ucs_fi_port_channel_speed_bytes gauge
+ucs_fi_port_channel_speed_bytes{domain="synthetic",fabric="A",port_channel="11"} 6.25e+09
+ucs_fi_port_channel_speed_bytes{domain="synthetic",fabric="B",port_channel="12"} 6.25e+09
+# HELP ucs_fi_port_channel_sqe_test_errors_total SQE test errors (UCSM etherLossStats.SQETest).
+# TYPE ucs_fi_port_channel_sqe_test_errors_total counter
+ucs_fi_port_channel_sqe_test_errors_total{domain="synthetic",fabric="A",port_channel="11"} 0
+ucs_fi_port_channel_sqe_test_errors_total{domain="synthetic",fabric="B",port_channel="12"} 0
+# HELP ucs_fi_port_channel_symbol_errors_total Symbol errors (UCSM etherLossStats.symbol).
+# TYPE ucs_fi_port_channel_symbol_errors_total counter
+ucs_fi_port_channel_symbol_errors_total{domain="synthetic",fabric="A",port_channel="11"} 0
+ucs_fi_port_channel_symbol_errors_total{domain="synthetic",fabric="B",port_channel="12"} 0
+# HELP ucs_fi_port_channel_transmit_broadcast_packets_total Broadcast packets transmitted (UCSM etherTxStats.broadcastPackets).
+# TYPE ucs_fi_port_channel_transmit_broadcast_packets_total counter
+ucs_fi_port_channel_transmit_broadcast_packets_total{domain="synthetic",fabric="A",port_channel="11"} 67
+ucs_fi_port_channel_transmit_broadcast_packets_total{domain="synthetic",fabric="B",port_channel="12"} 67
+# HELP ucs_fi_port_channel_transmit_jumbo_packets_total Jumbo packets transmitted (UCSM etherTxStats.jumboPackets).
+# TYPE ucs_fi_port_channel_transmit_jumbo_packets_total counter
+ucs_fi_port_channel_transmit_jumbo_packets_total{domain="synthetic",fabric="A",port_channel="11"} 0
+ucs_fi_port_channel_transmit_jumbo_packets_total{domain="synthetic",fabric="B",port_channel="12"} 0
+# HELP ucs_fi_port_channel_transmit_multicast_packets_total Multicast packets transmitted (UCSM etherTxStats.multicastPackets).
+# TYPE ucs_fi_port_channel_transmit_multicast_packets_total counter
+ucs_fi_port_channel_transmit_multicast_packets_total{domain="synthetic",fabric="A",port_channel="11"} 500
+ucs_fi_port_channel_transmit_multicast_packets_total{domain="synthetic",fabric="B",port_channel="12"} 500
+# HELP ucs_fi_port_channel_transmit_pause_frames_total Pause frames transmitted (UCSM etherPauseStats.xmitPause).
+# TYPE ucs_fi_port_channel_transmit_pause_frames_total counter
+ucs_fi_port_channel_transmit_pause_frames_total{domain="synthetic",fabric="A",port_channel="11"} 7
+ucs_fi_port_channel_transmit_pause_frames_total{domain="synthetic",fabric="B",port_channel="12"} 7
+# HELP ucs_fi_port_channel_transmit_unicast_packets_total Unicast packets transmitted (UCSM etherTxStats.unicastPackets).
+# TYPE ucs_fi_port_channel_transmit_unicast_packets_total counter
+ucs_fi_port_channel_transmit_unicast_packets_total{domain="synthetic",fabric="A",port_channel="11"} 1.134e+06
+ucs_fi_port_channel_transmit_unicast_packets_total{domain="synthetic",fabric="B",port_channel="12"} 1.134e+06
+# HELP ucs_fi_port_channel_up Whether the LAN port channel is up (UCSM fabricEthLanPc.operState).
+# TYPE ucs_fi_port_channel_up gauge
+ucs_fi_port_channel_up{domain="synthetic",fabric="A",port_channel="11"} 1
+ucs_fi_port_channel_up{domain="synthetic",fabric="B",port_channel="12"} 1
+# HELP ucs_fi_port_excess_collisions_total Excessive collisions (UCSM etherLossStats.excessCollision).
+# TYPE ucs_fi_port_excess_collisions_total counter
+ucs_fi_port_excess_collisions_total{domain="synthetic",fabric="A",port="1/1",role="server"} 0
+ucs_fi_port_excess_collisions_total{domain="synthetic",fabric="A",port="1/17",role="network"} 0
+ucs_fi_port_excess_collisions_total{domain="synthetic",fabric="A",port="1/18",role="network"} 0
+ucs_fi_port_excess_collisions_total{domain="synthetic",fabric="A",port="1/49/2",role="network"} 0
+ucs_fi_port_excess_collisions_total{domain="synthetic",fabric="B",port="1/17",role="network"} 0
+# HELP ucs_fi_port_info Fabric interconnect Ethernet port information (UCSM etherPIo).
+# TYPE ucs_fi_port_info gauge
+ucs_fi_port_info{domain="synthetic",fabric="A",mode="fabric",port="1/1",role="server",xcvr_type="sfp-h10gb-cu3m"} 1
+ucs_fi_port_info{domain="synthetic",fabric="A",mode="trunk",port="1/17",role="network",xcvr_type="sfp-25g-sr-s"} 1
+ucs_fi_port_info{domain="synthetic",fabric="A",mode="trunk",port="1/18",role="network",xcvr_type="unknown"} 1
+ucs_fi_port_info{domain="synthetic",fabric="A",mode="trunk",port="1/49/2",role="network",xcvr_type="qsfp-4sfp10g-cu3m"} 1
+ucs_fi_port_info{domain="synthetic",fabric="B",mode="trunk",port="1/17",role="network",xcvr_type="sfp-25g-sr-s"} 1
+# HELP ucs_fi_port_late_collisions_total Late collisions (UCSM etherLossStats.lateCollision).
+# TYPE ucs_fi_port_late_collisions_total counter
+ucs_fi_port_late_collisions_total{domain="synthetic",fabric="A",port="1/1",role="server"} 0
+ucs_fi_port_late_collisions_total{domain="synthetic",fabric="A",port="1/17",role="network"} 0
+ucs_fi_port_late_collisions_total{domain="synthetic",fabric="A",port="1/18",role="network"} 0
+ucs_fi_port_late_collisions_total{domain="synthetic",fabric="A",port="1/49/2",role="network"} 0
+ucs_fi_port_late_collisions_total{domain="synthetic",fabric="B",port="1/17",role="network"} 0
+# HELP ucs_fi_port_multiple_collisions_total Multiple collisions (UCSM etherLossStats.multiCollision).
+# TYPE ucs_fi_port_multiple_collisions_total counter
+ucs_fi_port_multiple_collisions_total{domain="synthetic",fabric="A",port="1/1",role="server"} 0
+ucs_fi_port_multiple_collisions_total{domain="synthetic",fabric="A",port="1/17",role="network"} 0
+ucs_fi_port_multiple_collisions_total{domain="synthetic",fabric="A",port="1/18",role="network"} 0
+ucs_fi_port_multiple_collisions_total{domain="synthetic",fabric="A",port="1/49/2",role="network"} 0
+ucs_fi_port_multiple_collisions_total{domain="synthetic",fabric="B",port="1/17",role="network"} 0
+# HELP ucs_fi_port_oper_state Fabric interconnect Ethernet port operational state (UCSM etherPIo.operState).
+# TYPE ucs_fi_port_oper_state gauge
+ucs_fi_port_oper_state{domain="synthetic",fabric="A",port="1/1",role="server",state="up"} 1
+ucs_fi_port_oper_state{domain="synthetic",fabric="A",port="1/17",role="network",state="up"} 1
+ucs_fi_port_oper_state{domain="synthetic",fabric="A",port="1/18",role="network",state="sfp-not-present"} 1
+ucs_fi_port_oper_state{domain="synthetic",fabric="A",port="1/49/2",role="network",state="up"} 1
+ucs_fi_port_oper_state{domain="synthetic",fabric="B",port="1/17",role="network",state="up"} 1
+# HELP ucs_fi_port_pause_resets_total Pause resets (UCSM etherPauseStats.resets).
+# TYPE ucs_fi_port_pause_resets_total counter
+ucs_fi_port_pause_resets_total{domain="synthetic",fabric="A",port="1/1",role="server"} 0
+ucs_fi_port_pause_resets_total{domain="synthetic",fabric="A",port="1/17",role="network"} 0
+ucs_fi_port_pause_resets_total{domain="synthetic",fabric="A",port="1/18",role="network"} 0
+ucs_fi_port_pause_resets_total{domain="synthetic",fabric="A",port="1/49/2",role="network"} 0
+ucs_fi_port_pause_resets_total{domain="synthetic",fabric="B",port="1/17",role="network"} 0
+# HELP ucs_fi_port_receive_broadcast_packets_total Broadcast packets received (UCSM etherRxStats.broadcastPackets).
+# TYPE ucs_fi_port_receive_broadcast_packets_total counter
+ucs_fi_port_receive_broadcast_packets_total{domain="synthetic",fabric="A",port="1/1",role="server"} 10
+ucs_fi_port_receive_broadcast_packets_total{domain="synthetic",fabric="A",port="1/17",role="network"} 10
+ucs_fi_port_receive_broadcast_packets_total{domain="synthetic",fabric="A",port="1/18",role="network"} 10
+ucs_fi_port_receive_broadcast_packets_total{domain="synthetic",fabric="A",port="1/49/2",role="network"} 10
+ucs_fi_port_receive_broadcast_packets_total{domain="synthetic",fabric="B",port="1/17",role="network"} 10
+# HELP ucs_fi_port_receive_giants_total Oversized (giant) frames received (UCSM etherLossStats.giants).
+# TYPE ucs_fi_port_receive_giants_total counter
+ucs_fi_port_receive_giants_total{domain="synthetic",fabric="A",port="1/1",role="server"} 2
+ucs_fi_port_receive_giants_total{domain="synthetic",fabric="A",port="1/17",role="network"} 2
+ucs_fi_port_receive_giants_total{domain="synthetic",fabric="A",port="1/18",role="network"} 2
+ucs_fi_port_receive_giants_total{domain="synthetic",fabric="A",port="1/49/2",role="network"} 2
+ucs_fi_port_receive_giants_total{domain="synthetic",fabric="B",port="1/17",role="network"} 2
+# HELP ucs_fi_port_receive_jumbo_packets_total Jumbo packets received (UCSM etherRxStats.jumboPackets).
+# TYPE ucs_fi_port_receive_jumbo_packets_total counter
+ucs_fi_port_receive_jumbo_packets_total{domain="synthetic",fabric="A",port="1/1",role="server"} 0
+ucs_fi_port_receive_jumbo_packets_total{domain="synthetic",fabric="A",port="1/17",role="network"} 0
+ucs_fi_port_receive_jumbo_packets_total{domain="synthetic",fabric="A",port="1/18",role="network"} 0
+ucs_fi_port_receive_jumbo_packets_total{domain="synthetic",fabric="A",port="1/49/2",role="network"} 0
+ucs_fi_port_receive_jumbo_packets_total{domain="synthetic",fabric="B",port="1/17",role="network"} 0
+# HELP ucs_fi_port_receive_multicast_packets_total Multicast packets received (UCSM etherRxStats.multicastPackets).
+# TYPE ucs_fi_port_receive_multicast_packets_total counter
+ucs_fi_port_receive_multicast_packets_total{domain="synthetic",fabric="A",port="1/1",role="server"} 20
+ucs_fi_port_receive_multicast_packets_total{domain="synthetic",fabric="A",port="1/17",role="network"} 20
+ucs_fi_port_receive_multicast_packets_total{domain="synthetic",fabric="A",port="1/18",role="network"} 20
+ucs_fi_port_receive_multicast_packets_total{domain="synthetic",fabric="A",port="1/49/2",role="network"} 20
+ucs_fi_port_receive_multicast_packets_total{domain="synthetic",fabric="B",port="1/17",role="network"} 20
+# HELP ucs_fi_port_receive_pause_frames_total Pause frames received (UCSM etherPauseStats.recvPause).
+# TYPE ucs_fi_port_receive_pause_frames_total counter
+ucs_fi_port_receive_pause_frames_total{domain="synthetic",fabric="A",port="1/1",role="server"} 4
+ucs_fi_port_receive_pause_frames_total{domain="synthetic",fabric="A",port="1/17",role="network"} 4
+ucs_fi_port_receive_pause_frames_total{domain="synthetic",fabric="A",port="1/18",role="network"} 4
+ucs_fi_port_receive_pause_frames_total{domain="synthetic",fabric="A",port="1/49/2",role="network"} 4
+ucs_fi_port_receive_pause_frames_total{domain="synthetic",fabric="B",port="1/17",role="network"} 4
+# HELP ucs_fi_port_receive_unicast_packets_total Unicast packets received (UCSM etherRxStats.unicastPackets).
+# TYPE ucs_fi_port_receive_unicast_packets_total counter
+ucs_fi_port_receive_unicast_packets_total{domain="synthetic",fabric="A",port="1/1",role="server"} 977
+ucs_fi_port_receive_unicast_packets_total{domain="synthetic",fabric="A",port="1/17",role="network"} 16977
+ucs_fi_port_receive_unicast_packets_total{domain="synthetic",fabric="A",port="1/18",role="network"} 17977
+ucs_fi_port_receive_unicast_packets_total{domain="synthetic",fabric="A",port="1/49/2",role="network"} 1977
+ucs_fi_port_receive_unicast_packets_total{domain="synthetic",fabric="B",port="1/17",role="network"} 16973
+# HELP ucs_fi_port_single_collisions_total Single collisions (UCSM etherLossStats.singleCollision).
+# TYPE ucs_fi_port_single_collisions_total counter
+ucs_fi_port_single_collisions_total{domain="synthetic",fabric="A",port="1/1",role="server"} 0
+ucs_fi_port_single_collisions_total{domain="synthetic",fabric="A",port="1/17",role="network"} 0
+ucs_fi_port_single_collisions_total{domain="synthetic",fabric="A",port="1/18",role="network"} 0
+ucs_fi_port_single_collisions_total{domain="synthetic",fabric="A",port="1/49/2",role="network"} 0
+ucs_fi_port_single_collisions_total{domain="synthetic",fabric="B",port="1/17",role="network"} 0
+# HELP ucs_fi_port_speed_bytes Fabric interconnect Ethernet port operational speed in bytes per second (UCSM etherPIo.operSpeed).
+# TYPE ucs_fi_port_speed_bytes gauge
+ucs_fi_port_speed_bytes{domain="synthetic",fabric="A",port="1/1",role="server"} 1.25e+09
+ucs_fi_port_speed_bytes{domain="synthetic",fabric="A",port="1/17",role="network"} 3.125e+09
+ucs_fi_port_speed_bytes{domain="synthetic",fabric="A",port="1/18",role="network"} 3.125e+09
+ucs_fi_port_speed_bytes{domain="synthetic",fabric="A",port="1/49/2",role="network"} 1.25e+09
+ucs_fi_port_speed_bytes{domain="synthetic",fabric="B",port="1/17",role="network"} 3.125e+09
+# HELP ucs_fi_port_sqe_test_errors_total SQE test errors (UCSM etherLossStats.SQETest).
+# TYPE ucs_fi_port_sqe_test_errors_total counter
+ucs_fi_port_sqe_test_errors_total{domain="synthetic",fabric="A",port="1/1",role="server"} 0
+ucs_fi_port_sqe_test_errors_total{domain="synthetic",fabric="A",port="1/17",role="network"} 0
+ucs_fi_port_sqe_test_errors_total{domain="synthetic",fabric="A",port="1/18",role="network"} 0
+ucs_fi_port_sqe_test_errors_total{domain="synthetic",fabric="A",port="1/49/2",role="network"} 0
+ucs_fi_port_sqe_test_errors_total{domain="synthetic",fabric="B",port="1/17",role="network"} 0
+# HELP ucs_fi_port_symbol_errors_total Symbol errors (UCSM etherLossStats.symbol).
+# TYPE ucs_fi_port_symbol_errors_total counter
+ucs_fi_port_symbol_errors_total{domain="synthetic",fabric="A",port="1/1",role="server"} 0
+ucs_fi_port_symbol_errors_total{domain="synthetic",fabric="A",port="1/17",role="network"} 0
+ucs_fi_port_symbol_errors_total{domain="synthetic",fabric="A",port="1/18",role="network"} 0
+ucs_fi_port_symbol_errors_total{domain="synthetic",fabric="A",port="1/49/2",role="network"} 0
+ucs_fi_port_symbol_errors_total{domain="synthetic",fabric="B",port="1/17",role="network"} 0
+# HELP ucs_fi_port_transmit_broadcast_packets_total Broadcast packets transmitted (UCSM etherTxStats.broadcastPackets).
+# TYPE ucs_fi_port_transmit_broadcast_packets_total counter
+ucs_fi_port_transmit_broadcast_packets_total{domain="synthetic",fabric="A",port="1/1",role="server"} 10
+ucs_fi_port_transmit_broadcast_packets_total{domain="synthetic",fabric="A",port="1/17",role="network"} 10
+ucs_fi_port_transmit_broadcast_packets_total{domain="synthetic",fabric="A",port="1/18",role="network"} 10
+ucs_fi_port_transmit_broadcast_packets_total{domain="synthetic",fabric="A",port="1/49/2",role="network"} 10
+ucs_fi_port_transmit_broadcast_packets_total{domain="synthetic",fabric="B",port="1/17",role="network"} 10
+# HELP ucs_fi_port_transmit_jumbo_packets_total Jumbo packets transmitted (UCSM etherTxStats.jumboPackets).
+# TYPE ucs_fi_port_transmit_jumbo_packets_total counter
+ucs_fi_port_transmit_jumbo_packets_total{domain="synthetic",fabric="A",port="1/1",role="server"} 0
+ucs_fi_port_transmit_jumbo_packets_total{domain="synthetic",fabric="A",port="1/17",role="network"} 0
+ucs_fi_port_transmit_jumbo_packets_total{domain="synthetic",fabric="A",port="1/18",role="network"} 0
+ucs_fi_port_transmit_jumbo_packets_total{domain="synthetic",fabric="A",port="1/49/2",role="network"} 0
+ucs_fi_port_transmit_jumbo_packets_total{domain="synthetic",fabric="B",port="1/17",role="network"} 0
+# HELP ucs_fi_port_transmit_multicast_packets_total Multicast packets transmitted (UCSM etherTxStats.multicastPackets).
+# TYPE ucs_fi_port_transmit_multicast_packets_total counter
+ucs_fi_port_transmit_multicast_packets_total{domain="synthetic",fabric="A",port="1/1",role="server"} 20
+ucs_fi_port_transmit_multicast_packets_total{domain="synthetic",fabric="A",port="1/17",role="network"} 20
+ucs_fi_port_transmit_multicast_packets_total{domain="synthetic",fabric="A",port="1/18",role="network"} 20
+ucs_fi_port_transmit_multicast_packets_total{domain="synthetic",fabric="A",port="1/49/2",role="network"} 20
+ucs_fi_port_transmit_multicast_packets_total{domain="synthetic",fabric="B",port="1/17",role="network"} 20
+# HELP ucs_fi_port_transmit_pause_frames_total Pause frames transmitted (UCSM etherPauseStats.xmitPause).
+# TYPE ucs_fi_port_transmit_pause_frames_total counter
+ucs_fi_port_transmit_pause_frames_total{domain="synthetic",fabric="A",port="1/1",role="server"} 7
+ucs_fi_port_transmit_pause_frames_total{domain="synthetic",fabric="A",port="1/17",role="network"} 7
+ucs_fi_port_transmit_pause_frames_total{domain="synthetic",fabric="A",port="1/18",role="network"} 7
+ucs_fi_port_transmit_pause_frames_total{domain="synthetic",fabric="A",port="1/49/2",role="network"} 7
+ucs_fi_port_transmit_pause_frames_total{domain="synthetic",fabric="B",port="1/17",role="network"} 7
+# HELP ucs_fi_port_transmit_unicast_packets_total Unicast packets transmitted (UCSM etherTxStats.unicastPackets).
+# TYPE ucs_fi_port_transmit_unicast_packets_total counter
+ucs_fi_port_transmit_unicast_packets_total{domain="synthetic",fabric="A",port="1/1",role="server"} 982
+ucs_fi_port_transmit_unicast_packets_total{domain="synthetic",fabric="A",port="1/17",role="network"} 16982
+ucs_fi_port_transmit_unicast_packets_total{domain="synthetic",fabric="A",port="1/18",role="network"} 17982
+ucs_fi_port_transmit_unicast_packets_total{domain="synthetic",fabric="A",port="1/49/2",role="network"} 1982
+ucs_fi_port_transmit_unicast_packets_total{domain="synthetic",fabric="B",port="1/17",role="network"} 16978
+# HELP ucs_fi_port_up Whether the fabric interconnect Ethernet port is up (UCSM etherPIo.operState).
+# TYPE ucs_fi_port_up gauge
+ucs_fi_port_up{domain="synthetic",fabric="A",port="1/1",role="server"} 1
+ucs_fi_port_up{domain="synthetic",fabric="A",port="1/17",role="network"} 1
+ucs_fi_port_up{domain="synthetic",fabric="A",port="1/18",role="network"} 0
+ucs_fi_port_up{domain="synthetic",fabric="A",port="1/49/2",role="network"} 1
+ucs_fi_port_up{domain="synthetic",fabric="B",port="1/17",role="network"} 1
+# HELP ucs_fi_vlan_ports VLAN port instances in use on the fabric interconnect (UCSM swVlanPortNs.totalVlanPortCount).
+# TYPE ucs_fi_vlan_ports gauge
+ucs_fi_vlan_ports{domain="synthetic",fabric="A"} 960
+ucs_fi_vlan_ports{domain="synthetic",fabric="B"} 960
+# HELP ucs_fi_vlan_ports_access Access VLAN port instances in use (UCSM swVlanPortNs.accessVlanPortCount).
+# TYPE ucs_fi_vlan_ports_access gauge
+ucs_fi_vlan_ports_access{domain="synthetic",fabric="A"} 120
+ucs_fi_vlan_ports_access{domain="synthetic",fabric="B"} 120
+# HELP ucs_fi_vlan_ports_alloc_state VLAN port instance allocation status (UCSM swVlanPortNs.allocStatus).
+# TYPE ucs_fi_vlan_ports_alloc_state gauge
+ucs_fi_vlan_ports_alloc_state{domain="synthetic",fabric="A",state="available"} 1
+ucs_fi_vlan_ports_alloc_state{domain="synthetic",fabric="B",state="available"} 1
+# HELP ucs_fi_vlan_ports_border Border (uplink) VLAN port instances in use (UCSM swVlanPortNs.borderVlanPortCount).
+# TYPE ucs_fi_vlan_ports_border gauge
+ucs_fi_vlan_ports_border{domain="synthetic",fabric="A"} 840
+ucs_fi_vlan_ports_border{domain="synthetic",fabric="B"} 840
+# HELP ucs_fi_vlan_ports_limit Maximum VLAN port instances supported (UCSM swVlanPortNs.limit).
+# TYPE ucs_fi_vlan_ports_limit gauge
+ucs_fi_vlan_ports_limit{domain="synthetic",fabric="A"} 16000
+ucs_fi_vlan_ports_limit{domain="synthetic",fabric="B"} 16000
+# HELP ucs_iom_fabric_port_crc_errors_total Frames received with CRC errors (UCSM etherNiErrStats.crc).
+# TYPE ucs_iom_fabric_port_crc_errors_total counter
+ucs_iom_fabric_port_crc_errors_total{chassis="1",domain="synthetic",iom="1",port="1"} 0
+ucs_iom_fabric_port_crc_errors_total{chassis="1",domain="synthetic",iom="2",port="1"} 2
+# HELP ucs_iom_fabric_port_in_range_length_errors_total In-range length errors (UCSM etherNiErrStats.inRange).
+# TYPE ucs_iom_fabric_port_in_range_length_errors_total counter
+ucs_iom_fabric_port_in_range_length_errors_total{chassis="1",domain="synthetic",iom="1",port="1"} 0
+ucs_iom_fabric_port_in_range_length_errors_total{chassis="1",domain="synthetic",iom="2",port="1"} 0
+# HELP ucs_iom_fabric_port_oper_state IOM/FEX fabric port operational state (UCSM etherSwitchIntFIo.operState).
+# TYPE ucs_iom_fabric_port_oper_state gauge
+ucs_iom_fabric_port_oper_state{chassis="1",domain="synthetic",iom="1",port="1",state="up"} 1
+ucs_iom_fabric_port_oper_state{chassis="1",domain="synthetic",iom="2",port="1",state="up"} 1
+# HELP ucs_iom_fabric_port_peer_info Fabric interconnect port connected to an IOM/FEX fabric port (UCSM etherSwitchIntFIo.peerDn).
+# TYPE ucs_iom_fabric_port_peer_info gauge
+ucs_iom_fabric_port_peer_info{chassis="1",domain="synthetic",iom="1",peer_fabric="A",peer_port="1/1",port="1"} 1
+ucs_iom_fabric_port_peer_info{chassis="1",domain="synthetic",iom="2",peer_fabric="B",peer_port="1/1",port="1"} 1
+# HELP ucs_iom_fabric_port_receive_too_long_total Frames received that were too long (UCSM etherNiErrStats.tooLong).
+# TYPE ucs_iom_fabric_port_receive_too_long_total counter
+ucs_iom_fabric_port_receive_too_long_total{chassis="1",domain="synthetic",iom="1",port="1"} 0
+ucs_iom_fabric_port_receive_too_long_total{chassis="1",domain="synthetic",iom="2",port="1"} 0
+# HELP ucs_iom_fabric_port_receive_too_short_total Frames received that were too short (UCSM etherNiErrStats.tooShort).
+# TYPE ucs_iom_fabric_port_receive_too_short_total counter
+ucs_iom_fabric_port_receive_too_short_total{chassis="1",domain="synthetic",iom="1",port="1"} 0
+ucs_iom_fabric_port_receive_too_short_total{chassis="1",domain="synthetic",iom="2",port="1"} 0
+# HELP ucs_iom_fabric_port_transmit_frame_errors_total Transmit frame errors (UCSM etherNiErrStats.frameTx).
+# TYPE ucs_iom_fabric_port_transmit_frame_errors_total counter
+ucs_iom_fabric_port_transmit_frame_errors_total{chassis="1",domain="synthetic",iom="1",port="1"} 0
+ucs_iom_fabric_port_transmit_frame_errors_total{chassis="1",domain="synthetic",iom="2",port="1"} 0
+# HELP ucs_iom_fabric_port_up Whether the IOM/FEX fabric port is up (UCSM etherSwitchIntFIo.operState).
+# TYPE ucs_iom_fabric_port_up gauge
+ucs_iom_fabric_port_up{chassis="1",domain="synthetic",iom="1",port="1"} 1
+ucs_iom_fabric_port_up{chassis="1",domain="synthetic",iom="2",port="1"} 1
+# HELP ucs_iom_host_port_carrier_sense_errors_total Carrier sense errors (UCSM etherLossStats.carrierSense).
+# TYPE ucs_iom_host_port_carrier_sense_errors_total counter
+ucs_iom_host_port_carrier_sense_errors_total{chassis="1",domain="synthetic",iom="1",port="1"} 0
+ucs_iom_host_port_carrier_sense_errors_total{chassis="1",domain="synthetic",iom="1",port="2"} 0
+ucs_iom_host_port_carrier_sense_errors_total{chassis="1",domain="synthetic",iom="2",port="1"} 0
+ucs_iom_host_port_carrier_sense_errors_total{chassis="1",domain="synthetic",iom="2",port="2"} 0
+# HELP ucs_iom_host_port_excess_collisions_total Excessive collisions (UCSM etherLossStats.excessCollision).
+# TYPE ucs_iom_host_port_excess_collisions_total counter
+ucs_iom_host_port_excess_collisions_total{chassis="1",domain="synthetic",iom="1",port="1"} 0
+ucs_iom_host_port_excess_collisions_total{chassis="1",domain="synthetic",iom="1",port="2"} 0
+ucs_iom_host_port_excess_collisions_total{chassis="1",domain="synthetic",iom="2",port="1"} 0
+ucs_iom_host_port_excess_collisions_total{chassis="1",domain="synthetic",iom="2",port="2"} 0
+# HELP ucs_iom_host_port_late_collisions_total Late collisions (UCSM etherLossStats.lateCollision).
+# TYPE ucs_iom_host_port_late_collisions_total counter
+ucs_iom_host_port_late_collisions_total{chassis="1",domain="synthetic",iom="1",port="1"} 0
+ucs_iom_host_port_late_collisions_total{chassis="1",domain="synthetic",iom="1",port="2"} 0
+ucs_iom_host_port_late_collisions_total{chassis="1",domain="synthetic",iom="2",port="1"} 0
+ucs_iom_host_port_late_collisions_total{chassis="1",domain="synthetic",iom="2",port="2"} 0
+# HELP ucs_iom_host_port_multiple_collisions_total Multiple collisions (UCSM etherLossStats.multiCollision).
+# TYPE ucs_iom_host_port_multiple_collisions_total counter
+ucs_iom_host_port_multiple_collisions_total{chassis="1",domain="synthetic",iom="1",port="1"} 0
+ucs_iom_host_port_multiple_collisions_total{chassis="1",domain="synthetic",iom="1",port="2"} 0
+ucs_iom_host_port_multiple_collisions_total{chassis="1",domain="synthetic",iom="2",port="1"} 0
+ucs_iom_host_port_multiple_collisions_total{chassis="1",domain="synthetic",iom="2",port="2"} 0
+# HELP ucs_iom_host_port_oper_state IOM/FEX host port operational state (UCSM etherServerIntFIo.operState).
+# TYPE ucs_iom_host_port_oper_state gauge
+ucs_iom_host_port_oper_state{chassis="1",domain="synthetic",iom="1",port="1",state="up"} 1
+ucs_iom_host_port_oper_state{chassis="1",domain="synthetic",iom="1",port="2",state="link-down"} 1
+ucs_iom_host_port_oper_state{chassis="1",domain="synthetic",iom="2",port="1",state="up"} 1
+ucs_iom_host_port_oper_state{chassis="1",domain="synthetic",iom="2",port="2",state="link-down"} 1
+# HELP ucs_iom_host_port_pause_resets_total Pause resets (UCSM etherPauseStats.resets).
+# TYPE ucs_iom_host_port_pause_resets_total counter
+ucs_iom_host_port_pause_resets_total{chassis="1",domain="synthetic",iom="1",port="1"} 0
+ucs_iom_host_port_pause_resets_total{chassis="1",domain="synthetic",iom="1",port="2"} 0
+ucs_iom_host_port_pause_resets_total{chassis="1",domain="synthetic",iom="2",port="1"} 0
+ucs_iom_host_port_pause_resets_total{chassis="1",domain="synthetic",iom="2",port="2"} 0
+# HELP ucs_iom_host_port_peer_info Server adapter port connected to an IOM/FEX host port (UCSM etherServerIntFIo.peerDn).
+# TYPE ucs_iom_host_port_peer_info gauge
+ucs_iom_host_port_peer_info{adaptor="1",chassis="1",domain="synthetic",interface="ext-eth-1",iom="1",port="1",server="chassis-1/blade-1"} 1
+ucs_iom_host_port_peer_info{adaptor="1",chassis="1",domain="synthetic",interface="ext-eth-1",iom="1",port="2",server="chassis-1/blade-2"} 1
+ucs_iom_host_port_peer_info{adaptor="1",chassis="1",domain="synthetic",interface="ext-eth-2",iom="2",port="1",server="chassis-1/blade-1"} 1
+ucs_iom_host_port_peer_info{adaptor="1",chassis="1",domain="synthetic",interface="ext-eth-2",iom="2",port="2",server="chassis-1/blade-2"} 1
+# HELP ucs_iom_host_port_receive_broadcast_packets_total Broadcast packets received (UCSM etherRxStats.broadcastPackets).
+# TYPE ucs_iom_host_port_receive_broadcast_packets_total counter
+ucs_iom_host_port_receive_broadcast_packets_total{chassis="1",domain="synthetic",iom="1",port="1"} 2
+ucs_iom_host_port_receive_broadcast_packets_total{chassis="1",domain="synthetic",iom="1",port="2"} 2
+ucs_iom_host_port_receive_broadcast_packets_total{chassis="1",domain="synthetic",iom="2",port="1"} 2
+ucs_iom_host_port_receive_broadcast_packets_total{chassis="1",domain="synthetic",iom="2",port="2"} 2
+# HELP ucs_iom_host_port_receive_giants_total Oversized (giant) frames received (UCSM etherLossStats.giants).
+# TYPE ucs_iom_host_port_receive_giants_total counter
+ucs_iom_host_port_receive_giants_total{chassis="1",domain="synthetic",iom="1",port="1"} 0
+ucs_iom_host_port_receive_giants_total{chassis="1",domain="synthetic",iom="1",port="2"} 0
+ucs_iom_host_port_receive_giants_total{chassis="1",domain="synthetic",iom="2",port="1"} 0
+ucs_iom_host_port_receive_giants_total{chassis="1",domain="synthetic",iom="2",port="2"} 0
+# HELP ucs_iom_host_port_receive_jumbo_packets_total Jumbo packets received (UCSM etherRxStats.jumboPackets).
+# TYPE ucs_iom_host_port_receive_jumbo_packets_total counter
+ucs_iom_host_port_receive_jumbo_packets_total{chassis="1",domain="synthetic",iom="1",port="1"} 0
+ucs_iom_host_port_receive_jumbo_packets_total{chassis="1",domain="synthetic",iom="1",port="2"} 0
+ucs_iom_host_port_receive_jumbo_packets_total{chassis="1",domain="synthetic",iom="2",port="1"} 0
+ucs_iom_host_port_receive_jumbo_packets_total{chassis="1",domain="synthetic",iom="2",port="2"} 0
+# HELP ucs_iom_host_port_receive_multicast_packets_total Multicast packets received (UCSM etherRxStats.multicastPackets).
+# TYPE ucs_iom_host_port_receive_multicast_packets_total counter
+ucs_iom_host_port_receive_multicast_packets_total{chassis="1",domain="synthetic",iom="1",port="1"} 3
+ucs_iom_host_port_receive_multicast_packets_total{chassis="1",domain="synthetic",iom="1",port="2"} 3
+ucs_iom_host_port_receive_multicast_packets_total{chassis="1",domain="synthetic",iom="2",port="1"} 3
+ucs_iom_host_port_receive_multicast_packets_total{chassis="1",domain="synthetic",iom="2",port="2"} 3
+# HELP ucs_iom_host_port_receive_pause_frames_total Pause frames received (UCSM etherPauseStats.recvPause).
+# TYPE ucs_iom_host_port_receive_pause_frames_total counter
+ucs_iom_host_port_receive_pause_frames_total{chassis="1",domain="synthetic",iom="1",port="1"} 0
+ucs_iom_host_port_receive_pause_frames_total{chassis="1",domain="synthetic",iom="1",port="2"} 0
+ucs_iom_host_port_receive_pause_frames_total{chassis="1",domain="synthetic",iom="2",port="1"} 0
+ucs_iom_host_port_receive_pause_frames_total{chassis="1",domain="synthetic",iom="2",port="2"} 0
+# HELP ucs_iom_host_port_receive_unicast_packets_total Unicast packets received (UCSM etherRxStats.unicastPackets).
+# TYPE ucs_iom_host_port_receive_unicast_packets_total counter
+ucs_iom_host_port_receive_unicast_packets_total{chassis="1",domain="synthetic",iom="1",port="1"} 550
+ucs_iom_host_port_receive_unicast_packets_total{chassis="1",domain="synthetic",iom="1",port="2"} 550
+ucs_iom_host_port_receive_unicast_packets_total{chassis="1",domain="synthetic",iom="2",port="1"} 550
+ucs_iom_host_port_receive_unicast_packets_total{chassis="1",domain="synthetic",iom="2",port="2"} 550
+# HELP ucs_iom_host_port_single_collisions_total Single collisions (UCSM etherLossStats.singleCollision).
+# TYPE ucs_iom_host_port_single_collisions_total counter
+ucs_iom_host_port_single_collisions_total{chassis="1",domain="synthetic",iom="1",port="1"} 0
+ucs_iom_host_port_single_collisions_total{chassis="1",domain="synthetic",iom="1",port="2"} 0
+ucs_iom_host_port_single_collisions_total{chassis="1",domain="synthetic",iom="2",port="1"} 0
+ucs_iom_host_port_single_collisions_total{chassis="1",domain="synthetic",iom="2",port="2"} 0
+# HELP ucs_iom_host_port_sqe_test_errors_total SQE test errors (UCSM etherLossStats.SQETest).
+# TYPE ucs_iom_host_port_sqe_test_errors_total counter
+ucs_iom_host_port_sqe_test_errors_total{chassis="1",domain="synthetic",iom="1",port="1"} 0
+ucs_iom_host_port_sqe_test_errors_total{chassis="1",domain="synthetic",iom="1",port="2"} 0
+ucs_iom_host_port_sqe_test_errors_total{chassis="1",domain="synthetic",iom="2",port="1"} 0
+ucs_iom_host_port_sqe_test_errors_total{chassis="1",domain="synthetic",iom="2",port="2"} 0
+# HELP ucs_iom_host_port_symbol_errors_total Symbol errors (UCSM etherLossStats.symbol).
+# TYPE ucs_iom_host_port_symbol_errors_total counter
+ucs_iom_host_port_symbol_errors_total{chassis="1",domain="synthetic",iom="1",port="1"} 0
+ucs_iom_host_port_symbol_errors_total{chassis="1",domain="synthetic",iom="1",port="2"} 0
+ucs_iom_host_port_symbol_errors_total{chassis="1",domain="synthetic",iom="2",port="1"} 0
+ucs_iom_host_port_symbol_errors_total{chassis="1",domain="synthetic",iom="2",port="2"} 0
+# HELP ucs_iom_host_port_transmit_broadcast_packets_total Broadcast packets transmitted (UCSM etherTxStats.broadcastPackets).
+# TYPE ucs_iom_host_port_transmit_broadcast_packets_total counter
+ucs_iom_host_port_transmit_broadcast_packets_total{chassis="1",domain="synthetic",iom="1",port="1"} 2
+ucs_iom_host_port_transmit_broadcast_packets_total{chassis="1",domain="synthetic",iom="1",port="2"} 2
+ucs_iom_host_port_transmit_broadcast_packets_total{chassis="1",domain="synthetic",iom="2",port="1"} 2
+ucs_iom_host_port_transmit_broadcast_packets_total{chassis="1",domain="synthetic",iom="2",port="2"} 2
+# HELP ucs_iom_host_port_transmit_jumbo_packets_total Jumbo packets transmitted (UCSM etherTxStats.jumboPackets).
+# TYPE ucs_iom_host_port_transmit_jumbo_packets_total counter
+ucs_iom_host_port_transmit_jumbo_packets_total{chassis="1",domain="synthetic",iom="1",port="1"} 0
+ucs_iom_host_port_transmit_jumbo_packets_total{chassis="1",domain="synthetic",iom="1",port="2"} 0
+ucs_iom_host_port_transmit_jumbo_packets_total{chassis="1",domain="synthetic",iom="2",port="1"} 0
+ucs_iom_host_port_transmit_jumbo_packets_total{chassis="1",domain="synthetic",iom="2",port="2"} 0
+# HELP ucs_iom_host_port_transmit_multicast_packets_total Multicast packets transmitted (UCSM etherTxStats.multicastPackets).
+# TYPE ucs_iom_host_port_transmit_multicast_packets_total counter
+ucs_iom_host_port_transmit_multicast_packets_total{chassis="1",domain="synthetic",iom="1",port="1"} 2
+ucs_iom_host_port_transmit_multicast_packets_total{chassis="1",domain="synthetic",iom="1",port="2"} 2
+ucs_iom_host_port_transmit_multicast_packets_total{chassis="1",domain="synthetic",iom="2",port="1"} 2
+ucs_iom_host_port_transmit_multicast_packets_total{chassis="1",domain="synthetic",iom="2",port="2"} 2
+# HELP ucs_iom_host_port_transmit_pause_frames_total Pause frames transmitted (UCSM etherPauseStats.xmitPause).
+# TYPE ucs_iom_host_port_transmit_pause_frames_total counter
+ucs_iom_host_port_transmit_pause_frames_total{chassis="1",domain="synthetic",iom="1",port="1"} 0
+ucs_iom_host_port_transmit_pause_frames_total{chassis="1",domain="synthetic",iom="1",port="2"} 0
+ucs_iom_host_port_transmit_pause_frames_total{chassis="1",domain="synthetic",iom="2",port="1"} 0
+ucs_iom_host_port_transmit_pause_frames_total{chassis="1",domain="synthetic",iom="2",port="2"} 0
+# HELP ucs_iom_host_port_transmit_unicast_packets_total Unicast packets transmitted (UCSM etherTxStats.unicastPackets).
+# TYPE ucs_iom_host_port_transmit_unicast_packets_total counter
+ucs_iom_host_port_transmit_unicast_packets_total{chassis="1",domain="synthetic",iom="1",port="1"} 440
+ucs_iom_host_port_transmit_unicast_packets_total{chassis="1",domain="synthetic",iom="1",port="2"} 440
+ucs_iom_host_port_transmit_unicast_packets_total{chassis="1",domain="synthetic",iom="2",port="1"} 440
+ucs_iom_host_port_transmit_unicast_packets_total{chassis="1",domain="synthetic",iom="2",port="2"} 440
+# HELP ucs_iom_host_port_up Whether the IOM/FEX host port is up (UCSM etherServerIntFIo.operState).
+# TYPE ucs_iom_host_port_up gauge
+ucs_iom_host_port_up{chassis="1",domain="synthetic",iom="1",port="1"} 1
+ucs_iom_host_port_up{chassis="1",domain="synthetic",iom="1",port="2"} 0
+ucs_iom_host_port_up{chassis="1",domain="synthetic",iom="2",port="1"} 1
+ucs_iom_host_port_up{chassis="1",domain="synthetic",iom="2",port="2"} 0

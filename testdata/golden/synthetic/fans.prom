@@ -1,0 +1,22 @@
+# HELP ucs_chassis_fan_speed_rpm Fan speed in revolutions per minute (UCSM equipmentFanStats.speed, equipmentNetworkElementFanStats.speed).
+# TYPE ucs_chassis_fan_speed_rpm gauge
+ucs_chassis_fan_speed_rpm{chassis="1",domain="synthetic",fan="1-1/1"} 4901
+ucs_chassis_fan_speed_rpm{chassis="1",domain="synthetic",fan="1-1/2"} 4902
+# HELP ucs_fex_fan_speed_rpm Fan speed in revolutions per minute (UCSM equipmentFanStats.speed, equipmentNetworkElementFanStats.speed).
+# TYPE ucs_fex_fan_speed_rpm gauge
+ucs_fex_fan_speed_rpm{domain="synthetic",fan="1",fex="101"} 6000
+# HELP ucs_fi_fan_drive_ratio Fabric interconnect fan drive level, 0-1 (UCSM equipmentNetworkElementFanStats.drivePercentage / 100).
+# TYPE ucs_fi_fan_drive_ratio gauge
+ucs_fi_fan_drive_ratio{domain="synthetic",fabric="A",fan="1-1/1"} 0.45
+ucs_fi_fan_drive_ratio{domain="synthetic",fabric="A",fan="1-1/2"} 0.45
+ucs_fi_fan_drive_ratio{domain="synthetic",fabric="B",fan="1-1/1"} 0.45
+ucs_fi_fan_drive_ratio{domain="synthetic",fabric="B",fan="1-1/2"} 0.45
+# HELP ucs_fi_fan_speed_rpm Fan speed in revolutions per minute (UCSM equipmentFanStats.speed, equipmentNetworkElementFanStats.speed).
+# TYPE ucs_fi_fan_speed_rpm gauge
+ucs_fi_fan_speed_rpm{domain="synthetic",fabric="A",fan="1-1/1"} 9120
+ucs_fi_fan_speed_rpm{domain="synthetic",fabric="A",fan="1-1/2"} 9050
+ucs_fi_fan_speed_rpm{domain="synthetic",fabric="B",fan="1-1/1"} 9120
+ucs_fi_fan_speed_rpm{domain="synthetic",fabric="B",fan="1-1/2"} 0
+# HELP ucs_server_fan_speed_rpm Fan speed in revolutions per minute (UCSM equipmentFanStats.speed, equipmentNetworkElementFanStats.speed).
+# TYPE ucs_server_fan_speed_rpm gauge
+ucs_server_fan_speed_rpm{domain="synthetic",fan="1-1/1",server="rack-unit-1"} 7300

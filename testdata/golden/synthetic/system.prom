@@ -1,0 +1,6 @@
+# HELP ucs_domain_info UCS domain information: system name, cluster mode and UCS Manager version (UCSM topSystem, versionApplication).
+# TYPE ucs_domain_info gauge
+ucs_domain_info{domain="synthetic",mode="cluster",system_name="ucs-synth",version="4.3(4a)"} 1
+# HELP ucs_system_uptime_seconds UCS Manager system uptime (UCSM topSystem.systemUpTime).
+# TYPE ucs_system_uptime_seconds gauge
+ucs_system_uptime_seconds{domain="synthetic"} 1.047845e+06

@@ -1,0 +1,28 @@
+# HELP ucs_fi_correctable_parity_errors_total Correctable parity errors (UCSM swSystemStats.CorrectableParityError).
+# TYPE ucs_fi_correctable_parity_errors_total counter
+ucs_fi_correctable_parity_errors_total{domain="synthetic",fabric="A"} 0
+ucs_fi_correctable_parity_errors_total{domain="synthetic",fabric="B"} 0
+# HELP ucs_fi_kernel_memory_free_bytes Fabric interconnect kernel memory free in bytes (UCSM swSystemStats.kernelMemFree).
+# TYPE ucs_fi_kernel_memory_free_bytes gauge
+ucs_fi_kernel_memory_free_bytes{domain="synthetic",fabric="A"} 3.221225472e+10
+ucs_fi_kernel_memory_free_bytes{domain="synthetic",fabric="B"} 3.221225472e+10
+# HELP ucs_fi_kernel_memory_total_bytes Fabric interconnect kernel memory total in bytes (UCSM swSystemStats.kernelMemTotal).
+# TYPE ucs_fi_kernel_memory_total_bytes gauge
+ucs_fi_kernel_memory_total_bytes{domain="synthetic",fabric="A"} 6.6571993088e+10
+ucs_fi_kernel_memory_total_bytes{domain="synthetic",fabric="B"} 6.6571993088e+10
+# HELP ucs_fi_load Fabric interconnect CPU load average (UCSM swSystemStats.load).
+# TYPE ucs_fi_load gauge
+ucs_fi_load{domain="synthetic",fabric="A"} 1.25
+ucs_fi_load{domain="synthetic",fabric="B"} 0.8
+# HELP ucs_fi_memory_available_bytes Fabric interconnect memory available in bytes (UCSM swSystemStats.memAvailable).
+# TYPE ucs_fi_memory_available_bytes gauge
+ucs_fi_memory_available_bytes{domain="synthetic",fabric="A"} 4.294967296e+10
+ucs_fi_memory_available_bytes{domain="synthetic",fabric="B"} 4.294967296e+10
+# HELP ucs_fi_memory_cached_bytes Fabric interconnect memory cached in bytes (UCSM swSystemStats.memCached).
+# TYPE ucs_fi_memory_cached_bytes gauge
+ucs_fi_memory_cached_bytes{domain="synthetic",fabric="A"} 8.589934592e+09
+ucs_fi_memory_cached_bytes{domain="synthetic",fabric="B"} 8.589934592e+09
+# HELP ucs_fi_uptime_seconds Fabric interconnect uptime in seconds, reported by UCSM 4.3(4a) and later (UCSM swSystemStats.upTime).
+# TYPE ucs_fi_uptime_seconds gauge
+ucs_fi_uptime_seconds{domain="synthetic",fabric="A"} 3.92523e+06
+ucs_fi_uptime_seconds{domain="synthetic",fabric="B"} 3.92523e+06

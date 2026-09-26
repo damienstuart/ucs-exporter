@@ -1,0 +1,5 @@
+<configResolveClass cookie="" response="yes" classId="swCardEnvStats">
+<outConfigs>
+<swCardEnvStats dn="sys/switch-A/cardenvstats" SlotOutlet1="36" SlotOutlet2="0" SlotOutlet3="0"/>
+</outConfigs>
+</configResolveClass>

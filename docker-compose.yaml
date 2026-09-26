@@ -1,0 +1,36 @@
+# SPDX-FileCopyrightText: 2026 The ucs-exporter authors
+#
+# SPDX-License-Identifier: GPL-3.0-only
+#
+# Put the UCS Manager password in ./examples/secrets/ucs_password and adjust
+# ./examples/config.yml, then: docker compose up -d
+# "docker compose --profile full up -d" also starts a Prometheus server.
+services:
+  ucs-exporter:
+    build: .
+    image: ucs-exporter
+    ports:
+      - "3001:3001"
+    environment:
+      PROM_UCS_USERNAME: 'ucs-CORP\svc_prometheus'
+    volumes:
+      - ./examples/compose/config.yml:/etc/ucs-exporter/config.yml:ro
+    secrets:
+      - ucs_password
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    restart: unless-stopped
+
+  prometheus:
+    profiles: [full]
+    image: prom/prometheus:latest
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./examples/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    depends_on: [ucs-exporter]
+
+secrets:
+  ucs_password:
+    file: ./examples/secrets/ucs_password

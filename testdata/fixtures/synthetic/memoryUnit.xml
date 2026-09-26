@@ -1,0 +1,10 @@
+<configResolveClass cookie="" response="yes" classId="memoryUnit">
+<outConfigs>
+<memoryUnit dn="sys/chassis-1/blade-1/board/memarray-1/mem-1" location="DIMM_A1" type="DDR4" model="M393A4K40DB3-CWE" serial="S11111" operability="operable" presence="equipped" capacity="32768"/>
+<memoryUnit dn="sys/chassis-1/blade-1/board/memarray-1/mem-2" location="DIMM_A2" type="DDR4" model="" serial="" operability="unknown" presence="missing" capacity="unspecified"/>
+<memoryUnit dn="sys/chassis-1/blade-2/board/memarray-1/mem-1" location="DIMM_A1" type="DDR4" model="M393A4K40DB3-CWE" serial="S11111" operability="operable" presence="equipped" capacity="32768"/>
+<memoryUnit dn="sys/chassis-1/blade-2/board/memarray-1/mem-2" location="DIMM_A2" type="DDR4" model="" serial="" operability="unknown" presence="missing" capacity="unspecified"/>
+<memoryUnit dn="sys/rack-unit-1/board/memarray-1/mem-1" location="DIMM_A1" type="DDR4" model="M393A4K40DB3-CWE" serial="S11111" operability="operable" presence="equipped" capacity="32768"/>
+<memoryUnit dn="sys/rack-unit-1/board/memarray-1/mem-2" location="DIMM_A2" type="DDR4" model="" serial="" operability="unknown" presence="missing" capacity="unspecified"/>
+</outConfigs>
+</configResolveClass>

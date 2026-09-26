@@ -1,0 +1,21 @@
+<configResolveClass cookie="" response="yes" classId="firmwareRunning">
+<outConfigs>
+<firmwareRunning dn="sys/switch-A/mgmt/fw-system" type="switch-software" deployment="system" version="9.3(5)I43(4a)" packageVersion="4.3(4a)A"/>
+<firmwareRunning dn="sys/switch-A/mgmt/fw-kernel" type="switch-kernel" deployment="kernel" version="9.3(5)I43(4a)" packageVersion="4.3(4a)A"/>
+<firmwareRunning dn="sys/switch-B/mgmt/fw-system" type="switch-software" deployment="system" version="9.3(5)I43(4a)" packageVersion="4.3(4a)A"/>
+<firmwareRunning dn="sys/switch-B/mgmt/fw-kernel" type="switch-kernel" deployment="kernel" version="9.3(5)I43(4a)" packageVersion="4.3(4a)A"/>
+<firmwareRunning dn="sys/mgmt/fw-system" type="system" deployment="system" version="4.3(4a)" packageVersion="4.3(4a)A"/>
+<firmwareRunning dn="sys/chassis-1/slot-1/mgmt/fw-system" type="iocard" deployment="system" version="4.3(4a)" packageVersion="4.3(4a)A"/>
+<firmwareRunning dn="sys/chassis-1/slot-2/mgmt/fw-system" type="iocard" deployment="system" version="4.3(4a)" packageVersion="4.3(4a)A"/>
+<firmwareRunning dn="sys/chassis-1/blade-1/mgmt/fw-system" type="blade-controller" deployment="system" version="4.3(4a)" packageVersion="4.3(4a)B"/>
+<firmwareRunning dn="sys/chassis-1/blade-1/bios/fw-running" type="blade-bios" deployment="system" version="B200M6.4.3.4a.0.0101240936" packageVersion="4.3(4a)B"/>
+<firmwareRunning dn="sys/chassis-1/blade-2/mgmt/fw-system" type="blade-controller" deployment="system" version="4.3(4a)" packageVersion="4.3(4a)B"/>
+<firmwareRunning dn="sys/chassis-1/blade-2/bios/fw-running" type="blade-bios" deployment="system" version="B200M6.4.3.4a.0.0101240936" packageVersion="4.3(4a)B"/>
+<firmwareRunning dn="sys/rack-unit-1/mgmt/fw-system" type="board-controller" deployment="system" version="4.3(4a)" packageVersion="4.3(4a)B"/>
+<firmwareRunning dn="sys/rack-unit-1/bios/fw-running" type="blade-bios" deployment="system" version="B200M6.4.3.4a.0.0101240936" packageVersion="4.3(4a)B"/>
+<firmwareRunning dn="sys/rack-unit-1/board/storage-SAS-1/fw-system" type="storage-controller" deployment="system" version="52.20.0-4523"/>
+<firmwareRunning dn="sys/chassis-1/blade-1/adaptor-1/mgmt/fw-system" type="adaptor" deployment="system" version="5.3(4.47)" packageVersion="4.3(4a)B"/>
+<firmwareRunning dn="sys/chassis-1/blade-2/adaptor-1/mgmt/fw-system" type="adaptor" deployment="system" version="5.3(4.47)" packageVersion="4.3(4a)B"/>
+<firmwareRunning dn="sys/rack-unit-1/adaptor-1/mgmt/fw-system" type="adaptor" deployment="system" version="5.3(4.47)" packageVersion="4.3(4a)B"/>
+</outConfigs>
+</configResolveClass>

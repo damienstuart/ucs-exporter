@@ -1,0 +1,10 @@
+<configResolveClass cookie="" response="yes" classId="adaptorExtEthIf">
+<outConfigs>
+<adaptorExtEthIf dn="sys/chassis-1/blade-1/adaptor-1/ext-eth-1" switchId="A" operState="up" linkState="up"/>
+<adaptorExtEthIf dn="sys/chassis-1/blade-1/adaptor-1/ext-eth-2" switchId="B" operState="up" linkState="up"/>
+<adaptorExtEthIf dn="sys/chassis-1/blade-2/adaptor-1/ext-eth-1" switchId="A" operState="link-down" linkState="down"/>
+<adaptorExtEthIf dn="sys/chassis-1/blade-2/adaptor-1/ext-eth-2" switchId="B" operState="link-down" linkState="down"/>
+<adaptorExtEthIf dn="sys/rack-unit-1/adaptor-1/ext-eth-1" switchId="A" operState="up" linkState="up"/>
+<adaptorExtEthIf dn="sys/rack-unit-1/adaptor-1/ext-eth-2" switchId="B" operState="up" linkState="up"/>
+</outConfigs>
+</configResolveClass>

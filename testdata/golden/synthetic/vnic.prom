@@ -1,0 +1,80 @@
+# HELP ucs_vhba_receive_bytes_total Bytes received by the vHBA (UCSM adaptorVnicStats.bytesRx).
+# TYPE ucs_vhba_receive_bytes_total counter
+ucs_vhba_receive_bytes_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc0"} 5.555555e+06
+ucs_vhba_receive_bytes_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root/finance",server="rack-unit-1",service_profile="db01",vhba="fc0"} 5.555555e+06
+ucs_vhba_receive_bytes_total{adaptor="1",domain="synthetic",interface="host-fc-2",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc1"} 1.111111e+07
+# HELP ucs_vhba_receive_dropped_total Received packets dropped by the vHBA (UCSM adaptorVnicStats.droppedRx).
+# TYPE ucs_vhba_receive_dropped_total counter
+ucs_vhba_receive_dropped_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc0"} 0
+ucs_vhba_receive_dropped_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root/finance",server="rack-unit-1",service_profile="db01",vhba="fc0"} 0
+ucs_vhba_receive_dropped_total{adaptor="1",domain="synthetic",interface="host-fc-2",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc1"} 0
+# HELP ucs_vhba_receive_errors_total Receive errors of the vHBA (UCSM adaptorVnicStats.errorsRx).
+# TYPE ucs_vhba_receive_errors_total counter
+ucs_vhba_receive_errors_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc0"} 0
+ucs_vhba_receive_errors_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root/finance",server="rack-unit-1",service_profile="db01",vhba="fc0"} 0
+ucs_vhba_receive_errors_total{adaptor="1",domain="synthetic",interface="host-fc-2",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc1"} 0
+# HELP ucs_vhba_receive_packets_total Packets received by the vHBA (UCSM adaptorVnicStats.packetsRx).
+# TYPE ucs_vhba_receive_packets_total counter
+ucs_vhba_receive_packets_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc0"} 5555
+ucs_vhba_receive_packets_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root/finance",server="rack-unit-1",service_profile="db01",vhba="fc0"} 5555
+ucs_vhba_receive_packets_total{adaptor="1",domain="synthetic",interface="host-fc-2",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc1"} 11110
+# HELP ucs_vhba_transmit_bytes_total Bytes transmitted by the vHBA (UCSM adaptorVnicStats.bytesTx).
+# TYPE ucs_vhba_transmit_bytes_total counter
+ucs_vhba_transmit_bytes_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc0"} 4.444444e+06
+ucs_vhba_transmit_bytes_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root/finance",server="rack-unit-1",service_profile="db01",vhba="fc0"} 4.444444e+06
+ucs_vhba_transmit_bytes_total{adaptor="1",domain="synthetic",interface="host-fc-2",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc1"} 8.888888e+06
+# HELP ucs_vhba_transmit_dropped_total Transmitted packets dropped by the vHBA (UCSM adaptorVnicStats.droppedTx).
+# TYPE ucs_vhba_transmit_dropped_total counter
+ucs_vhba_transmit_dropped_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc0"} 0
+ucs_vhba_transmit_dropped_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root/finance",server="rack-unit-1",service_profile="db01",vhba="fc0"} 0
+ucs_vhba_transmit_dropped_total{adaptor="1",domain="synthetic",interface="host-fc-2",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc1"} 0
+# HELP ucs_vhba_transmit_errors_total Transmit errors of the vHBA (UCSM adaptorVnicStats.errorsTx).
+# TYPE ucs_vhba_transmit_errors_total counter
+ucs_vhba_transmit_errors_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc0"} 0
+ucs_vhba_transmit_errors_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root/finance",server="rack-unit-1",service_profile="db01",vhba="fc0"} 0
+ucs_vhba_transmit_errors_total{adaptor="1",domain="synthetic",interface="host-fc-2",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc1"} 0
+# HELP ucs_vhba_transmit_packets_total Packets transmitted by the vHBA (UCSM adaptorVnicStats.packetsTx).
+# TYPE ucs_vhba_transmit_packets_total counter
+ucs_vhba_transmit_packets_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc0"} 4444
+ucs_vhba_transmit_packets_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root/finance",server="rack-unit-1",service_profile="db01",vhba="fc0"} 4444
+ucs_vhba_transmit_packets_total{adaptor="1",domain="synthetic",interface="host-fc-2",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc1"} 8888
+# HELP ucs_vnic_receive_bytes_total Bytes received by the vNIC (UCSM adaptorVnicStats.bytesRx).
+# TYPE ucs_vnic_receive_bytes_total counter
+ucs_vnic_receive_bytes_total{adaptor="1",domain="synthetic",interface="host-eth-1",org="root",server="chassis-1/blade-1",service_profile="esx01",vnic="eth0"} 1.23456789e+08
+ucs_vnic_receive_bytes_total{adaptor="1",domain="synthetic",interface="host-eth-1",org="root/finance",server="rack-unit-1",service_profile="db01",vnic="eth0"} 1.23456789e+08
+ucs_vnic_receive_bytes_total{adaptor="1",domain="synthetic",interface="host-eth-2",org="root",server="chassis-1/blade-1",service_profile="esx01",vnic="eth1"} 2.46913578e+08
+# HELP ucs_vnic_receive_dropped_total Received packets dropped by the vNIC (UCSM adaptorVnicStats.droppedRx).
+# TYPE ucs_vnic_receive_dropped_total counter
+ucs_vnic_receive_dropped_total{adaptor="1",domain="synthetic",interface="host-eth-1",org="root",server="chassis-1/blade-1",service_profile="esx01",vnic="eth0"} 0
+ucs_vnic_receive_dropped_total{adaptor="1",domain="synthetic",interface="host-eth-1",org="root/finance",server="rack-unit-1",service_profile="db01",vnic="eth0"} 0
+ucs_vnic_receive_dropped_total{adaptor="1",domain="synthetic",interface="host-eth-2",org="root",server="chassis-1/blade-1",service_profile="esx01",vnic="eth1"} 2
+# HELP ucs_vnic_receive_errors_total Receive errors of the vNIC (UCSM adaptorVnicStats.errorsRx).
+# TYPE ucs_vnic_receive_errors_total counter
+ucs_vnic_receive_errors_total{adaptor="1",domain="synthetic",interface="host-eth-1",org="root",server="chassis-1/blade-1",service_profile="esx01",vnic="eth0"} 0
+ucs_vnic_receive_errors_total{adaptor="1",domain="synthetic",interface="host-eth-1",org="root/finance",server="rack-unit-1",service_profile="db01",vnic="eth0"} 0
+ucs_vnic_receive_errors_total{adaptor="1",domain="synthetic",interface="host-eth-2",org="root",server="chassis-1/blade-1",service_profile="esx01",vnic="eth1"} 0
+# HELP ucs_vnic_receive_packets_total Packets received by the vNIC (UCSM adaptorVnicStats.packetsRx).
+# TYPE ucs_vnic_receive_packets_total counter
+ucs_vnic_receive_packets_total{adaptor="1",domain="synthetic",interface="host-eth-1",org="root",server="chassis-1/blade-1",service_profile="esx01",vnic="eth0"} 123456
+ucs_vnic_receive_packets_total{adaptor="1",domain="synthetic",interface="host-eth-1",org="root/finance",server="rack-unit-1",service_profile="db01",vnic="eth0"} 123456
+ucs_vnic_receive_packets_total{adaptor="1",domain="synthetic",interface="host-eth-2",org="root",server="chassis-1/blade-1",service_profile="esx01",vnic="eth1"} 246912
+# HELP ucs_vnic_transmit_bytes_total Bytes transmitted by the vNIC (UCSM adaptorVnicStats.bytesTx).
+# TYPE ucs_vnic_transmit_bytes_total counter
+ucs_vnic_transmit_bytes_total{adaptor="1",domain="synthetic",interface="host-eth-1",org="root",server="chassis-1/blade-1",service_profile="esx01",vnic="eth0"} 9.8765432e+07
+ucs_vnic_transmit_bytes_total{adaptor="1",domain="synthetic",interface="host-eth-1",org="root/finance",server="rack-unit-1",service_profile="db01",vnic="eth0"} 9.8765432e+07
+ucs_vnic_transmit_bytes_total{adaptor="1",domain="synthetic",interface="host-eth-2",org="root",server="chassis-1/blade-1",service_profile="esx01",vnic="eth1"} 1.97530864e+08
+# HELP ucs_vnic_transmit_dropped_total Transmitted packets dropped by the vNIC (UCSM adaptorVnicStats.droppedTx).
+# TYPE ucs_vnic_transmit_dropped_total counter
+ucs_vnic_transmit_dropped_total{adaptor="1",domain="synthetic",interface="host-eth-1",org="root",server="chassis-1/blade-1",service_profile="esx01",vnic="eth0"} 0
+ucs_vnic_transmit_dropped_total{adaptor="1",domain="synthetic",interface="host-eth-1",org="root/finance",server="rack-unit-1",service_profile="db01",vnic="eth0"} 0
+ucs_vnic_transmit_dropped_total{adaptor="1",domain="synthetic",interface="host-eth-2",org="root",server="chassis-1/blade-1",service_profile="esx01",vnic="eth1"} 0
+# HELP ucs_vnic_transmit_errors_total Transmit errors of the vNIC (UCSM adaptorVnicStats.errorsTx).
+# TYPE ucs_vnic_transmit_errors_total counter
+ucs_vnic_transmit_errors_total{adaptor="1",domain="synthetic",interface="host-eth-1",org="root",server="chassis-1/blade-1",service_profile="esx01",vnic="eth0"} 0
+ucs_vnic_transmit_errors_total{adaptor="1",domain="synthetic",interface="host-eth-1",org="root/finance",server="rack-unit-1",service_profile="db01",vnic="eth0"} 0
+ucs_vnic_transmit_errors_total{adaptor="1",domain="synthetic",interface="host-eth-2",org="root",server="chassis-1/blade-1",service_profile="esx01",vnic="eth1"} 0
+# HELP ucs_vnic_transmit_packets_total Packets transmitted by the vNIC (UCSM adaptorVnicStats.packetsTx).
+# TYPE ucs_vnic_transmit_packets_total counter
+ucs_vnic_transmit_packets_total{adaptor="1",domain="synthetic",interface="host-eth-1",org="root",server="chassis-1/blade-1",service_profile="esx01",vnic="eth0"} 98765
+ucs_vnic_transmit_packets_total{adaptor="1",domain="synthetic",interface="host-eth-1",org="root/finance",server="rack-unit-1",service_profile="db01",vnic="eth0"} 98765
+ucs_vnic_transmit_packets_total{adaptor="1",domain="synthetic",interface="host-eth-2",org="root",server="chassis-1/blade-1",service_profile="esx01",vnic="eth1"} 197530

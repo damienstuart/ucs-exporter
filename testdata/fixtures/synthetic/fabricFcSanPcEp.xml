@@ -1,0 +1,6 @@
+<configResolveClass cookie="" response="yes" classId="fabricFcSanPcEp">
+<outConfigs>
+<fabricFcSanPcEp dn="fabric/san/A/pc-1/ep-slot-1-port-1" membership="up" slotId="1" portId="1"/>
+<fabricFcSanPcEp dn="fabric/san/A/pc-1/ep-slot-1-port-2" membership="down" slotId="1" portId="2"/>
+</outConfigs>
+</configResolveClass>

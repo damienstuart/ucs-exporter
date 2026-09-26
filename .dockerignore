@@ -1,0 +1,7 @@
+.git
+bin
+*.test
+testdata
+grafana
+docs
+examples/secrets

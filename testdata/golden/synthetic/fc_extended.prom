@@ -1,0 +1,295 @@
+# HELP ucs_fi_fc_port_admin_state Fabric interconnect FC port administrative state (UCSM fcPIo.adminState).
+# TYPE ucs_fi_fc_port_admin_state gauge
+ucs_fi_fc_port_admin_state{domain="synthetic",fabric="A",port="1/1",state="enabled"} 1
+ucs_fi_fc_port_admin_state{domain="synthetic",fabric="A",port="1/2",state="enabled"} 1
+ucs_fi_fc_port_admin_state{domain="synthetic",fabric="B",port="1/1",state="enabled"} 1
+# HELP ucs_fi_fc_port_channel_admin_state SAN port channel administrative state (UCSM fabricFcSanPc.adminState).
+# TYPE ucs_fi_fc_port_channel_admin_state gauge
+ucs_fi_fc_port_channel_admin_state{domain="synthetic",fabric="A",port_channel="1",state="enabled"} 1
+# HELP ucs_fi_fc_port_channel_crc_errors_total Frames received with CRC errors (UCSM fcErrStats.crcRx).
+# TYPE ucs_fi_fc_port_channel_crc_errors_total counter
+ucs_fi_fc_port_channel_crc_errors_total{domain="synthetic",fabric="A",port_channel="1"} 7
+# HELP ucs_fi_fc_port_channel_link_failures_total Link failures (UCSM fcErrStats.linkFailures).
+# TYPE ucs_fi_fc_port_channel_link_failures_total counter
+ucs_fi_fc_port_channel_link_failures_total{domain="synthetic",fabric="A",port_channel="1"} 0
+# HELP ucs_fi_fc_port_channel_member_state SAN port channel member state (UCSM fabricFcSanPcEp.membership).
+# TYPE ucs_fi_fc_port_channel_member_state gauge
+ucs_fi_fc_port_channel_member_state{domain="synthetic",fabric="A",port="1/1",port_channel="1",state="up"} 1
+ucs_fi_fc_port_channel_member_state{domain="synthetic",fabric="A",port="1/2",port_channel="1",state="down"} 1
+# HELP ucs_fi_fc_port_channel_member_up Whether the SAN port channel member is up (UCSM fabricFcSanPcEp.membership).
+# TYPE ucs_fi_fc_port_channel_member_up gauge
+ucs_fi_fc_port_channel_member_up{domain="synthetic",fabric="A",port="1/1",port_channel="1"} 1
+ucs_fi_fc_port_channel_member_up{domain="synthetic",fabric="A",port="1/2",port_channel="1"} 0
+# HELP ucs_fi_fc_port_channel_oper_state SAN port channel operational state (UCSM fabricFcSanPc.operState).
+# TYPE ucs_fi_fc_port_channel_oper_state gauge
+ucs_fi_fc_port_channel_oper_state{domain="synthetic",fabric="A",port_channel="1",state="up"} 1
+# HELP ucs_fi_fc_port_channel_receive_discards_total Received frames discarded (UCSM fcErrStats.discardRx).
+# TYPE ucs_fi_fc_port_channel_receive_discards_total counter
+ucs_fi_fc_port_channel_receive_discards_total{domain="synthetic",fabric="A",port_channel="1"} 0
+# HELP ucs_fi_fc_port_channel_receive_errors_total Receive errors (UCSM fcErrStats.rx).
+# TYPE ucs_fi_fc_port_channel_receive_errors_total counter
+ucs_fi_fc_port_channel_receive_errors_total{domain="synthetic",fabric="A",port_channel="1"} 0
+# HELP ucs_fi_fc_port_channel_receive_too_long_total Frames received that were too long (UCSM fcErrStats.tooLongRx).
+# TYPE ucs_fi_fc_port_channel_receive_too_long_total counter
+ucs_fi_fc_port_channel_receive_too_long_total{domain="synthetic",fabric="A",port_channel="1"} 0
+# HELP ucs_fi_fc_port_channel_receive_too_short_total Frames received that were too short (UCSM fcErrStats.tooShortRx).
+# TYPE ucs_fi_fc_port_channel_receive_too_short_total counter
+ucs_fi_fc_port_channel_receive_too_short_total{domain="synthetic",fabric="A",port_channel="1"} 0
+# HELP ucs_fi_fc_port_channel_signal_losses_total Loss of signal events (UCSM fcErrStats.signalLosses).
+# TYPE ucs_fi_fc_port_channel_signal_losses_total counter
+ucs_fi_fc_port_channel_signal_losses_total{domain="synthetic",fabric="A",port_channel="1"} 0
+# HELP ucs_fi_fc_port_channel_speed_bytes SAN port channel aggregate speed in bytes per second (UCSM fabricFcSanPc.operSpeed, in Gbps).
+# TYPE ucs_fi_fc_port_channel_speed_bytes gauge
+ucs_fi_fc_port_channel_speed_bytes{domain="synthetic",fabric="A",port_channel="1"} 8e+09
+# HELP ucs_fi_fc_port_channel_sync_losses_total Loss of synchronization events (UCSM fcErrStats.syncLosses).
+# TYPE ucs_fi_fc_port_channel_sync_losses_total counter
+ucs_fi_fc_port_channel_sync_losses_total{domain="synthetic",fabric="A",port_channel="1"} 0
+# HELP ucs_fi_fc_port_channel_transmit_discards_total Transmitted frames discarded (UCSM fcErrStats.discardTx).
+# TYPE ucs_fi_fc_port_channel_transmit_discards_total counter
+ucs_fi_fc_port_channel_transmit_discards_total{domain="synthetic",fabric="A",port_channel="1"} 1
+# HELP ucs_fi_fc_port_channel_transmit_errors_total Transmit errors (UCSM fcErrStats.tx).
+# TYPE ucs_fi_fc_port_channel_transmit_errors_total counter
+ucs_fi_fc_port_channel_transmit_errors_total{domain="synthetic",fabric="A",port_channel="1"} 0
+# HELP ucs_fi_fc_port_channel_up Whether the SAN port channel is up (UCSM fabricFcSanPc.operState).
+# TYPE ucs_fi_fc_port_channel_up gauge
+ucs_fi_fc_port_channel_up{domain="synthetic",fabric="A",port_channel="1"} 1
+# HELP ucs_fi_fc_port_crc_errors_total Frames received with CRC errors (UCSM fcErrStats.crcRx).
+# TYPE ucs_fi_fc_port_crc_errors_total counter
+ucs_fi_fc_port_crc_errors_total{domain="synthetic",fabric="A",port="1/1"} 0
+ucs_fi_fc_port_crc_errors_total{domain="synthetic",fabric="A",port="1/2"} 7
+ucs_fi_fc_port_crc_errors_total{domain="synthetic",fabric="B",port="1/1"} 0
+# HELP ucs_fi_fc_port_info Fabric interconnect FC port information (UCSM fcPIo).
+# TYPE ucs_fi_fc_port_info gauge
+ucs_fi_fc_port_info{domain="synthetic",fabric="A",mode="N_proxy",port="1/1",role="network",wwn="20:01:00:de:fb:00:00:0a",xcvr_type="sfp-32g-sw"} 1
+ucs_fi_fc_port_info{domain="synthetic",fabric="A",mode="N_proxy",port="1/2",role="network",wwn="20:02:00:de:fb:00:00:0a",xcvr_type="sfp-32g-sw"} 1
+ucs_fi_fc_port_info{domain="synthetic",fabric="B",mode="N_proxy",port="1/1",role="network",wwn="20:01:00:de:fb:00:00:0b",xcvr_type="sfp-32g-sw"} 1
+# HELP ucs_fi_fc_port_link_failures_total Link failures (UCSM fcErrStats.linkFailures).
+# TYPE ucs_fi_fc_port_link_failures_total counter
+ucs_fi_fc_port_link_failures_total{domain="synthetic",fabric="A",port="1/1"} 0
+ucs_fi_fc_port_link_failures_total{domain="synthetic",fabric="A",port="1/2"} 0
+ucs_fi_fc_port_link_failures_total{domain="synthetic",fabric="B",port="1/1"} 2
+# HELP ucs_fi_fc_port_oper_state Fabric interconnect FC port operational state (UCSM fcPIo.operState).
+# TYPE ucs_fi_fc_port_oper_state gauge
+ucs_fi_fc_port_oper_state{domain="synthetic",fabric="A",port="1/1",state="up"} 1
+ucs_fi_fc_port_oper_state{domain="synthetic",fabric="A",port="1/2",state="up"} 1
+ucs_fi_fc_port_oper_state{domain="synthetic",fabric="B",port="1/1",state="link-down"} 1
+# HELP ucs_fi_fc_port_receive_discards_total Received frames discarded (UCSM fcErrStats.discardRx).
+# TYPE ucs_fi_fc_port_receive_discards_total counter
+ucs_fi_fc_port_receive_discards_total{domain="synthetic",fabric="A",port="1/1"} 0
+ucs_fi_fc_port_receive_discards_total{domain="synthetic",fabric="A",port="1/2"} 0
+ucs_fi_fc_port_receive_discards_total{domain="synthetic",fabric="B",port="1/1"} 0
+# HELP ucs_fi_fc_port_receive_errors_total Receive errors (UCSM fcErrStats.rx).
+# TYPE ucs_fi_fc_port_receive_errors_total counter
+ucs_fi_fc_port_receive_errors_total{domain="synthetic",fabric="A",port="1/1"} 0
+ucs_fi_fc_port_receive_errors_total{domain="synthetic",fabric="A",port="1/2"} 0
+ucs_fi_fc_port_receive_errors_total{domain="synthetic",fabric="B",port="1/1"} 0
+# HELP ucs_fi_fc_port_receive_too_long_total Frames received that were too long (UCSM fcErrStats.tooLongRx).
+# TYPE ucs_fi_fc_port_receive_too_long_total counter
+ucs_fi_fc_port_receive_too_long_total{domain="synthetic",fabric="A",port="1/1"} 0
+ucs_fi_fc_port_receive_too_long_total{domain="synthetic",fabric="A",port="1/2"} 0
+ucs_fi_fc_port_receive_too_long_total{domain="synthetic",fabric="B",port="1/1"} 0
+# HELP ucs_fi_fc_port_receive_too_short_total Frames received that were too short (UCSM fcErrStats.tooShortRx).
+# TYPE ucs_fi_fc_port_receive_too_short_total counter
+ucs_fi_fc_port_receive_too_short_total{domain="synthetic",fabric="A",port="1/1"} 0
+ucs_fi_fc_port_receive_too_short_total{domain="synthetic",fabric="A",port="1/2"} 0
+ucs_fi_fc_port_receive_too_short_total{domain="synthetic",fabric="B",port="1/1"} 0
+# HELP ucs_fi_fc_port_signal_losses_total Loss of signal events (UCSM fcErrStats.signalLosses).
+# TYPE ucs_fi_fc_port_signal_losses_total counter
+ucs_fi_fc_port_signal_losses_total{domain="synthetic",fabric="A",port="1/1"} 0
+ucs_fi_fc_port_signal_losses_total{domain="synthetic",fabric="A",port="1/2"} 0
+ucs_fi_fc_port_signal_losses_total{domain="synthetic",fabric="B",port="1/1"} 1
+# HELP ucs_fi_fc_port_speed_bytes Fabric interconnect FC port operational speed in bytes per second (UCSM fcPIo.operSpeed).
+# TYPE ucs_fi_fc_port_speed_bytes gauge
+ucs_fi_fc_port_speed_bytes{domain="synthetic",fabric="A",port="1/1"} 4e+09
+ucs_fi_fc_port_speed_bytes{domain="synthetic",fabric="A",port="1/2"} 4e+09
+# HELP ucs_fi_fc_port_sync_losses_total Loss of synchronization events (UCSM fcErrStats.syncLosses).
+# TYPE ucs_fi_fc_port_sync_losses_total counter
+ucs_fi_fc_port_sync_losses_total{domain="synthetic",fabric="A",port="1/1"} 0
+ucs_fi_fc_port_sync_losses_total{domain="synthetic",fabric="A",port="1/2"} 0
+ucs_fi_fc_port_sync_losses_total{domain="synthetic",fabric="B",port="1/1"} 3
+# HELP ucs_fi_fc_port_transmit_discards_total Transmitted frames discarded (UCSM fcErrStats.discardTx).
+# TYPE ucs_fi_fc_port_transmit_discards_total counter
+ucs_fi_fc_port_transmit_discards_total{domain="synthetic",fabric="A",port="1/1"} 1
+ucs_fi_fc_port_transmit_discards_total{domain="synthetic",fabric="A",port="1/2"} 1
+ucs_fi_fc_port_transmit_discards_total{domain="synthetic",fabric="B",port="1/1"} 1
+# HELP ucs_fi_fc_port_transmit_errors_total Transmit errors (UCSM fcErrStats.tx).
+# TYPE ucs_fi_fc_port_transmit_errors_total counter
+ucs_fi_fc_port_transmit_errors_total{domain="synthetic",fabric="A",port="1/1"} 0
+ucs_fi_fc_port_transmit_errors_total{domain="synthetic",fabric="A",port="1/2"} 0
+ucs_fi_fc_port_transmit_errors_total{domain="synthetic",fabric="B",port="1/1"} 0
+# HELP ucs_fi_fc_port_up Whether the fabric interconnect FC port is up (UCSM fcPIo.operState).
+# TYPE ucs_fi_fc_port_up gauge
+ucs_fi_fc_port_up{domain="synthetic",fabric="A",port="1/1"} 1
+ucs_fi_fc_port_up{domain="synthetic",fabric="A",port="1/2"} 1
+ucs_fi_fc_port_up{domain="synthetic",fabric="B",port="1/1"} 0
+# HELP ucs_fi_fcoe_port_channel_fcoe_state FCoE state (UCSM fabricFcoeSanEp/fabricFcoeSanPc.fcoeState).
+# TYPE ucs_fi_fcoe_port_channel_fcoe_state gauge
+ucs_fi_fcoe_port_channel_fcoe_state{domain="synthetic",fabric="B",port_channel="5",state="down"} 1
+# HELP ucs_fi_fcoe_port_channel_oper_state FCoE uplink or port channel operational state (UCSM fabricFcoeSanEp/fabricFcoeSanPc.operState).
+# TYPE ucs_fi_fcoe_port_channel_oper_state gauge
+ucs_fi_fcoe_port_channel_oper_state{domain="synthetic",fabric="B",port_channel="5",state="down"} 1
+# HELP ucs_fi_fcoe_port_channel_receive_bytes_total FCoE bytes received (UCSM etherFcoeInterfaceStats.bytesRx).
+# TYPE ucs_fi_fcoe_port_channel_receive_bytes_total counter
+ucs_fi_fcoe_port_channel_receive_bytes_total{domain="synthetic",fabric="B",port_channel="5"} 0
+# HELP ucs_fi_fcoe_port_channel_receive_dropped_total FCoE received packets dropped (UCSM etherFcoeInterfaceStats.droppedRx).
+# TYPE ucs_fi_fcoe_port_channel_receive_dropped_total counter
+ucs_fi_fcoe_port_channel_receive_dropped_total{domain="synthetic",fabric="B",port_channel="5"} 0
+# HELP ucs_fi_fcoe_port_channel_receive_errors_total FCoE receive errors (UCSM etherFcoeInterfaceStats.errorsRx).
+# TYPE ucs_fi_fcoe_port_channel_receive_errors_total counter
+ucs_fi_fcoe_port_channel_receive_errors_total{domain="synthetic",fabric="B",port_channel="5"} 0
+# HELP ucs_fi_fcoe_port_channel_receive_packets_total FCoE packets received (UCSM etherFcoeInterfaceStats.packetsRx).
+# TYPE ucs_fi_fcoe_port_channel_receive_packets_total counter
+ucs_fi_fcoe_port_channel_receive_packets_total{domain="synthetic",fabric="B",port_channel="5"} 0
+# HELP ucs_fi_fcoe_port_channel_transmit_bytes_total FCoE bytes transmitted (UCSM etherFcoeInterfaceStats.bytesTx).
+# TYPE ucs_fi_fcoe_port_channel_transmit_bytes_total counter
+ucs_fi_fcoe_port_channel_transmit_bytes_total{domain="synthetic",fabric="B",port_channel="5"} 0
+# HELP ucs_fi_fcoe_port_channel_transmit_dropped_total FCoE transmitted packets dropped (UCSM etherFcoeInterfaceStats.droppedTx).
+# TYPE ucs_fi_fcoe_port_channel_transmit_dropped_total counter
+ucs_fi_fcoe_port_channel_transmit_dropped_total{domain="synthetic",fabric="B",port_channel="5"} 0
+# HELP ucs_fi_fcoe_port_channel_transmit_errors_total FCoE transmit errors (UCSM etherFcoeInterfaceStats.errorsTx).
+# TYPE ucs_fi_fcoe_port_channel_transmit_errors_total counter
+ucs_fi_fcoe_port_channel_transmit_errors_total{domain="synthetic",fabric="B",port_channel="5"} 0
+# HELP ucs_fi_fcoe_port_channel_transmit_packets_total FCoE packets transmitted (UCSM etherFcoeInterfaceStats.packetsTx).
+# TYPE ucs_fi_fcoe_port_channel_transmit_packets_total counter
+ucs_fi_fcoe_port_channel_transmit_packets_total{domain="synthetic",fabric="B",port_channel="5"} 0
+# HELP ucs_fi_fcoe_port_channel_up Whether the FCoE uplink or port channel is up (UCSM fabricFcoeSanEp/fabricFcoeSanPc.operState).
+# TYPE ucs_fi_fcoe_port_channel_up gauge
+ucs_fi_fcoe_port_channel_up{domain="synthetic",fabric="B",port_channel="5"} 0
+# HELP ucs_fi_fcoe_uplink_fcoe_state FCoE state (UCSM fabricFcoeSanEp/fabricFcoeSanPc.fcoeState).
+# TYPE ucs_fi_fcoe_uplink_fcoe_state gauge
+ucs_fi_fcoe_uplink_fcoe_state{domain="synthetic",fabric="B",port="1/25",state="up"} 1
+# HELP ucs_fi_fcoe_uplink_oper_state FCoE uplink or port channel operational state (UCSM fabricFcoeSanEp/fabricFcoeSanPc.operState).
+# TYPE ucs_fi_fcoe_uplink_oper_state gauge
+ucs_fi_fcoe_uplink_oper_state{domain="synthetic",fabric="B",port="1/25",state="up"} 1
+# HELP ucs_fi_fcoe_uplink_receive_bytes_total FCoE bytes received (UCSM etherFcoeInterfaceStats.bytesRx).
+# TYPE ucs_fi_fcoe_uplink_receive_bytes_total counter
+ucs_fi_fcoe_uplink_receive_bytes_total{domain="synthetic",fabric="B",port="1/25"} 4400
+# HELP ucs_fi_fcoe_uplink_receive_dropped_total FCoE received packets dropped (UCSM etherFcoeInterfaceStats.droppedRx).
+# TYPE ucs_fi_fcoe_uplink_receive_dropped_total counter
+ucs_fi_fcoe_uplink_receive_dropped_total{domain="synthetic",fabric="B",port="1/25"} 1
+# HELP ucs_fi_fcoe_uplink_receive_errors_total FCoE receive errors (UCSM etherFcoeInterfaceStats.errorsRx).
+# TYPE ucs_fi_fcoe_uplink_receive_errors_total counter
+ucs_fi_fcoe_uplink_receive_errors_total{domain="synthetic",fabric="B",port="1/25"} 0
+# HELP ucs_fi_fcoe_uplink_receive_packets_total FCoE packets received (UCSM etherFcoeInterfaceStats.packetsRx).
+# TYPE ucs_fi_fcoe_uplink_receive_packets_total counter
+ucs_fi_fcoe_uplink_receive_packets_total{domain="synthetic",fabric="B",port="1/25"} 44
+# HELP ucs_fi_fcoe_uplink_transmit_bytes_total FCoE bytes transmitted (UCSM etherFcoeInterfaceStats.bytesTx).
+# TYPE ucs_fi_fcoe_uplink_transmit_bytes_total counter
+ucs_fi_fcoe_uplink_transmit_bytes_total{domain="synthetic",fabric="B",port="1/25"} 3300
+# HELP ucs_fi_fcoe_uplink_transmit_dropped_total FCoE transmitted packets dropped (UCSM etherFcoeInterfaceStats.droppedTx).
+# TYPE ucs_fi_fcoe_uplink_transmit_dropped_total counter
+ucs_fi_fcoe_uplink_transmit_dropped_total{domain="synthetic",fabric="B",port="1/25"} 0
+# HELP ucs_fi_fcoe_uplink_transmit_errors_total FCoE transmit errors (UCSM etherFcoeInterfaceStats.errorsTx).
+# TYPE ucs_fi_fcoe_uplink_transmit_errors_total counter
+ucs_fi_fcoe_uplink_transmit_errors_total{domain="synthetic",fabric="B",port="1/25"} 0
+# HELP ucs_fi_fcoe_uplink_transmit_packets_total FCoE packets transmitted (UCSM etherFcoeInterfaceStats.packetsTx).
+# TYPE ucs_fi_fcoe_uplink_transmit_packets_total counter
+ucs_fi_fcoe_uplink_transmit_packets_total{domain="synthetic",fabric="B",port="1/25"} 33
+# HELP ucs_fi_fcoe_uplink_up Whether the FCoE uplink or port channel is up (UCSM fabricFcoeSanEp/fabricFcoeSanPc.operState).
+# TYPE ucs_fi_fcoe_uplink_up gauge
+ucs_fi_fcoe_uplink_up{domain="synthetic",fabric="B",port="1/25"} 1
+# HELP ucs_vhba_crc_errors_total vHBA frames with invalid CRC (UCSM adaptorFcIfEventStats.invalidCRCCount).
+# TYPE ucs_vhba_crc_errors_total counter
+ucs_vhba_crc_errors_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc0"} 0
+ucs_vhba_crc_errors_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root/finance",server="rack-unit-1",service_profile="db01",vhba="fc0"} 0
+ucs_vhba_crc_errors_total{adaptor="1",domain="synthetic",interface="host-fc-2",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc1"} 0
+# HELP ucs_vhba_dumped_frames_total FC frames dumped by the vHBA (UCSM adaptorFcIfFrameStats.dumpedFrames).
+# TYPE ucs_vhba_dumped_frames_total counter
+ucs_vhba_dumped_frames_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc0"} 0
+ucs_vhba_dumped_frames_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root/finance",server="rack-unit-1",service_profile="db01",vhba="fc0"} 0
+ucs_vhba_dumped_frames_total{adaptor="1",domain="synthetic",interface="host-fc-2",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc1"} 0
+# HELP ucs_vhba_error_frames_total FC error frames on the vHBA (UCSM adaptorFcIfFrameStats.errorFrames).
+# TYPE ucs_vhba_error_frames_total counter
+ucs_vhba_error_frames_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc0"} 0
+ucs_vhba_error_frames_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root/finance",server="rack-unit-1",service_profile="db01",vhba="fc0"} 0
+ucs_vhba_error_frames_total{adaptor="1",domain="synthetic",interface="host-fc-2",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc1"} 0
+# HELP ucs_vhba_fcp_control_requests_total FCP control requests (UCSM adaptorFcIfFC4Stats.controlRequests).
+# TYPE ucs_vhba_fcp_control_requests_total counter
+ucs_vhba_fcp_control_requests_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc0"} 12
+ucs_vhba_fcp_control_requests_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root/finance",server="rack-unit-1",service_profile="db01",vhba="fc0"} 12
+ucs_vhba_fcp_control_requests_total{adaptor="1",domain="synthetic",interface="host-fc-2",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc1"} 12
+# HELP ucs_vhba_fcp_input_bytes_total FCP bytes read, from megabytes (UCSM adaptorFcIfFC4Stats.inputMegabytes).
+# TYPE ucs_vhba_fcp_input_bytes_total counter
+ucs_vhba_fcp_input_bytes_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc0"} 2.147483648e+09
+ucs_vhba_fcp_input_bytes_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root/finance",server="rack-unit-1",service_profile="db01",vhba="fc0"} 2.147483648e+09
+ucs_vhba_fcp_input_bytes_total{adaptor="1",domain="synthetic",interface="host-fc-2",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc1"} 2.147483648e+09
+# HELP ucs_vhba_fcp_input_requests_total FCP input (read) requests (UCSM adaptorFcIfFC4Stats.inputRequests).
+# TYPE ucs_vhba_fcp_input_requests_total counter
+ucs_vhba_fcp_input_requests_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc0"} 1000
+ucs_vhba_fcp_input_requests_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root/finance",server="rack-unit-1",service_profile="db01",vhba="fc0"} 1000
+ucs_vhba_fcp_input_requests_total{adaptor="1",domain="synthetic",interface="host-fc-2",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc1"} 1000
+# HELP ucs_vhba_fcp_output_bytes_total FCP bytes written, from megabytes (UCSM adaptorFcIfFC4Stats.outputMegabytes).
+# TYPE ucs_vhba_fcp_output_bytes_total counter
+ucs_vhba_fcp_output_bytes_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc0"} 1.073741824e+09
+ucs_vhba_fcp_output_bytes_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root/finance",server="rack-unit-1",service_profile="db01",vhba="fc0"} 1.073741824e+09
+ucs_vhba_fcp_output_bytes_total{adaptor="1",domain="synthetic",interface="host-fc-2",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc1"} 1.073741824e+09
+# HELP ucs_vhba_fcp_output_requests_total FCP output (write) requests (UCSM adaptorFcIfFC4Stats.outputRequests).
+# TYPE ucs_vhba_fcp_output_requests_total counter
+ucs_vhba_fcp_output_requests_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc0"} 800
+ucs_vhba_fcp_output_requests_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root/finance",server="rack-unit-1",service_profile="db01",vhba="fc0"} 800
+ucs_vhba_fcp_output_requests_total{adaptor="1",domain="synthetic",interface="host-fc-2",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc1"} 800
+# HELP ucs_vhba_link_failures_total vHBA link failures (UCSM adaptorFcIfEventStats.linkFailureCount).
+# TYPE ucs_vhba_link_failures_total counter
+ucs_vhba_link_failures_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc0"} 0
+ucs_vhba_link_failures_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root/finance",server="rack-unit-1",service_profile="db01",vhba="fc0"} 0
+ucs_vhba_link_failures_total{adaptor="1",domain="synthetic",interface="host-fc-2",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc1"} 1
+# HELP ucs_vhba_lips_total vHBA loop initialization primitives (UCSM adaptorFcIfEventStats.lipCount).
+# TYPE ucs_vhba_lips_total counter
+ucs_vhba_lips_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc0"} 0
+ucs_vhba_lips_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root/finance",server="rack-unit-1",service_profile="db01",vhba="fc0"} 0
+ucs_vhba_lips_total{adaptor="1",domain="synthetic",interface="host-fc-2",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc1"} 0
+# HELP ucs_vhba_nos_total vHBA not-operational sequences (UCSM adaptorFcIfEventStats.nOSCount).
+# TYPE ucs_vhba_nos_total counter
+ucs_vhba_nos_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc0"} 0
+ucs_vhba_nos_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root/finance",server="rack-unit-1",service_profile="db01",vhba="fc0"} 0
+ucs_vhba_nos_total{adaptor="1",domain="synthetic",interface="host-fc-2",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc1"} 0
+# HELP ucs_vhba_port_receive_bad_frames_total Bad frames received by the vHBA port (UCSM adaptorFcPortStats.rxBadFrames).
+# TYPE ucs_vhba_port_receive_bad_frames_total counter
+ucs_vhba_port_receive_bad_frames_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc0"} 0
+ucs_vhba_port_receive_bad_frames_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root/finance",server="rack-unit-1",service_profile="db01",vhba="fc0"} 0
+ucs_vhba_port_receive_bad_frames_total{adaptor="1",domain="synthetic",interface="host-fc-2",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc1"} 1
+# HELP ucs_vhba_port_receive_frames_total Frames received by the vHBA port (UCSM adaptorFcPortStats.rxFrames).
+# TYPE ucs_vhba_port_receive_frames_total counter
+ucs_vhba_port_receive_frames_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc0"} 5500
+ucs_vhba_port_receive_frames_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root/finance",server="rack-unit-1",service_profile="db01",vhba="fc0"} 5500
+ucs_vhba_port_receive_frames_total{adaptor="1",domain="synthetic",interface="host-fc-2",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc1"} 11000
+# HELP ucs_vhba_port_transmit_bad_frames_total Bad frames transmitted by the vHBA port (UCSM adaptorFcPortStats.txBadFrames).
+# TYPE ucs_vhba_port_transmit_bad_frames_total counter
+ucs_vhba_port_transmit_bad_frames_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc0"} 0
+ucs_vhba_port_transmit_bad_frames_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root/finance",server="rack-unit-1",service_profile="db01",vhba="fc0"} 0
+ucs_vhba_port_transmit_bad_frames_total{adaptor="1",domain="synthetic",interface="host-fc-2",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc1"} 0
+# HELP ucs_vhba_port_transmit_frames_total Frames transmitted by the vHBA port (UCSM adaptorFcPortStats.txFrames).
+# TYPE ucs_vhba_port_transmit_frames_total counter
+ucs_vhba_port_transmit_frames_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc0"} 4400
+ucs_vhba_port_transmit_frames_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root/finance",server="rack-unit-1",service_profile="db01",vhba="fc0"} 4400
+ucs_vhba_port_transmit_frames_total{adaptor="1",domain="synthetic",interface="host-fc-2",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc1"} 8800
+# HELP ucs_vhba_receive_frames_total FC frames received by the vHBA (UCSM adaptorFcIfFrameStats.rxFrames).
+# TYPE ucs_vhba_receive_frames_total counter
+ucs_vhba_receive_frames_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc0"} 5500
+ucs_vhba_receive_frames_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root/finance",server="rack-unit-1",service_profile="db01",vhba="fc0"} 5500
+ucs_vhba_receive_frames_total{adaptor="1",domain="synthetic",interface="host-fc-2",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc1"} 11000
+# HELP ucs_vhba_seconds_since_last_reset Seconds since the vHBA counters were last reset (UCSM adaptorFcIfEventStats.secondsSinceLastReset).
+# TYPE ucs_vhba_seconds_since_last_reset gauge
+ucs_vhba_seconds_since_last_reset{adaptor="1",domain="synthetic",interface="host-fc-1",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc0"} 864000
+ucs_vhba_seconds_since_last_reset{adaptor="1",domain="synthetic",interface="host-fc-1",org="root/finance",server="rack-unit-1",service_profile="db01",vhba="fc0"} 864000
+ucs_vhba_seconds_since_last_reset{adaptor="1",domain="synthetic",interface="host-fc-2",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc1"} 864000
+# HELP ucs_vhba_sequence_protocol_errors_total vHBA primitive sequence protocol errors (UCSM adaptorFcIfEventStats.seqProtocolErrCount).
+# TYPE ucs_vhba_sequence_protocol_errors_total counter
+ucs_vhba_sequence_protocol_errors_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc0"} 0
+ucs_vhba_sequence_protocol_errors_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root/finance",server="rack-unit-1",service_profile="db01",vhba="fc0"} 0
+ucs_vhba_sequence_protocol_errors_total{adaptor="1",domain="synthetic",interface="host-fc-2",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc1"} 0
+# HELP ucs_vhba_signal_losses_total vHBA loss of signal events (UCSM adaptorFcIfEventStats.lossOfSignalCount).
+# TYPE ucs_vhba_signal_losses_total counter
+ucs_vhba_signal_losses_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc0"} 0
+ucs_vhba_signal_losses_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root/finance",server="rack-unit-1",service_profile="db01",vhba="fc0"} 0
+ucs_vhba_signal_losses_total{adaptor="1",domain="synthetic",interface="host-fc-2",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc1"} 0
+# HELP ucs_vhba_sync_losses_total vHBA loss of synchronization events (UCSM adaptorFcIfEventStats.lossOfSyncCount).
+# TYPE ucs_vhba_sync_losses_total counter
+ucs_vhba_sync_losses_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc0"} 0
+ucs_vhba_sync_losses_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root/finance",server="rack-unit-1",service_profile="db01",vhba="fc0"} 0
+ucs_vhba_sync_losses_total{adaptor="1",domain="synthetic",interface="host-fc-2",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc1"} 2
+# HELP ucs_vhba_transmit_frames_total FC frames transmitted by the vHBA (UCSM adaptorFcIfFrameStats.txFrames).
+# TYPE ucs_vhba_transmit_frames_total counter
+ucs_vhba_transmit_frames_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc0"} 4400
+ucs_vhba_transmit_frames_total{adaptor="1",domain="synthetic",interface="host-fc-1",org="root/finance",server="rack-unit-1",service_profile="db01",vhba="fc0"} 4400
+ucs_vhba_transmit_frames_total{adaptor="1",domain="synthetic",interface="host-fc-2",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc1"} 8800

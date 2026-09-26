@@ -1,0 +1,15 @@
+<configResolveClass cookie="" response="yes" classId="etherPauseStats">
+<outConfigs>
+<etherPauseStats dn="sys/switch-A/slot-1/switch-ether/port-1/pause-stats" recvPause="4" xmitPause="7" resets="0"/>
+<etherPauseStats dn="sys/switch-A/slot-1/switch-ether/port-17/pause-stats" recvPause="4" xmitPause="7" resets="0"/>
+<etherPauseStats dn="sys/switch-A/slot-1/switch-ether/port-18/pause-stats" recvPause="4" xmitPause="7" resets="0"/>
+<etherPauseStats dn="sys/switch-A/slot-1/switch-ether/aggr-port-49/port-2/pause-stats" recvPause="4" xmitPause="7" resets="0"/>
+<etherPauseStats dn="sys/switch-B/slot-1/switch-ether/port-17/pause-stats" recvPause="4" xmitPause="7" resets="0"/>
+<etherPauseStats dn="fabric/lan/A/pc-11/pause-stats" recvPause="4" xmitPause="7" resets="0"/>
+<etherPauseStats dn="fabric/lan/B/pc-12/pause-stats" recvPause="4" xmitPause="7" resets="0"/>
+<etherPauseStats dn="sys/chassis-1/slot-1/host/port-1/pause-stats" recvPause="0" xmitPause="0" resets="0"/>
+<etherPauseStats dn="sys/chassis-1/slot-1/host/port-2/pause-stats" recvPause="0" xmitPause="0" resets="0"/>
+<etherPauseStats dn="sys/chassis-1/slot-2/host/port-1/pause-stats" recvPause="0" xmitPause="0" resets="0"/>
+<etherPauseStats dn="sys/chassis-1/slot-2/host/port-2/pause-stats" recvPause="0" xmitPause="0" resets="0"/>
+</outConfigs>
+</configResolveClass>

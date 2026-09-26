@@ -1,0 +1,11 @@
+<configResolveClass cookie="" response="yes" classId="dcxVc">
+<outConfigs>
+<dcxVc dn="sys/chassis-1/blade-1/fabric-A/path-1/vc-1001" vnic="eth0" switchId="A" transport="ether" operState="active" linkState="up" operBorderSlotId="0" operBorderAggrPortId="0" operBorderPortId="11" id="1001"/>
+<dcxVc dn="sys/chassis-1/blade-1/fabric-A/path-1/vc-1002" vnic="fc0" switchId="A" transport="fc" operState="active" linkState="up" operBorderSlotId="1" operBorderAggrPortId="0" operBorderPortId="1" id="1002"/>
+<dcxVc dn="sys/chassis-1/blade-1/fabric-B/path-1/vc-1003" vnic="eth1" switchId="B" transport="ether" operState="error" linkState="down" operBorderSlotId="0" operBorderAggrPortId="0" operBorderPortId="0" id="1003"/>
+<dcxVc dn="sys/chassis-1/blade-1/fabric-B/path-1/vc-1004" vnic="fc1" switchId="B" transport="fc" operState="active" linkState="up" operBorderSlotId="1" operBorderAggrPortId="0" operBorderPortId="1" id="1004"/>
+<dcxVc dn="sys/rack-unit-1/fabric-A/vc-2001" vnic="eth0" switchId="A" transport="ether" operState="active" linkState="up" operBorderSlotId="1" operBorderAggrPortId="49" operBorderPortId="2" id="2001"/>
+<dcxVc dn="sys/rack-unit-1/fabric-A/vc-2002" vnic="fc0" switchId="A" transport="fc" operState="active" linkState="up" operBorderSlotId="1" operBorderAggrPortId="0" operBorderPortId="2" id="2002"/>
+<dcxVc dn="sys/chassis-1/fabric-A/vc-1500" vnic="" switchId="A" transport="ether" operState="active" linkState="up" operBorderSlotId="0" operBorderAggrPortId="0" operBorderPortId="0" id="1500"/>
+</outConfigs>
+</configResolveClass>

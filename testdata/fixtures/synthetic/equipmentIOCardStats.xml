@@ -1,0 +1,6 @@
+<configResolveClass cookie="" response="yes" classId="equipmentIOCardStats">
+<outConfigs>
+<equipmentIOCardStats dn="sys/chassis-1/slot-1/stats" ambientTemp="31" dimmTemp="35" procTemp="48" temp="not-applicable" IomI2CErrors="0"/>
+<equipmentIOCardStats dn="sys/chassis-1/slot-2/stats" ambientTemp="31" dimmTemp="35" procTemp="48" temp="not-applicable" IomI2CErrors="0"/>
+</outConfigs>
+</configResolveClass>

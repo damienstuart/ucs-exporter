@@ -1,0 +1,6 @@
+<configResolveClass cookie="" response="yes" classId="networkElement">
+<outConfigs>
+<networkElement dn="sys/switch-A" id="A" model="UCS-FI-6454" serial="FDO11111AAA" vendor="Cisco Systems, Inc." operability="operable" thermal="ok" operEvacState="fill" totalMemory="65536" oobIfIp="192.0.2.11"/>
+<networkElement dn="sys/switch-B" id="B" model="UCS-FI-6454" serial="FDO11111BBB" vendor="Cisco Systems, Inc." operability="operable" thermal="ok" operEvacState="fill" totalMemory="65536" oobIfIp="192.0.2.12"/>
+</outConfigs>
+</configResolveClass>

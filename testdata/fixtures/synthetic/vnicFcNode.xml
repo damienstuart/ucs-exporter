@@ -1,0 +1,6 @@
+<configResolveClass cookie="" response="yes" classId="vnicFcNode">
+<outConfigs>
+<vnicFcNode dn="org-root/ls-esx01/fc-node" addr="20:00:00:25:B5:00:00:01"/>
+<vnicFcNode dn="org-root/org-finance/ls-db01/fc-node" addr="20:00:00:25:B5:00:01:01"/>
+</outConfigs>
+</configResolveClass>

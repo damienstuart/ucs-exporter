@@ -1,0 +1,6 @@
+<configResolveClass cookie="" response="yes" classId="swSystemStats">
+<outConfigs>
+<swSystemStats dn="sys/switch-A/sysstats" load="1.25" memAvailable="40960" memCached="8192" kernelMemTotal="65011712" kernelMemFree="31457280" upTime="45:10:20:30" CorrectableParityError="0" memAvailableDelta="12"/>
+<swSystemStats dn="sys/switch-B/sysstats" load="0.80" memAvailable="40960" memCached="8192" kernelMemTotal="65011712" kernelMemFree="31457280" upTime="45:10:20:30" CorrectableParityError="0" memAvailableDelta="12"/>
+</outConfigs>
+</configResolveClass>

@@ -1,0 +1,8 @@
+<configResolveClass cookie="" response="yes" classId="fcErrStats">
+<outConfigs>
+<fcErrStats dn="sys/switch-A/slot-1/switch-fc/port-1/err-stats" crcRx="0" discardRx="0" discardTx="1" linkFailures="0" rx="0" signalLosses="0" syncLosses="0" tooLongRx="0" tooShortRx="0" tx="0" crcRxDelta="1"/>
+<fcErrStats dn="sys/switch-A/slot-1/switch-fc/port-2/err-stats" crcRx="7" discardRx="0" discardTx="1" linkFailures="0" rx="0" signalLosses="0" syncLosses="0" tooLongRx="0" tooShortRx="0" tx="0" crcRxDelta="1"/>
+<fcErrStats dn="sys/switch-B/slot-1/switch-fc/port-1/err-stats" crcRx="0" discardRx="0" discardTx="1" linkFailures="2" rx="0" signalLosses="1" syncLosses="3" tooLongRx="0" tooShortRx="0" tx="0" crcRxDelta="1"/>
+<fcErrStats dn="fabric/san/A/pc-1/err-stats" crcRx="7" discardRx="0" discardTx="1" linkFailures="0" rx="0" signalLosses="0" syncLosses="0" tooLongRx="0" tooShortRx="0" tx="0"/>
+</outConfigs>
+</configResolveClass>

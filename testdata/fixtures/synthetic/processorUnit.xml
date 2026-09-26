@@ -1,0 +1,9 @@
+<configResolveClass cookie="" response="yes" classId="processorUnit">
+<outConfigs>
+<processorUnit dn="sys/chassis-1/blade-1/board/cpu-1" model="Intel(R) Xeon(R) Gold 6338 CPU @ 2.00GHz" operability="operable" presence="equipped" cores="32"/>
+<processorUnit dn="sys/chassis-1/blade-1/board/cpu-2" model="Intel(R) Xeon(R) Gold 6338 CPU @ 2.00GHz" operability="operable" presence="equipped" cores="32"/>
+<processorUnit dn="sys/chassis-1/blade-2/board/cpu-1" model="Intel(R) Xeon(R) Gold 6338 CPU @ 2.00GHz" operability="operable" presence="equipped" cores="32"/>
+<processorUnit dn="sys/chassis-1/blade-2/board/cpu-2" model="Intel(R) Xeon(R) Gold 6338 CPU @ 2.00GHz" operability="operable" presence="equipped" cores="32"/>
+<processorUnit dn="sys/rack-unit-1/board/cpu-1" model="Intel(R) Xeon(R) Gold 6338 CPU @ 2.00GHz" operability="operable" presence="equipped" cores="32"/>
+</outConfigs>
+</configResolveClass>

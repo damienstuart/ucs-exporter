@@ -1,0 +1,16 @@
+<configResolveClass cookie="" response="yes" classId="etherErrStats">
+<outConfigs>
+<etherErrStats dn="sys/switch-A/slot-1/switch-ether/port-1/err-stats" align="0" deferredTx="0" fcs="0" intMacRx="0" intMacTx="0" outDiscard="12" rcv="1" underSize="0" xmit="0" fcsDelta="1"/>
+<etherErrStats dn="sys/switch-A/slot-1/switch-ether/port-17/err-stats" align="0" deferredTx="0" fcs="3" intMacRx="0" intMacTx="0" outDiscard="12" rcv="1" underSize="0" xmit="0" fcsDelta="1"/>
+<etherErrStats dn="sys/switch-A/slot-1/switch-ether/port-18/err-stats" align="0" deferredTx="0" fcs="0" intMacRx="0" intMacTx="0" outDiscard="12" rcv="1" underSize="0" xmit="0" fcsDelta="1"/>
+<etherErrStats dn="sys/switch-A/slot-1/switch-ether/aggr-port-49/port-2/err-stats" align="0" deferredTx="0" fcs="0" intMacRx="0" intMacTx="0" outDiscard="12" rcv="1" underSize="0" xmit="0" fcsDelta="1"/>
+<etherErrStats dn="sys/switch-B/slot-1/switch-ether/port-17/err-stats" align="0" deferredTx="0" fcs="3" intMacRx="0" intMacTx="0" outDiscard="12" rcv="1" underSize="0" xmit="0" fcsDelta="1"/>
+<etherErrStats dn="fabric/lan/A/pc-11/err-stats" align="0" deferredTx="0" fcs="3" intMacRx="0" intMacTx="0" outDiscard="12" rcv="1" underSize="0" xmit="0"/>
+<etherErrStats dn="fabric/lan/B/pc-12/err-stats" align="0" deferredTx="0" fcs="3" intMacRx="0" intMacTx="0" outDiscard="12" rcv="1" underSize="0" xmit="0"/>
+<etherErrStats dn="sys/chassis-1/slot-1/host/port-1/err-stats" align="0" deferredTx="0" fcs="0" intMacRx="0" intMacTx="0" outDiscard="0" rcv="0" underSize="0" xmit="0"/>
+<etherErrStats dn="sys/chassis-1/slot-1/host/port-2/err-stats" align="0" deferredTx="0" fcs="0" intMacRx="0" intMacTx="0" outDiscard="0" rcv="0" underSize="0" xmit="0"/>
+<etherErrStats dn="sys/chassis-1/slot-2/host/port-1/err-stats" align="0" deferredTx="0" fcs="0" intMacRx="0" intMacTx="0" outDiscard="0" rcv="0" underSize="0" xmit="0"/>
+<etherErrStats dn="sys/chassis-1/slot-2/host/port-2/err-stats" align="0" deferredTx="0" fcs="0" intMacRx="0" intMacTx="0" outDiscard="0" rcv="0" underSize="0" xmit="0"/>
+<etherErrStats dn="sys/fex-101/slot-1/host/port-3/err-stats" align="0" deferredTx="0" fcs="0" intMacRx="0" intMacTx="0" outDiscard="0" rcv="0" underSize="0" xmit="0"/>
+</outConfigs>
+</configResolveClass>

@@ -1,0 +1,5 @@
+<configResolveClass cookie="" response="yes" classId="equipmentChassis">
+<outConfigs>
+<equipmentChassis dn="sys/chassis-1" id="1" model="UCSB-5108-AC2" serial="FOX1111CH01" operability="operable" thermal="ok" power="redundancy-degraded" presence="equipped"/>
+</outConfigs>
+</configResolveClass>

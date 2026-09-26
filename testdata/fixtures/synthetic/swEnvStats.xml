@@ -1,0 +1,6 @@
+<configResolveClass cookie="" response="yes" classId="swEnvStats">
+<outConfigs>
+<swEnvStats dn="sys/switch-A/envstats" mainBoardOutlet1="38" mainBoardOutlet2="41" psuCtrlrInlet1="29" psuCtrlrInlet2="30" fanCtrlrInlet1="27" fanCtrlrInlet2="0" fanCtrlrInlet3="not-applicable" fanCtrlrInlet4="0" donner="0" td2="0" tiburon="55"/>
+<swEnvStats dn="sys/switch-B/envstats" mainBoardOutlet1="38" mainBoardOutlet2="41" psuCtrlrInlet1="29" psuCtrlrInlet2="30" fanCtrlrInlet1="27" fanCtrlrInlet2="0" fanCtrlrInlet3="not-applicable" fanCtrlrInlet4="0" donner="0" td2="0" tiburon="55"/>
+</outConfigs>
+</configResolveClass>

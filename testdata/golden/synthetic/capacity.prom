@@ -1,0 +1,48 @@
+# HELP ucs_chassis_blade_slots Blade slots of a chassis by presence (UCSM fabricComputeSlotEp.presence).
+# TYPE ucs_chassis_blade_slots gauge
+ucs_chassis_blade_slots{chassis="1",domain="synthetic",presence="empty"} 6
+ucs_chassis_blade_slots{chassis="1",domain="synthetic",presence="equipped"} 2
+# HELP ucs_server_adaptors Number of adapters (UCSM computeBlade/computeRackUnit.numOfAdaptors).
+# TYPE ucs_server_adaptors gauge
+ucs_server_adaptors{domain="synthetic",server="chassis-1/blade-1"} 1
+ucs_server_adaptors{domain="synthetic",server="chassis-1/blade-2"} 1
+ucs_server_adaptors{domain="synthetic",server="rack-unit-1"} 1
+# HELP ucs_server_cpu_cores Number of CPU cores (UCSM computeBlade/computeRackUnit.numOfCores).
+# TYPE ucs_server_cpu_cores gauge
+ucs_server_cpu_cores{domain="synthetic",server="chassis-1/blade-1"} 64
+ucs_server_cpu_cores{domain="synthetic",server="chassis-1/blade-2"} 64
+ucs_server_cpu_cores{domain="synthetic",server="rack-unit-1"} 64
+# HELP ucs_server_cpu_cores_enabled Number of enabled CPU cores (UCSM computeBlade/computeRackUnit.numOfCoresEnabled).
+# TYPE ucs_server_cpu_cores_enabled gauge
+ucs_server_cpu_cores_enabled{domain="synthetic",server="chassis-1/blade-1"} 64
+ucs_server_cpu_cores_enabled{domain="synthetic",server="chassis-1/blade-2"} 32
+ucs_server_cpu_cores_enabled{domain="synthetic",server="rack-unit-1"} 64
+# HELP ucs_server_cpu_threads Number of CPU threads (UCSM computeBlade/computeRackUnit.numOfThreads).
+# TYPE ucs_server_cpu_threads gauge
+ucs_server_cpu_threads{domain="synthetic",server="chassis-1/blade-1"} 128
+ucs_server_cpu_threads{domain="synthetic",server="chassis-1/blade-2"} 128
+ucs_server_cpu_threads{domain="synthetic",server="rack-unit-1"} 128
+# HELP ucs_server_cpus Number of CPU sockets populated (UCSM computeBlade/computeRackUnit.numOfCpus).
+# TYPE ucs_server_cpus gauge
+ucs_server_cpus{domain="synthetic",server="chassis-1/blade-1"} 2
+ucs_server_cpus{domain="synthetic",server="chassis-1/blade-2"} 2
+ucs_server_cpus{domain="synthetic",server="rack-unit-1"} 2
+# HELP ucs_server_info Server information (UCSM computeBlade, computeRackUnit).
+# TYPE ucs_server_info gauge
+ucs_server_info{domain="synthetic",model="UCSB-B200-M6",serial="FLM1111BL01",server="chassis-1/blade-1",type="blade",vendor="Cisco Systems Inc"} 1
+ucs_server_info{domain="synthetic",model="UCSB-B200-M6",serial="FLM1111BL02",server="chassis-1/blade-2",type="blade",vendor="Cisco Systems Inc"} 1
+ucs_server_info{domain="synthetic",model="UCSC-C240-M6SX",serial="WZP1111RK01",server="rack-unit-1",type="rack",vendor="Cisco Systems Inc"} 1
+# HELP ucs_server_memory_available_bytes Available memory in bytes (UCSM computeBlade/computeRackUnit.availableMemory).
+# TYPE ucs_server_memory_available_bytes gauge
+ucs_server_memory_available_bytes{domain="synthetic",server="chassis-1/blade-1"} 5.49755813888e+11
+ucs_server_memory_available_bytes{domain="synthetic",server="chassis-1/blade-2"} 5.49755813888e+11
+ucs_server_memory_available_bytes{domain="synthetic",server="rack-unit-1"} 4.12316860416e+11
+# HELP ucs_server_memory_bytes Installed memory in bytes (UCSM computeBlade/computeRackUnit.totalMemory).
+# TYPE ucs_server_memory_bytes gauge
+ucs_server_memory_bytes{domain="synthetic",server="chassis-1/blade-1"} 5.49755813888e+11
+ucs_server_memory_bytes{domain="synthetic",server="chassis-1/blade-2"} 5.49755813888e+11
+ucs_server_memory_bytes{domain="synthetic",server="rack-unit-1"} 5.49755813888e+11
+# HELP ucs_server_service_profile_info Service profile associated with a server (UCSM computeBlade/computeRackUnit.assignedToDn).
+# TYPE ucs_server_service_profile_info gauge
+ucs_server_service_profile_info{domain="synthetic",org="root",server="chassis-1/blade-1",service_profile="esx01"} 1
+ucs_server_service_profile_info{domain="synthetic",org="root/finance",server="rack-unit-1",service_profile="db01"} 1

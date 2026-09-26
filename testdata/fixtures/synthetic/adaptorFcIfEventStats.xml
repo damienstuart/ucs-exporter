@@ -1,0 +1,7 @@
+<configResolveClass cookie="" response="yes" classId="adaptorFcIfEventStats">
+<outConfigs>
+<adaptorFcIfEventStats dn="sys/chassis-1/blade-1/adaptor-1/host-fc-1/fc-if-event-stats" linkFailureCount="0" lossOfSignalCount="0" lossOfSyncCount="0" invalidCRCCount="0" lipCount="0" nOSCount="0" seqProtocolErrCount="0" secondsSinceLastReset="864000"/>
+<adaptorFcIfEventStats dn="sys/chassis-1/blade-1/adaptor-1/host-fc-2/fc-if-event-stats" linkFailureCount="1" lossOfSignalCount="0" lossOfSyncCount="2" invalidCRCCount="0" lipCount="0" nOSCount="0" seqProtocolErrCount="0" secondsSinceLastReset="864000"/>
+<adaptorFcIfEventStats dn="sys/rack-unit-1/adaptor-1/host-fc-1/fc-if-event-stats" linkFailureCount="0" lossOfSignalCount="0" lossOfSyncCount="0" invalidCRCCount="0" lipCount="0" nOSCount="0" seqProtocolErrCount="0" secondsSinceLastReset="864000"/>
+</outConfigs>
+</configResolveClass>

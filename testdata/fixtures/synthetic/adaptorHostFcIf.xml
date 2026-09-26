@@ -1,0 +1,7 @@
+<configResolveClass cookie="" response="yes" classId="adaptorHostFcIf">
+<outConfigs>
+<adaptorHostFcIf dn="sys/chassis-1/blade-1/adaptor-1/host-fc-1" vnicDn="org-root/ls-esx01/fc-fc0" switchId="A" operState="operable" linkState="up" wwn="20:00:00:25:B5:0A:00:01"/>
+<adaptorHostFcIf dn="sys/chassis-1/blade-1/adaptor-1/host-fc-2" vnicDn="org-root/ls-esx01/fc-fc1" switchId="B" operState="operable" linkState="up" wwn="20:00:00:25:B5:0A:00:02"/>
+<adaptorHostFcIf dn="sys/rack-unit-1/adaptor-1/host-fc-1" vnicDn="org-root/org-finance/ls-db01/fc-fc0" switchId="A" operState="operable" linkState="up" wwn="20:00:00:25:B5:0A:00:01"/>
+</outConfigs>
+</configResolveClass>

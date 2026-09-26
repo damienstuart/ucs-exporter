@@ -1,0 +1,7 @@
+<configResolveClass cookie="" response="yes" classId="fcPIo">
+<outConfigs>
+<fcPIo dn="sys/switch-A/slot-1/switch-fc/port-1" ifRole="network" mode="N_proxy" operSpeed="32gbps" operState="up" adminState="enabled" wwn="20:01:00:de:fb:00:00:0a" xcvrType="sfp-32g-sw" portId="1" slotId="1" switchId="A"/>
+<fcPIo dn="sys/switch-A/slot-1/switch-fc/port-2" ifRole="network" mode="N_proxy" operSpeed="32gbps" operState="up" adminState="enabled" wwn="20:02:00:de:fb:00:00:0a" xcvrType="sfp-32g-sw" portId="2" slotId="1" switchId="A"/>
+<fcPIo dn="sys/switch-B/slot-1/switch-fc/port-1" ifRole="network" mode="N_proxy" operSpeed="indeterminate" operState="link-down" adminState="enabled" wwn="20:01:00:de:fb:00:00:0b" xcvrType="sfp-32g-sw" portId="1" slotId="1" switchId="B"/>
+</outConfigs>
+</configResolveClass>

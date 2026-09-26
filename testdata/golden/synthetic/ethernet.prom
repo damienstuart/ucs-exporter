@@ -1,0 +1,260 @@
+# HELP ucs_fex_host_port_align_errors_total Alignment errors (UCSM etherErrStats.align).
+# TYPE ucs_fex_host_port_align_errors_total counter
+ucs_fex_host_port_align_errors_total{domain="synthetic",fex="101",port="3"} 0
+# HELP ucs_fex_host_port_fcs_errors_total Frame check sequence errors (UCSM etherErrStats.fcs).
+# TYPE ucs_fex_host_port_fcs_errors_total counter
+ucs_fex_host_port_fcs_errors_total{domain="synthetic",fex="101",port="3"} 0
+# HELP ucs_fex_host_port_receive_bytes_total Bytes received (UCSM etherRxStats.totalBytes).
+# TYPE ucs_fex_host_port_receive_bytes_total counter
+ucs_fex_host_port_receive_bytes_total{domain="synthetic",fex="101",port="3"} 777000
+# HELP ucs_fex_host_port_receive_errors_total Receive errors (UCSM etherErrStats.rcv).
+# TYPE ucs_fex_host_port_receive_errors_total counter
+ucs_fex_host_port_receive_errors_total{domain="synthetic",fex="101",port="3"} 0
+# HELP ucs_fex_host_port_receive_internal_mac_errors_total Internal MAC receive errors (UCSM etherErrStats.intMacRx).
+# TYPE ucs_fex_host_port_receive_internal_mac_errors_total counter
+ucs_fex_host_port_receive_internal_mac_errors_total{domain="synthetic",fex="101",port="3"} 0
+# HELP ucs_fex_host_port_receive_packets_total Packets received (UCSM etherRxStats.totalPackets).
+# TYPE ucs_fex_host_port_receive_packets_total counter
+ucs_fex_host_port_receive_packets_total{domain="synthetic",fex="101",port="3"} 777
+# HELP ucs_fex_host_port_receive_undersize_total Undersized frames received (UCSM etherErrStats.underSize).
+# TYPE ucs_fex_host_port_receive_undersize_total counter
+ucs_fex_host_port_receive_undersize_total{domain="synthetic",fex="101",port="3"} 0
+# HELP ucs_fex_host_port_transmit_bytes_total Bytes transmitted (UCSM etherTxStats.totalBytes).
+# TYPE ucs_fex_host_port_transmit_bytes_total counter
+ucs_fex_host_port_transmit_bytes_total{domain="synthetic",fex="101",port="3"} 666000
+# HELP ucs_fex_host_port_transmit_deferred_total Deferred transmissions (UCSM etherErrStats.deferredTx).
+# TYPE ucs_fex_host_port_transmit_deferred_total counter
+ucs_fex_host_port_transmit_deferred_total{domain="synthetic",fex="101",port="3"} 0
+# HELP ucs_fex_host_port_transmit_discards_total Frames discarded on output (UCSM etherErrStats.outDiscard).
+# TYPE ucs_fex_host_port_transmit_discards_total counter
+ucs_fex_host_port_transmit_discards_total{domain="synthetic",fex="101",port="3"} 0
+# HELP ucs_fex_host_port_transmit_errors_total Transmit errors (UCSM etherErrStats.xmit).
+# TYPE ucs_fex_host_port_transmit_errors_total counter
+ucs_fex_host_port_transmit_errors_total{domain="synthetic",fex="101",port="3"} 0
+# HELP ucs_fex_host_port_transmit_internal_mac_errors_total Internal MAC transmit errors (UCSM etherErrStats.intMacTx).
+# TYPE ucs_fex_host_port_transmit_internal_mac_errors_total counter
+ucs_fex_host_port_transmit_internal_mac_errors_total{domain="synthetic",fex="101",port="3"} 0
+# HELP ucs_fex_host_port_transmit_packets_total Packets transmitted (UCSM etherTxStats.totalPackets).
+# TYPE ucs_fex_host_port_transmit_packets_total counter
+ucs_fex_host_port_transmit_packets_total{domain="synthetic",fex="101",port="3"} 666
+# HELP ucs_fi_port_align_errors_total Alignment errors (UCSM etherErrStats.align).
+# TYPE ucs_fi_port_align_errors_total counter
+ucs_fi_port_align_errors_total{domain="synthetic",fabric="A",port="1/1",role="server"} 0
+ucs_fi_port_align_errors_total{domain="synthetic",fabric="A",port="1/17",role="network"} 0
+ucs_fi_port_align_errors_total{domain="synthetic",fabric="A",port="1/18",role="network"} 0
+ucs_fi_port_align_errors_total{domain="synthetic",fabric="A",port="1/49/2",role="network"} 0
+ucs_fi_port_align_errors_total{domain="synthetic",fabric="B",port="1/17",role="network"} 0
+# HELP ucs_fi_port_channel_align_errors_total Alignment errors (UCSM etherErrStats.align).
+# TYPE ucs_fi_port_channel_align_errors_total counter
+ucs_fi_port_channel_align_errors_total{domain="synthetic",fabric="A",port_channel="11"} 0
+ucs_fi_port_channel_align_errors_total{domain="synthetic",fabric="B",port_channel="12"} 0
+# HELP ucs_fi_port_channel_fcs_errors_total Frame check sequence errors (UCSM etherErrStats.fcs).
+# TYPE ucs_fi_port_channel_fcs_errors_total counter
+ucs_fi_port_channel_fcs_errors_total{domain="synthetic",fabric="A",port_channel="11"} 3
+ucs_fi_port_channel_fcs_errors_total{domain="synthetic",fabric="B",port_channel="12"} 3
+# HELP ucs_fi_port_channel_receive_bytes_total Bytes received (UCSM etherRxStats.totalBytes).
+# TYPE ucs_fi_port_channel_receive_bytes_total counter
+ucs_fi_port_channel_receive_bytes_total{domain="synthetic",fabric="A",port_channel="11"} 9.87654321e+08
+ucs_fi_port_channel_receive_bytes_total{domain="synthetic",fabric="B",port_channel="12"} 9.87654321e+08
+# HELP ucs_fi_port_channel_receive_errors_total Receive errors (UCSM etherErrStats.rcv).
+# TYPE ucs_fi_port_channel_receive_errors_total counter
+ucs_fi_port_channel_receive_errors_total{domain="synthetic",fabric="A",port_channel="11"} 1
+ucs_fi_port_channel_receive_errors_total{domain="synthetic",fabric="B",port_channel="12"} 1
+# HELP ucs_fi_port_channel_receive_internal_mac_errors_total Internal MAC receive errors (UCSM etherErrStats.intMacRx).
+# TYPE ucs_fi_port_channel_receive_internal_mac_errors_total counter
+ucs_fi_port_channel_receive_internal_mac_errors_total{domain="synthetic",fabric="A",port_channel="11"} 0
+ucs_fi_port_channel_receive_internal_mac_errors_total{domain="synthetic",fabric="B",port_channel="12"} 0
+# HELP ucs_fi_port_channel_receive_packets_total Packets received (UCSM etherRxStats.totalPackets).
+# TYPE ucs_fi_port_channel_receive_packets_total counter
+ucs_fi_port_channel_receive_packets_total{domain="synthetic",fabric="A",port_channel="11"} 1.234567e+06
+ucs_fi_port_channel_receive_packets_total{domain="synthetic",fabric="B",port_channel="12"} 1.234567e+06
+# HELP ucs_fi_port_channel_receive_undersize_total Undersized frames received (UCSM etherErrStats.underSize).
+# TYPE ucs_fi_port_channel_receive_undersize_total counter
+ucs_fi_port_channel_receive_undersize_total{domain="synthetic",fabric="A",port_channel="11"} 0
+ucs_fi_port_channel_receive_undersize_total{domain="synthetic",fabric="B",port_channel="12"} 0
+# HELP ucs_fi_port_channel_transmit_bytes_total Bytes transmitted (UCSM etherTxStats.totalBytes).
+# TYPE ucs_fi_port_channel_transmit_bytes_total counter
+ucs_fi_port_channel_transmit_bytes_total{domain="synthetic",fabric="A",port_channel="11"} 8.7654321e+08
+ucs_fi_port_channel_transmit_bytes_total{domain="synthetic",fabric="B",port_channel="12"} 8.7654321e+08
+# HELP ucs_fi_port_channel_transmit_deferred_total Deferred transmissions (UCSM etherErrStats.deferredTx).
+# TYPE ucs_fi_port_channel_transmit_deferred_total counter
+ucs_fi_port_channel_transmit_deferred_total{domain="synthetic",fabric="A",port_channel="11"} 0
+ucs_fi_port_channel_transmit_deferred_total{domain="synthetic",fabric="B",port_channel="12"} 0
+# HELP ucs_fi_port_channel_transmit_discards_total Frames discarded on output (UCSM etherErrStats.outDiscard).
+# TYPE ucs_fi_port_channel_transmit_discards_total counter
+ucs_fi_port_channel_transmit_discards_total{domain="synthetic",fabric="A",port_channel="11"} 12
+ucs_fi_port_channel_transmit_discards_total{domain="synthetic",fabric="B",port_channel="12"} 12
+# HELP ucs_fi_port_channel_transmit_errors_total Transmit errors (UCSM etherErrStats.xmit).
+# TYPE ucs_fi_port_channel_transmit_errors_total counter
+ucs_fi_port_channel_transmit_errors_total{domain="synthetic",fabric="A",port_channel="11"} 0
+ucs_fi_port_channel_transmit_errors_total{domain="synthetic",fabric="B",port_channel="12"} 0
+# HELP ucs_fi_port_channel_transmit_internal_mac_errors_total Internal MAC transmit errors (UCSM etherErrStats.intMacTx).
+# TYPE ucs_fi_port_channel_transmit_internal_mac_errors_total counter
+ucs_fi_port_channel_transmit_internal_mac_errors_total{domain="synthetic",fabric="A",port_channel="11"} 0
+ucs_fi_port_channel_transmit_internal_mac_errors_total{domain="synthetic",fabric="B",port_channel="12"} 0
+# HELP ucs_fi_port_channel_transmit_packets_total Packets transmitted (UCSM etherTxStats.totalPackets).
+# TYPE ucs_fi_port_channel_transmit_packets_total counter
+ucs_fi_port_channel_transmit_packets_total{domain="synthetic",fabric="A",port_channel="11"} 1.134567e+06
+ucs_fi_port_channel_transmit_packets_total{domain="synthetic",fabric="B",port_channel="12"} 1.134567e+06
+# HELP ucs_fi_port_fcs_errors_total Frame check sequence errors (UCSM etherErrStats.fcs).
+# TYPE ucs_fi_port_fcs_errors_total counter
+ucs_fi_port_fcs_errors_total{domain="synthetic",fabric="A",port="1/1",role="server"} 0
+ucs_fi_port_fcs_errors_total{domain="synthetic",fabric="A",port="1/17",role="network"} 3
+ucs_fi_port_fcs_errors_total{domain="synthetic",fabric="A",port="1/18",role="network"} 0
+ucs_fi_port_fcs_errors_total{domain="synthetic",fabric="A",port="1/49/2",role="network"} 0
+ucs_fi_port_fcs_errors_total{domain="synthetic",fabric="B",port="1/17",role="network"} 3
+# HELP ucs_fi_port_receive_bytes_total Bytes received (UCSM etherRxStats.totalBytes).
+# TYPE ucs_fi_port_receive_bytes_total counter
+ucs_fi_port_receive_bytes_total{domain="synthetic",fabric="A",port="1/1",role="server"} 1.5105e+06
+ucs_fi_port_receive_bytes_total{domain="synthetic",fabric="A",port="1/17",role="network"} 2.55105e+07
+ucs_fi_port_receive_bytes_total{domain="synthetic",fabric="A",port="1/18",role="network"} 2.70105e+07
+ucs_fi_port_receive_bytes_total{domain="synthetic",fabric="A",port="1/49/2",role="network"} 3.0105e+06
+ucs_fi_port_receive_bytes_total{domain="synthetic",fabric="B",port="1/17",role="network"} 2.55045e+07
+# HELP ucs_fi_port_receive_errors_total Receive errors (UCSM etherErrStats.rcv).
+# TYPE ucs_fi_port_receive_errors_total counter
+ucs_fi_port_receive_errors_total{domain="synthetic",fabric="A",port="1/1",role="server"} 1
+ucs_fi_port_receive_errors_total{domain="synthetic",fabric="A",port="1/17",role="network"} 1
+ucs_fi_port_receive_errors_total{domain="synthetic",fabric="A",port="1/18",role="network"} 1
+ucs_fi_port_receive_errors_total{domain="synthetic",fabric="A",port="1/49/2",role="network"} 1
+ucs_fi_port_receive_errors_total{domain="synthetic",fabric="B",port="1/17",role="network"} 1
+# HELP ucs_fi_port_receive_internal_mac_errors_total Internal MAC receive errors (UCSM etherErrStats.intMacRx).
+# TYPE ucs_fi_port_receive_internal_mac_errors_total counter
+ucs_fi_port_receive_internal_mac_errors_total{domain="synthetic",fabric="A",port="1/1",role="server"} 0
+ucs_fi_port_receive_internal_mac_errors_total{domain="synthetic",fabric="A",port="1/17",role="network"} 0
+ucs_fi_port_receive_internal_mac_errors_total{domain="synthetic",fabric="A",port="1/18",role="network"} 0
+ucs_fi_port_receive_internal_mac_errors_total{domain="synthetic",fabric="A",port="1/49/2",role="network"} 0
+ucs_fi_port_receive_internal_mac_errors_total{domain="synthetic",fabric="B",port="1/17",role="network"} 0
+# HELP ucs_fi_port_receive_packets_total Packets received (UCSM etherRxStats.totalPackets).
+# TYPE ucs_fi_port_receive_packets_total counter
+ucs_fi_port_receive_packets_total{domain="synthetic",fabric="A",port="1/1",role="server"} 1007
+ucs_fi_port_receive_packets_total{domain="synthetic",fabric="A",port="1/17",role="network"} 17007
+ucs_fi_port_receive_packets_total{domain="synthetic",fabric="A",port="1/18",role="network"} 18007
+ucs_fi_port_receive_packets_total{domain="synthetic",fabric="A",port="1/49/2",role="network"} 2007
+ucs_fi_port_receive_packets_total{domain="synthetic",fabric="B",port="1/17",role="network"} 17003
+# HELP ucs_fi_port_receive_undersize_total Undersized frames received (UCSM etherErrStats.underSize).
+# TYPE ucs_fi_port_receive_undersize_total counter
+ucs_fi_port_receive_undersize_total{domain="synthetic",fabric="A",port="1/1",role="server"} 0
+ucs_fi_port_receive_undersize_total{domain="synthetic",fabric="A",port="1/17",role="network"} 0
+ucs_fi_port_receive_undersize_total{domain="synthetic",fabric="A",port="1/18",role="network"} 0
+ucs_fi_port_receive_undersize_total{domain="synthetic",fabric="A",port="1/49/2",role="network"} 0
+ucs_fi_port_receive_undersize_total{domain="synthetic",fabric="B",port="1/17",role="network"} 0
+# HELP ucs_fi_port_transmit_bytes_total Bytes transmitted (UCSM etherTxStats.totalBytes).
+# TYPE ucs_fi_port_transmit_bytes_total counter
+ucs_fi_port_transmit_bytes_total{domain="synthetic",fabric="A",port="1/1",role="server"} 1.4098e+06
+ucs_fi_port_transmit_bytes_total{domain="synthetic",fabric="A",port="1/17",role="network"} 2.38098e+07
+ucs_fi_port_transmit_bytes_total{domain="synthetic",fabric="A",port="1/18",role="network"} 2.52098e+07
+ucs_fi_port_transmit_bytes_total{domain="synthetic",fabric="A",port="1/49/2",role="network"} 2.8098e+06
+ucs_fi_port_transmit_bytes_total{domain="synthetic",fabric="B",port="1/17",role="network"} 2.38042e+07
+# HELP ucs_fi_port_transmit_deferred_total Deferred transmissions (UCSM etherErrStats.deferredTx).
+# TYPE ucs_fi_port_transmit_deferred_total counter
+ucs_fi_port_transmit_deferred_total{domain="synthetic",fabric="A",port="1/1",role="server"} 0
+ucs_fi_port_transmit_deferred_total{domain="synthetic",fabric="A",port="1/17",role="network"} 0
+ucs_fi_port_transmit_deferred_total{domain="synthetic",fabric="A",port="1/18",role="network"} 0
+ucs_fi_port_transmit_deferred_total{domain="synthetic",fabric="A",port="1/49/2",role="network"} 0
+ucs_fi_port_transmit_deferred_total{domain="synthetic",fabric="B",port="1/17",role="network"} 0
+# HELP ucs_fi_port_transmit_discards_total Frames discarded on output (UCSM etherErrStats.outDiscard).
+# TYPE ucs_fi_port_transmit_discards_total counter
+ucs_fi_port_transmit_discards_total{domain="synthetic",fabric="A",port="1/1",role="server"} 12
+ucs_fi_port_transmit_discards_total{domain="synthetic",fabric="A",port="1/17",role="network"} 12
+ucs_fi_port_transmit_discards_total{domain="synthetic",fabric="A",port="1/18",role="network"} 12
+ucs_fi_port_transmit_discards_total{domain="synthetic",fabric="A",port="1/49/2",role="network"} 12
+ucs_fi_port_transmit_discards_total{domain="synthetic",fabric="B",port="1/17",role="network"} 12
+# HELP ucs_fi_port_transmit_errors_total Transmit errors (UCSM etherErrStats.xmit).
+# TYPE ucs_fi_port_transmit_errors_total counter
+ucs_fi_port_transmit_errors_total{domain="synthetic",fabric="A",port="1/1",role="server"} 0
+ucs_fi_port_transmit_errors_total{domain="synthetic",fabric="A",port="1/17",role="network"} 0
+ucs_fi_port_transmit_errors_total{domain="synthetic",fabric="A",port="1/18",role="network"} 0
+ucs_fi_port_transmit_errors_total{domain="synthetic",fabric="A",port="1/49/2",role="network"} 0
+ucs_fi_port_transmit_errors_total{domain="synthetic",fabric="B",port="1/17",role="network"} 0
+# HELP ucs_fi_port_transmit_internal_mac_errors_total Internal MAC transmit errors (UCSM etherErrStats.intMacTx).
+# TYPE ucs_fi_port_transmit_internal_mac_errors_total counter
+ucs_fi_port_transmit_internal_mac_errors_total{domain="synthetic",fabric="A",port="1/1",role="server"} 0
+ucs_fi_port_transmit_internal_mac_errors_total{domain="synthetic",fabric="A",port="1/17",role="network"} 0
+ucs_fi_port_transmit_internal_mac_errors_total{domain="synthetic",fabric="A",port="1/18",role="network"} 0
+ucs_fi_port_transmit_internal_mac_errors_total{domain="synthetic",fabric="A",port="1/49/2",role="network"} 0
+ucs_fi_port_transmit_internal_mac_errors_total{domain="synthetic",fabric="B",port="1/17",role="network"} 0
+# HELP ucs_fi_port_transmit_packets_total Packets transmitted (UCSM etherTxStats.totalPackets).
+# TYPE ucs_fi_port_transmit_packets_total counter
+ucs_fi_port_transmit_packets_total{domain="synthetic",fabric="A",port="1/1",role="server"} 1012
+ucs_fi_port_transmit_packets_total{domain="synthetic",fabric="A",port="1/17",role="network"} 17012
+ucs_fi_port_transmit_packets_total{domain="synthetic",fabric="A",port="1/18",role="network"} 18012
+ucs_fi_port_transmit_packets_total{domain="synthetic",fabric="A",port="1/49/2",role="network"} 2012
+ucs_fi_port_transmit_packets_total{domain="synthetic",fabric="B",port="1/17",role="network"} 17008
+# HELP ucs_iom_host_port_align_errors_total Alignment errors (UCSM etherErrStats.align).
+# TYPE ucs_iom_host_port_align_errors_total counter
+ucs_iom_host_port_align_errors_total{chassis="1",domain="synthetic",iom="1",port="1"} 0
+ucs_iom_host_port_align_errors_total{chassis="1",domain="synthetic",iom="1",port="2"} 0
+ucs_iom_host_port_align_errors_total{chassis="1",domain="synthetic",iom="2",port="1"} 0
+ucs_iom_host_port_align_errors_total{chassis="1",domain="synthetic",iom="2",port="2"} 0
+# HELP ucs_iom_host_port_fcs_errors_total Frame check sequence errors (UCSM etherErrStats.fcs).
+# TYPE ucs_iom_host_port_fcs_errors_total counter
+ucs_iom_host_port_fcs_errors_total{chassis="1",domain="synthetic",iom="1",port="1"} 0
+ucs_iom_host_port_fcs_errors_total{chassis="1",domain="synthetic",iom="1",port="2"} 0
+ucs_iom_host_port_fcs_errors_total{chassis="1",domain="synthetic",iom="2",port="1"} 0
+ucs_iom_host_port_fcs_errors_total{chassis="1",domain="synthetic",iom="2",port="2"} 0
+# HELP ucs_iom_host_port_receive_bytes_total Bytes received (UCSM etherRxStats.totalBytes).
+# TYPE ucs_iom_host_port_receive_bytes_total counter
+ucs_iom_host_port_receive_bytes_total{chassis="1",domain="synthetic",iom="1",port="1"} 555000
+ucs_iom_host_port_receive_bytes_total{chassis="1",domain="synthetic",iom="1",port="2"} 555000
+ucs_iom_host_port_receive_bytes_total{chassis="1",domain="synthetic",iom="2",port="1"} 555000
+ucs_iom_host_port_receive_bytes_total{chassis="1",domain="synthetic",iom="2",port="2"} 555000
+# HELP ucs_iom_host_port_receive_errors_total Receive errors (UCSM etherErrStats.rcv).
+# TYPE ucs_iom_host_port_receive_errors_total counter
+ucs_iom_host_port_receive_errors_total{chassis="1",domain="synthetic",iom="1",port="1"} 0
+ucs_iom_host_port_receive_errors_total{chassis="1",domain="synthetic",iom="1",port="2"} 0
+ucs_iom_host_port_receive_errors_total{chassis="1",domain="synthetic",iom="2",port="1"} 0
+ucs_iom_host_port_receive_errors_total{chassis="1",domain="synthetic",iom="2",port="2"} 0
+# HELP ucs_iom_host_port_receive_internal_mac_errors_total Internal MAC receive errors (UCSM etherErrStats.intMacRx).
+# TYPE ucs_iom_host_port_receive_internal_mac_errors_total counter
+ucs_iom_host_port_receive_internal_mac_errors_total{chassis="1",domain="synthetic",iom="1",port="1"} 0
+ucs_iom_host_port_receive_internal_mac_errors_total{chassis="1",domain="synthetic",iom="1",port="2"} 0
+ucs_iom_host_port_receive_internal_mac_errors_total{chassis="1",domain="synthetic",iom="2",port="1"} 0
+ucs_iom_host_port_receive_internal_mac_errors_total{chassis="1",domain="synthetic",iom="2",port="2"} 0
+# HELP ucs_iom_host_port_receive_packets_total Packets received (UCSM etherRxStats.totalPackets).
+# TYPE ucs_iom_host_port_receive_packets_total counter
+ucs_iom_host_port_receive_packets_total{chassis="1",domain="synthetic",iom="1",port="1"} 555
+ucs_iom_host_port_receive_packets_total{chassis="1",domain="synthetic",iom="1",port="2"} 555
+ucs_iom_host_port_receive_packets_total{chassis="1",domain="synthetic",iom="2",port="1"} 555
+ucs_iom_host_port_receive_packets_total{chassis="1",domain="synthetic",iom="2",port="2"} 555
+# HELP ucs_iom_host_port_receive_undersize_total Undersized frames received (UCSM etherErrStats.underSize).
+# TYPE ucs_iom_host_port_receive_undersize_total counter
+ucs_iom_host_port_receive_undersize_total{chassis="1",domain="synthetic",iom="1",port="1"} 0
+ucs_iom_host_port_receive_undersize_total{chassis="1",domain="synthetic",iom="1",port="2"} 0
+ucs_iom_host_port_receive_undersize_total{chassis="1",domain="synthetic",iom="2",port="1"} 0
+ucs_iom_host_port_receive_undersize_total{chassis="1",domain="synthetic",iom="2",port="2"} 0
+# HELP ucs_iom_host_port_transmit_bytes_total Bytes transmitted (UCSM etherTxStats.totalBytes).
+# TYPE ucs_iom_host_port_transmit_bytes_total counter
+ucs_iom_host_port_transmit_bytes_total{chassis="1",domain="synthetic",iom="1",port="1"} 444000
+ucs_iom_host_port_transmit_bytes_total{chassis="1",domain="synthetic",iom="1",port="2"} 444000
+ucs_iom_host_port_transmit_bytes_total{chassis="1",domain="synthetic",iom="2",port="1"} 444000
+ucs_iom_host_port_transmit_bytes_total{chassis="1",domain="synthetic",iom="2",port="2"} 444000
+# HELP ucs_iom_host_port_transmit_deferred_total Deferred transmissions (UCSM etherErrStats.deferredTx).
+# TYPE ucs_iom_host_port_transmit_deferred_total counter
+ucs_iom_host_port_transmit_deferred_total{chassis="1",domain="synthetic",iom="1",port="1"} 0
+ucs_iom_host_port_transmit_deferred_total{chassis="1",domain="synthetic",iom="1",port="2"} 0
+ucs_iom_host_port_transmit_deferred_total{chassis="1",domain="synthetic",iom="2",port="1"} 0
+ucs_iom_host_port_transmit_deferred_total{chassis="1",domain="synthetic",iom="2",port="2"} 0
+# HELP ucs_iom_host_port_transmit_discards_total Frames discarded on output (UCSM etherErrStats.outDiscard).
+# TYPE ucs_iom_host_port_transmit_discards_total counter
+ucs_iom_host_port_transmit_discards_total{chassis="1",domain="synthetic",iom="1",port="1"} 0
+ucs_iom_host_port_transmit_discards_total{chassis="1",domain="synthetic",iom="1",port="2"} 0
+ucs_iom_host_port_transmit_discards_total{chassis="1",domain="synthetic",iom="2",port="1"} 0
+ucs_iom_host_port_transmit_discards_total{chassis="1",domain="synthetic",iom="2",port="2"} 0
+# HELP ucs_iom_host_port_transmit_errors_total Transmit errors (UCSM etherErrStats.xmit).
+# TYPE ucs_iom_host_port_transmit_errors_total counter
+ucs_iom_host_port_transmit_errors_total{chassis="1",domain="synthetic",iom="1",port="1"} 0
+ucs_iom_host_port_transmit_errors_total{chassis="1",domain="synthetic",iom="1",port="2"} 0
+ucs_iom_host_port_transmit_errors_total{chassis="1",domain="synthetic",iom="2",port="1"} 0
+ucs_iom_host_port_transmit_errors_total{chassis="1",domain="synthetic",iom="2",port="2"} 0
+# HELP ucs_iom_host_port_transmit_internal_mac_errors_total Internal MAC transmit errors (UCSM etherErrStats.intMacTx).
+# TYPE ucs_iom_host_port_transmit_internal_mac_errors_total counter
+ucs_iom_host_port_transmit_internal_mac_errors_total{chassis="1",domain="synthetic",iom="1",port="1"} 0
+ucs_iom_host_port_transmit_internal_mac_errors_total{chassis="1",domain="synthetic",iom="1",port="2"} 0
+ucs_iom_host_port_transmit_internal_mac_errors_total{chassis="1",domain="synthetic",iom="2",port="1"} 0
+ucs_iom_host_port_transmit_internal_mac_errors_total{chassis="1",domain="synthetic",iom="2",port="2"} 0
+# HELP ucs_iom_host_port_transmit_packets_total Packets transmitted (UCSM etherTxStats.totalPackets).
+# TYPE ucs_iom_host_port_transmit_packets_total counter
+ucs_iom_host_port_transmit_packets_total{chassis="1",domain="synthetic",iom="1",port="1"} 444
+ucs_iom_host_port_transmit_packets_total{chassis="1",domain="synthetic",iom="1",port="2"} 444
+ucs_iom_host_port_transmit_packets_total{chassis="1",domain="synthetic",iom="2",port="1"} 444
+ucs_iom_host_port_transmit_packets_total{chassis="1",domain="synthetic",iom="2",port="2"} 444

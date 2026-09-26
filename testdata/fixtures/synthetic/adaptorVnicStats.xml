@@ -1,0 +1,11 @@
+<configResolveClass cookie="" response="yes" classId="adaptorVnicStats">
+<outConfigs>
+<adaptorVnicStats dn="sys/chassis-1/blade-1/adaptor-1/host-eth-1/vnic-stats" bytesRx="123456789" bytesTx="98765432" packetsRx="123456" packetsTx="98765" errorsRx="0" errorsTx="0" droppedRx="0" droppedTx="0" bytesRxDelta="100"/>
+<adaptorVnicStats dn="sys/chassis-1/blade-1/adaptor-1/host-eth-2/vnic-stats" bytesRx="246913578" bytesTx="197530864" packetsRx="246912" packetsTx="197530" errorsRx="0" errorsTx="0" droppedRx="2" droppedTx="0" bytesRxDelta="100"/>
+<adaptorVnicStats dn="sys/chassis-1/blade-1/adaptor-1/host-fc-1/vnic-stats" bytesRx="5555555" bytesTx="4444444" packetsRx="5555" packetsTx="4444" errorsRx="0" errorsTx="0" droppedRx="0" droppedTx="0"/>
+<adaptorVnicStats dn="sys/chassis-1/blade-1/adaptor-1/host-fc-2/vnic-stats" bytesRx="11111110" bytesTx="8888888" packetsRx="11110" packetsTx="8888" errorsRx="0" errorsTx="0" droppedRx="0" droppedTx="0"/>
+<adaptorVnicStats dn="sys/chassis-1/blade-2/adaptor-1/host-eth-1/vnic-stats" bytesRx="123456789" bytesTx="98765432" packetsRx="123456" packetsTx="98765" errorsRx="0" errorsTx="0" droppedRx="0" droppedTx="0" bytesRxDelta="100"/>
+<adaptorVnicStats dn="sys/rack-unit-1/adaptor-1/host-eth-1/vnic-stats" bytesRx="123456789" bytesTx="98765432" packetsRx="123456" packetsTx="98765" errorsRx="0" errorsTx="0" droppedRx="0" droppedTx="0" bytesRxDelta="100"/>
+<adaptorVnicStats dn="sys/rack-unit-1/adaptor-1/host-fc-1/vnic-stats" bytesRx="5555555" bytesTx="4444444" packetsRx="5555" packetsTx="4444" errorsRx="0" errorsTx="0" droppedRx="0" droppedTx="0"/>
+</outConfigs>
+</configResolveClass>

@@ -1,0 +1,11 @@
+<configResolveClass cookie="" response="yes" classId="faultInst">
+<outConfigs>
+<faultInst dn="sys/chassis-1/psu-4/fault-F0374" severity="major" type="equipment" code="F0374" occur="5" cause="synthetic" descr="Synthetic fault F0374 &lt;test&gt; &amp; more"/>
+<faultInst dn="sys/chassis-1/fault-F0408" severity="major" type="environmental" code="F0408" occur="1" cause="synthetic" descr="Synthetic fault F0408 &lt;test&gt; &amp; more"/>
+<faultInst dn="sys/chassis-1/blade-1/fabric-B/path-1/vc-1003/fault-F0283" severity="major" type="network" code="F0283" occur="3" cause="synthetic" descr="Synthetic fault F0283 &lt;test&gt; &amp; more"/>
+<faultInst dn="sys/rack-unit-1/board/storage-SAS-1/disk-2/fault-F0181" severity="critical" type="equipment" code="F0181" occur="1" cause="synthetic" descr="Synthetic fault F0181 &lt;test&gt; &amp; more"/>
+<faultInst dn="sys/switch-B/fan-module-1-1/fan-2/fault-F0397" severity="minor" type="equipment" code="F0397" occur="2" cause="synthetic" descr="Synthetic fault F0397 &lt;test&gt; &amp; more"/>
+<faultInst dn="org-root/ls-spare/fault-F0327" severity="warning" type="server" code="F0327" occur="1" cause="synthetic" descr="Synthetic fault F0327 &lt;test&gt; &amp; more"/>
+<faultInst dn="sys/chassis-1/slot-2/fault-F0209" severity="cleared" type="connectivity" code="F0209" occur="4" cause="synthetic" descr="Synthetic fault F0209 &lt;test&gt; &amp; more"/>
+</outConfigs>
+</configResolveClass>

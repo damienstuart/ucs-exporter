@@ -1,0 +1,5 @@
+<configResolveClass cookie="" response="yes" classId="computeRackUnit">
+<outConfigs>
+<computeRackUnit dn="sys/rack-unit-1" model="UCSC-C240-M6SX" serial="WZP1111RK01" vendor="Cisco Systems Inc" assignedToDn="org-root/org-finance/ls-db01" operState="degraded" operability="degraded" operPower="on" presence="equipped" association="associated" thermal="ok" numOfCpus="2" numOfCores="64" numOfCoresEnabled="64" numOfThreads="128" totalMemory="524288" availableMemory="393216" numOfAdaptors="1" uuid="aaaaaaaa-bbbb-cccc-dddd-000000000001" usrLbl=""/>
+</outConfigs>
+</configResolveClass>

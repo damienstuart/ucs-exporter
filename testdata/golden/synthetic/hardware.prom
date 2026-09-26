@@ -1,0 +1,577 @@
+# HELP ucs_chassis_fan_module_ok Whether the fan module is operable (UCSM equipmentFanModule.operability).
+# TYPE ucs_chassis_fan_module_ok gauge
+ucs_chassis_fan_module_ok{chassis="1",domain="synthetic",fan_module="1-1"} 1
+# HELP ucs_chassis_fan_module_operability_state Fan module operability (UCSM equipmentFanModule.operability).
+# TYPE ucs_chassis_fan_module_operability_state gauge
+ucs_chassis_fan_module_operability_state{chassis="1",domain="synthetic",fan_module="1-1",state="operable"} 1
+# HELP ucs_chassis_fan_module_temperature_celsius Fan module ambient temperature in degrees Celsius (UCSM equipmentFanModuleStats.ambientTemp).
+# TYPE ucs_chassis_fan_module_temperature_celsius gauge
+ucs_chassis_fan_module_temperature_celsius{chassis="1",domain="synthetic",fan_module="1-1"} 24
+# HELP ucs_chassis_fan_ok Whether the fan is operable (UCSM equipmentFan.operability).
+# TYPE ucs_chassis_fan_ok gauge
+ucs_chassis_fan_ok{chassis="1",domain="synthetic",fan="1-1/1"} 1
+ucs_chassis_fan_ok{chassis="1",domain="synthetic",fan="1-1/2"} 1
+# HELP ucs_chassis_fan_operability_state Fan operability (UCSM equipmentFan.operability).
+# TYPE ucs_chassis_fan_operability_state gauge
+ucs_chassis_fan_operability_state{chassis="1",domain="synthetic",fan="1-1/1",state="operable"} 1
+ucs_chassis_fan_operability_state{chassis="1",domain="synthetic",fan="1-1/2",state="operable"} 1
+# HELP ucs_chassis_i2c_errors_total Chassis I2C errors (UCSM equipmentChassisStats.ChassisI2CErrors).
+# TYPE ucs_chassis_i2c_errors_total counter
+ucs_chassis_i2c_errors_total{chassis="1",domain="synthetic"} 0
+# HELP ucs_chassis_info Chassis information (UCSM equipmentChassis).
+# TYPE ucs_chassis_info gauge
+ucs_chassis_info{chassis="1",domain="synthetic",model="UCSB-5108-AC2",serial="FOX1111CH01"} 1
+# HELP ucs_chassis_input_power_watts Chassis input power in watts (UCSM equipmentChassisStats.inputPower).
+# TYPE ucs_chassis_input_power_watts gauge
+ucs_chassis_input_power_watts{chassis="1",domain="synthetic"} 1850.5
+# HELP ucs_chassis_ok Whether the chassis is operable (UCSM equipmentChassis.operability).
+# TYPE ucs_chassis_ok gauge
+ucs_chassis_ok{chassis="1",domain="synthetic"} 1
+# HELP ucs_chassis_operability_state Chassis operability (UCSM equipmentChassis.operability).
+# TYPE ucs_chassis_operability_state gauge
+ucs_chassis_operability_state{chassis="1",domain="synthetic",state="operable"} 1
+# HELP ucs_chassis_output_power_watts Chassis output power in watts (UCSM equipmentChassisStats.outputPower).
+# TYPE ucs_chassis_output_power_watts gauge
+ucs_chassis_output_power_watts{chassis="1",domain="synthetic"} 1700
+# HELP ucs_chassis_power_state Chassis power (redundancy) state (UCSM equipmentChassis.power).
+# TYPE ucs_chassis_power_state gauge
+ucs_chassis_power_state{chassis="1",domain="synthetic",state="redundancy-degraded"} 1
+# HELP ucs_chassis_psu_capacity_watts Power supply rated capacity in watts (UCSM equipmentPsu.psuWattage).
+# TYPE ucs_chassis_psu_capacity_watts gauge
+ucs_chassis_psu_capacity_watts{chassis="1",domain="synthetic",psu="1"} 2500
+ucs_chassis_psu_capacity_watts{chassis="1",domain="synthetic",psu="2"} 2500
+ucs_chassis_psu_capacity_watts{chassis="1",domain="synthetic",psu="3"} 2500
+ucs_chassis_psu_capacity_watts{chassis="1",domain="synthetic",psu="4"} 2500
+# HELP ucs_chassis_psu_i2c_errors_total Power supply I2C errors (UCSM equipmentPsuStats.PsuI2CErrors).
+# TYPE ucs_chassis_psu_i2c_errors_total counter
+ucs_chassis_psu_i2c_errors_total{chassis="1",domain="synthetic",psu="1"} 0
+ucs_chassis_psu_i2c_errors_total{chassis="1",domain="synthetic",psu="2"} 0
+ucs_chassis_psu_i2c_errors_total{chassis="1",domain="synthetic",psu="3"} 0
+ucs_chassis_psu_i2c_errors_total{chassis="1",domain="synthetic",psu="4"} 1
+# HELP ucs_chassis_psu_info Power supply information (UCSM equipmentPsu).
+# TYPE ucs_chassis_psu_info gauge
+ucs_chassis_psu_info{chassis="1",domain="synthetic",model="UCSB-PSU-2500ACDV",psu="1",serial="LIT111101"} 1
+ucs_chassis_psu_info{chassis="1",domain="synthetic",model="UCSB-PSU-2500ACDV",psu="2",serial="LIT111102"} 1
+ucs_chassis_psu_info{chassis="1",domain="synthetic",model="UCSB-PSU-2500ACDV",psu="3",serial="LIT111103"} 1
+ucs_chassis_psu_info{chassis="1",domain="synthetic",model="UCSB-PSU-2500ACDV",psu="4",serial="LIT111104"} 1
+# HELP ucs_chassis_psu_input_power_watts Power supply input power in watts (UCSM equipmentPsuStats.inputPower).
+# TYPE ucs_chassis_psu_input_power_watts gauge
+ucs_chassis_psu_input_power_watts{chassis="1",domain="synthetic",psu="1"} 620
+ucs_chassis_psu_input_power_watts{chassis="1",domain="synthetic",psu="2"} 620
+ucs_chassis_psu_input_power_watts{chassis="1",domain="synthetic",psu="3"} 620
+ucs_chassis_psu_input_power_watts{chassis="1",domain="synthetic",psu="4"} 0
+# HELP ucs_chassis_psu_input_voltage_volts Power supply input voltage in volts (UCSM equipmentPsuStats.input210v).
+# TYPE ucs_chassis_psu_input_voltage_volts gauge
+ucs_chassis_psu_input_voltage_volts{chassis="1",domain="synthetic",psu="1"} 229.5
+ucs_chassis_psu_input_voltage_volts{chassis="1",domain="synthetic",psu="2"} 229.5
+ucs_chassis_psu_input_voltage_volts{chassis="1",domain="synthetic",psu="3"} 229.5
+ucs_chassis_psu_input_voltage_volts{chassis="1",domain="synthetic",psu="4"} 229.5
+# HELP ucs_chassis_psu_ok Whether the power supply is operable (UCSM equipmentPsu.operability).
+# TYPE ucs_chassis_psu_ok gauge
+ucs_chassis_psu_ok{chassis="1",domain="synthetic",psu="1"} 1
+ucs_chassis_psu_ok{chassis="1",domain="synthetic",psu="2"} 1
+ucs_chassis_psu_ok{chassis="1",domain="synthetic",psu="3"} 1
+ucs_chassis_psu_ok{chassis="1",domain="synthetic",psu="4"} 0
+# HELP ucs_chassis_psu_operability_state Power supply operability (UCSM equipmentPsu.operability).
+# TYPE ucs_chassis_psu_operability_state gauge
+ucs_chassis_psu_operability_state{chassis="1",domain="synthetic",psu="1",state="operable"} 1
+ucs_chassis_psu_operability_state{chassis="1",domain="synthetic",psu="2",state="operable"} 1
+ucs_chassis_psu_operability_state{chassis="1",domain="synthetic",psu="3",state="operable"} 1
+ucs_chassis_psu_operability_state{chassis="1",domain="synthetic",psu="4",state="inoperable"} 1
+# HELP ucs_chassis_psu_output_current_amperes Power supply output current in amperes (UCSM equipmentPsuStats.outputCurrent).
+# TYPE ucs_chassis_psu_output_current_amperes gauge
+ucs_chassis_psu_output_current_amperes{chassis="1",domain="synthetic",psu="1"} 46.1
+ucs_chassis_psu_output_current_amperes{chassis="1",domain="synthetic",psu="2"} 46.1
+ucs_chassis_psu_output_current_amperes{chassis="1",domain="synthetic",psu="3"} 46.1
+ucs_chassis_psu_output_current_amperes{chassis="1",domain="synthetic",psu="4"} 46.1
+# HELP ucs_chassis_psu_output_power_watts Power supply output power in watts (UCSM equipmentPsuStats.outputPower).
+# TYPE ucs_chassis_psu_output_power_watts gauge
+ucs_chassis_psu_output_power_watts{chassis="1",domain="synthetic",psu="1"} 566
+ucs_chassis_psu_output_power_watts{chassis="1",domain="synthetic",psu="2"} 566
+ucs_chassis_psu_output_power_watts{chassis="1",domain="synthetic",psu="3"} 566
+ucs_chassis_psu_output_power_watts{chassis="1",domain="synthetic",psu="4"} 566
+# HELP ucs_chassis_psu_output_voltage_volts Power supply output voltage in volts by rail (UCSM equipmentPsuStats.output12v, output3v3).
+# TYPE ucs_chassis_psu_output_voltage_volts gauge
+ucs_chassis_psu_output_voltage_volts{chassis="1",domain="synthetic",psu="1",rail="12v"} 12.2
+ucs_chassis_psu_output_voltage_volts{chassis="1",domain="synthetic",psu="1",rail="3v3"} 3.3
+ucs_chassis_psu_output_voltage_volts{chassis="1",domain="synthetic",psu="2",rail="12v"} 12.2
+ucs_chassis_psu_output_voltage_volts{chassis="1",domain="synthetic",psu="2",rail="3v3"} 3.3
+ucs_chassis_psu_output_voltage_volts{chassis="1",domain="synthetic",psu="3",rail="12v"} 12.2
+ucs_chassis_psu_output_voltage_volts{chassis="1",domain="synthetic",psu="3",rail="3v3"} 3.3
+ucs_chassis_psu_output_voltage_volts{chassis="1",domain="synthetic",psu="4",rail="12v"} 12.2
+ucs_chassis_psu_output_voltage_volts{chassis="1",domain="synthetic",psu="4",rail="3v3"} 3.3
+# HELP ucs_chassis_psu_power_state Power supply power state (UCSM equipmentPsu.power).
+# TYPE ucs_chassis_psu_power_state gauge
+ucs_chassis_psu_power_state{chassis="1",domain="synthetic",psu="1",state="on"} 1
+ucs_chassis_psu_power_state{chassis="1",domain="synthetic",psu="2",state="on"} 1
+ucs_chassis_psu_power_state{chassis="1",domain="synthetic",psu="3",state="on"} 1
+ucs_chassis_psu_power_state{chassis="1",domain="synthetic",psu="4",state="off"} 1
+# HELP ucs_chassis_psu_presence_state Power supply presence (UCSM equipmentPsu.presence).
+# TYPE ucs_chassis_psu_presence_state gauge
+ucs_chassis_psu_presence_state{chassis="1",domain="synthetic",psu="1",state="equipped"} 1
+ucs_chassis_psu_presence_state{chassis="1",domain="synthetic",psu="2",state="equipped"} 1
+ucs_chassis_psu_presence_state{chassis="1",domain="synthetic",psu="3",state="equipped"} 1
+ucs_chassis_psu_presence_state{chassis="1",domain="synthetic",psu="4",state="equipped"} 1
+# HELP ucs_chassis_psu_temperature_celsius Power supply temperatures in degrees Celsius (UCSM equipmentPsuStats).
+# TYPE ucs_chassis_psu_temperature_celsius gauge
+ucs_chassis_psu_temperature_celsius{chassis="1",domain="synthetic",psu="1",sensor="ambient"} 26
+ucs_chassis_psu_temperature_celsius{chassis="1",domain="synthetic",psu="1",sensor="psu1"} 31
+ucs_chassis_psu_temperature_celsius{chassis="1",domain="synthetic",psu="1",sensor="psu2"} 33
+ucs_chassis_psu_temperature_celsius{chassis="1",domain="synthetic",psu="2",sensor="ambient"} 26
+ucs_chassis_psu_temperature_celsius{chassis="1",domain="synthetic",psu="2",sensor="psu1"} 31
+ucs_chassis_psu_temperature_celsius{chassis="1",domain="synthetic",psu="2",sensor="psu2"} 33
+ucs_chassis_psu_temperature_celsius{chassis="1",domain="synthetic",psu="3",sensor="ambient"} 26
+ucs_chassis_psu_temperature_celsius{chassis="1",domain="synthetic",psu="3",sensor="psu1"} 31
+ucs_chassis_psu_temperature_celsius{chassis="1",domain="synthetic",psu="3",sensor="psu2"} 33
+ucs_chassis_psu_temperature_celsius{chassis="1",domain="synthetic",psu="4",sensor="ambient"} 26
+ucs_chassis_psu_temperature_celsius{chassis="1",domain="synthetic",psu="4",sensor="psu1"} 31
+ucs_chassis_psu_temperature_celsius{chassis="1",domain="synthetic",psu="4",sensor="psu2"} 33
+# HELP ucs_chassis_psu_thermal_state Power supply thermal state (UCSM equipmentPsu.thermal).
+# TYPE ucs_chassis_psu_thermal_state gauge
+ucs_chassis_psu_thermal_state{chassis="1",domain="synthetic",psu="1",state="ok"} 1
+ucs_chassis_psu_thermal_state{chassis="1",domain="synthetic",psu="2",state="ok"} 1
+ucs_chassis_psu_thermal_state{chassis="1",domain="synthetic",psu="3",state="ok"} 1
+ucs_chassis_psu_thermal_state{chassis="1",domain="synthetic",psu="4",state="ok"} 1
+# HELP ucs_chassis_psu_voltage_state Power supply voltage state (UCSM equipmentPsu.voltage).
+# TYPE ucs_chassis_psu_voltage_state gauge
+ucs_chassis_psu_voltage_state{chassis="1",domain="synthetic",psu="1",state="ok"} 1
+ucs_chassis_psu_voltage_state{chassis="1",domain="synthetic",psu="2",state="ok"} 1
+ucs_chassis_psu_voltage_state{chassis="1",domain="synthetic",psu="3",state="ok"} 1
+ucs_chassis_psu_voltage_state{chassis="1",domain="synthetic",psu="4",state="ok"} 1
+# HELP ucs_chassis_thermal_state Chassis thermal state (UCSM equipmentChassis.thermal).
+# TYPE ucs_chassis_thermal_state gauge
+ucs_chassis_thermal_state{chassis="1",domain="synthetic",state="ok"} 1
+# HELP ucs_fex_fan_ok Whether the fan is operable (UCSM equipmentFan.operability).
+# TYPE ucs_fex_fan_ok gauge
+ucs_fex_fan_ok{domain="synthetic",fan="1",fex="101"} 1
+# HELP ucs_fex_fan_operability_state Fan operability (UCSM equipmentFan.operability).
+# TYPE ucs_fex_fan_operability_state gauge
+ucs_fex_fan_operability_state{domain="synthetic",fan="1",fex="101",state="operable"} 1
+# HELP ucs_fex_info FEX information (UCSM equipmentFex).
+# TYPE ucs_fex_info gauge
+ucs_fex_info{domain="synthetic",fabric="A",fex="101",model="N2K-C2348UPQ",serial="FOX1111FEX1"} 1
+# HELP ucs_fex_ok Whether the FEX is operable (UCSM equipmentFex.operability).
+# TYPE ucs_fex_ok gauge
+ucs_fex_ok{domain="synthetic",fex="101"} 1
+# HELP ucs_fex_operability_state FEX operability (UCSM equipmentFex.operability).
+# TYPE ucs_fex_operability_state gauge
+ucs_fex_operability_state{domain="synthetic",fex="101",state="operable"} 1
+# HELP ucs_fex_psu_capacity_watts Power supply rated capacity in watts (UCSM equipmentPsu.psuWattage).
+# TYPE ucs_fex_psu_capacity_watts gauge
+ucs_fex_psu_capacity_watts{domain="synthetic",fex="101",psu="1"} 400
+# HELP ucs_fex_psu_info Power supply information (UCSM equipmentPsu).
+# TYPE ucs_fex_psu_info gauge
+ucs_fex_psu_info{domain="synthetic",fex="101",model="N2200-PAC-400W",psu="1",serial="FEXPSU01"} 1
+# HELP ucs_fex_psu_ok Whether the power supply is operable (UCSM equipmentPsu.operability).
+# TYPE ucs_fex_psu_ok gauge
+ucs_fex_psu_ok{domain="synthetic",fex="101",psu="1"} 1
+# HELP ucs_fex_psu_operability_state Power supply operability (UCSM equipmentPsu.operability).
+# TYPE ucs_fex_psu_operability_state gauge
+ucs_fex_psu_operability_state{domain="synthetic",fex="101",psu="1",state="operable"} 1
+# HELP ucs_fex_psu_power_state Power supply power state (UCSM equipmentPsu.power).
+# TYPE ucs_fex_psu_power_state gauge
+ucs_fex_psu_power_state{domain="synthetic",fex="101",psu="1",state="on"} 1
+# HELP ucs_fex_psu_presence_state Power supply presence (UCSM equipmentPsu.presence).
+# TYPE ucs_fex_psu_presence_state gauge
+ucs_fex_psu_presence_state{domain="synthetic",fex="101",psu="1",state="equipped"} 1
+# HELP ucs_fex_psu_thermal_state Power supply thermal state (UCSM equipmentPsu.thermal).
+# TYPE ucs_fex_psu_thermal_state gauge
+ucs_fex_psu_thermal_state{domain="synthetic",fex="101",psu="1",state="ok"} 1
+# HELP ucs_fex_psu_voltage_state Power supply voltage state (UCSM equipmentPsu.voltage).
+# TYPE ucs_fex_psu_voltage_state gauge
+ucs_fex_psu_voltage_state{domain="synthetic",fex="101",psu="1",state="ok"} 1
+# HELP ucs_fi_evacuation_state Fabric interconnect traffic evacuation state (UCSM networkElement.operEvacState).
+# TYPE ucs_fi_evacuation_state gauge
+ucs_fi_evacuation_state{domain="synthetic",fabric="A",state="fill"} 1
+ucs_fi_evacuation_state{domain="synthetic",fabric="B",state="fill"} 1
+# HELP ucs_fi_fan_module_ok Whether the fan module is operable (UCSM equipmentFanModule.operability).
+# TYPE ucs_fi_fan_module_ok gauge
+ucs_fi_fan_module_ok{domain="synthetic",fabric="A",fan_module="1-1"} 1
+ucs_fi_fan_module_ok{domain="synthetic",fabric="B",fan_module="1-1"} 1
+# HELP ucs_fi_fan_module_operability_state Fan module operability (UCSM equipmentFanModule.operability).
+# TYPE ucs_fi_fan_module_operability_state gauge
+ucs_fi_fan_module_operability_state{domain="synthetic",fabric="A",fan_module="1-1",state="operable"} 1
+ucs_fi_fan_module_operability_state{domain="synthetic",fabric="B",fan_module="1-1",state="operable"} 1
+# HELP ucs_fi_fan_ok Whether the fan is operable (UCSM equipmentFan.operability).
+# TYPE ucs_fi_fan_ok gauge
+ucs_fi_fan_ok{domain="synthetic",fabric="A",fan="1-1/1"} 1
+ucs_fi_fan_ok{domain="synthetic",fabric="A",fan="1-1/2"} 1
+ucs_fi_fan_ok{domain="synthetic",fabric="B",fan="1-1/1"} 1
+ucs_fi_fan_ok{domain="synthetic",fabric="B",fan="1-1/2"} 0
+# HELP ucs_fi_fan_operability_state Fan operability (UCSM equipmentFan.operability).
+# TYPE ucs_fi_fan_operability_state gauge
+ucs_fi_fan_operability_state{domain="synthetic",fabric="A",fan="1-1/1",state="operable"} 1
+ucs_fi_fan_operability_state{domain="synthetic",fabric="A",fan="1-1/2",state="operable"} 1
+ucs_fi_fan_operability_state{domain="synthetic",fabric="B",fan="1-1/1",state="operable"} 1
+ucs_fi_fan_operability_state{domain="synthetic",fabric="B",fan="1-1/2",state="inoperable"} 1
+# HELP ucs_fi_info Fabric interconnect information (UCSM networkElement).
+# TYPE ucs_fi_info gauge
+ucs_fi_info{domain="synthetic",fabric="A",model="UCS-FI-6454",serial="FDO11111AAA"} 1
+ucs_fi_info{domain="synthetic",fabric="B",model="UCS-FI-6454",serial="FDO11111BBB"} 1
+# HELP ucs_fi_memory_bytes Fabric interconnect installed memory in bytes (UCSM networkElement.totalMemory).
+# TYPE ucs_fi_memory_bytes gauge
+ucs_fi_memory_bytes{domain="synthetic",fabric="A"} 6.8719476736e+10
+ucs_fi_memory_bytes{domain="synthetic",fabric="B"} 6.8719476736e+10
+# HELP ucs_fi_mgmt_ha_readiness_state UCS Manager HA readiness (UCSM mgmtEntity.haReadiness).
+# TYPE ucs_fi_mgmt_ha_readiness_state gauge
+ucs_fi_mgmt_ha_readiness_state{domain="synthetic",fabric="A",state="ready"} 1
+ucs_fi_mgmt_ha_readiness_state{domain="synthetic",fabric="B",state="ready"} 1
+# HELP ucs_fi_mgmt_ha_ready Whether the cluster is ready for failover (UCSM mgmtEntity.haReady).
+# TYPE ucs_fi_mgmt_ha_ready gauge
+ucs_fi_mgmt_ha_ready{domain="synthetic",fabric="A"} 1
+ucs_fi_mgmt_ha_ready{domain="synthetic",fabric="B"} 1
+# HELP ucs_fi_mgmt_leadership_state UCS Manager cluster role of the fabric interconnect (UCSM mgmtEntity.leadership).
+# TYPE ucs_fi_mgmt_leadership_state gauge
+ucs_fi_mgmt_leadership_state{domain="synthetic",fabric="A",state="primary"} 1
+ucs_fi_mgmt_leadership_state{domain="synthetic",fabric="B",state="subordinate"} 1
+# HELP ucs_fi_mgmt_services_state UCS Manager services state (UCSM mgmtEntity.mgmtServicesState).
+# TYPE ucs_fi_mgmt_services_state gauge
+ucs_fi_mgmt_services_state{domain="synthetic",fabric="A",state="up"} 1
+ucs_fi_mgmt_services_state{domain="synthetic",fabric="B",state="up"} 1
+# HELP ucs_fi_mgmt_state UCS Manager instance state on the fabric interconnect (UCSM mgmtEntity.state).
+# TYPE ucs_fi_mgmt_state gauge
+ucs_fi_mgmt_state{domain="synthetic",fabric="A",state="up"} 1
+ucs_fi_mgmt_state{domain="synthetic",fabric="B",state="up"} 1
+# HELP ucs_fi_mgmt_umbilical_state State of the link between the fabric interconnects (UCSM mgmtEntity.umbilicalState).
+# TYPE ucs_fi_mgmt_umbilical_state gauge
+ucs_fi_mgmt_umbilical_state{domain="synthetic",fabric="A",state="full"} 1
+ucs_fi_mgmt_umbilical_state{domain="synthetic",fabric="B",state="full"} 1
+# HELP ucs_fi_mgmt_up Whether the UCS Manager instance on the fabric interconnect is up (UCSM mgmtEntity.state).
+# TYPE ucs_fi_mgmt_up gauge
+ucs_fi_mgmt_up{domain="synthetic",fabric="A"} 1
+ucs_fi_mgmt_up{domain="synthetic",fabric="B"} 1
+# HELP ucs_fi_mgmt_version_mismatch Whether the fabric interconnects run different UCS Manager versions (UCSM mgmtEntity.versionMismatch).
+# TYPE ucs_fi_mgmt_version_mismatch gauge
+ucs_fi_mgmt_version_mismatch{domain="synthetic",fabric="A"} 0
+ucs_fi_mgmt_version_mismatch{domain="synthetic",fabric="B"} 0
+# HELP ucs_fi_ok Whether the fabric interconnect is operable (UCSM networkElement.operability).
+# TYPE ucs_fi_ok gauge
+ucs_fi_ok{domain="synthetic",fabric="A"} 1
+ucs_fi_ok{domain="synthetic",fabric="B"} 1
+# HELP ucs_fi_operability_state Fabric interconnect operability (UCSM networkElement.operability).
+# TYPE ucs_fi_operability_state gauge
+ucs_fi_operability_state{domain="synthetic",fabric="A",state="operable"} 1
+ucs_fi_operability_state{domain="synthetic",fabric="B",state="operable"} 1
+# HELP ucs_fi_psu_capacity_watts Power supply rated capacity in watts (UCSM equipmentPsu.psuWattage).
+# TYPE ucs_fi_psu_capacity_watts gauge
+ucs_fi_psu_capacity_watts{domain="synthetic",fabric="A",psu="1"} 1100
+ucs_fi_psu_capacity_watts{domain="synthetic",fabric="B",psu="1"} 1100
+# HELP ucs_fi_psu_i2c_errors_total Power supply I2C errors (UCSM equipmentPsuStats.PsuI2CErrors).
+# TYPE ucs_fi_psu_i2c_errors_total counter
+ucs_fi_psu_i2c_errors_total{domain="synthetic",fabric="A",psu="1"} 0
+ucs_fi_psu_i2c_errors_total{domain="synthetic",fabric="B",psu="1"} 0
+# HELP ucs_fi_psu_info Power supply information (UCSM equipmentPsu).
+# TYPE ucs_fi_psu_info gauge
+ucs_fi_psu_info{domain="synthetic",fabric="A",model="UCS-PSU-6332-AC",psu="1",serial="PSUA0001"} 1
+ucs_fi_psu_info{domain="synthetic",fabric="B",model="UCS-PSU-6332-AC",psu="1",serial="PSUB0001"} 1
+# HELP ucs_fi_psu_input_voltage_volts Power supply input voltage in volts (UCSM equipmentPsuStats.input210v).
+# TYPE ucs_fi_psu_input_voltage_volts gauge
+ucs_fi_psu_input_voltage_volts{domain="synthetic",fabric="A",psu="1"} 230
+ucs_fi_psu_input_voltage_volts{domain="synthetic",fabric="B",psu="1"} 230
+# HELP ucs_fi_psu_ok Whether the power supply is operable (UCSM equipmentPsu.operability).
+# TYPE ucs_fi_psu_ok gauge
+ucs_fi_psu_ok{domain="synthetic",fabric="A",psu="1"} 1
+ucs_fi_psu_ok{domain="synthetic",fabric="B",psu="1"} 1
+# HELP ucs_fi_psu_operability_state Power supply operability (UCSM equipmentPsu.operability).
+# TYPE ucs_fi_psu_operability_state gauge
+ucs_fi_psu_operability_state{domain="synthetic",fabric="A",psu="1",state="operable"} 1
+ucs_fi_psu_operability_state{domain="synthetic",fabric="B",psu="1",state="operable"} 1
+# HELP ucs_fi_psu_output_current_amperes Power supply output current in amperes (UCSM equipmentPsuStats.outputCurrent).
+# TYPE ucs_fi_psu_output_current_amperes gauge
+ucs_fi_psu_output_current_amperes{domain="synthetic",fabric="A",psu="1"} 17.2
+ucs_fi_psu_output_current_amperes{domain="synthetic",fabric="B",psu="1"} 17.2
+# HELP ucs_fi_psu_output_power_watts Power supply output power in watts (UCSM equipmentPsuStats.outputPower).
+# TYPE ucs_fi_psu_output_power_watts gauge
+ucs_fi_psu_output_power_watts{domain="synthetic",fabric="A",psu="1"} 210.5
+ucs_fi_psu_output_power_watts{domain="synthetic",fabric="B",psu="1"} 210.5
+# HELP ucs_fi_psu_output_voltage_volts Power supply output voltage in volts by rail (UCSM equipmentPsuStats.output12v, output3v3).
+# TYPE ucs_fi_psu_output_voltage_volts gauge
+ucs_fi_psu_output_voltage_volts{domain="synthetic",fabric="A",psu="1",rail="12v"} 12.1
+ucs_fi_psu_output_voltage_volts{domain="synthetic",fabric="A",psu="1",rail="3v3"} 3.3
+ucs_fi_psu_output_voltage_volts{domain="synthetic",fabric="B",psu="1",rail="12v"} 12.1
+ucs_fi_psu_output_voltage_volts{domain="synthetic",fabric="B",psu="1",rail="3v3"} 3.3
+# HELP ucs_fi_psu_power_state Power supply power state (UCSM equipmentPsu.power).
+# TYPE ucs_fi_psu_power_state gauge
+ucs_fi_psu_power_state{domain="synthetic",fabric="A",psu="1",state="on"} 1
+ucs_fi_psu_power_state{domain="synthetic",fabric="B",psu="1",state="on"} 1
+# HELP ucs_fi_psu_presence_state Power supply presence (UCSM equipmentPsu.presence).
+# TYPE ucs_fi_psu_presence_state gauge
+ucs_fi_psu_presence_state{domain="synthetic",fabric="A",psu="1",state="equipped"} 1
+ucs_fi_psu_presence_state{domain="synthetic",fabric="B",psu="1",state="equipped"} 1
+# HELP ucs_fi_psu_temperature_celsius Power supply temperatures in degrees Celsius (UCSM equipmentPsuStats).
+# TYPE ucs_fi_psu_temperature_celsius gauge
+ucs_fi_psu_temperature_celsius{domain="synthetic",fabric="A",psu="1",sensor="ambient"} 28
+ucs_fi_psu_temperature_celsius{domain="synthetic",fabric="B",psu="1",sensor="ambient"} 28
+# HELP ucs_fi_psu_thermal_state Power supply thermal state (UCSM equipmentPsu.thermal).
+# TYPE ucs_fi_psu_thermal_state gauge
+ucs_fi_psu_thermal_state{domain="synthetic",fabric="A",psu="1",state="ok"} 1
+ucs_fi_psu_thermal_state{domain="synthetic",fabric="B",psu="1",state="ok"} 1
+# HELP ucs_fi_psu_voltage_state Power supply voltage state (UCSM equipmentPsu.voltage).
+# TYPE ucs_fi_psu_voltage_state gauge
+ucs_fi_psu_voltage_state{domain="synthetic",fabric="A",psu="1",state="ok"} 1
+ucs_fi_psu_voltage_state{domain="synthetic",fabric="B",psu="1",state="ok"} 1
+# HELP ucs_fi_temperature_celsius Fabric interconnect temperature sensors in degrees Celsius (UCSM swEnvStats, swCardEnvStats).
+# TYPE ucs_fi_temperature_celsius gauge
+ucs_fi_temperature_celsius{domain="synthetic",fabric="A",sensor="fan_ctrlr_inlet1"} 27
+ucs_fi_temperature_celsius{domain="synthetic",fabric="A",sensor="main_board_outlet1"} 38
+ucs_fi_temperature_celsius{domain="synthetic",fabric="A",sensor="main_board_outlet2"} 41
+ucs_fi_temperature_celsius{domain="synthetic",fabric="A",sensor="psu_ctrlr_inlet1"} 29
+ucs_fi_temperature_celsius{domain="synthetic",fabric="A",sensor="psu_ctrlr_inlet2"} 30
+ucs_fi_temperature_celsius{domain="synthetic",fabric="A",sensor="slot_outlet1"} 36
+ucs_fi_temperature_celsius{domain="synthetic",fabric="A",sensor="tiburon"} 55
+ucs_fi_temperature_celsius{domain="synthetic",fabric="B",sensor="fan_ctrlr_inlet1"} 27
+ucs_fi_temperature_celsius{domain="synthetic",fabric="B",sensor="main_board_outlet1"} 38
+ucs_fi_temperature_celsius{domain="synthetic",fabric="B",sensor="main_board_outlet2"} 41
+ucs_fi_temperature_celsius{domain="synthetic",fabric="B",sensor="psu_ctrlr_inlet1"} 29
+ucs_fi_temperature_celsius{domain="synthetic",fabric="B",sensor="psu_ctrlr_inlet2"} 30
+ucs_fi_temperature_celsius{domain="synthetic",fabric="B",sensor="tiburon"} 55
+# HELP ucs_fi_thermal_state Fabric interconnect thermal state (UCSM networkElement.thermal).
+# TYPE ucs_fi_thermal_state gauge
+ucs_fi_thermal_state{domain="synthetic",fabric="A",state="ok"} 1
+ucs_fi_thermal_state{domain="synthetic",fabric="B",state="ok"} 1
+# HELP ucs_firmware_running_info Running firmware version of a component, e.g. component="chassis-1/blade-3" type="blade-controller" (UCSM firmwareRunning).
+# TYPE ucs_firmware_running_info gauge
+ucs_firmware_running_info{component="chassis-1/blade-1",deployment="system",domain="synthetic",type="blade-bios",version="B200M6.4.3.4a.0.0101240936"} 1
+ucs_firmware_running_info{component="chassis-1/blade-1",deployment="system",domain="synthetic",type="blade-controller",version="4.3(4a)"} 1
+ucs_firmware_running_info{component="chassis-1/blade-1/adaptor-1",deployment="system",domain="synthetic",type="adaptor",version="5.3(4.47)"} 1
+ucs_firmware_running_info{component="chassis-1/blade-2",deployment="system",domain="synthetic",type="blade-bios",version="B200M6.4.3.4a.0.0101240936"} 1
+ucs_firmware_running_info{component="chassis-1/blade-2",deployment="system",domain="synthetic",type="blade-controller",version="4.3(4a)"} 1
+ucs_firmware_running_info{component="chassis-1/blade-2/adaptor-1",deployment="system",domain="synthetic",type="adaptor",version="5.3(4.47)"} 1
+ucs_firmware_running_info{component="chassis-1/slot-1",deployment="system",domain="synthetic",type="iocard",version="4.3(4a)"} 1
+ucs_firmware_running_info{component="chassis-1/slot-2",deployment="system",domain="synthetic",type="iocard",version="4.3(4a)"} 1
+ucs_firmware_running_info{component="rack-unit-1",deployment="system",domain="synthetic",type="blade-bios",version="B200M6.4.3.4a.0.0101240936"} 1
+ucs_firmware_running_info{component="rack-unit-1",deployment="system",domain="synthetic",type="board-controller",version="4.3(4a)"} 1
+ucs_firmware_running_info{component="rack-unit-1/adaptor-1",deployment="system",domain="synthetic",type="adaptor",version="5.3(4.47)"} 1
+ucs_firmware_running_info{component="switch-A",deployment="kernel",domain="synthetic",type="switch-kernel",version="9.3(5)I43(4a)"} 1
+ucs_firmware_running_info{component="switch-A",deployment="system",domain="synthetic",type="switch-software",version="9.3(5)I43(4a)"} 1
+ucs_firmware_running_info{component="switch-B",deployment="kernel",domain="synthetic",type="switch-kernel",version="9.3(5)I43(4a)"} 1
+ucs_firmware_running_info{component="switch-B",deployment="system",domain="synthetic",type="switch-software",version="9.3(5)I43(4a)"} 1
+ucs_firmware_running_info{component="ucsm",deployment="system",domain="synthetic",type="system",version="4.3(4a)"} 1
+# HELP ucs_iom_active_fabric_ports Active fabric (IOM to FI) ports of the IO module (UCSM equipmentIOCard.numOfActiveFabricPorts).
+# TYPE ucs_iom_active_fabric_ports gauge
+ucs_iom_active_fabric_ports{chassis="1",domain="synthetic",iom="1"} 4
+ucs_iom_active_fabric_ports{chassis="1",domain="synthetic",iom="2"} 3
+# HELP ucs_iom_i2c_errors_total IO module I2C errors (UCSM equipmentIOCardStats.IomI2CErrors).
+# TYPE ucs_iom_i2c_errors_total counter
+ucs_iom_i2c_errors_total{chassis="1",domain="synthetic",iom="1"} 0
+ucs_iom_i2c_errors_total{chassis="1",domain="synthetic",iom="2"} 0
+# HELP ucs_iom_info IO module information (UCSM equipmentIOCard).
+# TYPE ucs_iom_info gauge
+ucs_iom_info{chassis="1",domain="synthetic",fabric="A",iom="1",model="UCS-IOM-2408",serial="FCH1111IO1"} 1
+ucs_iom_info{chassis="1",domain="synthetic",fabric="B",iom="2",model="UCS-IOM-2408",serial="FCH1111IO2"} 1
+# HELP ucs_iom_ok Whether the IO module is operable (UCSM equipmentIOCard.operability).
+# TYPE ucs_iom_ok gauge
+ucs_iom_ok{chassis="1",domain="synthetic",iom="1"} 1
+ucs_iom_ok{chassis="1",domain="synthetic",iom="2"} 1
+# HELP ucs_iom_operability_state IO module operability (UCSM equipmentIOCard.operability).
+# TYPE ucs_iom_operability_state gauge
+ucs_iom_operability_state{chassis="1",domain="synthetic",iom="1",state="operable"} 1
+ucs_iom_operability_state{chassis="1",domain="synthetic",iom="2",state="operable"} 1
+# HELP ucs_iom_temperature_celsius IO module temperatures in degrees Celsius (UCSM equipmentIOCardStats).
+# TYPE ucs_iom_temperature_celsius gauge
+ucs_iom_temperature_celsius{chassis="1",domain="synthetic",iom="1",sensor="ambient"} 31
+ucs_iom_temperature_celsius{chassis="1",domain="synthetic",iom="1",sensor="dimm"} 35
+ucs_iom_temperature_celsius{chassis="1",domain="synthetic",iom="1",sensor="processor"} 48
+ucs_iom_temperature_celsius{chassis="1",domain="synthetic",iom="2",sensor="ambient"} 31
+ucs_iom_temperature_celsius{chassis="1",domain="synthetic",iom="2",sensor="dimm"} 35
+ucs_iom_temperature_celsius{chassis="1",domain="synthetic",iom="2",sensor="processor"} 48
+# HELP ucs_iom_thermal_state IO module thermal state (UCSM equipmentIOCard.thermal).
+# TYPE ucs_iom_thermal_state gauge
+ucs_iom_thermal_state{chassis="1",domain="synthetic",iom="1",state="ok"} 1
+ucs_iom_thermal_state{chassis="1",domain="synthetic",iom="2",state="ok"} 1
+# HELP ucs_server_association_state Server association with a service profile (UCSM computeBlade/computeRackUnit.association).
+# TYPE ucs_server_association_state gauge
+ucs_server_association_state{domain="synthetic",server="chassis-1/blade-1",state="associated"} 1
+ucs_server_association_state{domain="synthetic",server="chassis-1/blade-2",state="none"} 1
+ucs_server_association_state{domain="synthetic",server="rack-unit-1",state="associated"} 1
+# HELP ucs_server_board_temperature_celsius Server motherboard temperature sensors in degrees Celsius (UCSM computeMbTempStats, computeRackUnitMbTempStats).
+# TYPE ucs_server_board_temperature_celsius gauge
+ucs_server_board_temperature_celsius{domain="synthetic",sensor="ambient",server="rack-unit-1"} 22
+ucs_server_board_temperature_celsius{domain="synthetic",sensor="front",server="rack-unit-1"} 23
+ucs_server_board_temperature_celsius{domain="synthetic",sensor="front_right",server="chassis-1/blade-1"} 29
+ucs_server_board_temperature_celsius{domain="synthetic",sensor="front_right",server="chassis-1/blade-2"} 29
+ucs_server_board_temperature_celsius{domain="synthetic",sensor="io",server="chassis-1/blade-1"} 33
+ucs_server_board_temperature_celsius{domain="synthetic",sensor="io",server="chassis-1/blade-2"} 33
+ucs_server_board_temperature_celsius{domain="synthetic",sensor="ioh1",server="rack-unit-1"} 47
+ucs_server_board_temperature_celsius{domain="synthetic",sensor="rear",server="chassis-1/blade-1"} 37.5
+ucs_server_board_temperature_celsius{domain="synthetic",sensor="rear",server="chassis-1/blade-2"} 37.5
+ucs_server_board_temperature_celsius{domain="synthetic",sensor="rear",server="rack-unit-1"} 41
+# HELP ucs_server_cpu_info CPU information (UCSM processorUnit).
+# TYPE ucs_server_cpu_info gauge
+ucs_server_cpu_info{cpu="1",domain="synthetic",model="Intel(R) Xeon(R) Gold 6338 CPU @ 2.00GHz",server="chassis-1/blade-1"} 1
+ucs_server_cpu_info{cpu="1",domain="synthetic",model="Intel(R) Xeon(R) Gold 6338 CPU @ 2.00GHz",server="chassis-1/blade-2"} 1
+ucs_server_cpu_info{cpu="1",domain="synthetic",model="Intel(R) Xeon(R) Gold 6338 CPU @ 2.00GHz",server="rack-unit-1"} 1
+ucs_server_cpu_info{cpu="2",domain="synthetic",model="Intel(R) Xeon(R) Gold 6338 CPU @ 2.00GHz",server="chassis-1/blade-1"} 1
+ucs_server_cpu_info{cpu="2",domain="synthetic",model="Intel(R) Xeon(R) Gold 6338 CPU @ 2.00GHz",server="chassis-1/blade-2"} 1
+# HELP ucs_server_cpu_ok Whether the CPU is operable (UCSM processorUnit.operability).
+# TYPE ucs_server_cpu_ok gauge
+ucs_server_cpu_ok{cpu="1",domain="synthetic",server="chassis-1/blade-1"} 1
+ucs_server_cpu_ok{cpu="1",domain="synthetic",server="chassis-1/blade-2"} 1
+ucs_server_cpu_ok{cpu="1",domain="synthetic",server="rack-unit-1"} 1
+ucs_server_cpu_ok{cpu="2",domain="synthetic",server="chassis-1/blade-1"} 1
+ucs_server_cpu_ok{cpu="2",domain="synthetic",server="chassis-1/blade-2"} 1
+# HELP ucs_server_cpu_operability_state CPU operability (UCSM processorUnit.operability).
+# TYPE ucs_server_cpu_operability_state gauge
+ucs_server_cpu_operability_state{cpu="1",domain="synthetic",server="chassis-1/blade-1",state="operable"} 1
+ucs_server_cpu_operability_state{cpu="1",domain="synthetic",server="chassis-1/blade-2",state="operable"} 1
+ucs_server_cpu_operability_state{cpu="1",domain="synthetic",server="rack-unit-1",state="operable"} 1
+ucs_server_cpu_operability_state{cpu="2",domain="synthetic",server="chassis-1/blade-1",state="operable"} 1
+ucs_server_cpu_operability_state{cpu="2",domain="synthetic",server="chassis-1/blade-2",state="operable"} 1
+# HELP ucs_server_dimm_info DIMM information (UCSM memoryUnit).
+# TYPE ucs_server_dimm_info gauge
+ucs_server_dimm_info{dimm="1",domain="synthetic",location="DIMM_A1",memory_array="1",model="M393A4K40DB3-CWE",serial="S11111",server="chassis-1/blade-1",type="DDR4"} 1
+ucs_server_dimm_info{dimm="1",domain="synthetic",location="DIMM_A1",memory_array="1",model="M393A4K40DB3-CWE",serial="S11111",server="chassis-1/blade-2",type="DDR4"} 1
+ucs_server_dimm_info{dimm="1",domain="synthetic",location="DIMM_A1",memory_array="1",model="M393A4K40DB3-CWE",serial="S11111",server="rack-unit-1",type="DDR4"} 1
+# HELP ucs_server_dimm_ok Whether the DIMM is operable (UCSM memoryUnit.operability).
+# TYPE ucs_server_dimm_ok gauge
+ucs_server_dimm_ok{dimm="1",domain="synthetic",memory_array="1",server="chassis-1/blade-1"} 1
+ucs_server_dimm_ok{dimm="1",domain="synthetic",memory_array="1",server="chassis-1/blade-2"} 1
+ucs_server_dimm_ok{dimm="1",domain="synthetic",memory_array="1",server="rack-unit-1"} 1
+# HELP ucs_server_dimm_operability_state DIMM operability (UCSM memoryUnit.operability).
+# TYPE ucs_server_dimm_operability_state gauge
+ucs_server_dimm_operability_state{dimm="1",domain="synthetic",memory_array="1",server="chassis-1/blade-1",state="operable"} 1
+ucs_server_dimm_operability_state{dimm="1",domain="synthetic",memory_array="1",server="chassis-1/blade-2",state="operable"} 1
+ucs_server_dimm_operability_state{dimm="1",domain="synthetic",memory_array="1",server="rack-unit-1",state="operable"} 1
+# HELP ucs_server_dimm_size_bytes DIMM capacity in bytes (UCSM memoryUnit.capacity).
+# TYPE ucs_server_dimm_size_bytes gauge
+ucs_server_dimm_size_bytes{dimm="1",domain="synthetic",memory_array="1",server="chassis-1/blade-1"} 3.4359738368e+10
+ucs_server_dimm_size_bytes{dimm="1",domain="synthetic",memory_array="1",server="chassis-1/blade-2"} 3.4359738368e+10
+ucs_server_dimm_size_bytes{dimm="1",domain="synthetic",memory_array="1",server="rack-unit-1"} 3.4359738368e+10
+# HELP ucs_server_dimm_temperature_celsius DIMM temperature in degrees Celsius (UCSM memoryUnitEnvStats.temperature).
+# TYPE ucs_server_dimm_temperature_celsius gauge
+ucs_server_dimm_temperature_celsius{dimm="1",domain="synthetic",memory_array="1",server="chassis-1/blade-1"} 36.5
+ucs_server_dimm_temperature_celsius{dimm="1",domain="synthetic",memory_array="1",server="chassis-1/blade-2"} 36.5
+ucs_server_dimm_temperature_celsius{dimm="1",domain="synthetic",memory_array="1",server="rack-unit-1"} 36.5
+# HELP ucs_server_disk_drive_state Local disk drive state (UCSM storageLocalDisk.diskState).
+# TYPE ucs_server_disk_drive_state gauge
+ucs_server_disk_drive_state{disk="SAS-1/1",domain="synthetic",server="rack-unit-1",state="online"} 1
+ucs_server_disk_drive_state{disk="SAS-1/2",domain="synthetic",server="rack-unit-1",state="failed"} 1
+# HELP ucs_server_disk_info Local disk information (UCSM storageLocalDisk).
+# TYPE ucs_server_disk_info gauge
+ucs_server_disk_info{device_type="SSD",disk="SAS-1/1",domain="synthetic",model="UCS-SD960GM1X-EV",protocol="SATA",serial="SDISK0001",server="rack-unit-1"} 1
+ucs_server_disk_info{device_type="SSD",disk="SAS-1/2",domain="synthetic",model="UCS-SD960GM1X-EV",protocol="SATA",serial="SDISK0002",server="rack-unit-1"} 1
+# HELP ucs_server_disk_ok Whether the local disk is operable (UCSM storageLocalDisk.operability).
+# TYPE ucs_server_disk_ok gauge
+ucs_server_disk_ok{disk="SAS-1/1",domain="synthetic",server="rack-unit-1"} 1
+ucs_server_disk_ok{disk="SAS-1/2",domain="synthetic",server="rack-unit-1"} 0
+# HELP ucs_server_disk_operability_state Local disk operability (UCSM storageLocalDisk.operability).
+# TYPE ucs_server_disk_operability_state gauge
+ucs_server_disk_operability_state{disk="SAS-1/1",domain="synthetic",server="rack-unit-1",state="operable"} 1
+ucs_server_disk_operability_state{disk="SAS-1/2",domain="synthetic",server="rack-unit-1",state="inoperable"} 1
+# HELP ucs_server_disk_size_bytes Local disk size in bytes, from megabytes (UCSM storageLocalDisk.size).
+# TYPE ucs_server_disk_size_bytes gauge
+ucs_server_disk_size_bytes{disk="SAS-1/1",domain="synthetic",server="rack-unit-1"} 9.6019677184e+11
+ucs_server_disk_size_bytes{disk="SAS-1/2",domain="synthetic",server="rack-unit-1"} 9.6019677184e+11
+# HELP ucs_server_fan_module_ok Whether the fan module is operable (UCSM equipmentFanModule.operability).
+# TYPE ucs_server_fan_module_ok gauge
+ucs_server_fan_module_ok{domain="synthetic",fan_module="1-1",server="rack-unit-1"} 1
+# HELP ucs_server_fan_module_operability_state Fan module operability (UCSM equipmentFanModule.operability).
+# TYPE ucs_server_fan_module_operability_state gauge
+ucs_server_fan_module_operability_state{domain="synthetic",fan_module="1-1",server="rack-unit-1",state="operable"} 1
+# HELP ucs_server_fan_ok Whether the fan is operable (UCSM equipmentFan.operability).
+# TYPE ucs_server_fan_ok gauge
+ucs_server_fan_ok{domain="synthetic",fan="1-1/1",server="rack-unit-1"} 1
+# HELP ucs_server_fan_operability_state Fan operability (UCSM equipmentFan.operability).
+# TYPE ucs_server_fan_operability_state gauge
+ucs_server_fan_operability_state{domain="synthetic",fan="1-1/1",server="rack-unit-1",state="operable"} 1
+# HELP ucs_server_ok Whether the server is operable (UCSM computeBlade/computeRackUnit.operability).
+# TYPE ucs_server_ok gauge
+ucs_server_ok{domain="synthetic",server="chassis-1/blade-1"} 1
+ucs_server_ok{domain="synthetic",server="chassis-1/blade-2"} 1
+ucs_server_ok{domain="synthetic",server="rack-unit-1"} 0
+# HELP ucs_server_oper_state Server operational state (UCSM computeBlade/computeRackUnit.operState).
+# TYPE ucs_server_oper_state gauge
+ucs_server_oper_state{domain="synthetic",server="chassis-1/blade-1",state="ok"} 1
+ucs_server_oper_state{domain="synthetic",server="chassis-1/blade-2",state="unassociated"} 1
+ucs_server_oper_state{domain="synthetic",server="rack-unit-1",state="degraded"} 1
+# HELP ucs_server_operability_state Server operability (UCSM computeBlade/computeRackUnit.operability).
+# TYPE ucs_server_operability_state gauge
+ucs_server_operability_state{domain="synthetic",server="chassis-1/blade-1",state="operable"} 1
+ucs_server_operability_state{domain="synthetic",server="chassis-1/blade-2",state="operable"} 1
+ucs_server_operability_state{domain="synthetic",server="rack-unit-1",state="degraded"} 1
+# HELP ucs_server_power_state Server power state (UCSM computeBlade/computeRackUnit.operPower).
+# TYPE ucs_server_power_state gauge
+ucs_server_power_state{domain="synthetic",server="chassis-1/blade-1",state="on"} 1
+ucs_server_power_state{domain="synthetic",server="chassis-1/blade-2",state="off"} 1
+ucs_server_power_state{domain="synthetic",server="rack-unit-1",state="on"} 1
+# HELP ucs_server_powered_on Whether the server is powered on (UCSM computeBlade/computeRackUnit.operPower).
+# TYPE ucs_server_powered_on gauge
+ucs_server_powered_on{domain="synthetic",server="chassis-1/blade-1"} 1
+ucs_server_powered_on{domain="synthetic",server="chassis-1/blade-2"} 0
+ucs_server_powered_on{domain="synthetic",server="rack-unit-1"} 1
+# HELP ucs_server_presence_state Server presence (UCSM computeBlade/computeRackUnit.presence).
+# TYPE ucs_server_presence_state gauge
+ucs_server_presence_state{domain="synthetic",server="chassis-1/blade-1",state="equipped"} 1
+ucs_server_presence_state{domain="synthetic",server="chassis-1/blade-2",state="equipped"} 1
+ucs_server_presence_state{domain="synthetic",server="rack-unit-1",state="equipped"} 1
+# HELP ucs_server_psu_capacity_watts Power supply rated capacity in watts (UCSM equipmentPsu.psuWattage).
+# TYPE ucs_server_psu_capacity_watts gauge
+ucs_server_psu_capacity_watts{domain="synthetic",psu="1",server="rack-unit-1"} 1600
+ucs_server_psu_capacity_watts{domain="synthetic",psu="2",server="rack-unit-1"} 1600
+# HELP ucs_server_psu_i2c_errors_total Power supply I2C errors (UCSM equipmentPsuStats.PsuI2CErrors).
+# TYPE ucs_server_psu_i2c_errors_total counter
+ucs_server_psu_i2c_errors_total{domain="synthetic",psu="1",server="rack-unit-1"} 0
+ucs_server_psu_i2c_errors_total{domain="synthetic",psu="2",server="rack-unit-1"} 0
+# HELP ucs_server_psu_info Power supply information (UCSM equipmentPsu).
+# TYPE ucs_server_psu_info gauge
+ucs_server_psu_info{domain="synthetic",model="UCSC-PSU1-1600W",psu="1",serial="RPSU0001",server="rack-unit-1"} 1
+ucs_server_psu_info{domain="synthetic",model="UCSC-PSU1-1600W",psu="2",serial="RPSU0002",server="rack-unit-1"} 1
+# HELP ucs_server_psu_input_power_watts Power supply input power in watts (UCSM equipmentPsuStats.inputPower).
+# TYPE ucs_server_psu_input_power_watts gauge
+ucs_server_psu_input_power_watts{domain="synthetic",psu="1",server="rack-unit-1"} 180
+ucs_server_psu_input_power_watts{domain="synthetic",psu="2",server="rack-unit-1"} 180
+# HELP ucs_server_psu_input_voltage_volts Power supply input voltage in volts (UCSM equipmentPsuStats.input210v).
+# TYPE ucs_server_psu_input_voltage_volts gauge
+ucs_server_psu_input_voltage_volts{domain="synthetic",psu="1",server="rack-unit-1"} 231
+ucs_server_psu_input_voltage_volts{domain="synthetic",psu="2",server="rack-unit-1"} 231
+# HELP ucs_server_psu_ok Whether the power supply is operable (UCSM equipmentPsu.operability).
+# TYPE ucs_server_psu_ok gauge
+ucs_server_psu_ok{domain="synthetic",psu="1",server="rack-unit-1"} 1
+ucs_server_psu_ok{domain="synthetic",psu="2",server="rack-unit-1"} 1
+# HELP ucs_server_psu_operability_state Power supply operability (UCSM equipmentPsu.operability).
+# TYPE ucs_server_psu_operability_state gauge
+ucs_server_psu_operability_state{domain="synthetic",psu="1",server="rack-unit-1",state="operable"} 1
+ucs_server_psu_operability_state{domain="synthetic",psu="2",server="rack-unit-1",state="operable"} 1
+# HELP ucs_server_psu_output_current_amperes Power supply output current in amperes (UCSM equipmentPsuStats.outputCurrent).
+# TYPE ucs_server_psu_output_current_amperes gauge
+ucs_server_psu_output_current_amperes{domain="synthetic",psu="1",server="rack-unit-1"} 13.7
+ucs_server_psu_output_current_amperes{domain="synthetic",psu="2",server="rack-unit-1"} 13.7
+# HELP ucs_server_psu_output_power_watts Power supply output power in watts (UCSM equipmentPsuStats.outputPower).
+# TYPE ucs_server_psu_output_power_watts gauge
+ucs_server_psu_output_power_watts{domain="synthetic",psu="1",server="rack-unit-1"} 165
+ucs_server_psu_output_power_watts{domain="synthetic",psu="2",server="rack-unit-1"} 165
+# HELP ucs_server_psu_output_voltage_volts Power supply output voltage in volts by rail (UCSM equipmentPsuStats.output12v, output3v3).
+# TYPE ucs_server_psu_output_voltage_volts gauge
+ucs_server_psu_output_voltage_volts{domain="synthetic",psu="1",rail="12v",server="rack-unit-1"} 12
+ucs_server_psu_output_voltage_volts{domain="synthetic",psu="1",rail="3v3",server="rack-unit-1"} 3.3
+ucs_server_psu_output_voltage_volts{domain="synthetic",psu="2",rail="12v",server="rack-unit-1"} 12
+ucs_server_psu_output_voltage_volts{domain="synthetic",psu="2",rail="3v3",server="rack-unit-1"} 3.3
+# HELP ucs_server_psu_power_state Power supply power state (UCSM equipmentPsu.power).
+# TYPE ucs_server_psu_power_state gauge
+ucs_server_psu_power_state{domain="synthetic",psu="1",server="rack-unit-1",state="on"} 1
+ucs_server_psu_power_state{domain="synthetic",psu="2",server="rack-unit-1",state="on"} 1
+# HELP ucs_server_psu_presence_state Power supply presence (UCSM equipmentPsu.presence).
+# TYPE ucs_server_psu_presence_state gauge
+ucs_server_psu_presence_state{domain="synthetic",psu="1",server="rack-unit-1",state="equipped"} 1
+ucs_server_psu_presence_state{domain="synthetic",psu="2",server="rack-unit-1",state="equipped"} 1
+# HELP ucs_server_psu_temperature_celsius Power supply temperatures in degrees Celsius (UCSM equipmentPsuStats).
+# TYPE ucs_server_psu_temperature_celsius gauge
+ucs_server_psu_temperature_celsius{domain="synthetic",psu="1",sensor="ambient",server="rack-unit-1"} 24
+ucs_server_psu_temperature_celsius{domain="synthetic",psu="1",sensor="psu1",server="rack-unit-1"} 28
+ucs_server_psu_temperature_celsius{domain="synthetic",psu="1",sensor="psu2",server="rack-unit-1"} 30
+ucs_server_psu_temperature_celsius{domain="synthetic",psu="2",sensor="ambient",server="rack-unit-1"} 24
+ucs_server_psu_temperature_celsius{domain="synthetic",psu="2",sensor="psu1",server="rack-unit-1"} 28
+ucs_server_psu_temperature_celsius{domain="synthetic",psu="2",sensor="psu2",server="rack-unit-1"} 30
+# HELP ucs_server_psu_thermal_state Power supply thermal state (UCSM equipmentPsu.thermal).
+# TYPE ucs_server_psu_thermal_state gauge
+ucs_server_psu_thermal_state{domain="synthetic",psu="1",server="rack-unit-1",state="ok"} 1
+ucs_server_psu_thermal_state{domain="synthetic",psu="2",server="rack-unit-1",state="ok"} 1
+# HELP ucs_server_psu_voltage_state Power supply voltage state (UCSM equipmentPsu.voltage).
+# TYPE ucs_server_psu_voltage_state gauge
+ucs_server_psu_voltage_state{domain="synthetic",psu="1",server="rack-unit-1",state="ok"} 1
+ucs_server_psu_voltage_state{domain="synthetic",psu="2",server="rack-unit-1",state="ok"} 1
+# HELP ucs_server_thermal_state Server thermal state (UCSM computeBlade/computeRackUnit.thermal).
+# TYPE ucs_server_thermal_state gauge
+ucs_server_thermal_state{domain="synthetic",server="chassis-1/blade-1",state="ok"} 1
+ucs_server_thermal_state{domain="synthetic",server="chassis-1/blade-2",state="ok"} 1
+ucs_server_thermal_state{domain="synthetic",server="rack-unit-1",state="ok"} 1

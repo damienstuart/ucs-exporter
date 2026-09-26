@@ -1,0 +1,6 @@
+<configResolveClass cookie="" response="yes" classId="mgmtEntity">
+<outConfigs>
+<mgmtEntity dn="sys/mgmt-entity-A" leadership="primary" state="up" haReady="yes" haReadiness="ready" mgmtServicesState="up" umbilicalState="full" versionMismatch="no"/>
+<mgmtEntity dn="sys/mgmt-entity-B" leadership="subordinate" state="up" haReady="yes" haReadiness="ready" mgmtServicesState="up" umbilicalState="full" versionMismatch="no"/>
+</outConfigs>
+</configResolveClass>

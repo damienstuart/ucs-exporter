@@ -1,0 +1,8 @@
+<configResolveClass cookie="" response="yes" classId="fcStats">
+<outConfigs>
+<fcStats dn="sys/switch-A/slot-1/switch-fc/port-1/stats" bytesRx="5000000" bytesTx="4000000" packetsRx="2500" packetsTx="2000" bytesRxDelta="1000"/>
+<fcStats dn="sys/switch-A/slot-1/switch-fc/port-2/stats" bytesRx="10000000" bytesTx="8000000" packetsRx="5000" packetsTx="4000" bytesRxDelta="1000"/>
+<fcStats dn="sys/switch-B/slot-1/switch-fc/port-1/stats" bytesRx="5000000" bytesTx="4000000" packetsRx="2500" packetsTx="2000" bytesRxDelta="1000"/>
+<fcStats dn="fabric/san/A/pc-1/stats" bytesRx="15000000" bytesTx="12000000" packetsRx="7500" packetsTx="6000"/>
+</outConfigs>
+</configResolveClass>

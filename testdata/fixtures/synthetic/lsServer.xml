@@ -1,0 +1,8 @@
+<configResolveClass cookie="" response="yes" classId="lsServer">
+<outConfigs>
+<lsServer dn="org-root/ls-esx01" name="esx01" type="instance" assocState="associated" operState="ok" configState="applied" pnDn="sys/chassis-1/blade-1" operSrcTemplName="org-root/ls-esx-tmpl" uuid="derived"/>
+<lsServer dn="org-root/org-finance/ls-db01" name="db01" type="instance" assocState="associated" operState="degraded" configState="applied" pnDn="sys/rack-unit-1" operSrcTemplName="" uuid="derived"/>
+<lsServer dn="org-root/ls-spare" name="spare" type="instance" assocState="unassociated" operState="unassociated" configState="not-applied" pnDn="" operSrcTemplName="" uuid="derived"/>
+<lsServer dn="org-root/ls-esx-tmpl" name="esx-tmpl" type="updating-template" assocState="unassociated" operState="unassociated" configState="not-applied" pnDn="" operSrcTemplName="" uuid="derived"/>
+</outConfigs>
+</configResolveClass>

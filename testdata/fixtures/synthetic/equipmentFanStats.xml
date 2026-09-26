@@ -1,0 +1,8 @@
+<configResolveClass cookie="" response="yes" classId="equipmentFanStats">
+<outConfigs>
+<equipmentFanStats dn="sys/chassis-1/fan-module-1-1/fan-1/stats" speed="4901" speedDelta="0"/>
+<equipmentFanStats dn="sys/chassis-1/fan-module-1-1/fan-2/stats" speed="4902" speedDelta="0"/>
+<equipmentFanStats dn="sys/rack-unit-1/fan-module-1-1/fan-1/stats" speed="7300"/>
+<equipmentFanStats dn="sys/fex-101/fan-1/stats" speed="6000"/>
+</outConfigs>
+</configResolveClass>

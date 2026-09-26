@@ -1,0 +1,5 @@
+<configResolveClass cookie="" response="yes" classId="topSystem">
+<outConfigs>
+<topSystem dn="sys" name="ucs-synth" mode="cluster" systemUpTime="12:03:04:05" address="192.0.2.10"/>
+</outConfigs>
+</configResolveClass>

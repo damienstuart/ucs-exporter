@@ -1,0 +1,6 @@
+<configResolveClass cookie="" response="yes" classId="fabricEthLanPc">
+<outConfigs>
+<fabricEthLanPc dn="fabric/lan/A/pc-11" operState="up" adminState="enabled" operSpeed="25gbps" bandwidth="50" portId="11" switchId="A"/>
+<fabricEthLanPc dn="fabric/lan/B/pc-12" operState="up" adminState="enabled" operSpeed="25gbps" bandwidth="50" portId="12" switchId="B"/>
+</outConfigs>
+</configResolveClass>

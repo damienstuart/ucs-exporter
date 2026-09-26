@@ -1,0 +1,5 @@
+/bin/
+*.test
+/examples/secrets/*
+!/examples/secrets/ucs_password.example
+*.env

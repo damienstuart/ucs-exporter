@@ -1,0 +1,5 @@
+# HELP ucs_server_cpu_temperature_celsius CPU temperature in degrees Celsius (UCSM processorEnvStats.temperature).
+# TYPE ucs_server_cpu_temperature_celsius gauge
+ucs_server_cpu_temperature_celsius{cpu="1",domain="synthetic",server="chassis-1/blade-1"} 56
+ucs_server_cpu_temperature_celsius{cpu="1",domain="synthetic",server="rack-unit-1"} 56
+ucs_server_cpu_temperature_celsius{cpu="2",domain="synthetic",server="chassis-1/blade-1"} 57

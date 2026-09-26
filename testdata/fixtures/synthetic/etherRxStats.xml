@@ -1,0 +1,18 @@
+<configResolveClass cookie="" response="yes" classId="etherRxStats">
+<outConfigs>
+<etherRxStats dn="sys/switch-A/slot-1/switch-ether/port-1/rx-stats" totalBytes="1510500" totalPackets="1007" unicastPackets="977" multicastPackets="20" broadcastPackets="10" jumboPackets="0" totalBytesDelta="1500"/>
+<etherRxStats dn="sys/switch-A/slot-1/switch-ether/port-17/rx-stats" totalBytes="25510500" totalPackets="17007" unicastPackets="16977" multicastPackets="20" broadcastPackets="10" jumboPackets="0" totalBytesDelta="1500"/>
+<etherRxStats dn="sys/switch-A/slot-1/switch-ether/port-18/rx-stats" totalBytes="27010500" totalPackets="18007" unicastPackets="17977" multicastPackets="20" broadcastPackets="10" jumboPackets="0" totalBytesDelta="1500"/>
+<etherRxStats dn="sys/switch-A/slot-1/switch-ether/aggr-port-49/port-2/rx-stats" totalBytes="3010500" totalPackets="2007" unicastPackets="1977" multicastPackets="20" broadcastPackets="10" jumboPackets="0" totalBytesDelta="1500"/>
+<etherRxStats dn="sys/switch-B/slot-1/switch-ether/port-17/rx-stats" totalBytes="25504500" totalPackets="17003" unicastPackets="16973" multicastPackets="20" broadcastPackets="10" jumboPackets="0" totalBytesDelta="1500"/>
+<etherRxStats dn="fabric/lan/A/pc-11/rx-stats" totalBytes="987654321" totalPackets="1234567" unicastPackets="1234000" multicastPackets="500" broadcastPackets="67" jumboPackets="0"/>
+<etherRxStats dn="fabric/lan/B/pc-12/rx-stats" totalBytes="987654321" totalPackets="1234567" unicastPackets="1234000" multicastPackets="500" broadcastPackets="67" jumboPackets="0"/>
+<etherRxStats dn="sys/chassis-1/slot-1/host/port-1/rx-stats" totalBytes="555000" totalPackets="555" unicastPackets="550" multicastPackets="3" broadcastPackets="2" jumboPackets="0"/>
+<etherRxStats dn="sys/chassis-1/slot-1/host/port-2/rx-stats" totalBytes="555000" totalPackets="555" unicastPackets="550" multicastPackets="3" broadcastPackets="2" jumboPackets="0"/>
+<etherRxStats dn="sys/chassis-1/slot-1/fabric/port-1/rx-stats" totalBytes="999000" totalPackets="999" unicastPackets="990" multicastPackets="5" broadcastPackets="4" jumboPackets="0"/>
+<etherRxStats dn="sys/chassis-1/slot-2/host/port-1/rx-stats" totalBytes="555000" totalPackets="555" unicastPackets="550" multicastPackets="3" broadcastPackets="2" jumboPackets="0"/>
+<etherRxStats dn="sys/chassis-1/slot-2/host/port-2/rx-stats" totalBytes="555000" totalPackets="555" unicastPackets="550" multicastPackets="3" broadcastPackets="2" jumboPackets="0"/>
+<etherRxStats dn="sys/chassis-1/slot-2/fabric/port-1/rx-stats" totalBytes="999000" totalPackets="999" unicastPackets="990" multicastPackets="5" broadcastPackets="4" jumboPackets="0"/>
+<etherRxStats dn="sys/fex-101/slot-1/host/port-3/rx-stats" totalBytes="777000" totalPackets="777" unicastPackets="770" multicastPackets="4" broadcastPackets="3" jumboPackets="0"/>
+</outConfigs>
+</configResolveClass>

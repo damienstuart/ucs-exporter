@@ -1,0 +1,9 @@
+<configResolveClass cookie="" response="yes" classId="etherServerIntFIo">
+<outConfigs>
+<etherServerIntFIo dn="sys/chassis-1/slot-1/host/port-1" operState="up" peerDn="sys/chassis-1/blade-1/adaptor-1/ext-eth-1" portId="1" slotId="1" chassisId="1"/>
+<etherServerIntFIo dn="sys/chassis-1/slot-1/host/port-2" operState="link-down" peerDn="sys/chassis-1/blade-2/adaptor-1/ext-eth-1" portId="2" slotId="1" chassisId="1"/>
+<etherServerIntFIo dn="sys/chassis-1/slot-2/host/port-1" operState="up" peerDn="sys/chassis-1/blade-1/adaptor-1/ext-eth-2" portId="1" slotId="2" chassisId="1"/>
+<etherServerIntFIo dn="sys/chassis-1/slot-2/host/port-2" operState="link-down" peerDn="sys/chassis-1/blade-2/adaptor-1/ext-eth-2" portId="2" slotId="2" chassisId="1"/>
+<etherServerIntFIo dn="sys/fex-101/slot-1/host/port-3" operState="up" peerDn="sys/rack-unit-1/adaptor-1/ext-eth-1" portId="3" slotId="1"/>
+</outConfigs>
+</configResolveClass>

@@ -1,0 +1,6 @@
+<configResolveClass cookie="" response="yes" classId="computeMbTempStats">
+<outConfigs>
+<computeMbTempStats dn="sys/chassis-1/blade-1/board/temp-stats" fmTempSenIo="33" fmTempSenRear="37.5" fmTempSenRearL="not-applicable" fmTempSenRearR="0" fmTempSenFrontR="29"/>
+<computeMbTempStats dn="sys/chassis-1/blade-2/board/temp-stats" fmTempSenIo="33" fmTempSenRear="37.5" fmTempSenRearL="not-applicable" fmTempSenRearR="0" fmTempSenFrontR="29"/>
+</outConfigs>
+</configResolveClass>

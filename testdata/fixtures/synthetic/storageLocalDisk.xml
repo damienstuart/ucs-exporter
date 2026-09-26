@@ -1,0 +1,6 @@
+<configResolveClass cookie="" response="yes" classId="storageLocalDisk">
+<outConfigs>
+<storageLocalDisk dn="sys/rack-unit-1/board/storage-SAS-1/disk-1" model="UCS-SD960GM1X-EV" serial="SDISK0001" deviceType="SSD" connectionProtocol="SATA" operability="operable" diskState="online" size="915715" presence="equipped"/>
+<storageLocalDisk dn="sys/rack-unit-1/board/storage-SAS-1/disk-2" model="UCS-SD960GM1X-EV" serial="SDISK0002" deviceType="SSD" connectionProtocol="SATA" operability="inoperable" diskState="failed" size="915715" presence="equipped"/>
+</outConfigs>
+</configResolveClass>

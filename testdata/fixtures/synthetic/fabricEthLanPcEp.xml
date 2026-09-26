@@ -1,0 +1,6 @@
+<configResolveClass cookie="" response="yes" classId="fabricEthLanPcEp">
+<outConfigs>
+<fabricEthLanPcEp dn="fabric/lan/A/pc-11/ep-slot-1-port-17" membership="up" slotId="1" portId="17"/>
+<fabricEthLanPcEp dn="fabric/lan/B/pc-12/ep-slot-1-port-17" membership="up" slotId="1" portId="17"/>
+</outConfigs>
+</configResolveClass>

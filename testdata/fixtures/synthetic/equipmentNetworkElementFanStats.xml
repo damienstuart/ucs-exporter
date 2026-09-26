@@ -1,0 +1,8 @@
+<configResolveClass cookie="" response="yes" classId="equipmentNetworkElementFanStats">
+<outConfigs>
+<equipmentNetworkElementFanStats dn="sys/switch-A/fan-module-1-1/fan-1/stats" speed="9120" drivePercentage="45"/>
+<equipmentNetworkElementFanStats dn="sys/switch-A/fan-module-1-1/fan-2/stats" speed="9050" drivePercentage="45"/>
+<equipmentNetworkElementFanStats dn="sys/switch-B/fan-module-1-1/fan-1/stats" speed="9120" drivePercentage="45"/>
+<equipmentNetworkElementFanStats dn="sys/switch-B/fan-module-1-1/fan-2/stats" speed="0" drivePercentage="45"/>
+</outConfigs>
+</configResolveClass>

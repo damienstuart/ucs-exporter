@@ -1,0 +1,9 @@
+<configResolveClass cookie="" response="yes" classId="vnicEtherIf">
+<outConfigs>
+<vnicEtherIf dn="org-root/ls-esx01/ether-eth0/if-VLAN100" vnet="100" name="VLAN100" defaultNet="no" operState="up"/>
+<vnicEtherIf dn="org-root/ls-esx01/ether-eth0/if-VLAN200" vnet="200" name="VLAN200" defaultNet="yes" operState="down"/>
+<vnicEtherIf dn="org-root/ls-esx01/ether-eth1/if-VLAN100" vnet="100" name="VLAN100" defaultNet="no" operState="up"/>
+<vnicEtherIf dn="org-root/org-finance/ls-db01/ether-eth0/if-default" vnet="1" name="default" defaultNet="yes" operState="up"/>
+<vnicEtherIf dn="org-root/ls-esx-tmpl/ether-eth0/if-VLAN100" vnet="100" name="VLAN100" defaultNet="no" operState="up"/>
+</outConfigs>
+</configResolveClass>

@@ -1,0 +1,169 @@
+# HELP ucs_adaptor_info Adapter information (UCSM adaptorUnit).
+# TYPE ucs_adaptor_info gauge
+ucs_adaptor_info{adaptor="1",domain="synthetic",model="UCSB-VIC-M84-4P",serial="FCH1111VIC1",server="chassis-1/blade-1",vendor="Cisco Systems Inc"} 1
+ucs_adaptor_info{adaptor="1",domain="synthetic",model="UCSB-VIC-M84-4P",serial="FCH1111VIC2",server="chassis-1/blade-2",vendor="Cisco Systems Inc"} 1
+ucs_adaptor_info{adaptor="1",domain="synthetic",model="UCSC-M-V5Q50G",serial="FCH1111VIC1",server="rack-unit-1",vendor="Cisco Systems Inc"} 1
+# HELP ucs_adaptor_ok Whether the adapter is operable (UCSM adaptorUnit.operability).
+# TYPE ucs_adaptor_ok gauge
+ucs_adaptor_ok{adaptor="1",domain="synthetic",server="chassis-1/blade-1"} 1
+ucs_adaptor_ok{adaptor="1",domain="synthetic",server="chassis-1/blade-2"} 1
+ucs_adaptor_ok{adaptor="1",domain="synthetic",server="rack-unit-1"} 1
+# HELP ucs_adaptor_operability_state Adapter operability (UCSM adaptorUnit.operability).
+# TYPE ucs_adaptor_operability_state gauge
+ucs_adaptor_operability_state{adaptor="1",domain="synthetic",server="chassis-1/blade-1",state="operable"} 1
+ucs_adaptor_operability_state{adaptor="1",domain="synthetic",server="chassis-1/blade-2",state="operable"} 1
+ucs_adaptor_operability_state{adaptor="1",domain="synthetic",server="rack-unit-1",state="operable"} 1
+# HELP ucs_adaptor_thermal_state Adapter thermal state (UCSM adaptorUnit.thermal).
+# TYPE ucs_adaptor_thermal_state gauge
+ucs_adaptor_thermal_state{adaptor="1",domain="synthetic",server="chassis-1/blade-1",state="ok"} 1
+ucs_adaptor_thermal_state{adaptor="1",domain="synthetic",server="chassis-1/blade-2",state="ok"} 1
+ucs_adaptor_thermal_state{adaptor="1",domain="synthetic",server="rack-unit-1",state="ok"} 1
+# HELP ucs_adaptor_uplink_info Adapter uplink (adapter to IOM/FEX/FI link) and the fabric it connects to (UCSM adaptorExtEthIf.switchId).
+# TYPE ucs_adaptor_uplink_info gauge
+ucs_adaptor_uplink_info{adaptor="1",domain="synthetic",fabric="A",interface="ext-eth-1",server="chassis-1/blade-1"} 1
+ucs_adaptor_uplink_info{adaptor="1",domain="synthetic",fabric="A",interface="ext-eth-1",server="chassis-1/blade-2"} 1
+ucs_adaptor_uplink_info{adaptor="1",domain="synthetic",fabric="A",interface="ext-eth-1",server="rack-unit-1"} 1
+ucs_adaptor_uplink_info{adaptor="1",domain="synthetic",fabric="B",interface="ext-eth-2",server="chassis-1/blade-1"} 1
+ucs_adaptor_uplink_info{adaptor="1",domain="synthetic",fabric="B",interface="ext-eth-2",server="chassis-1/blade-2"} 1
+ucs_adaptor_uplink_info{adaptor="1",domain="synthetic",fabric="B",interface="ext-eth-2",server="rack-unit-1"} 1
+# HELP ucs_adaptor_uplink_link_state Adapter uplink link state (UCSM adaptorExtEthIf.linkState).
+# TYPE ucs_adaptor_uplink_link_state gauge
+ucs_adaptor_uplink_link_state{adaptor="1",domain="synthetic",interface="ext-eth-1",server="chassis-1/blade-1",state="up"} 1
+ucs_adaptor_uplink_link_state{adaptor="1",domain="synthetic",interface="ext-eth-1",server="chassis-1/blade-2",state="down"} 1
+ucs_adaptor_uplink_link_state{adaptor="1",domain="synthetic",interface="ext-eth-1",server="rack-unit-1",state="up"} 1
+ucs_adaptor_uplink_link_state{adaptor="1",domain="synthetic",interface="ext-eth-2",server="chassis-1/blade-1",state="up"} 1
+ucs_adaptor_uplink_link_state{adaptor="1",domain="synthetic",interface="ext-eth-2",server="chassis-1/blade-2",state="down"} 1
+ucs_adaptor_uplink_link_state{adaptor="1",domain="synthetic",interface="ext-eth-2",server="rack-unit-1",state="up"} 1
+# HELP ucs_adaptor_uplink_oper_state Adapter uplink operational state (UCSM adaptorExtEthIf.operState).
+# TYPE ucs_adaptor_uplink_oper_state gauge
+ucs_adaptor_uplink_oper_state{adaptor="1",domain="synthetic",interface="ext-eth-1",server="chassis-1/blade-1",state="up"} 1
+ucs_adaptor_uplink_oper_state{adaptor="1",domain="synthetic",interface="ext-eth-1",server="chassis-1/blade-2",state="link-down"} 1
+ucs_adaptor_uplink_oper_state{adaptor="1",domain="synthetic",interface="ext-eth-1",server="rack-unit-1",state="up"} 1
+ucs_adaptor_uplink_oper_state{adaptor="1",domain="synthetic",interface="ext-eth-2",server="chassis-1/blade-1",state="up"} 1
+ucs_adaptor_uplink_oper_state{adaptor="1",domain="synthetic",interface="ext-eth-2",server="chassis-1/blade-2",state="link-down"} 1
+ucs_adaptor_uplink_oper_state{adaptor="1",domain="synthetic",interface="ext-eth-2",server="rack-unit-1",state="up"} 1
+# HELP ucs_adaptor_uplink_up Whether the adapter uplink is up (UCSM adaptorExtEthIf.operState).
+# TYPE ucs_adaptor_uplink_up gauge
+ucs_adaptor_uplink_up{adaptor="1",domain="synthetic",interface="ext-eth-1",server="chassis-1/blade-1"} 1
+ucs_adaptor_uplink_up{adaptor="1",domain="synthetic",interface="ext-eth-1",server="chassis-1/blade-2"} 0
+ucs_adaptor_uplink_up{adaptor="1",domain="synthetic",interface="ext-eth-1",server="rack-unit-1"} 1
+ucs_adaptor_uplink_up{adaptor="1",domain="synthetic",interface="ext-eth-2",server="chassis-1/blade-1"} 1
+ucs_adaptor_uplink_up{adaptor="1",domain="synthetic",interface="ext-eth-2",server="chassis-1/blade-2"} 0
+ucs_adaptor_uplink_up{adaptor="1",domain="synthetic",interface="ext-eth-2",server="rack-unit-1"} 1
+# HELP ucs_service_profile_assoc_state Service profile association state (UCSM lsServer.assocState).
+# TYPE ucs_service_profile_assoc_state gauge
+ucs_service_profile_assoc_state{domain="synthetic",org="root",service_profile="esx01",state="associated"} 1
+ucs_service_profile_assoc_state{domain="synthetic",org="root",service_profile="spare",state="unassociated"} 1
+ucs_service_profile_assoc_state{domain="synthetic",org="root/finance",service_profile="db01",state="associated"} 1
+# HELP ucs_service_profile_config_state Service profile configuration state (UCSM lsServer.configState).
+# TYPE ucs_service_profile_config_state gauge
+ucs_service_profile_config_state{domain="synthetic",org="root",service_profile="esx01",state="applied"} 1
+ucs_service_profile_config_state{domain="synthetic",org="root",service_profile="spare",state="not-applied"} 1
+ucs_service_profile_config_state{domain="synthetic",org="root/finance",service_profile="db01",state="applied"} 1
+# HELP ucs_service_profile_ok Whether the service profile operational state is ok (UCSM lsServer.operState).
+# TYPE ucs_service_profile_ok gauge
+ucs_service_profile_ok{domain="synthetic",org="root",service_profile="esx01"} 1
+ucs_service_profile_ok{domain="synthetic",org="root",service_profile="spare"} 0
+ucs_service_profile_ok{domain="synthetic",org="root/finance",service_profile="db01"} 0
+# HELP ucs_service_profile_oper_state Service profile operational state (UCSM lsServer.operState).
+# TYPE ucs_service_profile_oper_state gauge
+ucs_service_profile_oper_state{domain="synthetic",org="root",service_profile="esx01",state="ok"} 1
+ucs_service_profile_oper_state{domain="synthetic",org="root",service_profile="spare",state="unassociated"} 1
+ucs_service_profile_oper_state{domain="synthetic",org="root/finance",service_profile="db01",state="degraded"} 1
+# HELP ucs_service_profile_template_info Template a service profile was instantiated from (UCSM lsServer.operSrcTemplName).
+# TYPE ucs_service_profile_template_info gauge
+ucs_service_profile_template_info{domain="synthetic",org="root",service_profile="esx01",template="esx-tmpl",template_org="root"} 1
+# HELP ucs_vhba_info vHBA configuration: WWPN, WWNN, configured fabric and VSAN (UCSM vnicFc, vnicFcNode, vnicFcIf).
+# TYPE ucs_vhba_info gauge
+ucs_vhba_info{admin_fabric="A",domain="synthetic",org="root",service_profile="esx01",vhba="fc0",vsan="100",vsan_name="VSAN100",wwnn="20:00:00:25:B5:00:00:01",wwpn="20:00:00:25:B5:0A:00:01"} 1
+ucs_vhba_info{admin_fabric="A",domain="synthetic",org="root/finance",service_profile="db01",vhba="fc0",vsan="100",vsan_name="VSAN100",wwnn="20:00:00:25:B5:00:01:01",wwpn="20:00:00:25:B5:0A:01:01"} 1
+ucs_vhba_info{admin_fabric="B",domain="synthetic",org="root",service_profile="esx01",vhba="fc1",vsan="200",vsan_name="VSAN200",wwnn="20:00:00:25:B5:00:00:01",wwpn="20:00:00:25:B5:0B:00:01"} 1
+# HELP ucs_vhba_link_state Link state of the adapter interface backing a vHBA (UCSM adaptorHostFcIf.linkState).
+# TYPE ucs_vhba_link_state gauge
+ucs_vhba_link_state{adaptor="1",domain="synthetic",interface="host-fc-1",org="root",server="chassis-1/blade-1",service_profile="esx01",state="up",vhba="fc0"} 1
+ucs_vhba_link_state{adaptor="1",domain="synthetic",interface="host-fc-1",org="root/finance",server="rack-unit-1",service_profile="db01",state="up",vhba="fc0"} 1
+ucs_vhba_link_state{adaptor="1",domain="synthetic",interface="host-fc-2",org="root",server="chassis-1/blade-1",service_profile="esx01",state="up",vhba="fc1"} 1
+# HELP ucs_vhba_oper_state Operational state of the adapter interface backing a vHBA (UCSM adaptorHostFcIf.operState).
+# TYPE ucs_vhba_oper_state gauge
+ucs_vhba_oper_state{adaptor="1",domain="synthetic",interface="host-fc-1",org="root",server="chassis-1/blade-1",service_profile="esx01",state="operable",vhba="fc0"} 1
+ucs_vhba_oper_state{adaptor="1",domain="synthetic",interface="host-fc-1",org="root/finance",server="rack-unit-1",service_profile="db01",state="operable",vhba="fc0"} 1
+ucs_vhba_oper_state{adaptor="1",domain="synthetic",interface="host-fc-2",org="root",server="chassis-1/blade-1",service_profile="esx01",state="operable",vhba="fc1"} 1
+# HELP ucs_vhba_up Whether the link of the adapter interface backing a vHBA is up (UCSM adaptorHostFcIf.linkState).
+# TYPE ucs_vhba_up gauge
+ucs_vhba_up{adaptor="1",domain="synthetic",interface="host-fc-1",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc0"} 1
+ucs_vhba_up{adaptor="1",domain="synthetic",interface="host-fc-1",org="root/finance",server="rack-unit-1",service_profile="db01",vhba="fc0"} 1
+ucs_vhba_up{adaptor="1",domain="synthetic",interface="host-fc-2",org="root",server="chassis-1/blade-1",service_profile="esx01",vhba="fc1"} 1
+# HELP ucs_vif_link_state Virtual circuit (VIF) link state (UCSM dcxVc.linkState).
+# TYPE ucs_vif_link_state gauge
+ucs_vif_link_state{domain="synthetic",fabric="A",org="root",server="chassis-1/blade-1",service_profile="esx01",state="up",transport="ether",vif="1001",vnic="eth0"} 1
+ucs_vif_link_state{domain="synthetic",fabric="A",org="root",server="chassis-1/blade-1",service_profile="esx01",state="up",transport="fc",vif="1002",vnic="fc0"} 1
+ucs_vif_link_state{domain="synthetic",fabric="A",org="root/finance",server="rack-unit-1",service_profile="db01",state="up",transport="ether",vif="2001",vnic="eth0"} 1
+ucs_vif_link_state{domain="synthetic",fabric="A",org="root/finance",server="rack-unit-1",service_profile="db01",state="up",transport="fc",vif="2002",vnic="fc0"} 1
+ucs_vif_link_state{domain="synthetic",fabric="B",org="root",server="chassis-1/blade-1",service_profile="esx01",state="down",transport="ether",vif="1003",vnic="eth1"} 1
+ucs_vif_link_state{domain="synthetic",fabric="B",org="root",server="chassis-1/blade-1",service_profile="esx01",state="up",transport="fc",vif="1004",vnic="fc1"} 1
+# HELP ucs_vif_oper_state Virtual circuit (VIF) operational state; the vnic label holds the vNIC or vHBA name (UCSM dcxVc.operState).
+# TYPE ucs_vif_oper_state gauge
+ucs_vif_oper_state{domain="synthetic",fabric="A",org="root",server="chassis-1/blade-1",service_profile="esx01",state="active",transport="ether",vif="1001",vnic="eth0"} 1
+ucs_vif_oper_state{domain="synthetic",fabric="A",org="root",server="chassis-1/blade-1",service_profile="esx01",state="active",transport="fc",vif="1002",vnic="fc0"} 1
+ucs_vif_oper_state{domain="synthetic",fabric="A",org="root/finance",server="rack-unit-1",service_profile="db01",state="active",transport="ether",vif="2001",vnic="eth0"} 1
+ucs_vif_oper_state{domain="synthetic",fabric="A",org="root/finance",server="rack-unit-1",service_profile="db01",state="active",transport="fc",vif="2002",vnic="fc0"} 1
+ucs_vif_oper_state{domain="synthetic",fabric="B",org="root",server="chassis-1/blade-1",service_profile="esx01",state="active",transport="fc",vif="1004",vnic="fc1"} 1
+ucs_vif_oper_state{domain="synthetic",fabric="B",org="root",server="chassis-1/blade-1",service_profile="esx01",state="error",transport="ether",vif="1003",vnic="eth1"} 1
+# HELP ucs_vif_pinned_port_channel_info Fabric interconnect uplink port channel a virtual circuit is pinned to (UCSM dcxVc.operBorderPortId with operBorderSlotId 0).
+# TYPE ucs_vif_pinned_port_channel_info gauge
+ucs_vif_pinned_port_channel_info{domain="synthetic",fabric="A",org="root",port_channel="11",server="chassis-1/blade-1",service_profile="esx01",transport="ether",vif="1001",vnic="eth0"} 1
+# HELP ucs_vif_pinned_port_info Fabric interconnect uplink port a virtual circuit is pinned to (UCSM dcxVc.operBorderSlotId/operBorderAggrPortId/operBorderPortId).
+# TYPE ucs_vif_pinned_port_info gauge
+ucs_vif_pinned_port_info{domain="synthetic",fabric="A",org="root",port="1/1",server="chassis-1/blade-1",service_profile="esx01",transport="fc",vif="1002",vnic="fc0"} 1
+ucs_vif_pinned_port_info{domain="synthetic",fabric="A",org="root/finance",port="1/2",server="rack-unit-1",service_profile="db01",transport="fc",vif="2002",vnic="fc0"} 1
+ucs_vif_pinned_port_info{domain="synthetic",fabric="A",org="root/finance",port="1/49/2",server="rack-unit-1",service_profile="db01",transport="ether",vif="2001",vnic="eth0"} 1
+ucs_vif_pinned_port_info{domain="synthetic",fabric="B",org="root",port="1/1",server="chassis-1/blade-1",service_profile="esx01",transport="fc",vif="1004",vnic="fc1"} 1
+# HELP ucs_vif_up Whether the virtual circuit (VIF) link is up (UCSM dcxVc.linkState).
+# TYPE ucs_vif_up gauge
+ucs_vif_up{domain="synthetic",fabric="A",org="root",server="chassis-1/blade-1",service_profile="esx01",transport="ether",vif="1001",vnic="eth0"} 1
+ucs_vif_up{domain="synthetic",fabric="A",org="root",server="chassis-1/blade-1",service_profile="esx01",transport="fc",vif="1002",vnic="fc0"} 1
+ucs_vif_up{domain="synthetic",fabric="A",org="root/finance",server="rack-unit-1",service_profile="db01",transport="ether",vif="2001",vnic="eth0"} 1
+ucs_vif_up{domain="synthetic",fabric="A",org="root/finance",server="rack-unit-1",service_profile="db01",transport="fc",vif="2002",vnic="fc0"} 1
+ucs_vif_up{domain="synthetic",fabric="B",org="root",server="chassis-1/blade-1",service_profile="esx01",transport="ether",vif="1003",vnic="eth1"} 0
+ucs_vif_up{domain="synthetic",fabric="B",org="root",server="chassis-1/blade-1",service_profile="esx01",transport="fc",vif="1004",vnic="fc1"} 1
+# HELP ucs_vnic_info vNIC configuration: MAC address and configured fabric (UCSM vnicEther).
+# TYPE ucs_vnic_info gauge
+ucs_vnic_info{admin_fabric="A",domain="synthetic",mac="00:25:B5:00:00:01",org="root",service_profile="esx01",vnic="eth0"} 1
+ucs_vnic_info{admin_fabric="A-B",domain="synthetic",mac="00:25:B5:00:01:01",org="root/finance",service_profile="db01",vnic="eth0"} 1
+ucs_vnic_info{admin_fabric="B",domain="synthetic",mac="00:25:B5:00:00:02",org="root",service_profile="esx01",vnic="eth1"} 1
+# HELP ucs_vnic_link_state Link state of the adapter interface backing a vNIC (UCSM adaptorHostEthIf.linkState).
+# TYPE ucs_vnic_link_state gauge
+ucs_vnic_link_state{adaptor="1",domain="synthetic",interface="host-eth-1",org="root",server="chassis-1/blade-1",service_profile="esx01",state="up",vnic="eth0"} 1
+ucs_vnic_link_state{adaptor="1",domain="synthetic",interface="host-eth-1",org="root/finance",server="rack-unit-1",service_profile="db01",state="up",vnic="eth0"} 1
+ucs_vnic_link_state{adaptor="1",domain="synthetic",interface="host-eth-2",org="root",server="chassis-1/blade-1",service_profile="esx01",state="down",vnic="eth1"} 1
+# HELP ucs_vnic_mtu_bytes vNIC MTU in bytes (UCSM vnicEther.mtu).
+# TYPE ucs_vnic_mtu_bytes gauge
+ucs_vnic_mtu_bytes{domain="synthetic",org="root",service_profile="esx01",vnic="eth0"} 9000
+ucs_vnic_mtu_bytes{domain="synthetic",org="root",service_profile="esx01",vnic="eth1"} 9000
+ucs_vnic_mtu_bytes{domain="synthetic",org="root/finance",service_profile="db01",vnic="eth0"} 1500
+# HELP ucs_vnic_oper_state Operational state of the adapter interface backing a vNIC (UCSM adaptorHostEthIf.operState).
+# TYPE ucs_vnic_oper_state gauge
+ucs_vnic_oper_state{adaptor="1",domain="synthetic",interface="host-eth-1",org="root",server="chassis-1/blade-1",service_profile="esx01",state="operable",vnic="eth0"} 1
+ucs_vnic_oper_state{adaptor="1",domain="synthetic",interface="host-eth-1",org="root/finance",server="rack-unit-1",service_profile="db01",state="operable",vnic="eth0"} 1
+ucs_vnic_oper_state{adaptor="1",domain="synthetic",interface="host-eth-2",org="root",server="chassis-1/blade-1",service_profile="esx01",state="operable",vnic="eth1"} 1
+# HELP ucs_vnic_up Whether the link of the adapter interface backing a vNIC is up (UCSM adaptorHostEthIf.linkState).
+# TYPE ucs_vnic_up gauge
+ucs_vnic_up{adaptor="1",domain="synthetic",interface="host-eth-1",org="root",server="chassis-1/blade-1",service_profile="esx01",vnic="eth0"} 1
+ucs_vnic_up{adaptor="1",domain="synthetic",interface="host-eth-1",org="root/finance",server="rack-unit-1",service_profile="db01",vnic="eth0"} 1
+ucs_vnic_up{adaptor="1",domain="synthetic",interface="host-eth-2",org="root",server="chassis-1/blade-1",service_profile="esx01",vnic="eth1"} 0
+# HELP ucs_vnic_vlan_info VLAN membership of a vNIC (UCSM vnicEtherIf).
+# TYPE ucs_vnic_vlan_info gauge
+ucs_vnic_vlan_info{domain="synthetic",native="false",org="root",service_profile="esx01",vlan="100",vlan_name="VLAN100",vnic="eth0"} 1
+ucs_vnic_vlan_info{domain="synthetic",native="false",org="root",service_profile="esx01",vlan="100",vlan_name="VLAN100",vnic="eth1"} 1
+ucs_vnic_vlan_info{domain="synthetic",native="true",org="root",service_profile="esx01",vlan="200",vlan_name="VLAN200",vnic="eth0"} 1
+ucs_vnic_vlan_info{domain="synthetic",native="true",org="root/finance",service_profile="db01",vlan="1",vlan_name="default",vnic="eth0"} 1
+# HELP ucs_vnic_vlans VLANs configured on a vNIC (UCSM vnicEtherIf).
+# TYPE ucs_vnic_vlans gauge
+ucs_vnic_vlans{domain="synthetic",org="root",service_profile="esx01",vnic="eth0"} 2
+ucs_vnic_vlans{domain="synthetic",org="root",service_profile="esx01",vnic="eth1"} 1
+ucs_vnic_vlans{domain="synthetic",org="root/finance",service_profile="db01",vnic="eth0"} 1
+# HELP ucs_vnic_vlans_down VLANs configured on a vNIC whose operational state is not up (UCSM vnicEtherIf.operState).
+# TYPE ucs_vnic_vlans_down gauge
+ucs_vnic_vlans_down{domain="synthetic",org="root",service_profile="esx01",vnic="eth0"} 1
+ucs_vnic_vlans_down{domain="synthetic",org="root",service_profile="esx01",vnic="eth1"} 0
+ucs_vnic_vlans_down{domain="synthetic",org="root/finance",service_profile="db01",vnic="eth0"} 0

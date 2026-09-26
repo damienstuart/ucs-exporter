@@ -1,0 +1,40 @@
+# HELP ucs_server_dimm_address_parity_correctable_errors_total Correctable address parity errors (UCSM memoryErrorStats.addressParityErrorsCorrectable).
+# TYPE ucs_server_dimm_address_parity_correctable_errors_total counter
+ucs_server_dimm_address_parity_correctable_errors_total{dimm="1",domain="synthetic",memory_array="1",server="chassis-1/blade-1"} 0
+ucs_server_dimm_address_parity_correctable_errors_total{dimm="1",domain="synthetic",memory_array="1",server="chassis-1/blade-2"} 0
+ucs_server_dimm_address_parity_correctable_errors_total{dimm="1",domain="synthetic",memory_array="1",server="rack-unit-1"} 0
+# HELP ucs_server_dimm_address_parity_errors_total Address parity errors (UCSM memoryErrorStats.addressParityErrors).
+# TYPE ucs_server_dimm_address_parity_errors_total counter
+ucs_server_dimm_address_parity_errors_total{dimm="1",domain="synthetic",memory_array="1",server="chassis-1/blade-1"} 0
+ucs_server_dimm_address_parity_errors_total{dimm="1",domain="synthetic",memory_array="1",server="chassis-1/blade-2"} 0
+ucs_server_dimm_address_parity_errors_total{dimm="1",domain="synthetic",memory_array="1",server="rack-unit-1"} 0
+# HELP ucs_server_dimm_address_parity_uncorrectable_errors_total Uncorrectable address parity errors (UCSM memoryErrorStats.addressParityErrorsUnCorrectable).
+# TYPE ucs_server_dimm_address_parity_uncorrectable_errors_total counter
+ucs_server_dimm_address_parity_uncorrectable_errors_total{dimm="1",domain="synthetic",memory_array="1",server="chassis-1/blade-1"} 0
+ucs_server_dimm_address_parity_uncorrectable_errors_total{dimm="1",domain="synthetic",memory_array="1",server="chassis-1/blade-2"} 0
+ucs_server_dimm_address_parity_uncorrectable_errors_total{dimm="1",domain="synthetic",memory_array="1",server="rack-unit-1"} 0
+# HELP ucs_server_dimm_dram_write_crc_correctable_errors_total Correctable DRAM write data CRC errors (UCSM memoryErrorStats.DramWriteDataCorrectableCRCErrors).
+# TYPE ucs_server_dimm_dram_write_crc_correctable_errors_total counter
+ucs_server_dimm_dram_write_crc_correctable_errors_total{dimm="1",domain="synthetic",memory_array="1",server="chassis-1/blade-1"} 0
+ucs_server_dimm_dram_write_crc_correctable_errors_total{dimm="1",domain="synthetic",memory_array="1",server="chassis-1/blade-2"} 0
+ucs_server_dimm_dram_write_crc_correctable_errors_total{dimm="1",domain="synthetic",memory_array="1",server="rack-unit-1"} 0
+# HELP ucs_server_dimm_dram_write_crc_uncorrectable_errors_total Uncorrectable DRAM write data CRC errors (UCSM memoryErrorStats.DramWriteDataUnCorrectableCRCErrors).
+# TYPE ucs_server_dimm_dram_write_crc_uncorrectable_errors_total counter
+ucs_server_dimm_dram_write_crc_uncorrectable_errors_total{dimm="1",domain="synthetic",memory_array="1",server="chassis-1/blade-1"} 0
+ucs_server_dimm_dram_write_crc_uncorrectable_errors_total{dimm="1",domain="synthetic",memory_array="1",server="chassis-1/blade-2"} 0
+ucs_server_dimm_dram_write_crc_uncorrectable_errors_total{dimm="1",domain="synthetic",memory_array="1",server="rack-unit-1"} 0
+# HELP ucs_server_dimm_ecc_multibit_errors_total Multi-bit (uncorrectable) ECC errors (UCSM memoryErrorStats.eccMultibitErrors).
+# TYPE ucs_server_dimm_ecc_multibit_errors_total counter
+ucs_server_dimm_ecc_multibit_errors_total{dimm="1",domain="synthetic",memory_array="1",server="chassis-1/blade-1"} 0
+ucs_server_dimm_ecc_multibit_errors_total{dimm="1",domain="synthetic",memory_array="1",server="chassis-1/blade-2"} 0
+ucs_server_dimm_ecc_multibit_errors_total{dimm="1",domain="synthetic",memory_array="1",server="rack-unit-1"} 0
+# HELP ucs_server_dimm_ecc_singlebit_errors_total Single-bit (corrected) ECC errors (UCSM memoryErrorStats.eccSinglebitErrors).
+# TYPE ucs_server_dimm_ecc_singlebit_errors_total counter
+ucs_server_dimm_ecc_singlebit_errors_total{dimm="1",domain="synthetic",memory_array="1",server="chassis-1/blade-1"} 5
+ucs_server_dimm_ecc_singlebit_errors_total{dimm="1",domain="synthetic",memory_array="1",server="chassis-1/blade-2"} 5
+ucs_server_dimm_ecc_singlebit_errors_total{dimm="1",domain="synthetic",memory_array="1",server="rack-unit-1"} 0
+# HELP ucs_server_dimm_mismatch_errors_total Memory mismatch errors (UCSM memoryErrorStats.mismatchErrors).
+# TYPE ucs_server_dimm_mismatch_errors_total counter
+ucs_server_dimm_mismatch_errors_total{dimm="1",domain="synthetic",memory_array="1",server="chassis-1/blade-1"} 0
+ucs_server_dimm_mismatch_errors_total{dimm="1",domain="synthetic",memory_array="1",server="chassis-1/blade-2"} 0
+ucs_server_dimm_mismatch_errors_total{dimm="1",domain="synthetic",memory_array="1",server="rack-unit-1"} 0

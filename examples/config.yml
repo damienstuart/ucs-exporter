@@ -1,0 +1,70 @@
+# SPDX-FileCopyrightText: 2026 The ucs-exporter authors
+#
+# SPDX-License-Identifier: GPL-3.0-only
+#
+# ucs-exporter configuration. Every setting under "defaults" can be
+# overridden per domain. Validate with: ucs-exporter check-config
+
+defaults:
+  # Credentials. The username falls back to $PROM_UCS_USERNAME and the
+  # password to $PROM_UCS_PASSWORD. A password_file is re-read at every login,
+  # so it can be rotated without a restart. A read-only UCSM account is enough.
+  username: 'ucs-CORP\svc_prometheus'
+  password_file: /run/secrets/ucs_password
+  # password: ...                 # alternatively, inline (mutually exclusive with password_file)
+
+  # Polling. UCS Manager collects statistics every 60 seconds by default (30s
+  # at the fastest), so polling more often than that gains nothing.
+  interval: 60s
+  # timeout: 45s                  # whole poll; default 0.75 * interval
+  # request_timeout: 30s          # one class query; default min(30s, timeout)
+  # max_concurrent_requests: 2    # parallel class queries per domain (1-8)
+  # max_data_age: 3m              # keep serving data of a class whose query fails for this
+  #                               # long (default 3 * interval; 0 disables)
+
+  # TLS. Certificates are verified by default. Point ca_file at the UCSM CA
+  # (or its self-signed certificate), or disable verification per domain.
+  tls:
+    ca_file: /etc/ucs-exporter/ucsm-ca.pem
+    # server_name: ucs.example.com
+    # insecure_skip_verify: false
+    # min_version: TLS12
+
+  # proxy_url: http://proxy.example.com:3128
+
+  # Modules to run (default: all). See "ucs-exporter modules".
+  # modules: [system, capacity, power, cpu_temperature, fans, fi_system, memory_errors,
+  #           faults, ethernet, fc, vnic, virtual, fc_extended, ethernet_extended, hardware]
+
+  module_options:
+    virtual:
+      vlans: "off"                # off | count (VLANs per vNIC) | full (one series per vNIC and VLAN);
+      #                             count and full read every VLAN membership object (tens of thousands on large domains)
+    ethernet_extended:
+      iom_host_ports: false       # packet-type, loss and pause counters for every IOM/FEX host port
+      adaptor_uplink_errors: false # adapter-side CRC/length/discard counters on adapter uplinks
+    # hardware:
+    #   firmware_types: [system, switch-kernel, switch-software, iocard, blade-controller,
+    #                    blade-bios, adaptor, board-controller, fex]
+
+domains:
+  # "name" is the key for /metrics?domain=<name> and the value of the domain
+  # label; the address defaults to the name.
+  - name: ucs-lon1.example.com
+
+  - name: ucs-nyc1
+    address: 10.20.0.5:443
+    username: 'ucs-NYC\svc_prometheus'
+    password_file: /run/secrets/ucs_nyc1_password
+    interval: 120s
+    tls:
+      insecure_skip_verify: true  # self-signed certificate; prefer ca_file
+
+# Poll domains that are not listed above when /metrics?domain=<name> is
+# requested, using the defaults. Off by default: the exporter sends the
+# default credentials to whatever host is named, so the allowlist is required.
+unlisted_domains:
+  enabled: false
+  allow: ['ucs-[a-z0-9-]+\.example\.com']
+  max_domains: 16
+  idle_timeout: 1h

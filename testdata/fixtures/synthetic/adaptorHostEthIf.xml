@@ -1,0 +1,8 @@
+<configResolveClass cookie="" response="yes" classId="adaptorHostEthIf">
+<outConfigs>
+<adaptorHostEthIf dn="sys/chassis-1/blade-1/adaptor-1/host-eth-1" vnicDn="org-root/ls-esx01/ether-eth0" switchId="A" operState="operable" linkState="up" mac="00:25:B5:00:00:01"/>
+<adaptorHostEthIf dn="sys/chassis-1/blade-1/adaptor-1/host-eth-2" vnicDn="org-root/ls-esx01/ether-eth1" switchId="B" operState="operable" linkState="down" mac="00:25:B5:00:00:02"/>
+<adaptorHostEthIf dn="sys/chassis-1/blade-2/adaptor-1/host-eth-1" vnicDn="" switchId="A" operState="unknown" linkState="unallocated" mac="00:25:B5:00:00:01"/>
+<adaptorHostEthIf dn="sys/rack-unit-1/adaptor-1/host-eth-1" vnicDn="org-root/org-finance/ls-db01/ether-eth0" switchId="A" operState="operable" linkState="up" mac="00:25:B5:00:00:01"/>
+</outConfigs>
+</configResolveClass>

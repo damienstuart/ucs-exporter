@@ -1,0 +1,12 @@
+<configResolveClass cookie="" response="yes" classId="fabricComputeSlotEp">
+<outConfigs>
+<fabricComputeSlotEp dn="fabric/server/chassis-1/slot-1" presence="equipped" slotId="1" chassisId="1"/>
+<fabricComputeSlotEp dn="fabric/server/chassis-1/slot-2" presence="equipped" slotId="2" chassisId="1"/>
+<fabricComputeSlotEp dn="fabric/server/chassis-1/slot-3" presence="empty" slotId="3" chassisId="1"/>
+<fabricComputeSlotEp dn="fabric/server/chassis-1/slot-4" presence="empty" slotId="4" chassisId="1"/>
+<fabricComputeSlotEp dn="fabric/server/chassis-1/slot-5" presence="empty" slotId="5" chassisId="1"/>
+<fabricComputeSlotEp dn="fabric/server/chassis-1/slot-6" presence="empty" slotId="6" chassisId="1"/>
+<fabricComputeSlotEp dn="fabric/server/chassis-1/slot-7" presence="empty" slotId="7" chassisId="1"/>
+<fabricComputeSlotEp dn="fabric/server/chassis-1/slot-8" presence="empty" slotId="8" chassisId="1"/>
+</outConfigs>
+</configResolveClass>

@@ -1,0 +1,7 @@
+<configResolveClass cookie="" response="yes" classId="adaptorFcIfFrameStats">
+<outConfigs>
+<adaptorFcIfFrameStats dn="sys/chassis-1/blade-1/adaptor-1/host-fc-1/fc-if-frame-stats" rxFrames="5500" txFrames="4400" dumpedFrames="0" errorFrames="0"/>
+<adaptorFcIfFrameStats dn="sys/chassis-1/blade-1/adaptor-1/host-fc-2/fc-if-frame-stats" rxFrames="11000" txFrames="8800" dumpedFrames="0" errorFrames="0"/>
+<adaptorFcIfFrameStats dn="sys/rack-unit-1/adaptor-1/host-fc-1/fc-if-frame-stats" rxFrames="5500" txFrames="4400" dumpedFrames="0" errorFrames="0"/>
+</outConfigs>
+</configResolveClass>

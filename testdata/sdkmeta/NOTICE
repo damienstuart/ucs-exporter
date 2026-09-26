@@ -1,0 +1,4 @@
+classes.json is derived from the class metadata of Cisco's UCS Manager Python
+SDK (ucsmsdk 0.9.27, https://github.com/CiscoUcs/ucsmsdk), which is licensed
+under the Apache License, Version 2.0. Only class, relative-name, parent and
+attribute names, types and enumeration values are included.

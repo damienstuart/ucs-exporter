@@ -1,0 +1,15 @@
+<configResolveClass cookie="" response="yes" classId="etherLossStats">
+<outConfigs>
+<etherLossStats dn="sys/switch-A/slot-1/switch-ether/port-1/loss-stats" SQETest="0" carrierSense="0" excessCollision="0" giants="2" lateCollision="0" multiCollision="0" singleCollision="0" symbol="0"/>
+<etherLossStats dn="sys/switch-A/slot-1/switch-ether/port-17/loss-stats" SQETest="0" carrierSense="0" excessCollision="0" giants="2" lateCollision="0" multiCollision="0" singleCollision="0" symbol="0"/>
+<etherLossStats dn="sys/switch-A/slot-1/switch-ether/port-18/loss-stats" SQETest="0" carrierSense="0" excessCollision="0" giants="2" lateCollision="0" multiCollision="0" singleCollision="0" symbol="0"/>
+<etherLossStats dn="sys/switch-A/slot-1/switch-ether/aggr-port-49/port-2/loss-stats" SQETest="0" carrierSense="0" excessCollision="0" giants="2" lateCollision="0" multiCollision="0" singleCollision="0" symbol="0"/>
+<etherLossStats dn="sys/switch-B/slot-1/switch-ether/port-17/loss-stats" SQETest="0" carrierSense="0" excessCollision="0" giants="2" lateCollision="0" multiCollision="0" singleCollision="0" symbol="0"/>
+<etherLossStats dn="fabric/lan/A/pc-11/loss-stats" SQETest="0" carrierSense="0" excessCollision="0" giants="2" lateCollision="0" multiCollision="0" singleCollision="0" symbol="0"/>
+<etherLossStats dn="fabric/lan/B/pc-12/loss-stats" SQETest="0" carrierSense="0" excessCollision="0" giants="2" lateCollision="0" multiCollision="0" singleCollision="0" symbol="0"/>
+<etherLossStats dn="sys/chassis-1/slot-1/host/port-1/loss-stats" SQETest="0" carrierSense="0" excessCollision="0" giants="0" lateCollision="0" multiCollision="0" singleCollision="0" symbol="0"/>
+<etherLossStats dn="sys/chassis-1/slot-1/host/port-2/loss-stats" SQETest="0" carrierSense="0" excessCollision="0" giants="0" lateCollision="0" multiCollision="0" singleCollision="0" symbol="0"/>
+<etherLossStats dn="sys/chassis-1/slot-2/host/port-1/loss-stats" SQETest="0" carrierSense="0" excessCollision="0" giants="0" lateCollision="0" multiCollision="0" singleCollision="0" symbol="0"/>
+<etherLossStats dn="sys/chassis-1/slot-2/host/port-2/loss-stats" SQETest="0" carrierSense="0" excessCollision="0" giants="0" lateCollision="0" multiCollision="0" singleCollision="0" symbol="0"/>
+</outConfigs>
+</configResolveClass>

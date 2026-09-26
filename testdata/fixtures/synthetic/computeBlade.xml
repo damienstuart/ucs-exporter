@@ -1,0 +1,6 @@
+<configResolveClass cookie="" response="yes" classId="computeBlade">
+<outConfigs>
+<computeBlade dn="sys/chassis-1/blade-1" model="UCSB-B200-M6" serial="FLM1111BL01" vendor="Cisco Systems Inc" assignedToDn="org-root/ls-esx01" operState="ok" operability="operable" operPower="on" presence="equipped" association="associated" thermal="ok" numOfCpus="2" numOfCores="64" numOfCoresEnabled="64" numOfThreads="128" totalMemory="524288" availableMemory="524288" numOfAdaptors="1" uuid="aaaaaaaa-bbbb-cccc-dddd-000000000001" usrLbl=""/>
+<computeBlade dn="sys/chassis-1/blade-2" model="UCSB-B200-M6" serial="FLM1111BL02" vendor="Cisco Systems Inc" assignedToDn="" operState="unassociated" operability="operable" operPower="off" presence="equipped" association="none" thermal="ok" numOfCpus="2" numOfCores="64" numOfCoresEnabled="32" numOfThreads="128" totalMemory="524288" availableMemory="524288" numOfAdaptors="1" uuid="aaaaaaaa-bbbb-cccc-dddd-000000000001" usrLbl=""/>
+</outConfigs>
+</configResolveClass>

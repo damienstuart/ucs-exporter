@@ -1,0 +1,5 @@
+<configResolveClass cookie="" response="yes" classId="equipmentChassisStats">
+<outConfigs>
+<equipmentChassisStats dn="sys/chassis-1/stats" inputPower="1850.5" outputPower="1700" ChassisI2CErrors="0"/>
+</outConfigs>
+</configResolveClass>

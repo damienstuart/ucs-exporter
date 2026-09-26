@@ -1,0 +1,7 @@
+<configResolveClass cookie="" response="yes" classId="adaptorFcIfFC4Stats">
+<outConfigs>
+<adaptorFcIfFC4Stats dn="sys/chassis-1/blade-1/adaptor-1/host-fc-1/fc-if-fc4-stats" inputRequests="1000" outputRequests="800" controlRequests="12" inputMegabytes="2048" outputMegabytes="1024"/>
+<adaptorFcIfFC4Stats dn="sys/chassis-1/blade-1/adaptor-1/host-fc-2/fc-if-fc4-stats" inputRequests="1000" outputRequests="800" controlRequests="12" inputMegabytes="2048" outputMegabytes="1024"/>
+<adaptorFcIfFC4Stats dn="sys/rack-unit-1/adaptor-1/host-fc-1/fc-if-fc4-stats" inputRequests="1000" outputRequests="800" controlRequests="12" inputMegabytes="2048" outputMegabytes="1024"/>
+</outConfigs>
+</configResolveClass>

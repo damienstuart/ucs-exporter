@@ -1,0 +1,32 @@
+# HELP ucs_fi_fc_port_channel_receive_bytes_total Fibre Channel bytes received (UCSM fcStats.bytesRx).
+# TYPE ucs_fi_fc_port_channel_receive_bytes_total counter
+ucs_fi_fc_port_channel_receive_bytes_total{domain="synthetic",fabric="A",port_channel="1"} 1.5e+07
+# HELP ucs_fi_fc_port_channel_receive_frames_total Fibre Channel frames received (UCSM fcStats.packetsRx).
+# TYPE ucs_fi_fc_port_channel_receive_frames_total counter
+ucs_fi_fc_port_channel_receive_frames_total{domain="synthetic",fabric="A",port_channel="1"} 7500
+# HELP ucs_fi_fc_port_channel_transmit_bytes_total Fibre Channel bytes transmitted (UCSM fcStats.bytesTx).
+# TYPE ucs_fi_fc_port_channel_transmit_bytes_total counter
+ucs_fi_fc_port_channel_transmit_bytes_total{domain="synthetic",fabric="A",port_channel="1"} 1.2e+07
+# HELP ucs_fi_fc_port_channel_transmit_frames_total Fibre Channel frames transmitted (UCSM fcStats.packetsTx).
+# TYPE ucs_fi_fc_port_channel_transmit_frames_total counter
+ucs_fi_fc_port_channel_transmit_frames_total{domain="synthetic",fabric="A",port_channel="1"} 6000
+# HELP ucs_fi_fc_port_receive_bytes_total Fibre Channel bytes received (UCSM fcStats.bytesRx).
+# TYPE ucs_fi_fc_port_receive_bytes_total counter
+ucs_fi_fc_port_receive_bytes_total{domain="synthetic",fabric="A",port="1/1"} 5e+06
+ucs_fi_fc_port_receive_bytes_total{domain="synthetic",fabric="A",port="1/2"} 1e+07
+ucs_fi_fc_port_receive_bytes_total{domain="synthetic",fabric="B",port="1/1"} 5e+06
+# HELP ucs_fi_fc_port_receive_frames_total Fibre Channel frames received (UCSM fcStats.packetsRx).
+# TYPE ucs_fi_fc_port_receive_frames_total counter
+ucs_fi_fc_port_receive_frames_total{domain="synthetic",fabric="A",port="1/1"} 2500
+ucs_fi_fc_port_receive_frames_total{domain="synthetic",fabric="A",port="1/2"} 5000
+ucs_fi_fc_port_receive_frames_total{domain="synthetic",fabric="B",port="1/1"} 2500
+# HELP ucs_fi_fc_port_transmit_bytes_total Fibre Channel bytes transmitted (UCSM fcStats.bytesTx).
+# TYPE ucs_fi_fc_port_transmit_bytes_total counter
+ucs_fi_fc_port_transmit_bytes_total{domain="synthetic",fabric="A",port="1/1"} 4e+06
+ucs_fi_fc_port_transmit_bytes_total{domain="synthetic",fabric="A",port="1/2"} 8e+06
+ucs_fi_fc_port_transmit_bytes_total{domain="synthetic",fabric="B",port="1/1"} 4e+06
+# HELP ucs_fi_fc_port_transmit_frames_total Fibre Channel frames transmitted (UCSM fcStats.packetsTx).
+# TYPE ucs_fi_fc_port_transmit_frames_total counter
+ucs_fi_fc_port_transmit_frames_total{domain="synthetic",fabric="A",port="1/1"} 2000
+ucs_fi_fc_port_transmit_frames_total{domain="synthetic",fabric="A",port="1/2"} 4000
+ucs_fi_fc_port_transmit_frames_total{domain="synthetic",fabric="B",port="1/1"} 2000

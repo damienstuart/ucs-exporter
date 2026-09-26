@@ -1,0 +1,7 @@
+<configResolveClass cookie="" response="yes" classId="vnicFcIf">
+<outConfigs>
+<vnicFcIf dn="org-root/ls-esx01/fc-fc0/if-default" vnet="100" name="VSAN100" operVnetName="VSAN100"/>
+<vnicFcIf dn="org-root/ls-esx01/fc-fc1/if-default" vnet="200" name="VSAN200" operVnetName="VSAN200"/>
+<vnicFcIf dn="org-root/org-finance/ls-db01/fc-fc0/if-default" vnet="100" name="VSAN100" operVnetName="VSAN100"/>
+</outConfigs>
+</configResolveClass>

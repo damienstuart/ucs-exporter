@@ -1,0 +1,5 @@
+<configResolveClass cookie="" response="yes" classId="equipmentFanModuleStats">
+<outConfigs>
+<equipmentFanModuleStats dn="sys/chassis-1/fan-module-1-1/stats" ambientTemp="24" FanModuleI2CErrors="0"/>
+</outConfigs>
+</configResolveClass>
