@@ -153,9 +153,10 @@ func TestMergeQueries(t *testing.T) {
 	if cls := Classes(got); !slices.Equal(cls, []string{"etherRxStats", "faultInst", "fcStats", "lsServer"}) {
 		t.Fatalf("classes = %v", cls)
 	}
-	if !slices.Equal(got[0].Attrs, []string{"totalBytes", "unicastPackets"}) {
+	if !slices.Equal(got[0].Attrs, []string{"suspect", "totalBytes", "unicastPackets"}) {
 		t.Errorf("etherRxStats attrs = %v", got[0].Attrs)
 	}
+	// Only statistics classes get the suspect attribute.
 	if got[1].Filter == nil || !slices.Equal(got[1].Attrs, []string{"severity", "type"}) {
 		t.Errorf("faultInst = %+v", got[1])
 	}

@@ -68,6 +68,24 @@ func (m *MO) Uint(name string) (uint64, bool) {
 	return n, err == nil
 }
 
+// SuspectAttr is the attribute with which UCSM flags the values of a
+// statistics object as unreliable.
+const SuspectAttr = "suspect"
+
+// IsStatsClass reports whether class is a UCSM statistics class. These are
+// the classes named *Stats, and they all carry the suspect attribute.
+func IsStatsClass(class string) bool { return strings.HasSuffix(class, "Stats") }
+
+// Suspect reports whether UCSM flagged the object's values as unreliable
+// (suspect is "yes" or "true").
+func (m *MO) Suspect() bool {
+	switch strings.ToLower(strings.TrimSpace(m.Get(SuspectAttr))) {
+	case "yes", "true":
+		return true
+	}
+	return false
+}
+
 // All iterates over the attributes of m, including dn.
 func (m *MO) All() iter.Seq2[string, string] {
 	return func(yield func(string, string) bool) {

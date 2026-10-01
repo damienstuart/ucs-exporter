@@ -18,6 +18,9 @@ type ClassData struct {
 	// forward from an earlier poll it is the time of that poll.
 	FetchedAt time.Time
 	Stale     bool
+	// Suspect is the number of objects UCSM flagged as suspect. They are
+	// not in Objects if the domain skips suspect statistics.
+	Suspect int
 }
 
 // Snapshot is the read-only set of objects from one poll of a domain, with

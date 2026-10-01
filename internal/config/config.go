@@ -69,6 +69,7 @@ type DomainSettings struct {
 	RequestTimeout        model.Duration     `yaml:"request_timeout,omitempty"`
 	MaxConcurrentRequests int                `yaml:"max_concurrent_requests,omitempty"`
 	MaxDataAge            *model.Duration    `yaml:"max_data_age,omitempty"`
+	SkipSuspectStats      *bool              `yaml:"skip_suspect_stats,omitempty"`
 	TLS                   *promcfg.TLSConfig `yaml:"tls,omitempty"`
 	ProxyURL              string             `yaml:"proxy_url,omitempty"`
 	Modules               []string           `yaml:"modules,omitempty"`
@@ -143,6 +144,7 @@ type Resolved struct {
 	RequestTimeout        time.Duration
 	MaxConcurrentRequests int
 	MaxDataAge            time.Duration // 0 disables carry-forward
+	SkipSuspectStats      bool          // leave out statistics objects UCSM flags as suspect
 	TLS                   promcfg.TLSConfig
 	ProxyURL              string
 	Modules               []string // nil means each module's default
@@ -373,6 +375,9 @@ func (c *Config) resolve(d DomainConfig, unlisted bool) Resolved {
 		r.MaxDataAge = time.Duration(*def.MaxDataAge)
 	default:
 		r.MaxDataAge = 3 * r.Interval
+	}
+	if skip := firstNonNil(s.SkipSuspectStats, def.SkipSuspectStats); skip != nil {
+		r.SkipSuspectStats = *skip
 	}
 	switch {
 	case s.TLS != nil:

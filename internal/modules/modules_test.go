@@ -53,6 +53,11 @@ func TestSDKMetadata(t *testing.T) {
 				t.Errorf("class %s has no attribute %s", q.Class, a)
 			}
 		}
+		// The poller relies on statistics classes, and only those, having
+		// the suspect flag.
+		if _, ok := c.Attrs[ucsm.SuspectAttr]; ok != ucsm.IsStatsClass(q.Class) {
+			t.Errorf("class %s: has suspect attribute = %v, IsStatsClass = %v", q.Class, ok, ucsm.IsStatsClass(q.Class))
+		}
 	}
 	// The zero-filled fault enumerations must match the SDK.
 	for _, sev := range faultSeverities {

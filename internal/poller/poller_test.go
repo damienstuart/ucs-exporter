@@ -8,6 +8,7 @@ import (
 	"bytes"
 	"context"
 	"errors"
+	"fmt"
 	"strings"
 	"testing"
 	"testing/synctest"
@@ -42,6 +43,24 @@ func (bladeModule) Collect(s *module.Snapshot, e *module.Emitter) error {
 		bladeCPUTable.Emit(e, mo, strings.TrimPrefix(mo.DN, "sys/"))
 	}
 	e.Gauge(chassisCount, float64(len(s.Class("equipmentChassis"))))
+	return nil
+}
+
+// rxModule exports one counter per etherRxStats object.
+type rxModule struct{}
+
+var rxTable = module.NewTable("etherRxStats", "ucs_test_rx", []string{"dn"}, module.C("totalBytes", "bytes_total", "Bytes received"))
+
+func (rxModule) Name() string        { return "rx" }
+func (rxModule) Description() string { return "test" }
+func (rxModule) Queries() []module.Query {
+	return []module.Query{{Class: "etherRxStats", Attrs: rxTable.Attrs()}}
+}
+func (rxModule) Describe(ch chan<- *prometheus.Desc) { rxTable.Describe(ch) }
+func (rxModule) Collect(s *module.Snapshot, e *module.Emitter) error {
+	for _, mo := range s.Class("etherRxStats") {
+		rxTable.Emit(e, mo, mo.DN)
+	}
 	return nil
 }
 
@@ -163,6 +182,56 @@ func TestPollPartialCarryForward(t *testing.T) {
 			t.Error("last success forgotten")
 		}
 	})
+}
+
+func TestPollSuspectStats(t *testing.T) {
+	const good, bad = "sys/switch-A/slot-1/switch-ether/port-1/rx-stats", "sys/switch-A/slot-1/switch-ether/port-2/rx-stats"
+	for _, skip := range []bool{false, true} {
+		t.Run(fmt.Sprintf("skip=%t", skip), func(t *testing.T) {
+			s := fake(t, ucsmtest.WithObjects(
+				ucsm.NewMO("etherRxStats", good, "totalBytes", "100", "suspect", "no"),
+				ucsm.NewMO("etherRxStats", bad, "totalBytes", "465042103975542800", "suspect", "yes"),
+			))
+			p, err := New(Options{Config: resolved(t, fmt.Sprintf(", skip_suspect_stats: %t", skip)),
+				Modules: []module.Module{bladeModule{}, rxModule{}}, Transport: s.RoundTripper()})
+			if err != nil {
+				t.Fatal(err)
+			}
+			ctx := context.Background()
+			st := p.PollOnce(ctx)
+			out := text(t, st)
+			if !strings.Contains(out, `dn="`+good+`"`) {
+				t.Errorf("object that is not suspect missing:\n%s", out)
+			}
+			if exported := strings.Contains(out, `dn="`+bad+`"`); exported == skip {
+				t.Errorf("suspect object exported = %v with skip_suspect_stats: %v\n%s", exported, skip, out)
+			}
+			objects := 2
+			if skip {
+				objects = 1
+			}
+			if cs := st.Classes["etherRxStats"]; cs.Suspect != 1 || cs.Objects != objects {
+				t.Errorf("class status = %+v", cs)
+			}
+			// Reported whether or not suspect objects are skipped, and only
+			// for statistics classes.
+			expected := `
+# HELP ucs_class_suspect_objects Objects of a UCSM statistics class that UCSM flagged as suspect (unreliable) in the latest snapshot. They are left out when skip_suspect_stats is enabled.
+# TYPE ucs_class_suspect_objects gauge
+ucs_class_suspect_objects{class="etherRxStats",domain="ucs1"} 1
+`
+			if err := testutil.CollectAndCompare(p.Health(st), strings.NewReader(expected), "ucs_class_suspect_objects"); err != nil {
+				t.Error(err)
+			}
+
+			// The count is carried forward with stale data.
+			s.UnknownClass("etherRxStats")
+			st = p.PollOnce(ctx)
+			if cs := st.Classes["etherRxStats"]; !cs.Stale || cs.Suspect != 1 || cs.Objects != objects {
+				t.Errorf("stale class status = %+v", cs)
+			}
+		})
+	}
 }
 
 func TestPollLoginFailure(t *testing.T) {

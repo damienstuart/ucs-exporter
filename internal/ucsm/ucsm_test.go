@@ -127,6 +127,20 @@ func TestMOAccessors(t *testing.T) {
 	}
 }
 
+func TestSuspect(t *testing.T) {
+	for v, want := range map[string]bool{"yes": true, "true": true, "YES": true, " yes ": true, "no": false, "false": false, "": false} {
+		if got := NewMO("etherRxStats", "x", "suspect", v).Suspect(); got != want {
+			t.Errorf("Suspect(%q) = %v, want %v", v, got, want)
+		}
+	}
+	if NewMO("etherRxStats", "x").Suspect() {
+		t.Error("Suspect without the attribute")
+	}
+	if !IsStatsClass("fcErrStats") || IsStatsClass("fcPIo") || IsStatsClass("fcErrStatsHist") {
+		t.Error("IsStatsClass mismatch")
+	}
+}
+
 func TestSanitizer(t *testing.T) {
 	cases := []struct{ in, want string }{
 		{`<a b="x < y"/>`, `<a b="x &lt; y"/>`},

@@ -13,6 +13,7 @@ import (
 	"math/rand/v2"
 	"net/http"
 	"net/url"
+	"slices"
 	"sort"
 	"sync"
 	"sync/atomic"
@@ -39,6 +40,7 @@ type ClassStatus struct {
 	Objects     int
 	Err         error
 	Stale       bool      // data carried forward from an earlier poll
+	Suspect     int       // objects UCSM flagged as suspect (statistics classes only)
 	LastSuccess time.Time // zero if never retrieved
 }
 
@@ -305,9 +307,10 @@ func (p *Poller) pollOnce(ctx context.Context) {
 		st := ClassStatus{Duration: res.dur, Err: res.err}
 		if res.err == nil {
 			ok++
-			cd := &module.ClassData{Objects: res.objs, FetchedAt: now}
+			objs, suspect := screenSuspect(q.Class, res.objs, p.cfg.SkipSuspectStats)
+			cd := &module.ClassData{Objects: objs, FetchedAt: now, Suspect: suspect}
 			classes[q.Class], p.prev[q.Class] = cd, cd
-			st.Objects, st.LastSuccess = len(res.objs), now
+			st.Objects, st.Suspect, st.LastSuccess = len(objs), suspect, now
 			p.lastOK[q.Class] = now
 			p.lastDur[q.Class] = res.dur
 		} else {
@@ -317,8 +320,8 @@ func (p *Poller) pollOnce(ctx context.Context) {
 			st.LastSuccess = p.lastOK[q.Class]
 			if prev := p.prev[q.Class]; prev != nil {
 				if p.cfg.MaxDataAge > 0 && now.Sub(prev.FetchedAt) <= p.cfg.MaxDataAge {
-					classes[q.Class] = &module.ClassData{Objects: prev.Objects, FetchedAt: prev.FetchedAt, Stale: true}
-					st.Stale, st.Objects = true, len(prev.Objects)
+					classes[q.Class] = &module.ClassData{Objects: prev.Objects, FetchedAt: prev.FetchedAt, Stale: true, Suspect: prev.Suspect}
+					st.Stale, st.Objects, st.Suspect = true, len(prev.Objects), prev.Suspect
 				} else {
 					delete(p.prev, q.Class)
 				}
@@ -364,6 +367,25 @@ func (p *Poller) pollOnce(ctx context.Context) {
 	p.state.Store(st)
 	p.firstOnce.Do(func() { close(p.firstDone) })
 	p.logTransitions(st)
+}
+
+// screenSuspect counts the objects of a statistics class that UCSM flagged
+// as suspect and, if skip is set, removes them so that their values are not
+// exported.
+func screenSuspect(class string, objs []*ucsm.MO, skip bool) ([]*ucsm.MO, int) {
+	if !ucsm.IsStatsClass(class) {
+		return objs, 0
+	}
+	n := 0
+	for _, mo := range objs {
+		if mo.Suspect() {
+			n++
+		}
+	}
+	if skip && n > 0 {
+		objs = slices.DeleteFunc(objs, (*ucsm.MO).Suspect)
+	}
+	return objs, n
 }
 
 // fetchAll queries every class with bounded concurrency, slowest first.
