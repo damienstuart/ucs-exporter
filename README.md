@@ -107,6 +107,7 @@ Settings in `defaults` apply to every domain and can be overridden per domain. [
 | `request_timeout` | min(30s, timeout) | Deadline for one class query. |
 | `max_concurrent_requests` | `2` | Parallel class queries per domain (1–8). |
 | `max_data_age` | 3 × interval | How long to keep serving data for a class whose query fails. `0` disables this. |
+| `skip_suspect_stats` | `false` | Leave statistics objects (`*Stats` classes) that UCSM flags as suspect (unreliable) out of the metrics. `ucs_class_suspect_objects{class}` counts the flagged objects either way. |
 | `tls` | verify | `ca_file`, `server_name`, `insecure_skip_verify`, `min_version`, `cert_file`/`key_file`. A domain-level `tls` block replaces the default block. |
 | `proxy_url` | none | HTTP proxy. Proxy environment variables are ignored. |
 | `modules` | all | Modules to run; see [Metrics](#metrics). |
@@ -234,7 +235,7 @@ ucs_fi_mgmt_ha_ready == 0
 **Exporter health metrics.** These are served with each domain and carry its `domain` label:
 
 - **Poll:** `ucs_up`, `ucs_poll_duration_seconds`, `ucs_poll_timestamp_seconds`, `ucs_poll_last_success_timestamp_seconds`, `ucs_snapshot_age_seconds`, `ucs_polls_total{result}`, `ucs_poll_overruns_total`.
-- **Per class:** `ucs_class_query_success{class}`, `ucs_class_query_duration_seconds{class}`, `ucs_class_query_errors_total{class}`, `ucs_class_objects{class}`, `ucs_class_stale{class}`, `ucs_class_last_success_timestamp_seconds{class}`.
+- **Per class:** `ucs_class_query_success{class}`, `ucs_class_query_duration_seconds{class}`, `ucs_class_query_errors_total{class}`, `ucs_class_objects{class}`, `ucs_class_stale{class}`, `ucs_class_last_success_timestamp_seconds{class}`, and `ucs_class_suspect_objects{class}` for statistics classes.
 - **Per module:** `ucs_module_success{module}`, `ucs_module_series{module}`, `ucs_module_skipped_objects{module,reason}`.
 - **Session:** `ucs_session_operations_total{op,result}`.
 

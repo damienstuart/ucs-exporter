@@ -21,6 +21,8 @@ defaults:
   # max_concurrent_requests: 2    # parallel class queries per domain (1-8)
   # max_data_age: 3m              # keep serving data of a class whose query fails for this
   #                               # long (default 3 * interval; 0 disables)
+  # skip_suspect_stats: false     # leave out statistics that UCSM flags as suspect (unreliable);
+  #                               # ucs_class_suspect_objects counts them either way
 
   # TLS. Certificates are verified by default. Point ca_file at the UCSM CA
   # (or its self-signed certificate), or disable verification per domain.

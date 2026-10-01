@@ -50,6 +50,9 @@ func TestDefaults(t *testing.T) {
 	if r.TLS.InsecureSkipVerify {
 		t.Error("TLS verification disabled by default")
 	}
+	if r.SkipSuspectStats {
+		t.Error("suspect statistics skipped by default")
+	}
 	if len(cfg.Warnings()) != 0 {
 		t.Errorf("warnings = %q", cfg.Warnings())
 	}
@@ -66,6 +69,7 @@ defaults:
   password: defpass
   interval: 2m
   max_data_age: 0s
+  skip_suspect_stats: true
   tls: {insecure_skip_verify: true}
   modules: [system, faults]
   module_options:
@@ -81,6 +85,7 @@ domains:
     timeout: 20s
     request_timeout: 10s
     max_concurrent_requests: 4
+    skip_suspect_stats: false
     tls: {server_name: ucs-nyc}
     modules: [capacity]
     module_options:
@@ -93,7 +98,7 @@ domains:
 	}
 	lon, _ := cfg.Lookup("lon")
 	if lon.Username != "defuser" || string(lon.Password) != "defpass" || lon.Interval != 2*time.Minute ||
-		lon.Timeout != 90*time.Second || lon.RequestTimeout != 30*time.Second || lon.MaxDataAge != 0 {
+		lon.Timeout != 90*time.Second || lon.RequestTimeout != 30*time.Second || lon.MaxDataAge != 0 || !lon.SkipSuspectStats {
 		t.Errorf("lon = %+v", lon)
 	}
 	if !lon.TLS.InsecureSkipVerify || !slices.Equal(lon.Modules, []string{"system", "faults"}) ||
@@ -110,7 +115,7 @@ domains:
 		t.Errorf("nyc tls should replace defaults: %+v", nyc.TLS)
 	}
 	if nyc.Interval != 30*time.Second || nyc.Timeout != 20*time.Second || nyc.RequestTimeout != 10*time.Second ||
-		nyc.MaxConcurrentRequests != 4 || nyc.MaxDataAge != 0 {
+		nyc.MaxConcurrentRequests != 4 || nyc.MaxDataAge != 0 || nyc.SkipSuspectStats {
 		t.Errorf("nyc timing = %+v", nyc)
 	}
 	if !slices.Equal(nyc.Modules, []string{"capacity"}) || nyc.Options.VirtualVLANs != "off" || !nyc.Options.IOMHostPorts ||

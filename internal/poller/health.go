@@ -9,6 +9,8 @@ import (
 	"time"
 
 	"github.com/prometheus/client_golang/prometheus"
+
+	"github.com/damienstuart/ucs-exporter/internal/ucsm"
 )
 
 func desc(name, help string, labels ...string) *prometheus.Desc {
@@ -28,6 +30,7 @@ var (
 	classErrorsDesc     = desc("ucs_class_query_errors_total", "Failed queries for a UCSM class.", "class")
 	classObjectsDesc    = desc("ucs_class_objects", "Objects of a UCSM class in the latest snapshot (including stale data carried forward).", "class")
 	classStaleDesc      = desc("ucs_class_stale", "Whether the snapshot uses data from an earlier poll for a UCSM class because the latest query failed.", "class")
+	classSuspectDesc    = desc("ucs_class_suspect_objects", "Objects of a UCSM statistics class that UCSM flagged as suspect (unreliable) in the latest snapshot. They are left out when skip_suspect_stats is enabled.", "class")
 	classLastSuccessTSD = desc("ucs_class_last_success_timestamp_seconds", "Time a UCSM class was last retrieved successfully.", "class")
 	moduleSuccessDesc   = desc("ucs_module_success", "Whether a metric module rendered without error in the latest poll.", "module")
 	moduleSeriesDesc    = desc("ucs_module_series", "Series produced by a metric module in the latest poll.", "module")
@@ -76,6 +79,9 @@ func (h health) Collect(ch chan<- prometheus.Metric) {
 			g(classSuccessDesc, b(cs.Err == nil), class)
 			g(classObjectsDesc, float64(cs.Objects), class)
 			g(classStaleDesc, b(cs.Stale), class)
+			if ucsm.IsStatsClass(class) {
+				g(classSuspectDesc, float64(cs.Suspect), class)
+			}
 			if !cs.LastSuccess.IsZero() {
 				g(classLastSuccessTSD, ts(cs.LastSuccess), class)
 			}

@@ -51,7 +51,8 @@ type Module interface {
 
 // MergeQueries combines the queries of several modules: one query per
 // class, with the union of attributes (nil if any module needs all) and the
-// filter kept only if every module uses the same one.
+// filter kept only if every module uses the same one. Queries of statistics
+// classes also read the suspect attribute, which the poller checks.
 func MergeQueries(mods []Module) []Query {
 	type merged struct {
 		q        Query
@@ -89,6 +90,9 @@ func MergeQueries(mods []Module) []Query {
 			q.Filter = nil
 		}
 		if !m.allAttrs {
+			if ucsm.IsStatsClass(q.Class) {
+				m.attrs[ucsm.SuspectAttr] = true
+			}
 			q.Attrs = make([]string, 0, len(m.attrs))
 			for a := range m.attrs {
 				q.Attrs = append(q.Attrs, a)
