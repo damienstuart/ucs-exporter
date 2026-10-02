@@ -242,7 +242,9 @@ timeseries("FC port traffic", [
     (f'8 * rate(ucs_fi_fc_port_transmit_bytes_total{{{D}}}[{RI}])', "{{fabric}} fc{{port}} tx")], unit="bps", negative_tx=True)
 timeseries("FC CRC errors (per hour)", [
     (f'increase(ucs_fi_fc_port_crc_errors_total{{{D}}}[1h]) > 0', "{{fabric}} fc{{port}}"),
-    (f'increase(ucs_fi_fc_port_channel_crc_errors_total{{{D}}}[1h]) > 0', "{{fabric}} san-po{{port_channel}}")])
+    (f'sum by (fabric, port_channel) (increase(ucs_fi_fc_port_crc_errors_total{{{D}}}[1h]) * on (domain, fabric, port) group_left (port_channel) '
+     f'group by (domain, fabric, port, port_channel) (ucs_fi_fc_port_channel_member_up{{{D}}})) > 0', "{{fabric}} san-po{{port_channel}}")],
+    desc="SAN port channels are summed from their member ports: UCSM's own port-channel error counters occasionally report garbage values for one poll.")
 timeseries("FC link failures, signal and sync losses (per hour)", [
     (f'increase(ucs_fi_fc_port_link_failures_total{{{D}}}[1h]) > 0', "{{fabric}} fc{{port}} link failures"),
     (f'increase(ucs_fi_fc_port_signal_losses_total{{{D}}}[1h]) > 0', "{{fabric}} fc{{port}} signal losses"),

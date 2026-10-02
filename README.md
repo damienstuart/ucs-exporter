@@ -286,6 +286,17 @@ Import [`grafana/dashboard.json`](grafana/dashboard.json). It shows one domain a
   - set `tls.insecure_skip_verify: true` for that domain.
 - **Old UCSM TLS.** Builds with Go 1.27 or later cannot negotiate RSA key exchange or 3DES cipher suites; Go removed the `tlsrsakex` and `tls3des` GODEBUG settings. A UCSM that offers only those needs a newer UCSM release, or an exporter built with Go 1.26 and run with `GODEBUG=tlsrsakex=1`. `tls.min_version: TLS10` allows TLS 1.0 and 1.1.
 - **`login suppressed until …`.** A login failed, for example because of a wrong password or the session limit. Logins back off from 1 minute up to 30 minutes. Fix the credentials and reload, or wait for the backoff to expire.
+- **Huge one-poll spikes on SAN port-channel counters.** UCSM computes the SAN port-channel statistics (`ucs_fi_fc_port_channel_*_total`) itself, and they occasionally show garbage for a single poll, such as a CRC error count of 4e17 between two zeros, while the member ports stay normal. Prometheus treats the jump and the drop back as counter resets, so `rate()` and `increase()` spike.
+  - **Traffic counters:** `skip_suspect_stats: true` removes these glitches (bytes and frames, from `fcStats`), because UCSM flags them as suspect.
+  - **Error counters:** skipping doesn't help for errors from `fcErrStats`. UCSM has been seen to flag the poll after the bad value instead of the bad value itself. Sum the member ports instead, as the dashboard does. Swap `crc_errors` for any other `ucs_fi_fc_port_*` error counter:
+
+  ```promql
+  sum by (domain, fabric, port_channel) (
+    increase(ucs_fi_fc_port_crc_errors_total[1h])
+    * on (domain, fabric, port) group_left (port_channel)
+      group by (domain, fabric, port, port_channel) (ucs_fi_fc_port_channel_member_up)
+  ) > 0
+  ```
 - **Look at UCSM directly.** The `explore` commands (a Go port of `scripts/explore.py`) use a configured domain (`--domain`) or `--address` with `$PROM_UCS_USERNAME` and `$PROM_UCS_PASSWORD`:
 
   ```sh

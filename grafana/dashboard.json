@@ -2438,7 +2438,7 @@
         {
           "type": "timeseries",
           "title": "FC CRC errors (per hour)",
-          "description": "",
+          "description": "SAN port channels are summed from their member ports: UCSM's own port-channel error counters occasionally report garbage values for one poll.",
           "id": 47,
           "datasource": {
             "type": "prometheus",
@@ -2465,7 +2465,7 @@
                 "type": "prometheus",
                 "uid": "${datasource}"
               },
-              "expr": "increase(ucs_fi_fc_port_channel_crc_errors_total{domain=\"$domain\"}[1h]) > 0",
+              "expr": "sum by (fabric, port_channel) (increase(ucs_fi_fc_port_crc_errors_total{domain=\"$domain\"}[1h]) * on (domain, fabric, port) group_left (port_channel) group by (domain, fabric, port, port_channel) (ucs_fi_fc_port_channel_member_up{domain=\"$domain\"})) > 0",
               "refId": "B",
               "legendFormat": "{{fabric}} san-po{{port_channel}}"
             }
