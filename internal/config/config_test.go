@@ -220,13 +220,18 @@ unlisted_domains: {enabled: true, allow: ['ucs-[a-z0-9]+\.example\.com']}
 	if cfg.UnlistedDomains.MaxDomains != DefaultUnlistedMaxDomains || time.Duration(cfg.UnlistedDomains.IdleTimeout) != time.Hour {
 		t.Errorf("unlisted defaults = %+v", cfg.UnlistedDomains)
 	}
-	for _, bad := range []string{"evil.example.com", "ucs-lab1.example.com.evil.net", "ucs-x.example.com/../x", "a b", ""} {
-		if _, err := cfg.ResolveUnlisted(bad); !errors.Is(err, ErrNotAllowed) {
-			t.Errorf("ResolveUnlisted(%q) err = %v", bad, err)
+	// The error says why the domain was rejected.
+	const noMatch, invalid = "does not match any unlisted_domains.allow pattern", "not a valid host name"
+	for bad, reason := range map[string]string{
+		"evil.example.com": noMatch, "ucs-lab1.example.com.evil.net": noMatch,
+		"ucs-x.example.com/../x": invalid, "a b": invalid, "": invalid,
+	} {
+		if _, err := cfg.ResolveUnlisted(bad); !errors.Is(err, ErrNotAllowed) || !strings.Contains(err.Error(), reason) {
+			t.Errorf("ResolveUnlisted(%q) err = %v, want %q", bad, err, reason)
 		}
 	}
 	off := mustParse(t, `domains: [{name: a}]`)
-	if _, err := off.ResolveUnlisted("a2"); !errors.Is(err, ErrNotAllowed) {
+	if _, err := off.ResolveUnlisted("a2"); !errors.Is(err, ErrNotAllowed) || !strings.Contains(err.Error(), "unlisted_domains is not enabled") {
 		t.Errorf("disabled unlisted err = %v", err)
 	}
 }

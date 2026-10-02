@@ -184,7 +184,7 @@ func (s *Server) handleMetrics(w http.ResponseWriter, r *http.Request) {
 	switch {
 	case errors.Is(err, config.ErrNotAllowed):
 		s.rejections.WithLabelValues("not_allowed").Inc()
-		s.fail(w, http.StatusNotFound, fmt.Sprintf("unknown domain %q", name))
+		s.fail(w, http.StatusNotFound, fmt.Sprintf("unknown domain %q: %v", name, err))
 		return
 	case errors.Is(err, poller.ErrLimit):
 		s.rejections.WithLabelValues("limit").Inc()

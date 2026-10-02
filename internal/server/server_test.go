@@ -128,6 +128,11 @@ func TestMetricsEndpoints(t *testing.T) {
 	if body := get(t, s, "/metrics").Body.String(); !strings.Contains(body, `ucs_exporter_unlisted_domain_rejections_total{reason="not_allowed"} 2`) {
 		t.Errorf("rejections not counted:\n%s", body)
 	}
+	// The 404 says why the domain was rejected.
+	const want = `unknown domain "nope.example": not listed under domains, and it does not match any unlisted_domains.allow pattern`
+	if body := get(t, s, "/metrics?domain=nope.example").Body.String(); !strings.Contains(body, want) {
+		t.Errorf("404 body = %q, want %q", body, want)
+	}
 }
 
 func TestFirstPollPending(t *testing.T) {
