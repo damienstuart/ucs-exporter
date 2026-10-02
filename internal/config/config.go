@@ -439,19 +439,19 @@ func (c *Config) Lookup(name string) (Resolved, bool) {
 	return Resolved{}, false
 }
 
-// ErrNotAllowed is returned for unlisted domains that are disabled or do not
-// match the allowlist.
-var ErrNotAllowed = errors.New("domain is not configured")
+// ErrNotAllowed is returned, wrapped with the reason, for domains that are
+// not configured and cannot be polled as unlisted domains.
+var ErrNotAllowed = errors.New("not listed under domains")
 
 // ResolveUnlisted returns the configuration for an unlisted domain, using the
 // defaults, if unlisted domains are enabled and name matches the allowlist.
 func (c *Config) ResolveUnlisted(name string) (Resolved, error) {
 	if !c.UnlistedDomains.Enabled {
-		return Resolved{}, ErrNotAllowed
+		return Resolved{}, fmt.Errorf("%w, and unlisted_domains is not enabled", ErrNotAllowed)
 	}
 	name = strings.ToLower(name)
 	if !validHostname(name) {
-		return Resolved{}, ErrNotAllowed
+		return Resolved{}, fmt.Errorf("%w, and not a valid host name for an unlisted domain", ErrNotAllowed)
 	}
 	for _, re := range c.allow {
 		if re.MatchString(name) {
@@ -459,7 +459,7 @@ func (c *Config) ResolveUnlisted(name string) (Resolved, error) {
 			return r, nil
 		}
 	}
-	return Resolved{}, ErrNotAllowed
+	return Resolved{}, fmt.Errorf("%w, and it does not match any unlisted_domains.allow pattern", ErrNotAllowed)
 }
 
 var hostnameRE = regexp.MustCompile(`^[a-z0-9]([a-z0-9.-]*[a-z0-9])?(:[0-9]{1,5})?$`)
